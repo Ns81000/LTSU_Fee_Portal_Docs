@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture - LTSU Fee Portal Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Overview
+    </a>
+    <a href="architecture.html" class="active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Architecture
+    </a>
+    <a href="database.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      Database Schema
+    </a>
+    <a href="authentication.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Authentication
+    </a>
+    <a href="admin.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Admin Panel
+    </a>
+    <a href="dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      Dashboard
+    </a>
+    <a href="student-form.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Student Form
+    </a>
+    <a href="email.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email System
+    </a>
+    <a href="security.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      Security
+    </a>
+    <a href="deployment.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+      Deployment
+    </a>
+    <a href="components.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Components
+    </a>
+    <a href="api.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      API Reference
+    </a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>System Architecture</h1>
+      <p class="subtitle">Detailed breakdown of the LTSU Fee Portal's application architecture, file organization, routing configuration, context providers, data flow patterns, and build tooling.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#system-architecture">System Architecture</a></li>
+        <li><a href="#technology-layer-breakdown">Technology Layer Breakdown</a></li>
+        <li><a href="#file-structure">File Structure</a></li>
+        <li><a href="#routing-configuration">Routing Configuration</a></li>
+        <li><a href="#context-providers">Context Providers</a></li>
+        <li><a href="#data-flow-patterns">Data Flow Patterns</a></li>
+        <li><a href="#build-configuration">Build Configuration</a></li>
+        <li><a href="#deployment-architecture">Deployment Architecture</a></li>
+      </ul>
+    </div>
+
+    <!-- System Architecture -->
+    <h2 id="system-architecture">System Architecture</h2>
+    <div class="card">
+      <p>The LTSU Fee Portal is a <strong>single-page application (SPA)</strong> built with <strong>React 19.2.0</strong>, bundled by <strong>Vite 7.3.1</strong>, styled with <strong>Tailwind CSS v4</strong> and a custom CSS design system, and powered by a <strong>Supabase</strong> backend. The application follows a client-heavy architecture where all rendering, routing, and state management occurs in the browser, with Supabase providing the backend infrastructure without any custom server code (aside from a single Edge Function for admin operations).</p>
+
+      <p>The system is composed of four distinct architectural layers:</p>
+      <ul>
+        <li><strong>Presentation Layer:</strong> React components organized into pages, layout wrappers, UI primitives, and feature-specific modules (admin, dashboard, forms). Tailwind CSS v4 handles utility-first styling, supplemented by a custom CSS design system for the glassmorphism aesthetic.</li>
+        <li><strong>State Management Layer:</strong> Three React Context providers (AuthContext, DataContext, ToastContext) manage global application state. Custom hooks (useFeeRequests, useActivityLog, useDebounce) encapsulate complex data-fetching logic with proper cleanup and memoization.</li>
+        <li><strong>Data Access Layer:</strong> A single Supabase client instance initialized in <code>lib/supabase.js</code> handles all communication with the backend, including authentication, database queries, real-time subscriptions, and Edge Function invocations.</li>
+        <li><strong>Backend Layer:</strong> Supabase provides PostgreSQL as the database engine, Supabase Auth for authentication and session management, Row-Level Security (RLS) policies for data access control, Edge Functions for privileged operations, and pg_cron for scheduled tasks.</li>
+      </ul>
+
+      <p>Deployment is on <strong>Vercel</strong> with SPA rewrites configured in <code>vercel.json</code>, ensuring all client-side routes resolve to <code>index.html</code> for proper React Router handling.</p>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Single-Page Application:</strong> The entire application is delivered as a single HTML file with JavaScript bundles. All navigation is handled client-side by React Router v7, with Vercel's rewrite rules ensuring deep links and browser refreshes work correctly. There is no server-side rendering (SSR) or static site generation (SSG).
+    </div>
+
+    <!-- High-Level Architecture Diagram -->
+    <div class="card">
+      <h3>High-Level Architecture</h3>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Browser (React SPA)</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Supabase Client SDK</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Supabase API Gateway</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">PostgreSQL + Auth + Edge Functions</div>
+      </div>
+      <p>The browser communicates directly with Supabase's API gateway using the <code>@supabase/supabase-js</code> client library. All database operations pass through RLS policies before touching the underlying PostgreSQL tables. Authentication tokens are managed automatically by the Supabase client and attached to every request.</p>
+    </div>
+
+    <!-- Technology Layer Breakdown -->
+    <h2 id="technology-layer-breakdown">Technology Layer Breakdown</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Technology</th>
+            <th>Version</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>UI Framework</td>
+            <td>React</td>
+            <td>19.2.0</td>
+            <td>Component-based UI rendering with hooks, context, lazy loading, and Suspense</td>
+          </tr>
+          <tr>
+            <td>Build Tool</td>
+            <td>Vite</td>
+            <td>7.3.1</td>
+            <td>Development server with HMR, production bundling with esbuild minification and code splitting</td>
+          </tr>
+          <tr>
+            <td>Styling</td>
+            <td>Tailwind CSS</td>
+            <td>v4</td>
+            <td>Utility-first CSS framework with JIT compilation, supplemented by custom CSS variables and glassmorphism design tokens</td>
+          </tr>
+          <tr>
+            <td>Routing</td>
+            <td>React Router</td>
+            <td>v7</td>
+            <td>Client-side routing with protected routes, role-based guards, and lazy-loaded page components</td>
+          </tr>
+          <tr>
+            <td>Backend</td>
+            <td>Supabase</td>
+            <td>Latest</td>
+            <td>PostgreSQL database, authentication, Row-Level Security, Edge Functions, real-time capabilities</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>EmailJS</td>
+            <td>4.4.1</td>
+            <td>Client-side email dispatch for approval/rejection notifications with HTML templates</td>
+          </tr>
+          <tr>
+            <td>Icons</td>
+            <td>Lucide React</td>
+            <td>0.511.0</td>
+            <td>Tree-shakeable SVG icon library providing consistent iconography across the application</td>
+          </tr>
+          <tr>
+            <td>PDF Generation</td>
+            <td>jsPDF + autoTable</td>
+            <td>2.5.2 / 3.8.4</td>
+            <td>Client-side PDF generation for receipts and data export with auto-formatted tables</td>
+          </tr>
+          <tr>
+            <td>CSV Parsing</td>
+            <td>PapaParse</td>
+            <td>5.5.2</td>
+            <td>Robust CSV parsing for student data upload with header detection and error handling</td>
+          </tr>
+          <tr>
+            <td>Excel Export</td>
+            <td>SheetJS (xlsx)</td>
+            <td>0.18.5</td>
+            <td>Excel workbook generation for dashboard data export with formatted columns</td>
+          </tr>
+          <tr>
+            <td>Hosting</td>
+            <td>Vercel</td>
+            <td>--</td>
+            <td>Static hosting with SPA rewrites, automatic deployments from Git, edge network CDN</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- File Structure -->
+    <h2 id="file-structure">File Structure</h2>
+    <div class="card">
+      <p>The project follows a feature-based directory structure within the <code>src/</code> folder. Components are grouped by their functional domain (admin, dashboard, forms, layout, ui), while shared utilities, hooks, and context providers occupy their own top-level directories. The <code>pages/</code> directory contains one component per route.</p>
+
+      <pre><code>ltsu-fee-portal/
+├── public/
+│   └── ltsu_shield.svg
+├── src/
+│   ├── components/
+│   │   ├── admin/
+│   │   │   ├── AdminOverview.jsx
+│   │   │   ├── AdminSidebar.jsx
+│   │   │   ├── BatchManager.jsx
+│   │   │   ├── BranchManager.jsx
+│   │   │   ├── CSVUploader.jsx
+│   │   │   ├── SectionManager.jsx
+│   │   │   ├── SemesterManager.jsx
+│   │   │   ├── SpecManager.jsx
+│   │   │   ├── StaffManager.jsx
+│   │   │   └── StudentManager.jsx
+│   │   ├── dashboard/
+│   │   │   ├── ExportMenu.jsx
+│   │   │   ├── RejectModal.jsx
+│   │   │   └── SectionSwitcher.jsx
+│   │   ├── layout/
+│   │   │   ├── MobileNav.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── PageWrapper.jsx
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   └── Sidebar.jsx
+│   │   └── ui/
+│   │       ├── Badge.jsx
+│   │       ├── Button.jsx
+│   │       ├── GlassCard.jsx
+│   │       ├── Input.jsx
+│   │       ├── Modal.jsx
+│   │       ├── Select.jsx
+│   │       ├── Spinner.jsx
+│   │       ├── StatsCard.jsx
+│   │       └── Tabs.jsx
+│   ├── context/
+│   │   ├── AuthContext.jsx
+│   │   ├── DataContext.jsx
+│   │   └── ToastContext.jsx
+│   ├── hooks/
+│   │   ├── useActivityLog.js
+│   │   ├── useDebounce.js
+│   │   └── useFeeRequests.js
+│   ├── lib/
+│   │   └── supabase.js
+│   ├── pages/
+│   │   ├── AdminPage.jsx
+│   │   ├── ActivityLogPage.jsx
+│   │   ├── DashboardPage.jsx
+│   │   ├── LandingPage.jsx
+│   │   ├── LoginPage.jsx
+│   │   ├── NotFoundPage.jsx
+│   │   ├── StudentFormPage.jsx
+│   │   └── TrackingPage.jsx
+│   ├── utils/
+│   │   ├── exportCSV.js
+│   │   ├── exportExcel.js
+│   │   ├── exportPDF.js
+│   │   ├── formatters.js
+│   │   ├── generateReceipt.js
+│   │   ├── logAction.js
+│   │   └── validators.js
+│   ├── App.jsx
+│   ├── ErrorBoundary.jsx
+│   ├── index.css
+│   └── main.jsx
+├── supabase/
+│   └── functions/
+│       └── admin-actions/
+│           └── index.ts
+├── email-templates/
+│   ├── approval-template.html
+│   └── rejection-template.html
+├── index.html
+├── package.json
+├── vercel.json
+└── vite.config.js</code></pre>
+    </div>
+
+    <h3>Directory Purposes</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Directory</th>
+            <th>Contents</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>src/components/admin/</code></td>
+            <td>10 components</td>
+            <td>Admin panel modules: branch management, specialisation management, semester management, section management, batch configuration, staff account management, student data management, CSV upload, admin sidebar navigation, and admin overview dashboard.</td>
+          </tr>
+          <tr>
+            <td><code>src/components/dashboard/</code></td>
+            <td>3 components</td>
+            <td>Dashboard-specific components: multi-format export menu (PDF, Excel, CSV), rejection modal with reason input, and section switcher for teachers with multi-section access.</td>
+          </tr>
+          <tr>
+            <td><code>src/components/layout/</code></td>
+            <td>5 components</td>
+            <td>Application shell components: mobile bottom navigation, top navbar with user info, page transition wrapper with animated layout, protected route guard with role checking, and collapsible sidebar navigation.</td>
+          </tr>
+          <tr>
+            <td><code>src/components/ui/</code></td>
+            <td>9 components</td>
+            <td>Reusable UI primitives: Badge, Button, GlassCard, Input, Modal, Select, Spinner, StatsCard, and Tabs. These form the design system foundation.</td>
+          </tr>
+          <tr>
+            <td><code>src/context/</code></td>
+            <td>3 providers</td>
+            <td>React Context providers for authentication state, reference data, and toast notifications. Wrapped at the application root in App.jsx.</td>
+          </tr>
+          <tr>
+            <td><code>src/hooks/</code></td>
+            <td>3 hooks</td>
+            <td>Custom React hooks encapsulating complex data fetching: paginated activity logs, debounced values for search inputs, and fee request data enrichment with batch configs.</td>
+          </tr>
+          <tr>
+            <td><code>src/lib/</code></td>
+            <td>1 file</td>
+            <td>Supabase client initialization with environment variable validation. Single instance shared across the entire application.</td>
+          </tr>
+          <tr>
+            <td><code>src/pages/</code></td>
+            <td>8 pages</td>
+            <td>One React component per route. Each page is lazy-loaded via React.lazy() and wrapped in Suspense with a Spinner fallback.</td>
+          </tr>
+          <tr>
+            <td><code>src/utils/</code></td>
+            <td>7 utilities</td>
+            <td>Pure utility functions: CSV export, Excel export, PDF export, date/currency formatters, receipt PDF generation, activity log recording, and input validation.</td>
+          </tr>
+          <tr>
+            <td><code>supabase/functions/</code></td>
+            <td>1 Edge Function</td>
+            <td>The <code>admin-actions</code> Edge Function handles privileged operations that require the Supabase service role key (user creation, password resets, account deactivation).</td>
+          </tr>
+          <tr>
+            <td><code>email-templates/</code></td>
+            <td>2 templates</td>
+            <td>HTML email templates for approval and rejection notifications. Used as reference for the EmailJS template configuration.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Routing Configuration -->
+    <h2 id="routing-configuration">Routing Configuration</h2>
+    <div class="card">
+      <h3>React Router v7 Setup</h3>
+      <p>The application uses React Router v7 with a <code>BrowserRouter</code> wrapping all routes in <code>App.jsx</code>. All eight page components are lazy-loaded using <code>React.lazy()</code>, which means the JavaScript for each page is only downloaded when the user first navigates to that route. A <code>Suspense</code> boundary wraps the <code>Routes</code> component and displays a centered <code>Spinner</code> component while the lazy-loaded chunk is being fetched.</p>
+
+      <pre><code><span class="kw">const</span> LandingPage = <span class="fn">lazy</span>(() =&gt; <span class="fn">import</span>(<span class="str">'./pages/LandingPage'</span>));
+<span class="kw">const</span> StudentFormPage = <span class="fn">lazy</span>(() =&gt; <span class="fn">import</span>(<span class="str">'./pages/StudentFormPage'</span>));
+<span class="kw">const</span> TrackingPage = <span class="fn">lazy</span>(() =&gt; <span class="fn">import</span>(<span class="str">'./pages/TrackingPage'</span>));
+<span class="kw">const</span> LoginPage = <span class="fn">lazy</span>(() =&gt; <span class="fn">import</span>(<span class="str">'./pages/LoginPage'</span>));
+<span class="kw">const</span> DashboardPage = <span class="fn">lazy</span>(() =&gt; <span class="fn">import</span>(<span class="str">'./pages/DashboardPage'</span>));
+<span class="kw">const</span> ActivityLogPage = <span class="fn">lazy</span>(() =&gt; <span class="fn">import</span>(<span class="str">'./pages/ActivityLogPage'</span>));
+<span class="kw">const</span> AdminPage = <span class="fn">lazy</span>(() =&gt; <span class="fn">import</span>(<span class="str">'./pages/AdminPage'</span>));
+<span class="kw">const</span> NotFoundPage = <span class="fn">lazy</span>(() =&gt; <span class="fn">import</span>(<span class="str">'./pages/NotFoundPage'</span>));
+
+<span class="cm">// Wrapped in &lt;Suspense fallback={&lt;Spinner /&gt;}&gt;</span></code></pre>
+    </div>
+
+    <h3>Route Table</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Path</th>
+            <th>Component</th>
+            <th>Access</th>
+            <th>Allowed Roles</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>/</code></td>
+            <td>LandingPage</td>
+            <td>Public</td>
+            <td>--</td>
+            <td>Landing page with feature overview, quick-action buttons, and navigation to the student form and tracking pages.</td>
+          </tr>
+          <tr>
+            <td><code>/submit</code></td>
+            <td>StudentFormPage</td>
+            <td>Public</td>
+            <td>--</td>
+            <td>Two-step fee submission wizard. Step 1: roll number lookup and student verification. Step 2: fee details, UTR input, and submission.</td>
+          </tr>
+          <tr>
+            <td><code>/track</code></td>
+            <td>TrackingPage</td>
+            <td>Public</td>
+            <td>--</td>
+            <td>Request status tracking by reference number. Shows current status, timestamps, and allows receipt download for approved requests.</td>
+          </tr>
+          <tr>
+            <td><code>/login</code></td>
+            <td>LoginPage</td>
+            <td>Public</td>
+            <td>--</td>
+            <td>Supabase email/password authentication for CR and Teacher roles. Includes role selection and error handling.</td>
+          </tr>
+          <tr>
+            <td><code>/dashboard</code></td>
+            <td>DashboardPage</td>
+            <td>Protected</td>
+            <td><code>cr</code>, <code>teacher</code></td>
+            <td>Main staff dashboard with statistics cards, tabbed fee request views (pending/approved/rejected), search, sort, batch operations, and multi-format export.</td>
+          </tr>
+          <tr>
+            <td><code>/log</code></td>
+            <td>ActivityLogPage</td>
+            <td>Protected</td>
+            <td><code>cr</code>, <code>teacher</code></td>
+            <td>Paginated activity log showing all approval/rejection actions with timestamps, actor details, and affected students.</td>
+          </tr>
+          <tr>
+            <td><code>/admin</code></td>
+            <td>AdminPage</td>
+            <td>Separate Auth</td>
+            <td>Admin only</td>
+            <td>Admin panel with a separate authentication flow. Uses session-based validation against the <code>VITE_ADMIN_EMAIL</code> environment variable. Contains nine management modules.</td>
+          </tr>
+          <tr>
+            <td><code>*</code></td>
+            <td>NotFoundPage</td>
+            <td>Public</td>
+            <td>--</td>
+            <td>Catch-all 404 page displayed for any unmatched route. Provides navigation back to the home page.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>ProtectedRoute Component</h3>
+    <div class="card">
+      <p>The <code>ProtectedRoute</code> component acts as a route guard for authenticated pages. It wraps the <code>/dashboard</code> and <code>/log</code> routes and enforces three conditions before rendering the child component:</p>
+
+      <ol>
+        <li><strong>Authentication Check:</strong> Verifies that a Supabase Auth session exists by checking the <code>user</code> object from <code>AuthContext</code>. If no user is present and the context is not in a loading state, the user is redirected to <code>/login</code>.</li>
+        <li><strong>Role Verification:</strong> Compares the user's <code>profile.role</code> against the <code>allowedRoles</code> prop (an array of strings like <code>['cr', 'teacher']</code>). If the user's role is not in the allowed list, they are redirected to <code>/login</code>.</li>
+        <li><strong>Active Status Check:</strong> Confirms the user's <code>profile.is_active</code> flag is <code>true</code>. Deactivated accounts are redirected to <code>/login</code> even if their session token is still valid.</li>
+      </ol>
+
+      <pre><code><span class="kw">function</span> <span class="fn">ProtectedRoute</span>({ children, allowedRoles }) {
+  <span class="kw">const</span> { user, profile, loading } = <span class="fn">useAuth</span>();
+
+  <span class="kw">if</span> (loading) <span class="kw">return</span> &lt;<span class="fn">Spinner</span> /&gt;;
+
+  <span class="kw">if</span> (!user || !profile) <span class="kw">return</span> &lt;<span class="fn">Navigate</span> to=<span class="str">"/login"</span> replace /&gt;;
+
+  <span class="kw">if</span> (!allowedRoles.<span class="fn">includes</span>(profile.role))
+    <span class="kw">return</span> &lt;<span class="fn">Navigate</span> to=<span class="str">"/login"</span> replace /&gt;;
+
+  <span class="kw">if</span> (!profile.is_active)
+    <span class="kw">return</span> &lt;<span class="fn">Navigate</span> to=<span class="str">"/login"</span> replace /&gt;;
+
+  <span class="kw">return</span> children;
+}</code></pre>
+
+      <p>While the authentication check is in progress (the <code>loading</code> state from AuthContext), a <code>Spinner</code> component is rendered to prevent flashing unauthorized content.</p>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Admin Authentication:</strong> The <code>/admin</code> route does NOT use the <code>ProtectedRoute</code> component. Instead, the AdminPage component implements its own authentication flow that validates against the <code>VITE_ADMIN_EMAIL</code> environment variable using Supabase Auth, then stores a session flag. This is a separate authentication path from the CR/Teacher login.
+    </div>
+
+    <!-- Context Providers -->
+    <h2 id="context-providers">Context Providers</h2>
+    <div class="card">
+      <p>The application uses three React Context providers, all wrapped at the root level in <code>App.jsx</code>. The nesting order matters because inner providers may depend on data from outer providers:</p>
+
+      <pre><code>&lt;<span class="fn">BrowserRouter</span>&gt;
+  &lt;<span class="fn">AuthProvider</span>&gt;
+    &lt;<span class="fn">DataProvider</span>&gt;
+      &lt;<span class="fn">ToastProvider</span>&gt;
+        &lt;<span class="fn">Suspense</span> fallback={&lt;<span class="fn">Spinner</span> /&gt;}&gt;
+          &lt;<span class="fn">Routes</span>&gt;
+            <span class="cm">{/* ... route definitions ... */}</span>
+          &lt;/<span class="fn">Routes</span>&gt;
+        &lt;/<span class="fn">Suspense</span>&gt;
+      &lt;/<span class="fn">ToastProvider</span>&gt;
+    &lt;/<span class="fn">DataProvider</span>&gt;
+  &lt;/<span class="fn">AuthProvider</span>&gt;
+&lt;/<span class="fn">BrowserRouter</span>&gt;</code></pre>
+    </div>
+
+    <h3>AuthProvider (AuthContext.jsx)</h3>
+    <div class="card">
+      <p>The <code>AuthProvider</code> manages the entire authentication lifecycle by wrapping Supabase Auth's session management. It tracks the currently authenticated user, their enriched profile data, and provides login/logout functions to the rest of the application.</p>
+
+      <h4>State Management</h4>
+      <ul>
+        <li><code>user</code> - The raw Supabase Auth user object (contains <code>id</code>, <code>email</code>, <code>app_metadata</code>, etc.)</li>
+        <li><code>profile</code> - The enriched user profile fetched from the <code>users</code> table, including assigned sections with their branch, semester, and specialisation data</li>
+        <li><code>loading</code> - Boolean flag indicating whether the initial auth check is in progress</li>
+      </ul>
+
+      <h4>Duplicate Fetch Prevention</h4>
+      <p>A <code>fetchingRef</code> (React useRef) is used to prevent duplicate profile fetch calls. When Supabase Auth's <code>onAuthStateChange</code> fires, it can trigger multiple times (e.g., <code>INITIAL_SESSION</code> followed by <code>SIGNED_IN</code>). The ref acts as a mutex:</p>
+
+      <pre><code><span class="kw">const</span> fetchingRef = <span class="fn">useRef</span>(<span class="kw">false</span>);
+
+<span class="kw">async function</span> <span class="fn">fetchProfile</span>(userId) {
+  <span class="kw">if</span> (fetchingRef.current) <span class="kw">return</span>;
+  fetchingRef.current = <span class="kw">true</span>;
+  <span class="kw">try</span> {
+    <span class="cm">// ... fetch profile from Supabase ...</span>
+  } <span class="kw">finally</span> {
+    fetchingRef.current = <span class="kw">false</span>;
+  }
+}</code></pre>
+
+      <h4>Profile Fetching</h4>
+      <p>The <code>fetchProfile</code> function queries the <code>users</code> table with a complex join chain to populate the user's section assignments with full reference data:</p>
+
+      <pre><code>supabase
+  .<span class="fn">from</span>(<span class="str">'users'</span>)
+  .<span class="fn">select</span>(<span class="str">`
+    *,
+    user_sections (
+      section_id,
+      sections (
+        id, name, is_active,
+        semesters ( id, name ),
+        branches ( id, name ),
+        specialisations ( id, name )
+      )
+    )
+  `</span>)
+  .<span class="fn">eq</span>(<span class="str">'id'</span>, userId)
+  .<span class="fn">single</span>()</code></pre>
+
+      <p>This returns the user record enriched with an array of <code>user_sections</code>, each containing the full section object with its associated semester, branch, and specialisation data. The result is stored as the <code>profile</code> state.</p>
+
+      <h4>Provided Values</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>user</code></td>
+              <td>Object | null</td>
+              <td>Raw Supabase Auth user object</td>
+            </tr>
+            <tr>
+              <td><code>profile</code></td>
+              <td>Object | null</td>
+              <td>Enriched profile with role, name, and sections array (each with branch/semester/spec data)</td>
+            </tr>
+            <tr>
+              <td><code>loading</code></td>
+              <td>Boolean</td>
+              <td>True during initial auth check, false once session state is determined</td>
+            </tr>
+            <tr>
+              <td><code>login(email, password)</code></td>
+              <td>Function</td>
+              <td>Authenticates via <code>supabase.auth.signInWithPassword</code>, fetches profile, verifies role and active status</td>
+            </tr>
+            <tr>
+              <td><code>logout()</code></td>
+              <td>Function</td>
+              <td>Signs out via <code>supabase.auth.signOut()</code>, clears user and profile state</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Login Flow</h4>
+      <p>The <code>login()</code> function performs a multi-step validation:</p>
+      <ol>
+        <li>Calls <code>supabase.auth.signInWithPassword({ email, password })</code></li>
+        <li>On success, calls <code>fetchProfile(user.id)</code> to load the user's profile and section assignments</li>
+        <li>Verifies the user's role matches the expected role (the login page may have a role selector)</li>
+        <li>Checks the <code>is_active</code> flag to ensure the account has not been deactivated by an admin</li>
+        <li>If any check fails, calls <code>supabase.auth.signOut()</code> and throws an appropriate error</li>
+      </ol>
+    </div>
+
+    <h3>DataProvider (DataContext.jsx)</h3>
+    <div class="card">
+      <p>The <code>DataProvider</code> fetches and caches all reference data that the application needs to populate dropdowns, validate inputs, and enrich displayed records. This data is fetched once on mount and can be individually refreshed when the admin modifies any table.</p>
+
+      <h4>Data Fetched on Mount</h4>
+      <p>On component mount, the provider fetches five reference tables from Supabase, each filtered to only include active records (<code>is_active = true</code>):</p>
+      <ul>
+        <li><code>branches</code> - Academic branches/departments (e.g., Computer Science, Electronics)</li>
+        <li><code>specialisations</code> - Specialisations within branches (e.g., AI/ML, Data Science)</li>
+        <li><code>sections</code> - Class sections with foreign keys to branch, specialisation, and semester</li>
+        <li><code>batch_configs</code> - Fee amount configurations per section, including academic year and fee amounts</li>
+        <li><code>semesters</code> - Academic semesters (e.g., Semester 1, Semester 2)</li>
+      </ul>
+
+      <h4>Refetch Functions</h4>
+      <p>Individual refetch functions are provided for each table so that admin operations can refresh only the data they modified:</p>
+
+      <pre><code><span class="kw">const</span> <span class="fn">refetchBranches</span> = () =&gt; fetchTable(<span class="str">'branches'</span>, setBranches);
+<span class="kw">const</span> <span class="fn">refetchSpecs</span> = () =&gt; fetchTable(<span class="str">'specialisations'</span>, setSpecs);
+<span class="kw">const</span> <span class="fn">refetchSections</span> = () =&gt; fetchTable(<span class="str">'sections'</span>, setSections);
+<span class="kw">const</span> <span class="fn">refetchBatches</span> = () =&gt; fetchTable(<span class="str">'batch_configs'</span>, setBatches);
+<span class="kw">const</span> <span class="fn">refetchSemesters</span> = () =&gt; fetchTable(<span class="str">'semesters'</span>, setSemesters);</code></pre>
+
+      <h4>Memoized Filtered Arrays</h4>
+      <p>The provider exposes memoized (via <code>useMemo</code>) arrays that filter the raw data to only active records. This prevents unnecessary re-renders when the raw data arrays change but the active subset remains identical:</p>
+      <ul>
+        <li><code>activeBranches</code> - Branches where <code>is_active === true</code></li>
+        <li><code>activeSpecs</code> - Specialisations where <code>is_active === true</code></li>
+        <li><code>activeSections</code> - Sections where <code>is_active === true</code></li>
+        <li><code>activeSemesters</code> - Semesters where <code>is_active === true</code></li>
+        <li><code>activeBatches</code> - Batch configs where <code>is_active === true</code></li>
+      </ul>
+
+      <h4>Helper Functions</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Parameters</th>
+              <th>Returns</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>getSpecsByBranch(branchId)</code></td>
+              <td>UUID string</td>
+              <td>Array</td>
+              <td>Filters active specialisations to those belonging to the given branch ID</td>
+            </tr>
+            <tr>
+              <td><code>getSectionsByBranchAndSpec(branchId, specId)</code></td>
+              <td>Two UUID strings</td>
+              <td>Array</td>
+              <td>Filters active sections matching both the branch and specialisation IDs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>ToastProvider (ToastContext.jsx)</h3>
+    <div class="card">
+      <p>The <code>ToastProvider</code> implements a queue-based notification system with automatic dismissal and a maximum visible count. It renders a fixed-position container in the top-right corner of the viewport.</p>
+
+      <h4>Implementation Details</h4>
+      <ul>
+        <li><strong>Maximum visible toasts:</strong> 5. When a new toast is added and the count exceeds 5, the queue is trimmed to the last 4 items before appending the new one, ensuring the most recent notification is always visible.</li>
+        <li><strong>Unique IDs:</strong> A <code>useRef</code> counter generates monotonically increasing integer IDs for each toast, ensuring stable React keys.</li>
+        <li><strong>Auto-dismiss:</strong> Each toast has a configurable duration (default varies by type). A <code>timersRef</code> Map stores <code>setTimeout</code> handles keyed by toast ID, allowing cleanup when toasts are manually dismissed or when the component unmounts.</li>
+        <li><strong>Cleanup:</strong> On unmount, all active timers in the <code>timersRef</code> Map are cleared to prevent memory leaks and state updates on unmounted components.</li>
+      </ul>
+
+      <h4>Toast Types</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Appearance</th>
+              <th>Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>success</code></td>
+              <td>Green accent with check icon</td>
+              <td>Successful operations (fee approved, data saved, export complete)</td>
+            </tr>
+            <tr>
+              <td><code>error</code></td>
+              <td>Red accent with X icon</td>
+              <td>Failed operations (network error, validation failure, unauthorized action)</td>
+            </tr>
+            <tr>
+              <td><code>warning</code></td>
+              <td>Amber/yellow accent with alert icon</td>
+              <td>Non-blocking warnings (duplicate submission detected, session expiring)</td>
+            </tr>
+            <tr>
+              <td><code>info</code></td>
+              <td>Blue accent with info icon</td>
+              <td>Informational notices (data refreshed, batch operation in progress)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Data Flow Patterns -->
+    <h2 id="data-flow-patterns">Data Flow Patterns</h2>
+    <div class="card">
+      <h3>Core Data Flow</h3>
+      <p>Data flows through the application in a predictable, unidirectional pattern. Every data operation follows the same fundamental pipeline: a user interaction triggers a function call in a React component, which invokes a Supabase client method, which communicates with the PostgreSQL backend through Supabase's API gateway, and the response updates React state, causing a re-render.</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step highlight">User Action</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">React Component</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Context / Hook</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Supabase Client</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">PostgreSQL</div>
+      </div>
+
+      <div class="flow-diagram">
+        <div class="flow-step highlight">PostgreSQL</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Response (JSON)</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">State Update</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Re-render</div>
+      </div>
+    </div>
+
+    <h3>Step-by-Step Data Pipeline</h3>
+    <div class="card">
+      <ol>
+        <li><strong>Supabase Client Initialization (lib/supabase.js):</strong> The Supabase client is initialized exactly once using <code>createClient()</code> with the project URL and anonymous key read from <code>import.meta.env</code>. The module validates that both environment variables are present before creating the client. This single instance is imported wherever database access is needed.</li>
+        <li><strong>Authentication State (AuthContext):</strong> On app load, <code>onAuthStateChange</code> listens for session events. When a session exists, it triggers <code>fetchProfile()</code> to load the user's enriched profile. The <code>user</code> and <code>profile</code> objects are stored in React state and made available via context.</li>
+        <li><strong>Reference Data (DataContext):</strong> On mount, DataContext fetches all five reference tables in parallel. This data populates dropdowns in the student form and admin panel, and is used by the dashboard to enrich fee request records with human-readable names.</li>
+        <li><strong>Page-Level Data Consumption:</strong> Pages consume contexts via <code>useContext(AuthContext)</code> and <code>useContext(DataContext)</code> hooks. They may also use custom hooks like <code>useFeeRequests</code> for data that is specific to a particular view.</li>
+        <li><strong>Custom Hook: useFeeRequests:</strong> This hook accepts an array of <code>sectionIds</code> and performs a multi-step data enrichment pipeline:
+          <ul>
+            <li>Fetches all students belonging to the given sections from the <code>students</code> table</li>
+            <li>Fetches <code>batch_configs</code> and enriches each student with their applicable <code>fee_amount</code></li>
+            <li>Fetches <code>fee_requests</code> with joined data (student name, section details)</li>
+            <li>Combines students and fee requests into a unified dataset</li>
+            <li>Uses <code>AbortController</code> for cleanup when the component unmounts or section IDs change</li>
+          </ul>
+        </li>
+        <li><strong>Custom Hook: useActivityLog:</strong> Provides paginated, filtered activity log data. Accepts search terms and pagination parameters. Uses sanitized search queries (trimming, escaping special characters) to prevent injection in Supabase text search. Returns paginated results with total count for the pagination UI.</li>
+        <li><strong>Custom Hook: useDebounce:</strong> A utility hook that delays updating a value until a specified period of inactivity. Used primarily with search inputs to prevent excessive Supabase queries on every keystroke. Typically configured with a 300ms delay.</li>
+      </ol>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>AbortController Pattern:</strong> The <code>useFeeRequests</code> hook uses the <code>AbortController</code> API to cancel in-flight Supabase requests when the component unmounts or when the dependency array (section IDs) changes. This prevents state updates on unmounted components and avoids race conditions when rapidly switching between sections.
+    </div>
+
+    <h3>Fee Request Data Flow (Detailed)</h3>
+    <div class="card">
+      <p>The fee request lifecycle involves data flowing through multiple layers. Here is the complete path for a student submitting a fee request:</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step highlight">StudentFormPage</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Roll Number Lookup</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Student Verified</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Fee Details Entered</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Supabase Insert</div>
+      </div>
+
+      <ol>
+        <li>The student enters their roll number on the StudentFormPage</li>
+        <li>The component queries <code>students</code> table by roll number to verify the student exists and retrieve their section/branch data</li>
+        <li>The fee amount is looked up from <code>batch_configs</code> based on the student's section</li>
+        <li>Duplicate detection queries <code>fee_requests</code> to check for existing pending/approved requests for the same student</li>
+        <li>On submission, a new row is inserted into <code>fee_requests</code> with status <code>pending</code></li>
+        <li>A unique reference number is generated and returned to the student for tracking</li>
+      </ol>
+    </div>
+
+    <h3>Dashboard Data Flow (Detailed)</h3>
+    <div class="card">
+      <p>When a CR or Teacher loads the dashboard, the following data fetching sequence occurs:</p>
+
+      <ol>
+        <li><code>AuthContext</code> provides the user's profile with their assigned section IDs</li>
+        <li><code>useFeeRequests(sectionIds)</code> is called with the section IDs from the profile</li>
+        <li>The hook fetches students, batch configs, and fee requests in sequence</li>
+        <li>Data is enriched: each fee request gets the student's name, roll number, branch, and the applicable fee amount</li>
+        <li>The enriched dataset is split into three tab groups: pending, approved, and rejected</li>
+        <li>Statistics (total students, pending count, approved count, total amount) are computed from the enriched data</li>
+        <li>For teachers with multiple sections, the <code>SectionSwitcher</code> component allows changing the active section, which triggers a re-fetch with new section IDs</li>
+      </ol>
+    </div>
+
+    <!-- Build Configuration -->
+    <h2 id="build-configuration">Build Configuration</h2>
+    <div class="card">
+      <h3>Vite Configuration (vite.config.js)</h3>
+      <p>The Vite configuration defines the build pipeline, development server settings, and production optimizations. The configuration file uses two plugins and several esbuild/Rollup options for production builds.</p>
+
+      <h4>Plugins</h4>
+      <pre><code><span class="kw">import</span> { defineConfig } <span class="kw">from</span> <span class="str">'vite'</span>;
+<span class="kw">import</span> react <span class="kw">from</span> <span class="str">'@vitejs/plugin-react'</span>;
+<span class="kw">import</span> tailwindcss <span class="kw">from</span> <span class="str">'@tailwindcss/vite'</span>;
+
+<span class="kw">export default</span> <span class="fn">defineConfig</span>({
+  plugins: [<span class="fn">react</span>(), <span class="fn">tailwindcss</span>()],
+  <span class="cm">// ...</span>
+})</code></pre>
+
+      <ul>
+        <li><code>@vitejs/plugin-react</code> - Enables React Fast Refresh during development and JSX transformation for production builds.</li>
+        <li><code>@tailwindcss/vite</code> - Integrates Tailwind CSS v4 directly into the Vite pipeline, enabling JIT compilation and hot-reloading of utility classes without a separate PostCSS configuration.</li>
+      </ul>
+
+      <h4>Production Build Optimizations</h4>
+      <p>In production mode, the build configuration strips debugging artifacts and splits the output into optimized chunks:</p>
+
+      <pre><code><span class="fn">defineConfig</span>({
+  esbuild: {
+    drop: [<span class="str">'debugger'</span>],
+    pure: [
+      <span class="str">'console.log'</span>,
+      <span class="str">'console.debug'</span>,
+      <span class="str">'console.info'</span>,
+      <span class="str">'console.warn'</span>
+    ]
+  },
+  build: {
+    sourcemap: <span class="kw">false</span>,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: [<span class="str">'react'</span>, <span class="str">'react-dom'</span>, <span class="str">'react-router-dom'</span>],
+          supabase: [<span class="str">'@supabase/supabase-js'</span>]
+        }
+      }
+    }
+  }
+})</code></pre>
+
+      <h4>Build Optimization Details</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Value</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>esbuild.drop</code></td>
+              <td><code>['debugger']</code></td>
+              <td>Removes all <code>debugger</code> statements from production output, preventing accidental breakpoints in deployed code</td>
+            </tr>
+            <tr>
+              <td><code>esbuild.pure</code></td>
+              <td><code>['console.log', 'console.debug', 'console.info', 'console.warn']</code></td>
+              <td>Tree-shakes all specified console methods from production output. These calls are treated as side-effect-free and eliminated during dead code removal. Note: <code>console.error</code> is intentionally preserved.</td>
+            </tr>
+            <tr>
+              <td><code>build.sourcemap</code></td>
+              <td><code>false</code></td>
+              <td>Disables source map generation in production, reducing build output size and preventing source code exposure in browser DevTools</td>
+            </tr>
+            <tr>
+              <td><code>manualChunks.vendor</code></td>
+              <td><code>['react', 'react-dom', 'react-router-dom']</code></td>
+              <td>Bundles React core libraries into a dedicated <code>vendor</code> chunk. These rarely change between deployments, so they benefit from long-term browser caching.</td>
+            </tr>
+            <tr>
+              <td><code>manualChunks.supabase</code></td>
+              <td><code>['@supabase/supabase-js']</code></td>
+              <td>Isolates the Supabase client SDK into its own chunk. Separating it from vendor code means Supabase SDK updates do not invalidate the React vendor cache.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Console.error Preserved:</strong> The <code>console.error</code> method is intentionally NOT included in the <code>esbuild.pure</code> array. This ensures that genuine runtime errors are still logged in production, allowing developers to diagnose issues in deployed environments via browser DevTools or error monitoring tools.
+    </div>
+
+    <!-- Deployment Architecture -->
+    <h2 id="deployment-architecture">Deployment Architecture</h2>
+    <div class="card">
+      <h3>Vercel SPA Configuration</h3>
+      <p>The application is deployed on Vercel as a static SPA. The <code>vercel.json</code> configuration file contains a single rewrite rule that directs all incoming requests to <code>/index.html</code>, allowing React Router to handle client-side routing:</p>
+
+      <pre><code>{
+  <span class="str">"rewrites"</span>: [
+    { <span class="str">"source"</span>: <span class="str">"/(.*)"</span>, <span class="str">"destination"</span>: <span class="str">"/index.html"</span> }
+  ]
+}</code></pre>
+
+      <p>This rewrite is essential for SPA behavior. Without it, direct navigation to routes like <code>/dashboard</code> or <code>/admin</code> would return a 404 from Vercel's static file server, since no physical <code>dashboard/index.html</code> file exists in the build output. The rewrite ensures the React application is always served, and React Router matches the URL to the correct page component.</p>
+
+      <h3>Build Output</h3>
+      <p>The Vite production build generates the following output structure in the <code>dist/</code> directory:</p>
+
+      <pre><code>dist/
+├── index.html          <span class="cm"># Entry HTML with script tags</span>
+├── assets/
+│   ├── vendor-[hash].js    <span class="cm"># React + React Router chunk</span>
+│   ├── supabase-[hash].js  <span class="cm"># Supabase SDK chunk</span>
+│   ├── index-[hash].js     <span class="cm"># Main application code</span>
+│   ├── [Page]-[hash].js    <span class="cm"># Lazy-loaded page chunks</span>
+│   └── index-[hash].css    <span class="cm"># Compiled Tailwind + custom CSS</span>
+└── ltsu_shield.svg     <span class="cm"># Static assets from public/</span></code></pre>
+
+      <h3>Deployment Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Git Push</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Vercel Detects Change</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">pnpm install + pnpm build</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">dist/ Deployed to Edge CDN</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Live</div>
+      </div>
+
+      <p>Vercel's build pipeline runs <code>pnpm install</code> followed by <code>pnpm run build</code> (which executes <code>vite build</code>). The resulting <code>dist/</code> directory is deployed to Vercel's global edge network. Environment variables (<code>VITE_SUPABASE_URL</code>, <code>VITE_SUPABASE_ANON_KEY</code>, etc.) are configured in the Vercel project dashboard and are embedded into the JavaScript bundles at build time by Vite's <code>import.meta.env</code> replacement.</p>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Edge Network Distribution:</strong> Vercel automatically distributes the static build output across its global edge network. Users receive the application from the nearest edge node, minimizing latency. Since the application is entirely client-side (no SSR), there are no serverless function cold starts to contend with for page loads.
+    </div>
+
+    <h3>Architecture Summary</h3>
+    <div class="card">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Choice</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rendering</td>
+              <td>Client-side SPA</td>
+              <td>Simplicity, fast navigation after initial load, no server infrastructure to manage</td>
+            </tr>
+            <tr>
+              <td>State Management</td>
+              <td>React Context + Custom Hooks</td>
+              <td>Avoids external state libraries (Redux, Zustand). Context is sufficient for the app's complexity level.</td>
+            </tr>
+            <tr>
+              <td>Code Splitting</td>
+              <td>React.lazy per page</td>
+              <td>Reduces initial bundle size. Users only download code for the pages they visit.</td>
+            </tr>
+            <tr>
+              <td>Chunk Splitting</td>
+              <td>Manual chunks (vendor, supabase)</td>
+              <td>Optimizes caching. Vendor code changes rarely, benefiting from long-term cache.</td>
+            </tr>
+            <tr>
+              <td>Backend</td>
+              <td>Supabase (BaaS)</td>
+              <td>Provides PostgreSQL, Auth, RLS, Edge Functions, and real-time without custom server code</td>
+            </tr>
+            <tr>
+              <td>Hosting</td>
+              <td>Vercel (Static)</td>
+              <td>Zero-config deployment, global CDN, automatic HTTPS, Git-integrated CI/CD</td>
+            </tr>
+            <tr>
+              <td>Styling</td>
+              <td>Tailwind CSS v4 + Custom CSS</td>
+              <td>Utility-first for rapid development, custom CSS for the glassmorphism design system</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

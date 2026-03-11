@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - LTSU Fee Portal Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Admin Panel</h1>
+      <p class="subtitle">Complete system administration with nine management modules for configuring branches, sections, staff accounts, student data, and batch settings.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#admin-panel-overview">Admin Panel Overview</a></li>
+        <li><a href="#admin-overview">Admin Overview (AdminOverview.jsx)</a></li>
+        <li><a href="#branch-manager">Branch Manager (BranchManager.jsx)</a></li>
+        <li><a href="#specialisation-manager">Specialisation Manager (SpecManager.jsx)</a></li>
+        <li><a href="#semester-manager">Semester Manager (SemesterManager.jsx)</a></li>
+        <li><a href="#section-manager">Section Manager (SectionManager.jsx)</a></li>
+        <li><a href="#batch-manager">Batch Manager (BatchManager.jsx)</a></li>
+        <li><a href="#staff-manager">Staff Manager (StaffManager.jsx)</a></li>
+        <li><a href="#csv-uploader">CSV Uploader (CSVUploader.jsx)</a></li>
+        <li><a href="#student-manager">Student Manager (StudentManager.jsx)</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Admin Panel Overview -->
+    <!-- ============================================================ -->
+    <div class="card" id="admin-panel-overview">
+      <h2>Admin Panel Overview</h2>
+      <p>The Admin Panel is a self-contained administration interface accessed at the <code>/admin</code> route. It implements its own authentication flow, completely separate from the staff login used by CRs and Teachers. The panel is responsible for all system configuration -- from academic structures (branches, specialisations, semesters, sections) to user management (staff accounts, student records) and fee configuration (batch year pricing).</p>
+
+      <h3>Authentication</h3>
+      <p>The admin login is session-based and validates the signed-in user's email against the <code>VITE_ADMIN_EMAIL</code> environment variable. Only when the authenticated email matches does the panel grant access. The admin credentials are:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Email</td><td><code>admin@ltsu.edu.in</code></td></tr>
+            <tr><td>Staff ID</td><td><code>ADMIN001</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>If the user signs in successfully via Supabase Auth but their email does not match <code>VITE_ADMIN_EMAIL</code>, the session is immediately signed out and the login fails silently (no email enumeration). After successful admin login, the action is recorded in the activity log with action type <code>admin_login</code>.</p>
+
+      <h3>Component Architecture</h3>
+      <p><code>AdminPage.jsx</code> is the top-level page component. It manages which of the 9 administration sections is currently displayed via a <code>switch/case</code> block driven by the <code>activeSection</code> state variable. The mapping is:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Section ID</th><th>Component</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>overview</code></td><td><code>AdminOverview</code></td></tr>
+            <tr><td><code>branches</code></td><td><code>BranchManager</code></td></tr>
+            <tr><td><code>specialisations</code></td><td><code>SpecManager</code></td></tr>
+            <tr><td><code>sections</code></td><td><code>SectionManager</code></td></tr>
+            <tr><td><code>batches</code></td><td><code>BatchManager</code></td></tr>
+            <tr><td><code>semesters</code></td><td><code>SemesterManager</code></td></tr>
+            <tr><td><code>staff</code></td><td><code>StaffManager</code></td></tr>
+            <tr><td><code>upload</code></td><td><code>CSVUploader</code></td></tr>
+            <tr><td><code>students</code></td><td><code>StudentManager</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>AdminSidebar Component</h3>
+      <p>The <code>AdminSidebar</code> component renders the left-side navigation panel with 9 navigation items corresponding to the management modules listed above. Below the main navigation, separated by a divider, is an Activity Log link that navigates to the <code>/log</code> route. At the bottom of the sidebar, a Logout button calls the <code>handleLogout</code> function, which signs out the Supabase session and resets all admin state.</p>
+      <p>The sidebar navigation items, in order, are:</p>
+      <ol>
+        <li><strong>Overview</strong> -- LayoutDashboard icon</li>
+        <li><strong>Branches</strong> -- GitBranch icon</li>
+        <li><strong>Specialisations</strong> -- Layers icon</li>
+        <li><strong>Semesters</strong> -- GraduationCap icon</li>
+        <li><strong>Sections</strong> -- Grid3X3 icon</li>
+        <li><strong>Batches</strong> -- Calendar icon</li>
+        <li><strong>Staff</strong> -- Users icon</li>
+        <li><strong>Upload</strong> -- Upload icon</li>
+        <li><strong>Students</strong> -- UserCheck icon</li>
+      </ol>
+      <p>The active item is highlighted with a navy background and gold text. All icons are from the <code>lucide-react</code> library.</p>
+
+      <h3>Mobile Behaviour</h3>
+      <p>On viewports narrower than 768px, the sidebar is hidden. A fixed mobile header replaces it, showing the text "Admin Panel" and a hamburger menu button. Tapping the hamburger opens the sidebar as a full-height drawer overlay with a semi-transparent navy backdrop and blur filter. A circular close button appears to the right of the drawer. Selecting any navigation item automatically closes the drawer via the <code>handleNavigate</code> function.</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step">User visits /admin</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Check existing Supabase session</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Session email matches VITE_ADMIN_EMAIL?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Authenticated = true</div>
+      </div>
+      <div class="flow-diagram">
+        <div class="flow-step">No session or mismatch</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Show login form</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">signInWithPassword</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Re-check email</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Grant or deny</div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Admin Overview -->
+    <!-- ============================================================ -->
+    <div class="card" id="admin-overview">
+      <h2>Admin Overview (AdminOverview.jsx)</h2>
+      <p>The overview section is the default landing view after admin authentication. It provides a high-level summary of the system state through statistics, recent activity, and quick navigation links.</p>
+
+      <h3>Statistics Cards</h3>
+      <p>Eight stat cards are displayed in a responsive grid (<code>repeat(auto-fill, minmax(200px, 1fr))</code>). Each card uses the <code>StatsCard</code> UI component and shows a single aggregate value fetched from Supabase:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Card Label</th><th>Data Source</th><th>Icon</th><th>Border Colour</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Branches</td><td><code>branches</code> table (from DataContext)</td><td>GitBranch</td><td>Navy</td></tr>
+            <tr><td>Sections</td><td><code>sections</code> table (from DataContext)</td><td>Grid3X3</td><td>Gold</td></tr>
+            <tr><td>Students</td><td><code>students</code> table, <code>count</code> query</td><td>GraduationCap</td><td>Pending colour</td></tr>
+            <tr><td>Staff Accounts</td><td><code>users</code> table, <code>count</code> query</td><td>Users</td><td>#7C3AED (purple)</td></tr>
+            <tr><td>Total Requests</td><td>Sum of approved + pending + rejected</td><td>FileText</td><td>Navy</td></tr>
+            <tr><td>Approved</td><td><code>fee_requests</code> where <code>status = 'approved'</code></td><td>CheckCircle</td><td>Success (green)</td></tr>
+            <tr><td>Pending</td><td><code>fee_requests</code> where <code>status = 'pending'</code></td><td>Clock</td><td>Warning (amber)</td></tr>
+            <tr><td>Rejected</td><td><code>fee_requests</code> where <code>status = 'rejected'</code></td><td>XCircle</td><td>Error (red)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>All count queries use Supabase's <code>{ count: 'exact', head: true }</code> option for efficient counting without downloading rows. The branches and sections counts come directly from the DataContext arrays rather than separate database queries.</p>
+
+      <h3>Recent Activity Section</h3>
+      <p>Below the stats grid, a glass card displays the last 10 activity log entries. Each entry shows the formatted action type, the name of the person who performed it, and a formatted timestamp. The query selects <code>id</code>, <code>action_type</code>, <code>performed_by_name</code>, and <code>created_at</code> from the <code>activity_logs</code> table, ordered by <code>created_at</code> descending, limited to 10 results. If no activity exists, the text "No recent activity" is displayed.</p>
+
+      <h3>Quick Links</h3>
+      <p>A second glass card presents 7 shortcut buttons, each of which calls <code>onNavigate(sectionId)</code> to switch the active admin section without using the sidebar:</p>
+      <ol>
+        <li>Manage Branches</li>
+        <li>Manage Specialisations</li>
+        <li>Manage Sections</li>
+        <li>Manage Batches</li>
+        <li>Manage Semesters</li>
+        <li>Manage Staff</li>
+        <li>Upload Students</li>
+      </ol>
+      <p>All buttons use the <code>Button</code> component with <code>variant="secondary"</code>.</p>
+
+      <pre><code>// Data fetching in AdminOverview -- all 6 queries run in parallel
+const [
+  { count: studentCount },
+  { count: staffCount },
+  { count: approvedCount },
+  { count: pendingCount },
+  { count: rejectedCount },
+  { data: logs },
+] = await Promise.all([
+  supabase.from('students').select('*', { count: 'exact', head: true }),
+  supabase.from('users').select('*', { count: 'exact', head: true }),
+  supabase.from('fee_requests').select('*', { count: 'exact', head: true }).eq('status', 'approved'),
+  supabase.from('fee_requests').select('*', { count: 'exact', head: true }).eq('status', 'pending'),
+  supabase.from('fee_requests').select('*', { count: 'exact', head: true }).eq('status', 'rejected'),
+  supabase.from('activity_logs').select('id, action_type, performed_by_name, created_at')
+    .order('created_at', { ascending: false }).limit(10),
+])</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Branch Manager -->
+    <!-- ============================================================ -->
+    <div class="card" id="branch-manager">
+      <h2>Branch Manager (BranchManager.jsx)</h2>
+      <p>The Branch Manager provides full CRUD operations on the <code>branches</code> table. Branches are the top-level academic unit in the hierarchy: Branch -> Specialisation -> Section.</p>
+
+      <h3>Database Fields</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Constraints</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>name</code></td><td>text</td><td>UNIQUE, NOT NULL</td><td>Full name of the branch (e.g. "Computer Science and Engineering")</td></tr>
+            <tr><td><code>code</code></td><td>text</td><td>UNIQUE, NOT NULL</td><td>Short code (e.g. "CSE", "ECE", "ME")</td></tr>
+            <tr><td><code>is_active</code></td><td>boolean</td><td>DEFAULT true</td><td>Active/inactive toggle</td></tr>
+            <tr><td><code>created_at</code></td><td>timestamptz</td><td>DEFAULT now()</td><td>Creation timestamp</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Both <code>name</code> and <code>code</code> have UNIQUE constraints enforced at the database level. Attempting to insert a duplicate will result in a Supabase error that is caught and displayed via toast.</p>
+
+      <h3>User Interface</h3>
+      <p>The page displays a header row with the title "Branches" and an "Add Branch" button. Below this is a table with columns: <strong>Name</strong>, <strong>Code</strong>, <strong>Status</strong>, <strong>Created At</strong>, and <strong>Actions</strong>. Branches are sorted by <code>created_at</code> descending (newest first) using <code>useMemo</code>.</p>
+      <p>The Status column shows a badge -- <span class="badge badge-approved">Active</span> or <span class="badge badge-rejected">Inactive</span> -- reflecting the <code>is_active</code> boolean.</p>
+
+      <h3>Actions</h3>
+      <ul>
+        <li><strong>Edit:</strong> Opens a modal pre-filled with the branch's current name and code. On save, calls <code>supabase.from('branches').update({ name, code }).eq('id', editing.id)</code>.</li>
+        <li><strong>Toggle Active/Inactive:</strong> Flips the <code>is_active</code> boolean. Deactivated branches remain in the database but are typically filtered out of selection dropdowns throughout the application.</li>
+        <li><strong>Delete:</strong> Shows a confirmation dialog warning: "Permanently delete branch [name]? This will fail if any specialisations, sections, or students still reference this branch. Consider deactivating instead to preserve historical data." If confirmed, calls <code>supabase.from('branches').delete().eq('id', branch.id)</code>. The delete will fail at the database level if foreign key references exist.</li>
+      </ul>
+
+      <h3>Activity Logging</h3>
+      <p>Every create, update, toggle, and delete operation logs to the <code>activity_logs</code> table with the following action types:</p>
+      <ul>
+        <li><code>admin_created_branch</code></li>
+        <li><code>admin_updated_branch</code></li>
+        <li><code>admin_toggled_branch</code> (with details indicating activated or deactivated)</li>
+        <li><code>admin_deleted_branch</code></li>
+      </ul>
+      <p>All actions are recorded with <code>performedByRole: 'admin'</code> and <code>performedByName: 'Administrator'</code>. Input values are sanitised via <code>sanitizeText()</code> before being sent to the database.</p>
+
+      <div class="callout callout-warning">
+        <strong>Dependency Cascade:</strong> Deleting a branch will fail if any specialisations, sections, or students reference it via foreign keys. The recommended pattern is to deactivate rather than delete, which preserves historical data while hiding the branch from new selections.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Specialisation Manager -->
+    <!-- ============================================================ -->
+    <div class="card" id="specialisation-manager">
+      <h2>Specialisation Manager (SpecManager.jsx)</h2>
+      <p>Specialisations sit one level below branches in the academic hierarchy. Each specialisation belongs to exactly one branch.</p>
+
+      <h3>Database Fields</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Constraints</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>name</code></td><td>text</td><td>NOT NULL</td><td>Full name (e.g. "Data Science")</td></tr>
+            <tr><td><code>code</code></td><td>text</td><td></td><td>Short code (e.g. "DS")</td></tr>
+            <tr><td><code>branch_id</code></td><td>uuid</td><td>FOREIGN KEY -> branches.id</td><td>Parent branch reference</td></tr>
+            <tr><td><code>is_active</code></td><td>boolean</td><td>DEFAULT true</td><td>Active/inactive toggle</td></tr>
+            <tr><td><code>created_at</code></td><td>timestamptz</td><td>DEFAULT now()</td><td>Creation timestamp</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Cascading Relationship</h3>
+      <p>When creating or editing a specialisation, the admin must first select a parent branch from a dropdown populated with active branches only (sourced from <code>activeBranches</code> in DataContext). The branch selection determines which specialisation is linked to which academic department.</p>
+
+      <h3>Filtering</h3>
+      <p>A "Filter by Branch" dropdown is provided above the table. When a branch is selected, only specialisations belonging to that branch are displayed. Clearing the filter shows all specialisations across all branches.</p>
+
+      <h3>Table Display</h3>
+      <p>Columns: <strong>Name</strong>, <strong>Code</strong>, <strong>Branch</strong> (resolved from branches array via <code>branch_id</code>), <strong>Status</strong>, <strong>Created At</strong>, and <strong>Actions</strong>. Specialisations are sorted by <code>created_at</code> descending.</p>
+
+      <h3>Actions</h3>
+      <ul>
+        <li><strong>Edit:</strong> Opens a modal with name, code, and branch select fields pre-filled.</li>
+        <li><strong>Toggle Active/Inactive:</strong> Flips <code>is_active</code>.</li>
+        <li><strong>Delete:</strong> Confirmation warns that deletion will fail if sections or students reference this specialisation. Recommends deactivating instead.</li>
+      </ul>
+
+      <h3>Activity Logging</h3>
+      <p>Action types: <code>admin_created_specialisation</code>, <code>admin_updated_specialisation</code>, <code>admin_toggled_specialisation</code>, <code>admin_deleted_specialisation</code>. The <code>created_by</code> field is tracked for audit purposes.</p>
+
+      <div class="callout callout-info">
+        <strong>Parent Dependency:</strong> Specialisations require an active parent branch. If a branch is deactivated, its specialisations remain in the database but the branch will no longer appear in the creation dropdown, effectively preventing new specialisations from being added under it.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Semester Manager -->
+    <!-- ============================================================ -->
+    <div class="card" id="semester-manager">
+      <h2>Semester Manager (SemesterManager.jsx)</h2>
+      <p>The Semester Manager handles CRUD operations on the <code>semesters</code> table. Semesters represent the academic term divisions and are referenced by sections.</p>
+
+      <h3>Database Fields</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Constraints</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>number</code></td><td>integer</td><td>UNIQUE, NOT NULL, 1-8</td><td>Semester number (1 through 8)</td></tr>
+            <tr><td><code>name</code></td><td>text</td><td>UNIQUE, NOT NULL</td><td>Display name (e.g. "Semester 1")</td></tr>
+            <tr><td><code>is_active</code></td><td>boolean</td><td>DEFAULT true</td><td>Active/inactive toggle</td></tr>
+            <tr><td><code>created_at</code></td><td>timestamptz</td><td>DEFAULT now()</td><td>Creation timestamp</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Both <code>number</code> and <code>name</code> have UNIQUE constraints. The number field is validated client-side to be an integer between 1 and 8. Additionally, the component checks for duplicate semester numbers against the existing semesters array before attempting the insert.</p>
+
+      <h3>User Interface</h3>
+      <p>The table displays columns: <strong>Number</strong>, <strong>Name</strong>, <strong>Status</strong>, <strong>Created At</strong>, and <strong>Actions</strong>. Semesters are sorted by <code>number</code> ascending (Semester 1 at top, Semester 8 at bottom) using <code>useMemo</code>.</p>
+      <p>Unlike other managers, semesters do not have an Edit action -- they only support creation, toggling, and deletion. The creation modal collects two fields: Semester Number (integer input, 1-8) and Semester Name (text input).</p>
+
+      <h3>Actions</h3>
+      <ul>
+        <li><strong>Toggle Active/Inactive:</strong> Flips the <code>is_active</code> boolean.</li>
+        <li><strong>Delete:</strong> Confirmation warns that deletion will fail if any fee requests or sections reference this semester. Strongly advises deactivating instead for semesters with past data.</li>
+      </ul>
+
+      <h3>Activity Logging</h3>
+      <p>Action types: <code>admin_created_semester</code>, <code>admin_toggled_semester</code>, <code>admin_deleted_semester</code>. Details include the semester number and name.</p>
+
+      <div class="callout callout-warning">
+        <strong>Section Dependencies:</strong> Semesters are referenced by sections, which in turn are assigned to staff members. Deleting a semester that has active sections will fail at the database level due to foreign key constraints. Always deactivate instead of deleting when the semester has ever been used.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section Manager -->
+    <!-- ============================================================ -->
+    <div class="card" id="section-manager">
+      <h2>Section Manager (SectionManager.jsx)</h2>
+      <p>Sections are the fundamental organisational unit that connects branches, specialisations, and semesters into a single assignable entity. Staff members (CRs and Teachers) are assigned to sections, and students belong to sections. This makes the Section Manager a central configuration point in the system.</p>
+
+      <h3>Database Fields</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Constraints</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>name</code></td><td>text</td><td>NOT NULL</td><td>Section name (e.g. "Section A")</td></tr>
+            <tr><td><code>branch_id</code></td><td>uuid</td><td>FOREIGN KEY -> branches.id</td><td>Parent branch</td></tr>
+            <tr><td><code>specialisation_id</code></td><td>uuid</td><td>FOREIGN KEY -> specialisations.id</td><td>Parent specialisation</td></tr>
+            <tr><td><code>semester_id</code></td><td>uuid</td><td>FOREIGN KEY -> semesters.id</td><td>Associated semester</td></tr>
+            <tr><td><code>is_active</code></td><td>boolean</td><td>DEFAULT true</td><td>Active/inactive toggle</td></tr>
+            <tr><td><code>created_at</code></td><td>timestamptz</td><td>DEFAULT now()</td><td>Creation timestamp</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Cascading Select Behaviour</h3>
+      <p>When creating or editing a section, the admin must fill three cascading dropdown selects in order:</p>
+      <ol>
+        <li><strong>Branch</strong> -- populated from <code>activeBranches</code></li>
+        <li><strong>Specialisation</strong> -- filtered to only show specialisations belonging to the selected branch. Disabled until a branch is selected, displaying placeholder "Select a branch first".</li>
+        <li><strong>Semester</strong> -- populated from <code>activeSemesters</code> (not cascaded, all active semesters shown)</li>
+      </ol>
+      <p>Changing the branch resets the specialisation selection. The section name is entered as a free-text input field.</p>
+
+      <h3>Filtering</h3>
+      <p>Two filter dropdowns are displayed above the table:</p>
+      <ul>
+        <li><strong>Filter by Branch:</strong> Limits the table to sections under the selected branch.</li>
+        <li><strong>Filter by Specialisation:</strong> Further narrows to sections under the selected specialisation. The specialisation dropdown is populated based on the currently selected branch filter.</li>
+      </ul>
+      <p>Changing the branch filter resets the specialisation filter to "All Specialisations".</p>
+
+      <h3>Table Display</h3>
+      <p>Columns: <strong>Branch</strong> (resolved from <code>section.branches.name</code>), <strong>Specialisation</strong> (from <code>section.specialisations.name</code>), <strong>Section</strong>, <strong>Semester</strong> (from <code>section.semesters.name</code>, or a dash if null), <strong>Status</strong>, <strong>Created At</strong>, and <strong>Actions</strong>. The data is fetched with joined relations, so branch, specialisation, and semester names are available directly.</p>
+
+      <h3>Actions</h3>
+      <ul>
+        <li><strong>Edit:</strong> Opens a modal with all four fields (branch, specialisation, semester, name) pre-filled.</li>
+        <li><strong>Toggle Active/Inactive:</strong> Flips <code>is_active</code>.</li>
+        <li><strong>Delete:</strong> Warns that deletion will fail if students or staff are assigned to this section.</li>
+      </ul>
+
+      <h3>Activity Logging</h3>
+      <p>Action types: <code>admin_created_section</code>, <code>admin_updated_section</code>, <code>admin_toggled_section</code>, <code>admin_deleted_section</code>.</p>
+
+      <div class="callout callout-info">
+        <strong>Central Role:</strong> Sections are the linking entity between academic structure and users. A section ties together a branch + specialisation + semester into an assignable unit. Staff are assigned to sections via the <code>user_sections</code> junction table, and students have a direct <code>section_id</code> foreign key. This makes sections the most interconnected entity in the system.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Batch Manager -->
+    <!-- ============================================================ -->
+    <div class="card" id="batch-manager">
+      <h2>Batch Manager (BatchManager.jsx)</h2>
+      <p>The Batch Manager configures the <code>batch_configs</code> table, which determines the fee amount that students must pay based on their batch year. Each batch year has exactly one fee amount, and the table is the source of truth for fee calculations across the entire system.</p>
+
+      <h3>Database Fields</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Constraints</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>batch_year</code></td><td>integer</td><td>UNIQUE, NOT NULL</td><td>4-digit year (e.g. 2024, 2025)</td></tr>
+            <tr><td><code>fee_amount</code></td><td>numeric</td><td>NOT NULL, > 0</td><td>Fee amount in rupees (e.g. 1500.00)</td></tr>
+            <tr><td><code>is_active</code></td><td>boolean</td><td>DEFAULT true</td><td>Active/inactive toggle</td></tr>
+            <tr><td><code>created_at</code></td><td>timestamptz</td><td>DEFAULT now()</td><td>Creation timestamp</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The <code>batch_year</code> field has a UNIQUE constraint. Client-side validation ensures the year is a valid 4-digit integer and the fee amount is a positive number. Duplicate batch year checks are performed against the existing batches array before insert.</p>
+
+      <h3>User Interface</h3>
+      <p>The page title is "Batch Years &amp; Fees". The table displays columns: <strong>Batch Year</strong>, <strong>Fee Amount</strong> (formatted as currency using <code>formatCurrency()</code>), <strong>Status</strong>, <strong>Created At</strong>, and <strong>Actions</strong>. Batches are sorted by <code>created_at</code> descending.</p>
+
+      <h3>Actions</h3>
+      <ul>
+        <li><strong>Edit Fee:</strong> Opens a modal allowing the admin to change the fee amount for an existing batch year. The batch year itself cannot be changed once created -- only the fee amount is editable. The update calls <code>supabase.from('batch_configs').update({ fee_amount }).eq('id', editing.id)</code>.</li>
+        <li><strong>Toggle Active/Inactive:</strong> Flips <code>is_active</code>. Deactivated batch configs will not appear in batch year selection dropdowns.</li>
+        <li><strong>Delete:</strong> Confirmation warns: "Permanently delete batch year [year] (fee: [amount])? This removes the fee configuration. Students in this batch year will no longer have a fee amount set. Consider deactivating instead to preserve historical data."</li>
+      </ul>
+
+      <h3>Activity Logging</h3>
+      <p>Action types: <code>admin_created_batch</code>, <code>admin_updated_batch</code>, <code>admin_toggled_batch</code>, <code>admin_deleted_batch</code>. Details include <code>batch_year</code> and <code>fee_amount</code>.</p>
+
+      <div class="callout callout-danger">
+        <strong>Fee Impact:</strong> Deleting a batch configuration removes the fee amount for all students in that batch year. This means any new fee requests for those students will not have a configured fee amount to reference. Always prefer deactivation over deletion for batch years that have ever had students or fee requests.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Staff Manager -->
+    <!-- ============================================================ -->
+    <div class="card" id="staff-manager">
+      <h2>Staff Manager (StaffManager.jsx)</h2>
+      <p>The Staff Manager is the most complex module in the admin panel, spanning approximately 737 lines. It handles the complete lifecycle of staff accounts: creation with auto-generated credentials, section assignments, password resets, activation/deactivation, and deletion. Staff are divided into two roles: <strong>CR</strong> (Class Representative) and <strong>Teacher</strong>.</p>
+
+      <h3>Staff Creation</h3>
+      <p>Clicking the "Create CR Account" or "Create Teacher Account" button (label changes based on active tab) opens a modal with the following fields:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Full Name</td><td>Text input</td><td>Required. Sanitised via <code>sanitizeText()</code>.</td></tr>
+            <tr><td>Email</td><td>Email input</td><td>Required. Validated via <code>isValidEmail()</code>. Converted to lowercase.</td></tr>
+            <tr><td>Staff ID</td><td>Text input + Auto button</td><td>Required. Can be manually entered or auto-generated.</td></tr>
+            <tr><td>Password</td><td>Password input + Auto button</td><td>Required. Minimum 6 characters. Can be auto-generated.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Auto-Generated Staff ID</h4>
+      <p>The Staff ID is generated using the <code>generateStaffId(role)</code> function with the following algorithm:</p>
+      <ol>
+        <li>Determine prefix based on role: <code>TCH</code> for teachers, <code>CR</code> for CRs.</li>
+        <li>Generate a timestamp component: take <code>Date.now().toString(36).toUpperCase()</code> and extract the last 4 characters.</li>
+        <li>Generate a random component: create 3 random bytes via <code>crypto.getRandomValues(new Uint8Array(3))</code>, convert each byte modulo 36 to a base-36 uppercase character.</li>
+        <li>Combine: <code>{prefix}-{timestamp}{random}</code> (e.g. <code>TCH-1K5XABC</code> or <code>CR-2M9NDEF</code>).</li>
+      </ol>
+
+      <pre><code>const generateStaffId = (role) => {
+  const prefix = role === 'teacher' ? 'TCH' : 'CR'
+  const stamp = Date.now().toString(36).toUpperCase().slice(-4)
+  const rand = Array.from(crypto.getRandomValues(new Uint8Array(3)))
+    .map(b => (b % 36).toString(36).toUpperCase())
+    .join('')
+  return `${prefix}-${stamp}${rand}`
+}</code></pre>
+
+      <h4>Auto-Generated Password</h4>
+      <p>The password is generated using the <code>generatePassword()</code> function, which produces a 12-character cryptographically random password with guaranteed character diversity:</p>
+      <ol>
+        <li>Define character pools: uppercase (<code>ABCDEFGHJKLMNPQRSTUVWXYZ</code> -- note: ambiguous characters I, O removed), lowercase (<code>abcdefghjkmnpqrstuvwxyz</code> -- i, l, o removed), digits (<code>23456789</code> -- 0 and 1 removed), and symbols (<code>!@#$%&amp;*</code>).</li>
+        <li>Pick one character from each pool to guarantee at least 1 uppercase, 1 lowercase, 1 digit, and 1 special character.</li>
+        <li>Fill the remaining 8 positions with random characters from the combined pool of all categories.</li>
+        <li>Shuffle the entire 12-character array using the Fisher-Yates algorithm with <code>crypto.getRandomValues</code> as the random source.</li>
+      </ol>
+
+      <pre><code>const generatePassword = () => {
+  const upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ'
+  const lower = 'abcdefghjkmnpqrstuvwxyz'
+  const digits = '23456789'
+  const symbols = '!@#$%&*'
+  const all = upper + lower + digits + symbols
+  const pick = (s) => s[secureRandom(s.length)]
+  let pw = [pick(upper), pick(lower), pick(digits), pick(symbols)]
+  for (let i = 0; i < 8; i++) pw.push(pick(all))
+  // Fisher-Yates shuffle
+  for (let i = pw.length - 1; i > 0; i--) {
+    const j = secureRandom(i + 1);
+    [pw[i], pw[j]] = [pw[j], pw[i]]
+  }
+  return pw.join('')
+}</code></pre>
+
+      <p>The <code>secureRandom(max)</code> helper uses <code>crypto.getRandomValues(new Uint32Array(1))</code> for cryptographically secure randomness, unlike <code>Math.random()</code>.</p>
+
+      <h4>Section Assignment on Creation</h4>
+      <p>Below the credential fields, a section assignment area is displayed, using cascading selects for Branch, Specialisation, and Section. The behaviour differs by role:</p>
+      <ul>
+        <li><strong>CR:</strong> Assigned to exactly one section. The section select works as a standard single-value dropdown. The selected <code>section_id</code> is sent as a single-element array.</li>
+        <li><strong>Teacher:</strong> Assigned to one or more sections. After selecting a section, the admin clicks "+ Add Section" to add it to a list. Sections appear as removable tags below the selects. Each tag displays the section name, branch name, and specialisation name. Duplicate section additions show a warning toast.</li>
+      </ul>
+
+      <h4>Submission Flow</h4>
+      <p>On submit, the component invokes the <code>admin-actions</code> Supabase Edge Function with the following payload:</p>
+      <pre><code>await supabase.functions.invoke('admin-actions', {
+  body: {
+    action: 'create_user',
+    email,
+    password,
+    fullName,
+    role,        // 'cr' or 'teacher'
+    staffId,
+    sectionIds,  // array of section UUIDs
+  },
+})</code></pre>
+      <p>The Edge Function performs three operations server-side:</p>
+      <ol>
+        <li>Creates a new entry in <code>auth.users</code> (Supabase Auth) with the provided email and password.</li>
+        <li>Creates a corresponding record in the <code>public.users</code> table with the staff details (full_name, email, role, staff_id, is_active).</li>
+        <li>Creates <code>user_sections</code> junction records linking the new user to their assigned sections.</li>
+      </ol>
+
+      <div class="callout callout-info">
+        <strong>Credentials Display:</strong> After successful creation, the admin should note down or share the generated staff ID and password with the new staff member. There is no way to retrieve these credentials later -- the password is only visible at the moment of creation.
+      </div>
+
+      <h3>Staff Listing</h3>
+      <p>The listing view uses a <code>Tabs</code> component to switch between two views:</p>
+      <ul>
+        <li><strong>CRs tab:</strong> Shows all users with <code>role = 'cr'</code>, with a count badge.</li>
+        <li><strong>Teachers tab:</strong> Shows all users with <code>role = 'teacher'</code>, with a count badge.</li>
+      </ul>
+      <p>The table columns are identical for both tabs:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Column</th><th>Source</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Staff ID</td><td><code>user.staff_id</code></td></tr>
+            <tr><td>Full Name</td><td><code>user.full_name</code></td></tr>
+            <tr><td>Email</td><td><code>user.email</code></td></tr>
+            <tr><td>Sections</td><td>Resolved from <code>user_sections</code> relations -- displays section name with branch name in parentheses, comma-separated for multi-section teachers</td></tr>
+            <tr><td>Status</td><td><span class="badge badge-approved">Active</span> or <span class="badge badge-rejected">Inactive</span></td></tr>
+            <tr><td>Actions</td><td>Edit, Reset PW, Deactivate/Activate, Delete</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>User data is fetched with deep joins to resolve section details:</p>
+      <pre><code>const { data: userData } = await supabase
+  .from('users')
+  .select('*, user_sections!user_sections_user_id_fkey(
+    section_id,
+    sections(id, name, branch_id, specialisation_id,
+      branches(name), specialisations(name), semesters(name))
+  )')
+  .order('created_at', { ascending: false })</code></pre>
+
+      <h3>Staff Actions</h3>
+
+      <h4>Edit Sections</h4>
+      <p>Opens a modal titled "Edit Sections -- [staff name]". The modal displays the currently assigned sections as removable tags, followed by cascading selects (Branch -> Specialisation -> Section) and an "Add Section" button. For CRs, selecting a new section replaces the current one (single section only). For Teachers, sections accumulate in the list.</p>
+      <p>On save, the component performs two database operations:</p>
+      <ol>
+        <li>Deletes all existing <code>user_sections</code> records for the user: <code>supabase.from('user_sections').delete().eq('user_id', user.id)</code></li>
+        <li>Inserts new <code>user_sections</code> records for each assigned section.</li>
+      </ol>
+      <p>This "delete all then re-insert" pattern ensures clean state without needing to diff existing vs. new assignments.</p>
+
+      <h4>Reset Password</h4>
+      <p>Opens a modal where the admin enters a new password (minimum 6 characters). A new password can also be auto-generated using the same <code>generatePassword()</code> function. On submit, calls the <code>admin-actions</code> Edge Function:</p>
+      <pre><code>await supabase.functions.invoke('admin-actions', {
+  body: {
+    action: 'reset_password',
+    userId: resetModal.user.id,
+    newPassword,
+  },
+})</code></pre>
+      <p>The Edge Function uses the Supabase Admin API (service role key) to update the user's password in <code>auth.users</code>.</p>
+
+      <h4>Toggle Active/Inactive</h4>
+      <p>Flips the <code>is_active</code> flag in the <code>public.users</code> table. Deactivated staff members are blocked from logging in -- the login flow in <code>AuthContext</code> checks <code>is_active</code> after authentication and rejects inactive accounts. This is a soft disable that preserves the account and all its data.</p>
+
+      <h4>Delete Staff Account</h4>
+      <p>The most destructive action. Shows a strong confirmation warning: "Permanently delete [ROLE] account [name]? This will remove their section assignments and deactivate their auth account. Any fee requests they previously reviewed will lose their reviewer reference. Consider deactivating instead to preserve audit history."</p>
+      <p>If confirmed, the deletion proceeds in three steps:</p>
+      <ol>
+        <li><strong>Remove section assignments:</strong> <code>supabase.from('user_sections').delete().eq('user_id', user.id)</code></li>
+        <li><strong>Deactivate auth account:</strong> Call Edge Function with <code>action: 'deactivate_user'</code> to disable the <code>auth.users</code> entry server-side.</li>
+        <li><strong>Delete public record:</strong> <code>supabase.from('users').delete().eq('id', user.id)</code></li>
+      </ol>
+
+      <div class="flow-diagram">
+        <div class="flow-step">Admin clicks Delete</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Confirmation dialog</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Delete user_sections</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Edge Function: deactivate auth</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Delete public.users record</div>
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>Irreversible:</strong> Deleting a staff account removes the <code>public.users</code> record permanently. Any fee requests the staff member previously reviewed will lose their reviewer reference. The <code>auth.users</code> entry is deactivated (not deleted) to prevent auth orphans. This action cannot be undone -- always prefer deactivation for staff who may have historical data.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- CSV Uploader -->
+    <!-- ============================================================ -->
+    <div class="card" id="csv-uploader">
+      <h2>CSV Uploader (CSVUploader.jsx)</h2>
+      <p>The CSV Uploader provides a 3-step wizard interface for bulk-importing student records from CSV files. It uses the <code>PapaParse</code> library for client-side CSV parsing.</p>
+
+      <h3>Step 1: Select Target</h3>
+      <p>The admin selects the target academic context for the uploaded students using four cascading dropdowns:</p>
+      <ol>
+        <li><strong>Branch</strong> -- from active branches</li>
+        <li><strong>Specialisation</strong> -- filtered by selected branch</li>
+        <li><strong>Section</strong> -- filtered by selected specialisation</li>
+        <li><strong>Batch Year</strong> -- from active batch configs</li>
+      </ol>
+      <p>All four selections are required before the upload can proceed. These values determine the <code>branch_id</code>, <code>specialisation_id</code>, <code>section_id</code>, and <code>batch_year</code> assigned to every student in the upload.</p>
+
+      <h3>Step 2: Upload File</h3>
+      <p>A drag-and-drop zone accepts CSV files. The zone is styled with a dashed border that highlights in gold on hover. Alternatively, clicking the zone opens a native file picker. Constraints:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Constraint</th><th>Limit</th><th>Error Message</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>File size</td><td>Maximum 1 MB</td><td>"File too large ([size]MB). Maximum 1MB."</td></tr>
+            <tr><td>File type</td><td><code>.csv</code> and <code>.txt</code> only</td><td>"Only .csv and .txt files are supported"</td></tr>
+            <tr><td>Row count</td><td>Maximum 500 rows</td><td>"Too many rows ([count]). Maximum 500 per upload."</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The CSV is parsed using <code>Papa.parse(file, { header: true, skipEmptyLines: true })</code>. The parser looks for two required columns (case-insensitive, with multiple accepted header names):</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Required Column</th><th>Accepted Header Names</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Roll Number</td><td><code>Roll Number</code>, <code>rollnumber</code>, <code>roll_number</code></td></tr>
+            <tr><td>Name</td><td><code>Name</code>, <code>full_name</code>, <code>Student Name</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Roll numbers are sanitised via <code>sanitizeRollNumber()</code> and names via <code>sanitizeText()</code>. Rows where either value is empty after sanitisation are filtered out.</p>
+      <p>An "Download example CSV" link is provided below the upload zone, pointing to <code>/student_list.csv</code> in the public directory.</p>
+
+      <h3>Step 3: Preview</h3>
+      <p>After successful parsing, a preview table displays the first 10 parsed rows with columns: <strong>#</strong> (row index), <strong>Roll Number</strong>, and <strong>Name</strong>. If more than 10 rows exist, a text note reads "...and [N] more rows".</p>
+      <p>A "Confirm Upload ([count] students)" button triggers the actual insert process.</p>
+
+      <h3>Upload Process</h3>
+      <p>The upload function performs the following steps:</p>
+      <ol>
+        <li><strong>Duplicate detection:</strong> Queries the <code>students</code> table for all roll numbers in the upload batch: <code>supabase.from('students').select('roll_number').in('roll_number', rollNumbers)</code>. Roll numbers that already exist in the database are collected into a Set.</li>
+        <li><strong>Filter new records:</strong> Only rows whose roll numbers are NOT in the existing set are prepared for insertion.</li>
+        <li><strong>Insert:</strong> New student records are inserted with the target branch, specialisation, section, and batch year from Step 1, plus <code>is_active: true</code>.</li>
+        <li><strong>Activity logging:</strong> Logs the upload with action type <code>admin_uploaded_students</code>, including details: total count, added count, skipped count, and file name.</li>
+      </ol>
+
+      <h3>Upload Results</h3>
+      <p>After completion, the wizard displays a results card with:</p>
+      <ul>
+        <li>A green checkmark and "Upload Complete" header</li>
+        <li>Count of students added and skipped (duplicates)</li>
+        <li>If any were skipped, a list of the skipped roll numbers displayed as small tags</li>
+        <li>An "Upload More" button to reset the wizard</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>Duplicate Handling:</strong> The uploader checks for duplicate roll numbers against the entire <code>students</code> table, not just within the current upload file. Duplicates within the file itself are not detected at the preview stage -- they would cause a database unique constraint violation on insert. The system silently skips any students whose roll numbers already exist in the database.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Student Manager -->
+    <!-- ============================================================ -->
+    <div class="card" id="student-manager">
+      <h2>Student Manager (StudentManager.jsx)</h2>
+      <p>The Student Manager provides full CRUD operations on the <code>students</code> table. At approximately 560 lines, it is the second most complex admin module after the Staff Manager. It features advanced filtering, pagination, responsive mobile card layouts, and cascading form selects.</p>
+
+      <h3>Data Fetching</h3>
+      <p>Students are fetched with joined relations to resolve branch, specialisation, and section names:</p>
+      <pre><code>const { data: studentData } = await supabase
+  .from('students')
+  .select('*, branches(name), specialisations(name), sections(name)')
+  .order('uploaded_at', { ascending: false })</code></pre>
+      <p>All students are loaded into local state on mount. Filtering and pagination are performed client-side on the full dataset.</p>
+
+      <h3>Filtering</h3>
+      <p>Five filters are provided in a glass card above the table:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Filter</th><th>Type</th><th>Behaviour</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Branch</td><td>Select dropdown</td><td>Filters by <code>branch_id</code>. Changing resets Specialisation and Section filters.</td></tr>
+            <tr><td>Specialisation</td><td>Select dropdown</td><td>Cascaded from Branch selection. Filters by <code>specialisation_id</code>. Changing resets Section filter.</td></tr>
+            <tr><td>Section</td><td>Select dropdown</td><td>Cascaded from Specialisation selection. Filters by <code>section_id</code>.</td></tr>
+            <tr><td>Batch Year</td><td>Select dropdown</td><td>Filters by <code>batch_year</code>. Independent (not cascaded).</td></tr>
+            <tr><td>Search</td><td>Text input with search icon</td><td>Filters by student name or roll number (case-insensitive substring match).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>On desktop, the filters are arranged in a 3-column grid. On mobile, they stack vertically in a single column. Changing any filter resets the page to 0.</p>
+
+      <h3>Table Display (Desktop)</h3>
+      <p>Columns: <strong>Roll Number</strong>, <strong>Name</strong>, <strong>Branch</strong>, <strong>Section</strong>, <strong>Batch Year</strong>, <strong>Status</strong>, and <strong>Actions</strong>. Rows highlight with a subtle gold tint on hover (<code>rgba(201,168,76,0.04)</code>).</p>
+      <p>A count summary appears below the heading: "[N] student(s) found".</p>
+
+      <h3>Mobile Card Layout</h3>
+      <p>On viewports narrower than 768px (detected via <code>window.innerWidth</code> with a resize listener), the table switches to a card-based layout. Each student is rendered as an individual glass card showing:</p>
+      <ul>
+        <li>Top row: roll number (navy, small, bold) and status badge</li>
+        <li>Student full name (medium, bold)</li>
+        <li>Branch, section, and batch year in a single line, separated by dots</li>
+        <li>Action buttons (Edit, Deactivate/Activate, Delete) at the bottom</li>
+      </ul>
+
+      <h3>Pagination</h3>
+      <p>Results are paginated at 20 students per page. The pagination control appears when there are more results than the page size and includes:</p>
+      <ul>
+        <li><strong>First</strong> button -- jumps to page 0</li>
+        <li><strong>Previous</strong> button (chevron left) -- goes back one page</li>
+        <li><strong>Numbered page buttons</strong> -- up to 5 visible on desktop, 3 on mobile. The active page is highlighted with navy background and gold text. Ellipsis ("...") markers appear when pages are truncated.</li>
+        <li><strong>Next</strong> button (chevron right) -- advances one page</li>
+        <li><strong>Last</strong> button -- jumps to the final page</li>
+      </ul>
+      <p>Navigation buttons are disabled at their respective boundaries (First and Previous disabled on page 0; Next and Last disabled on the last page).</p>
+
+      <h3>Create / Edit Student</h3>
+      <p>Both create and edit share the same modal with the title "Add Student" or "Edit Student". The modal contains:</p>
+      <ul>
+        <li><strong>Roll Number</strong> -- text input, sanitised via <code>sanitizeRollNumber()</code></li>
+        <li><strong>Full Name</strong> -- text input, sanitised via <code>sanitizeText()</code></li>
+        <li><strong>Branch</strong> -- select dropdown from active branches</li>
+        <li><strong>Specialisation</strong> -- cascaded from branch selection</li>
+        <li><strong>Section</strong> -- cascaded from specialisation selection</li>
+        <li><strong>Batch Year</strong> -- select dropdown from active batch configs</li>
+      </ul>
+      <p>All six fields are required. When editing, the modal is pre-filled with the student's current values, including correctly initialised cascading selects.</p>
+
+      <h3>Actions</h3>
+      <ul>
+        <li><strong>Edit:</strong> Opens the modal pre-filled with the student's current data.</li>
+        <li><strong>Toggle Active/Inactive:</strong> Flips <code>is_active</code>. Deactivated students remain in the database but will not appear in fee request forms.</li>
+        <li><strong>Delete:</strong> Shows a strong confirmation warning: "WARNING: Permanently delete student [name] ([roll_number])? This will ALSO DELETE all their fee request history (approved, pending, rejected). This data CANNOT be recovered. Consider deactivating instead if you want to preserve records." If confirmed, deletes the student record entirely.</li>
+      </ul>
+
+      <h3>Activity Logging</h3>
+      <p>Action types: <code>admin_created_student</code>, <code>admin_updated_student</code> (also used for toggle), <code>admin_deleted_student</code>. Details include student name and roll number.</p>
+
+      <div class="callout callout-danger">
+        <strong>Data Loss Warning:</strong> Deleting a student cascades to all their fee request records. This means approved, pending, and rejected fee request history is permanently destroyed. This is the most destructive operation in the Student Manager and should only be used when the student record was created in error. For students who have graduated or transferred, deactivation is always the correct approach.
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Performance Note:</strong> All students are loaded into memory and filtered client-side. For institutions with thousands of students, this approach works well because the data payload is relatively small (only student records with resolved names). However, the full dataset is re-fetched from Supabase after every create, update, toggle, or delete operation.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

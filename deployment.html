@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deployment - LTSU Fee Portal Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Deployment</h1>
+      <p class="subtitle">Complete deployment guide covering Vercel hosting, Supabase backend setup, Edge Functions, environment configuration, and automated maintenance with pg_cron.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#deployment-architecture-overview">Deployment Architecture Overview</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#vercel-configuration">Vercel Configuration</a></li>
+        <li><a href="#supabase-project-setup">Supabase Project Setup</a></li>
+        <li><a href="#edge-function-deployment">Edge Function Deployment</a></li>
+        <li><a href="#environment-variables">Environment Variables</a></li>
+        <li><a href="#pg-cron-automated-maintenance">pg_cron Automated Maintenance</a></li>
+        <li><a href="#emailjs-setup">EmailJS Setup</a></li>
+        <li><a href="#local-development">Local Development</a></li>
+        <li><a href="#deployment-checklist">Deployment Checklist</a></li>
+      </ul>
+    </div>
+
+    <!-- Deployment Architecture Overview -->
+    <h2 id="deployment-architecture-overview">Deployment Architecture Overview</h2>
+    <div class="card">
+      <h3>End-to-End Deployment Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">GitHub Repository</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Vercel (Builds Vite)</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">CDN (Static Assets)</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">User Browser</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Supabase Backend</div>
+      </div>
+      <p>The LTSU Fee Portal is split into two independently hosted layers. The frontend is a static single-page application built with Vite and deployed to Vercel. The backend is entirely managed by Supabase, which provides hosted PostgreSQL, authentication, Edge Functions, and Realtime subscriptions.</p>
+
+      <h4>Frontend: Vercel</h4>
+      <p>Vercel serves the production-built static files from the <code>dist/</code> directory. It handles SPA routing through a rewrite rule that directs all paths to <code>index.html</code>, allowing React Router to manage client-side navigation. Every push to the main branch on GitHub triggers an automatic rebuild and deployment.</p>
+
+      <h4>Backend: Supabase</h4>
+      <p>Supabase hosts the entire backend infrastructure. This includes a PostgreSQL database with Row-Level Security policies, Supabase Auth for email/password authentication, Edge Functions (Deno runtime) for privileged admin operations that require the <code>service_role</code> key, and Realtime subscriptions for live data updates on the dashboard.</p>
+    </div>
+
+    <!-- Prerequisites -->
+    <h2 id="prerequisites">Prerequisites</h2>
+    <div class="card">
+      <h3>Required Tools and Accounts</h3>
+      <p>Before deploying the LTSU Fee Portal, ensure the following tools are installed and accounts are provisioned:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Version / Details</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Node.js</code></td>
+              <td>18+ (LTS recommended)</td>
+              <td>JavaScript runtime for build tooling</td>
+            </tr>
+            <tr>
+              <td><code>pnpm</code></td>
+              <td>Latest stable</td>
+              <td>Package manager (used instead of npm/yarn)</td>
+            </tr>
+            <tr>
+              <td><code>Git</code></td>
+              <td>Latest stable</td>
+              <td>Version control, triggers Vercel deployments</td>
+            </tr>
+            <tr>
+              <td>Supabase Account</td>
+              <td>Free or Pro tier</td>
+              <td>Database, Auth, Edge Functions, Realtime</td>
+            </tr>
+            <tr>
+              <td>Vercel Account</td>
+              <td>Hobby or Pro tier</td>
+              <td>Static site hosting and CDN</td>
+            </tr>
+            <tr>
+              <td>EmailJS Account</td>
+              <td>Free or paid tier</td>
+              <td>Transactional email for approval/rejection notifications</td>
+            </tr>
+            <tr>
+              <td>GitHub Repository</td>
+              <td>Public or private</td>
+              <td>Source code hosting, CI/CD trigger for Vercel</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Vercel Configuration -->
+    <h2 id="vercel-configuration">Vercel Configuration</h2>
+    <div class="card">
+      <h3>vercel.json</h3>
+      <p>The <code>vercel.json</code> file at the project root configures Vercel's routing behavior:</p>
+      <pre><code>{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}</code></pre>
+      <p>This rewrite rule ensures ALL routes serve <code>index.html</code>, enabling React Router's client-side routing. Without this configuration, direct navigation to paths like <code>/dashboard</code> or <code>/admin</code> would return a 404 error because those paths do not correspond to physical files on the server. The rewrite intercepts every request and serves the SPA entry point, allowing React Router to parse the URL and render the correct component.</p>
+
+      <div class="callout callout-warning">
+        <strong>Critical:</strong> Without the rewrite rule, refreshing the browser on any route other than <code>/</code> will produce a 404 error. This is the most common deployment issue with single-page applications on static hosting platforms.
+      </div>
+
+      <h3>Vercel Deployment Steps</h3>
+      <ol>
+        <li><strong>Connect GitHub Repository:</strong> Link the GitHub repository (<code>Ns81000/LTSU_Fee_Portal</code>) to a new Vercel project. Vercel will automatically detect the repository structure.</li>
+        <li><strong>Framework Preset:</strong> Select <strong>Vite</strong> as the framework. Vercel auto-detects this from <code>vite.config.js</code> in most cases.</li>
+        <li><strong>Build Command:</strong> <code>pnpm run build</code> (resolves to <code>vite build</code>).</li>
+        <li><strong>Output Directory:</strong> <code>dist</code> &mdash; this is where Vite places the production bundle.</li>
+        <li><strong>Install Command:</strong> <code>pnpm install</code> &mdash; Vercel runs this before the build step to install all dependencies.</li>
+        <li><strong>Environment Variables:</strong> Set all required <code>VITE_</code> prefixed environment variables in the Vercel dashboard under Project Settings &rarr; Environment Variables. These must be configured before the first deployment.</li>
+      </ol>
+
+      <h3>Build Process</h3>
+      <p>Vite builds the React application with the following configuration defined in <code>vite.config.js</code>:</p>
+
+      <h4>Plugins</h4>
+      <ul>
+        <li><strong>@vitejs/plugin-react</strong> &mdash; Enables React Fast Refresh for hot module replacement during development.</li>
+        <li><strong>@tailwindcss/vite</strong> &mdash; Tailwind CSS v4 plugin for utility-first CSS processing.</li>
+      </ul>
+
+      <h4>Production Optimizations</h4>
+      <p>When building in production mode (<code>mode === 'production'</code>), the following esbuild optimizations are applied:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Optimization</th>
+              <th>Configuration</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Console stripping</td>
+              <td><code>pure: ['console.log', 'console.debug', 'console.info', 'console.warn']</code></td>
+              <td>Removes all non-error console statements from production bundle</td>
+            </tr>
+            <tr>
+              <td>Debugger stripping</td>
+              <td><code>drop: ['debugger']</code></td>
+              <td>Removes all <code>debugger</code> statements</td>
+            </tr>
+            <tr>
+              <td>Sourcemaps</td>
+              <td><code>sourcemap: false</code></td>
+              <td>Disabled in production to reduce bundle size and prevent source exposure</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>console.error Preserved:</strong> Note that <code>console.error</code> is intentionally excluded from the <code>pure</code> list. Error logging remains active in production to support debugging of critical failures. The <code>logAction</code> utility falls back to <code>console.error</code> when an activity log insert fails.
+      </div>
+
+      <h4>Manual Chunks</h4>
+      <p>The build configuration splits the bundle into manual chunks for optimal caching:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Chunk Name</th>
+              <th>Included Packages</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>vendor</code></td>
+              <td><code>react</code>, <code>react-dom</code>, <code>react-router-dom</code></td>
+              <td>Core framework libraries that rarely change; cached long-term by the CDN</td>
+            </tr>
+            <tr>
+              <td><code>supabase</code></td>
+              <td><code>@supabase/supabase-js</code></td>
+              <td>Supabase client SDK; isolated so app code changes do not invalidate this chunk</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Output</h4>
+      <p>The build produces a <code>dist/</code> folder containing <code>index.html</code> and an <code>assets/</code> directory with hashed JavaScript and CSS files. Vercel serves these files with immutable cache headers on hashed assets and short-lived cache on <code>index.html</code>.</p>
+    </div>
+
+    <!-- Supabase Project Setup -->
+    <h2 id="supabase-project-setup">Supabase Project Setup</h2>
+    <div class="card">
+      <h3>Project Details</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Project ID</td>
+              <td><code>xcvmlqugpqeuiyozkqcu</code></td>
+            </tr>
+            <tr>
+              <td>Project URL</td>
+              <td><code>https://xcvmlqugpqeuiyozkqcu.supabase.co</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Database Setup Steps</h3>
+      <p>The database must be configured in a specific order due to foreign key dependencies between tables. Follow these steps in sequence:</p>
+
+      <ol>
+        <li>
+          <strong>Create all 10 tables with correct schemas:</strong>
+          <p>The following tables must be created in the Supabase SQL Editor, respecting foreign key order:</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Table</th>
+                  <th>Purpose</th>
+                  <th>Dependencies</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>users</code></td>
+                  <td>Staff and admin accounts linked to auth.users</td>
+                  <td>None (references auth.users via id)</td>
+                </tr>
+                <tr>
+                  <td><code>branches</code></td>
+                  <td>Academic branches (e.g., CSE, ECE)</td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <td><code>specialisations</code></td>
+                  <td>Branch-specific specialisations</td>
+                  <td><code>branches</code></td>
+                </tr>
+                <tr>
+                  <td><code>semesters</code></td>
+                  <td>Available semesters per branch</td>
+                  <td><code>branches</code></td>
+                </tr>
+                <tr>
+                  <td><code>sections</code></td>
+                  <td>Class sections under branches</td>
+                  <td><code>branches</code></td>
+                </tr>
+                <tr>
+                  <td><code>batch_configs</code></td>
+                  <td>Session year and fee amount configuration</td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <td><code>students</code></td>
+                  <td>Student master records</td>
+                  <td><code>branches</code>, <code>specialisations</code>, <code>sections</code></td>
+                </tr>
+                <tr>
+                  <td><code>fee_requests</code></td>
+                  <td>Fee payment submissions and approvals</td>
+                  <td><code>students</code>, <code>semesters</code>, <code>sections</code>, <code>users</code></td>
+                </tr>
+                <tr>
+                  <td><code>activity_logs</code></td>
+                  <td>Audit trail of all staff/admin actions</td>
+                  <td><code>users</code></td>
+                </tr>
+                <tr>
+                  <td><code>user_sections</code></td>
+                  <td>Many-to-many mapping of staff to sections</td>
+                  <td><code>users</code>, <code>sections</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li>
+          <strong>Enable Row-Level Security (RLS) on all tables:</strong>
+          <p>Every table must have RLS enabled. Without RLS, the Supabase anon key would grant unrestricted access to all data. Run <code>ALTER TABLE table_name ENABLE ROW LEVEL SECURITY;</code> for each table.</p>
+        </li>
+        <li>
+          <strong>Create RLS policies for each table:</strong>
+          <p>Define SELECT, INSERT, UPDATE, and DELETE policies that restrict access based on the authenticated user's role (admin, teacher, cr) resolved from the <code>users</code> table. Public tables like <code>branches</code>, <code>semesters</code>, <code>sections</code>, and <code>specialisations</code> allow anonymous SELECT for the student submission form.</p>
+        </li>
+        <li>
+          <strong>Create SECURITY DEFINER RPC functions:</strong>
+          <p>These PostgreSQL functions execute with elevated privileges regardless of the caller's RLS context:</p>
+          <ul>
+            <li><code>check_duplicate_fee_request</code> &mdash; Checks if a student already has a pending/approved request for the same semester</li>
+            <li><code>submit_fee_request</code> &mdash; Inserts a new fee request with reference number generation</li>
+            <li><code>track_fee_request</code> &mdash; Allows anonymous tracking by reference number and roll number</li>
+            <li><code>batch_approve_requests</code> &mdash; Approves multiple fee requests in a single transaction with optimistic locking</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Create the reference number generation trigger:</strong>
+          <p>A PostgreSQL trigger on the <code>fee_requests</code> table automatically generates a unique reference number in the format <code>LTSU-XXXXXX</code> (6-character alphanumeric) on INSERT.</p>
+        </li>
+        <li>
+          <strong>Set up indexes on foreign key columns:</strong>
+          <p>Create indexes on all foreign key columns to optimize JOIN performance. This includes <code>fee_requests.student_id</code>, <code>fee_requests.semester_id</code>, <code>fee_requests.section_id</code>, <code>students.branch_id</code>, <code>students.spec_id</code>, <code>students.section_id</code>, and others.</p>
+        </li>
+      </ol>
+
+      <h3>Supabase Auth Configuration</h3>
+      <ul>
+        <li><strong>Enable Email/Password auth provider:</strong> In the Supabase Dashboard, navigate to Authentication &rarr; Providers and enable the Email provider. This is the only authentication method used by the portal.</li>
+        <li><strong>Disable email confirmation:</strong> For simplicity, disable the "Confirm email" requirement under Authentication &rarr; Settings. Alternatively, configure a custom SMTP server to send confirmation emails. Admin-created staff accounts are created via the Edge Function which bypasses email confirmation entirely.</li>
+        <li><strong>Set password requirements:</strong> Configure minimum password length and complexity under Authentication &rarr; Settings to match your institution's security policy.</li>
+      </ul>
+
+      <h3>Admin Account Seeding</h3>
+      <p>The initial admin account must be created manually before the portal can be used:</p>
+
+      <ol>
+        <li>
+          <strong>Create auth user via Supabase Dashboard or CLI:</strong>
+          <p>Navigate to Authentication &rarr; Users &rarr; Add User, or use the Supabase CLI. Set the email to <code>admin@ltsu.edu.in</code> and assign a secure password.</p>
+        </li>
+        <li>
+          <strong>Insert into public.users table:</strong>
+          <pre><code>INSERT INTO public.users (id, role, full_name, staff_id, email, is_active)
+VALUES (
+  '&lt;auth-user-uuid&gt;',
+  'admin',
+  'Admin',
+  'ADMIN001',
+  'admin@ltsu.edu.in',
+  true
+);</code></pre>
+          <p>Replace <code>&lt;auth-user-uuid&gt;</code> with the UUID generated by Supabase Auth in the previous step. This links the auth.users entry to the public.users profile with the <code>admin</code> role.</p>
+        </li>
+      </ol>
+
+      <div class="callout callout-danger">
+        <strong>Important:</strong> The admin account must exist in both <code>auth.users</code> and <code>public.users</code> tables. If the <code>public.users</code> row is missing, the login will succeed at the auth level but the application will fail to resolve the user's role, resulting in a blank screen or redirect loop.
+      </div>
+    </div>
+
+    <!-- Edge Function Deployment -->
+    <h2 id="edge-function-deployment">Edge Function Deployment</h2>
+    <div class="card">
+      <h3>Edge Function Overview</h3>
+      <p>The portal uses a single Supabase Edge Function located at <code>supabase/functions/admin-actions/index.ts</code>. This function handles privileged operations that require the <code>service_role</code> key, which bypasses Row-Level Security.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Runtime</td>
+              <td>Deno (Supabase Edge Functions)</td>
+            </tr>
+            <tr>
+              <td>File Path</td>
+              <td><code>supabase/functions/admin-actions/index.ts</code></td>
+            </tr>
+            <tr>
+              <td>Authentication</td>
+              <td>Uses <code>service_role</code> key (bypasses RLS)</td>
+            </tr>
+            <tr>
+              <td>Supported Actions</td>
+              <td><code>create_user</code>, <code>reset_password</code>, <code>deactivate_user</code></td>
+            </tr>
+            <tr>
+              <td>CORS</td>
+              <td>Configured for cross-origin requests from the Vercel-hosted frontend</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Deployment Command</h3>
+      <pre><code>supabase functions deploy admin-actions</code></pre>
+      <p>This command packages and deploys the Edge Function to the Supabase project. Ensure the Supabase CLI is installed and authenticated with your project before running this command.</p>
+
+      <h3>Edge Function Actions Detail</h3>
+
+      <h4>1. create_user</h4>
+      <p>Creates a new staff account by performing three operations in sequence:</p>
+      <ol>
+        <li>Creates an entry in <code>auth.users</code> via <code>supabase.auth.admin.createUser()</code> with email and password</li>
+        <li>Inserts a corresponding record in <code>public.users</code> with role, full_name, staff_id, and email</li>
+        <li>Inserts <code>user_sections</code> entries to assign the staff member to their designated sections</li>
+      </ol>
+      <p>This action is invoked by the <strong>StaffManager</strong> component when an admin creates a new staff account.</p>
+
+      <h4>2. reset_password</h4>
+      <p>Updates the password for an existing auth user via <code>supabase.auth.admin.updateUserById()</code>. This is used by the <strong>StaffManager</strong> when an admin needs to reset a staff member's password without requiring the old password.</p>
+
+      <h4>3. deactivate_user</h4>
+      <p>Marks a user as inactive in both <code>auth.users</code> (bans the user) and <code>public.users</code> (sets <code>is_active = false</code>). This effectively locks the account and prevents future logins. Used when an admin deletes or deactivates a staff account.</p>
+
+      <h3>Edge Function Secrets</h3>
+      <div class="callout callout-info">
+        <strong>No Additional Configuration Needed:</strong> The <code>SUPABASE_URL</code> and <code>SUPABASE_SERVICE_ROLE_KEY</code> environment variables are automatically available inside Supabase Edge Functions. They are injected by the Supabase runtime and do not need to be manually configured as secrets.
+      </div>
+    </div>
+
+    <!-- Environment Variables -->
+    <h2 id="environment-variables">Environment Variables</h2>
+    <div class="card">
+      <h3>Complete Environment Variable Reference</h3>
+      <p>All environment variables required by the application. These must be set in both the local <code>.env</code> file (for development) and in the Vercel dashboard (for production).</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Description</th>
+              <th>Example Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>VITE_SUPABASE_URL</code></td>
+              <td>Supabase project URL</td>
+              <td><code>https://xcvmlqugpqeuiyozkqcu.supabase.co</code></td>
+            </tr>
+            <tr>
+              <td><code>VITE_SUPABASE_ANON_KEY</code></td>
+              <td>Supabase anonymous (public) API key</td>
+              <td><code>eyJhbGciOi...</code></td>
+            </tr>
+            <tr>
+              <td><code>VITE_EMAILJS_SERVICE_ID</code></td>
+              <td>EmailJS service identifier</td>
+              <td><code>service_va1s1tq</code></td>
+            </tr>
+            <tr>
+              <td><code>VITE_EMAILJS_APPROVAL_TEMPLATE_ID</code></td>
+              <td>EmailJS template ID for approval notifications</td>
+              <td><code>template_bsick8e</code></td>
+            </tr>
+            <tr>
+              <td><code>VITE_EMAILJS_REJECTION_TEMPLATE_ID</code></td>
+              <td>EmailJS template ID for rejection notifications</td>
+              <td><code>template_wd7lk49</code></td>
+            </tr>
+            <tr>
+              <td><code>VITE_EMAILJS_PUBLIC_KEY</code></td>
+              <td>EmailJS public API key</td>
+              <td><code>Hp31LVJ0_HZsNpnN4</code></td>
+            </tr>
+            <tr>
+              <td><code>VITE_ADMIN_EMAIL</code></td>
+              <td>Default admin email for authentication</td>
+              <td><code>admin@ltsu.edu.in</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Client-Side Exposure:</strong> All <code>VITE_</code> prefixed variables are embedded into the client-side JavaScript bundle at build time. They are visible in the browser's source code. The Supabase anon key is safe to expose because its permissions are strictly controlled by Row-Level Security policies. Never expose the <code>service_role</code> key to the client &mdash; it is only used inside the Edge Function on the server side.
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Vercel Configuration:</strong> In the Vercel dashboard, navigate to Project Settings &rarr; Environment Variables. Add each variable for all environments (Production, Preview, Development). Vercel injects these into the build process, making them available to Vite's <code>import.meta.env</code> at compile time.
+      </div>
+    </div>
+
+    <!-- pg_cron Automated Maintenance -->
+    <h2 id="pg-cron-automated-maintenance">pg_cron Automated Maintenance</h2>
+    <div class="card">
+      <h3>Activity Log Cleanup</h3>
+      <p>The <code>activity_logs</code> table records every staff and admin action in the system. Without regular cleanup, this table grows indefinitely and can impact query performance over time. A <code>pg_cron</code> job handles automatic pruning.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Job Name</td>
+              <td><code>cleanup-old-activity-logs</code></td>
+            </tr>
+            <tr>
+              <td>Schedule</td>
+              <td>Daily at 3:00 AM UTC</td>
+            </tr>
+            <tr>
+              <td>Cron Expression</td>
+              <td><code>0 3 * * *</code></td>
+            </tr>
+            <tr>
+              <td>SQL Statement</td>
+              <td><code>DELETE FROM public.activity_logs WHERE created_at &lt; now() - interval '31 days'</code></td>
+            </tr>
+            <tr>
+              <td>Retention Period</td>
+              <td>31 days of audit history</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Setting Up pg_cron</h3>
+      <ol>
+        <li>
+          <strong>Enable the pg_cron extension:</strong>
+          <p>In the Supabase Dashboard, navigate to Database &rarr; Extensions. Search for <code>pg_cron</code> and enable it. This extension allows scheduling PostgreSQL commands to run on a cron schedule directly inside the database.</p>
+        </li>
+        <li>
+          <strong>Create the cron job via SQL Editor:</strong>
+          <pre><code>SELECT cron.schedule(
+  'cleanup-old-activity-logs',
+  '0 3 * * *',
+  $$DELETE FROM public.activity_logs WHERE created_at &lt; now() - interval '31 days'$$
+);</code></pre>
+          <p>This schedules the cleanup job to run every day at 3:00 AM UTC. The <code>$$</code> dollar-quoting syntax is used to avoid escaping single quotes inside the SQL statement.</p>
+        </li>
+      </ol>
+
+      <div class="callout callout-info">
+        <strong>Monitoring:</strong> You can verify the cron job is registered by querying <code>SELECT * FROM cron.job;</code> in the SQL Editor. To check execution history, query <code>SELECT * FROM cron.job_run_details ORDER BY start_time DESC LIMIT 10;</code>.
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Retention Period:</strong> The 31-day retention window means that any activity log entries older than 31 days are permanently deleted. If your institution requires longer audit trails for compliance, adjust the interval accordingly before creating the cron job.
+      </div>
+    </div>
+
+    <!-- EmailJS Setup -->
+    <h2 id="emailjs-setup">EmailJS Setup</h2>
+    <div class="card">
+      <h3>EmailJS Configuration Steps</h3>
+      <p>EmailJS is used to send approval and rejection email notifications to students directly from the browser. No server-side email infrastructure is required.</p>
+
+      <ol>
+        <li>
+          <strong>Create an EmailJS account:</strong>
+          <p>Sign up at <a href="https://www.emailjs.com" target="_blank" rel="noopener">emailjs.com</a>. The free tier allows 200 emails per month, which is sufficient for most use cases.</p>
+        </li>
+        <li>
+          <strong>Create an Email Service:</strong>
+          <p>Connect your email provider (Gmail, Outlook, etc.) as a service. The service ID for this project is <code>service_va1s1tq</code>.</p>
+        </li>
+        <li>
+          <strong>Create the Approval Template:</strong>
+          <p>Template ID: <code>template_bsick8e</code>. Configure the template with the following dynamic variables:</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>to_email</code></td>
+                  <td>Student's email address</td>
+                </tr>
+                <tr>
+                  <td><code>student_name</code></td>
+                  <td>Full name of the student</td>
+                </tr>
+                <tr>
+                  <td><code>reference_number</code></td>
+                  <td>Fee request reference number (LTSU-XXXXXX)</td>
+                </tr>
+                <tr>
+                  <td><code>fee_amount</code></td>
+                  <td>Approved fee amount</td>
+                </tr>
+                <tr>
+                  <td><code>semester</code></td>
+                  <td>Semester name</td>
+                </tr>
+                <tr>
+                  <td><code>approved_date</code></td>
+                  <td>Date of approval</td>
+                </tr>
+                <tr>
+                  <td><code>approved_by</code></td>
+                  <td>Name of the staff who approved</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li>
+          <strong>Create the Rejection Template:</strong>
+          <p>Template ID: <code>template_wd7lk49</code>. Configure the template with the following dynamic variables:</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>to_email</code></td>
+                  <td>Student's email address</td>
+                </tr>
+                <tr>
+                  <td><code>student_name</code></td>
+                  <td>Full name of the student</td>
+                </tr>
+                <tr>
+                  <td><code>reference_number</code></td>
+                  <td>Fee request reference number (LTSU-XXXXXX)</td>
+                </tr>
+                <tr>
+                  <td><code>rejection_reason</code></td>
+                  <td>Reason for rejection provided by staff</td>
+                </tr>
+                <tr>
+                  <td><code>rejected_date</code></td>
+                  <td>Date of rejection</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li>
+          <strong>Get the Public Key:</strong>
+          <p>Navigate to Account &rarr; API Keys in the EmailJS dashboard. The public key for this project is <code>Hp31LVJ0_HZsNpnN4</code>. This key is used in the client-side <code>emailjs.send()</code> call.</p>
+        </li>
+        <li>
+          <strong>Add credentials to environment variables:</strong>
+          <p>Set <code>VITE_EMAILJS_SERVICE_ID</code>, <code>VITE_EMAILJS_APPROVAL_TEMPLATE_ID</code>, <code>VITE_EMAILJS_REJECTION_TEMPLATE_ID</code>, and <code>VITE_EMAILJS_PUBLIC_KEY</code> in both the local <code>.env</code> file and the Vercel dashboard.</p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Local Development -->
+    <h2 id="local-development">Local Development</h2>
+    <div class="card">
+      <h3>Development Setup</h3>
+      <pre><code># Clone the repository
+git clone https://github.com/Ns81000/LTSU_Fee_Portal.git
+cd LTSU_Fee_Portal
+
+# Install dependencies
+pnpm install
+
+# Configure environment variables
+cp .env.example .env
+# Edit .env with your Supabase and EmailJS credentials
+
+# Start the development server
+pnpm run dev
+# Opens at http://localhost:5173
+
+# Build for production
+pnpm run build
+
+# Preview the production build locally
+pnpm run preview</code></pre>
+
+      <div class="callout callout-info">
+        <strong>Hot Module Replacement:</strong> The development server uses Vite's HMR with React Fast Refresh. Changes to React components are reflected instantly without a full page reload. CSS changes via Tailwind are also hot-reloaded.
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Environment File Required:</strong> The <code>.env</code> file must be present in the project root before starting the dev server. Without it, all Supabase and EmailJS calls will fail with undefined credentials. Copy from <code>.env.example</code> and fill in the actual values.
+      </div>
+    </div>
+
+    <!-- Deployment Checklist -->
+    <h2 id="deployment-checklist">Deployment Checklist</h2>
+    <div class="card">
+      <h3>Complete Pre-Launch Checklist</h3>
+      <p>Verify every item before considering the deployment complete:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Task</th>
+              <th>Category</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Supabase project created</td>
+              <td>Backend</td>
+              <td>Project ID and URL available, region selected</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>All 10 tables created with correct schemas</td>
+              <td>Database</td>
+              <td>users, students, fee_requests, activity_logs, branches, specialisations, sections, semesters, batch_configs, user_sections</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>RLS enabled and policies created</td>
+              <td>Security</td>
+              <td>Row-Level Security enabled on every table with appropriate SELECT/INSERT/UPDATE/DELETE policies</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>RPC functions created</td>
+              <td>Database</td>
+              <td>check_duplicate_fee_request, submit_fee_request, track_fee_request, batch_approve_requests</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Reference number trigger created</td>
+              <td>Database</td>
+              <td>Trigger on fee_requests INSERT generates LTSU-XXXXXX reference numbers</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Edge Function deployed</td>
+              <td>Backend</td>
+              <td>admin-actions function deployed via <code>supabase functions deploy admin-actions</code></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Admin account seeded</td>
+              <td>Auth</td>
+              <td>admin@ltsu.edu.in exists in both auth.users and public.users with role='admin'</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>pg_cron extension enabled and job created</td>
+              <td>Maintenance</td>
+              <td>cleanup-old-activity-logs job runs daily at 3:00 AM UTC</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>EmailJS account and templates configured</td>
+              <td>Email</td>
+              <td>Service, approval template, rejection template, and public key all configured</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Vercel connected to GitHub repo</td>
+              <td>Frontend</td>
+              <td>Repository linked, framework set to Vite, build/output directories configured</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>All environment variables set in Vercel</td>
+              <td>Frontend</td>
+              <td>All 7 VITE_ prefixed variables configured for Production, Preview, and Development environments</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>First deployment triggered</td>
+              <td>Frontend</td>
+              <td>Push to main branch triggers Vercel build; verify build succeeds without errors</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>Verify all routes work</td>
+              <td>Verification</td>
+              <td>Test <code>/</code>, <code>/submit</code>, <code>/track</code>, <code>/login</code>, <code>/dashboard</code>, <code>/admin</code> via direct URL navigation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>Route Verification:</strong> The most critical post-deployment check is step 13. Navigate directly to each route by entering the URL in the browser address bar (not by clicking links). This confirms that the Vercel rewrite rule is functioning correctly. If any route returns a 404, the <code>vercel.json</code> configuration is missing or incorrect.
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Continuous Deployment:</strong> After the initial deployment, every push to the main branch on GitHub automatically triggers a new Vercel build and deployment. Preview deployments are created for pull requests, allowing you to test changes before merging.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

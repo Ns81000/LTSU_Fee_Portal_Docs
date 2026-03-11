@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Components - LTSU Fee Portal Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>UI Components</h1>
+      <p class="subtitle">Complete reference for all reusable React components in the LTSU Fee Portal, covering form elements, layout structures, feedback indicators, and specialized dashboard widgets.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#component-overview">Component Overview</a></li>
+        <li><a href="#button">Button Component</a></li>
+        <li><a href="#input">Input Component</a></li>
+        <li><a href="#modal">Modal Component</a></li>
+        <li><a href="#select">Select Component</a></li>
+        <li><a href="#badge">Badge Component</a></li>
+        <li><a href="#glasscard">GlassCard Component</a></li>
+        <li><a href="#spinner">Spinner Component</a></li>
+        <li><a href="#statscard">StatsCard Component</a></li>
+        <li><a href="#tabs">Tabs Component</a></li>
+        <li><a href="#errorboundary">ErrorBoundary Component</a></li>
+        <li><a href="#sidebar">Sidebar Component</a></li>
+        <li><a href="#mobilenav">MobileNav Component</a></li>
+        <li><a href="#navbar">Navbar Component</a></li>
+        <li><a href="#pagewrapper">PageWrapper Component</a></li>
+        <li><a href="#protectedroute">ProtectedRoute Component</a></li>
+        <li><a href="#exportmenu">ExportMenu Component</a></li>
+        <li><a href="#rejectmodal">RejectModal Component</a></li>
+        <li><a href="#sectionswitcher">SectionSwitcher Component</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Component Overview -->
+    <!-- ============================================================ -->
+    <div class="card" id="component-overview">
+      <h2>Component Overview</h2>
+      <p>The LTSU Fee Portal organises all reusable React components inside the <code>src/components/</code> directory, subdivided into four categories: <strong>UI primitives</strong> (<code>ui/</code>), <strong>layout shells</strong> (<code>layout/</code>), <strong>form helpers</strong> (<code>forms/</code>), and <strong>dashboard-specific widgets</strong> (<code>dashboard/</code>). A single top-level component, <code>ErrorBoundary.jsx</code>, lives at the root of <code>src/components/</code>.</p>
+
+      <h3>Directory Structure</h3>
+      <pre><code>src/components/
+  ErrorBoundary.jsx          # React class error boundary
+  ui/
+    Button.jsx               # Multi-variant button
+    Input.jsx                # Enhanced form input with validation
+    Modal.jsx                # Accessible modal dialog
+    Select.jsx               # Custom select dropdown
+    Badge.jsx                # Status badge indicators
+    GlassCard.jsx            # Frosted glass container
+    Spinner.jsx              # Loading indicator
+    StatsCard.jsx            # Statistics display card
+    Tabs.jsx                 # Tab navigation component
+  layout/
+    Sidebar.jsx              # Desktop navigation sidebar
+    MobileNav.jsx            # Mobile bottom navigation
+    Navbar.jsx               # Top navigation bar
+    PageWrapper.jsx          # Page layout wrapper
+    ProtectedRoute.jsx       # Auth guard route wrapper
+  forms/
+    RejectModal.jsx          # Rejection reason dialog
+  dashboard/
+    ExportMenu.jsx           # Data export dropdown (PDF/Excel/CSV)
+    SectionSwitcher.jsx      # Multi-section selector pills</code></pre>
+
+      <h3>Summary Table</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>File</th>
+              <th>Category</th>
+              <th>Props Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Button</code></td>
+              <td><code>ui/Button.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>5 + rest spread</td>
+            </tr>
+            <tr>
+              <td><code>Input</code></td>
+              <td><code>ui/Input.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>7 + rest spread</td>
+            </tr>
+            <tr>
+              <td><code>Modal</code></td>
+              <td><code>ui/Modal.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td><code>Select</code></td>
+              <td><code>ui/Select.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>6 + rest spread</td>
+            </tr>
+            <tr>
+              <td><code>Badge</code></td>
+              <td><code>ui/Badge.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><code>GlassCard</code></td>
+              <td><code>ui/GlassCard.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>3 + rest spread</td>
+            </tr>
+            <tr>
+              <td><code>Spinner</code></td>
+              <td><code>ui/Spinner.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td><code>StatsCard</code></td>
+              <td><code>ui/StatsCard.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td><code>Tabs</code></td>
+              <td><code>ui/Tabs.jsx</code></td>
+              <td>UI Primitive</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><code>ErrorBoundary</code></td>
+              <td><code>ErrorBoundary.jsx</code></td>
+              <td>Error Handling</td>
+              <td>1 (children)</td>
+            </tr>
+            <tr>
+              <td><code>Sidebar</code></td>
+              <td><code>layout/Sidebar.jsx</code></td>
+              <td>Layout</td>
+              <td>0 (context-driven)</td>
+            </tr>
+            <tr>
+              <td><code>MobileNav</code></td>
+              <td><code>layout/MobileNav.jsx</code></td>
+              <td>Layout</td>
+              <td>0 (context-driven)</td>
+            </tr>
+            <tr>
+              <td><code>Navbar</code></td>
+              <td><code>layout/Navbar.jsx</code></td>
+              <td>Layout</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td><code>PageWrapper</code></td>
+              <td><code>layout/PageWrapper.jsx</code></td>
+              <td>Layout</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><code>ProtectedRoute</code></td>
+              <td><code>layout/ProtectedRoute.jsx</code></td>
+              <td>Layout</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td><code>ExportMenu</code></td>
+              <td><code>dashboard/ExportMenu.jsx</code></td>
+              <td>Dashboard</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td><code>RejectModal</code></td>
+              <td><code>forms/RejectModal.jsx</code></td>
+              <td>Form</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td><code>SectionSwitcher</code></td>
+              <td><code>dashboard/SectionSwitcher.jsx</code></td>
+              <td>Dashboard</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Design System Note:</strong> All UI components are built with the project's custom CSS design system (defined in <code>src/index.css</code>) rather than a third-party component library. Class names such as <code>glass-card</code>, <code>btn-primary</code>, <code>input-field</code>, and <code>badge</code> are all custom classes. Icons throughout the component library use the <code>lucide-react</code> icon set.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Button Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="button">
+      <h2>Button Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/Button.jsx</code></p>
+      <p>The Button component is the primary interactive element used across the entire application. It supports five visual variants, an integrated loading state with an animated spinner, and forwards all additional props to the underlying <code>&lt;button&gt;</code> element. The component is used for form submissions, modal actions, navigation triggers, export operations, and destructive confirmations.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>variant</code></td>
+              <td><code>'primary' | 'secondary' | 'danger' | 'ghost' | 'success'</code></td>
+              <td><code>'primary'</code></td>
+              <td>Determines the visual style of the button. Maps to a CSS class name.</td>
+            </tr>
+            <tr>
+              <td><code>loading</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>When true, displays an animated <code>Loader2</code> spinner icon (16px) before the children content and disables the button to prevent duplicate submissions.</td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Disables the button. The button is also automatically disabled when <code>loading</code> is true (via <code>disabled={disabled || loading}</code>).</td>
+            </tr>
+            <tr>
+              <td><code>className</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>Additional CSS classes appended to the computed variant class string.</td>
+            </tr>
+            <tr>
+              <td><code>children</code></td>
+              <td><code>React.ReactNode</code></td>
+              <td>--</td>
+              <td>The button label content. Can include text, icons, or any React nodes.</td>
+            </tr>
+            <tr>
+              <td><code>...props</code></td>
+              <td><code>any</code></td>
+              <td>--</td>
+              <td>All remaining props are spread directly onto the native <code>&lt;button&gt;</code> element. This includes <code>onClick</code>, <code>type</code>, <code>style</code>, <code>aria-*</code> attributes, and any other valid button props.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Variant Class Mapping</h3>
+      <p>The component maintains an internal <code>variants</code> object that maps each variant name to its corresponding CSS class. If an invalid variant string is supplied, the component falls back to <code>btn-primary</code>.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Variant</th>
+              <th>CSS Class</th>
+              <th>Visual Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>'primary'</code></td>
+              <td><code>btn-primary</code></td>
+              <td>Navy background (<code>--color-navy</code>) with gold text (<code>--color-gold</code>). The default action button used for form submissions and primary actions.</td>
+            </tr>
+            <tr>
+              <td><code>'secondary'</code></td>
+              <td><code>btn-secondary</code></td>
+              <td>Transparent background with a 1px border. Used for cancel actions and secondary operations.</td>
+            </tr>
+            <tr>
+              <td><code>'danger'</code></td>
+              <td><code>btn-danger</code></td>
+              <td>Red background (<code>--color-error</code>) with white text. Used for destructive actions such as deletions and rejections.</td>
+            </tr>
+            <tr>
+              <td><code>'ghost'</code></td>
+              <td><code>btn-ghost</code></td>
+              <td>Fully transparent with no border. Text inherits colour from context. Used for inline actions and toolbar buttons like export triggers.</td>
+            </tr>
+            <tr>
+              <td><code>'success'</code></td>
+              <td><code>btn-success</code></td>
+              <td>Green background (<code>--color-success</code>) with white text. Used for approval actions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Loading State Behaviour</h3>
+      <p>When <code>loading={true}</code>, three things happen simultaneously:</p>
+      <ol>
+        <li>The <code>Loader2</code> icon from <code>lucide-react</code> renders at 16px with the <code>animate-spin</code> CSS class, producing a smooth rotating animation.</li>
+        <li>The native <code>disabled</code> attribute is set to <code>true</code>, preventing click interactions.</li>
+        <li>The <code>aria-busy</code> attribute is set to <code>true</code> (or <code>undefined</code> when not loading), signalling the busy state to screen readers.</li>
+      </ol>
+      <p>The children content remains visible alongside the spinner -- the spinner is prepended, not a replacement.</p>
+
+      <h3>Accessibility</h3>
+      <p>The default <code>type</code> attribute is <code>"button"</code> (not <code>"submit"</code>), which prevents unintended form submissions when the button is used outside of form contexts. The <code>aria-busy</code> attribute is conditionally applied during loading states. Consumers can override the type or add additional ARIA attributes via the rest spread.</p>
+
+      <h3>Usage Examples</h3>
+      <pre><code>// Primary form submission
+&lt;Button onClick={handleSubmit} loading={isSubmitting}&gt;
+  Submit Request
+&lt;/Button&gt;
+
+// Danger action with custom style
+&lt;Button variant="danger" onClick={handleDelete}&gt;
+  Delete Student
+&lt;/Button&gt;
+
+// Ghost button for toolbar
+&lt;Button variant="ghost" onClick={() =&gt; handleExport('pdf')}&gt;
+  &lt;Download size={14} /&gt; PDF
+&lt;/Button&gt;
+
+// Success approval
+&lt;Button variant="success" loading={approving} onClick={handleApprove}&gt;
+  Approve
+&lt;/Button&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Input Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="input">
+      <h2>Input Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/Input.jsx</code></p>
+      <p>The Input component is an enhanced form input that wraps the native HTML <code>&lt;input&gt;</code> element with label rendering, validation feedback (error and success states), password visibility toggle, loading indicator, and accessible ARIA bindings. It is the sole text input component used across all forms in the application -- login, student fee submission, and admin management screens.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>label</code></td>
+              <td><code>string</code></td>
+              <td><code>undefined</code></td>
+              <td>When provided, renders a <code>&lt;label&gt;</code> element above the input, associated via <code>htmlFor</code> pointing to the input's <code>id</code>.</td>
+            </tr>
+            <tr>
+              <td><code>error</code></td>
+              <td><code>string</code></td>
+              <td><code>undefined</code></td>
+              <td>Error message string. When truthy, applies the <code>error</code> CSS class to the input (red border), renders an X icon inside the input, and displays the error text below the input in a <code>&lt;p role="alert"&gt;</code> element.</td>
+            </tr>
+            <tr>
+              <td><code>success</code></td>
+              <td><code>string</code></td>
+              <td><code>undefined</code></td>
+              <td>Success message string. When truthy, applies the <code>success</code> CSS class (green border), renders a Check icon inside the input, and displays the success text below.</td>
+            </tr>
+            <tr>
+              <td><code>loading</code></td>
+              <td><code>boolean</code></td>
+              <td><code>undefined</code></td>
+              <td>Aliased internally as <code>inputLoading</code>. When true, displays a spinning <code>Loader2</code> icon (16px) on the right side of the input. Takes visual priority over success/error icons.</td>
+            </tr>
+            <tr>
+              <td><code>type</code></td>
+              <td><code>string</code></td>
+              <td><code>'text'</code></td>
+              <td>The HTML input type. When set to <code>'password'</code>, an eye/eye-off toggle button is rendered to switch between masked and plain text display.</td>
+            </tr>
+            <tr>
+              <td><code>className</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>Additional CSS classes applied to the outer wrapper <code>&lt;div&gt;</code>.</td>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>string</code></td>
+              <td>auto-generated via <code>useId()</code></td>
+              <td>Explicit ID for the input element. If not provided, React's <code>useId()</code> hook generates a unique ID for label association and ARIA bindings.</td>
+            </tr>
+            <tr>
+              <td><code>...props</code></td>
+              <td><code>any</code></td>
+              <td>--</td>
+              <td>Spread onto the native <code>&lt;input&gt;</code> element. Covers <code>value</code>, <code>onChange</code>, <code>placeholder</code>, <code>name</code>, <code>required</code>, <code>disabled</code>, <code>maxLength</code>, etc.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Password Toggle</h3>
+      <p>When <code>type="password"</code> is passed, the component enters password mode. A local state variable <code>showPassword</code> (managed via <code>useState(false)</code>) controls whether the actual input type is <code>'password'</code> or <code>'text'</code>. A toggle button is rendered on the right side of the input:</p>
+      <ul>
+        <li>When <code>showPassword</code> is false: the <code>Eye</code> icon is shown, and the input type is <code>'password'</code> (dots/bullets).</li>
+        <li>When <code>showPassword</code> is true: the <code>EyeOff</code> icon is shown, and the input type is <code>'text'</code> (visible characters).</li>
+      </ul>
+      <p>The toggle button has <code>type="button"</code> to prevent form submissions, and includes an <code>aria-label</code> that updates dynamically ("Hide password" or "Show password").</p>
+
+      <h3>Validation State Rendering</h3>
+      <p>The input supports three mutually exclusive visual states, determined by the precedence: <code>error</code> takes priority over <code>success</code>.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>CSS Class on Input</th>
+              <th>Icon Displayed</th>
+              <th>Text Below</th>
+              <th>ARIA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Error</td>
+              <td><code>error</code></td>
+              <td><code>X</code> icon (red, 16px)</td>
+              <td>Error message in <code>.input-error</code></td>
+              <td><code>aria-invalid="true"</code>, <code>aria-describedby="{id}-error"</code></td>
+            </tr>
+            <tr>
+              <td>Success</td>
+              <td><code>success</code></td>
+              <td><code>Check</code> icon (green, 16px)</td>
+              <td>Success message in <code>.input-success</code></td>
+              <td><code>aria-describedby="{id}-success"</code></td>
+            </tr>
+            <tr>
+              <td>Loading</td>
+              <td>(none)</td>
+              <td><code>Loader2</code> spinner (muted, 16px)</td>
+              <td>(none)</td>
+              <td>(none)</td>
+            </tr>
+            <tr>
+              <td>Default</td>
+              <td>(none)</td>
+              <td>(none)</td>
+              <td>(none)</td>
+              <td>(none)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The loading indicator takes rendering priority: when <code>inputLoading</code> is true, neither the success Check icon nor the error X icon is rendered. However, the error/success text below the input and the border colour still apply regardless of loading state.</p>
+
+      <h3>Icon Positioning</h3>
+      <p>Status icons and the password toggle are absolutely positioned inside the input's container div, anchored to the right side with <code>right: 12px</code> and vertically centred via <code>top: 50%; transform: translateY(-50%)</code>. Multiple icons (e.g., loading spinner + password toggle) are laid out horizontally with a 4px gap using flexbox.</p>
+
+      <h3>ID Generation</h3>
+      <p>The component uses React's <code>useId()</code> hook to auto-generate a unique identifier when no explicit <code>id</code> prop is provided. This ID is used in three places: the <code>id</code> attribute on the input, the <code>htmlFor</code> attribute on the label, and the <code>aria-describedby</code> attribute linking to error/success message paragraphs. Each message paragraph gets a derived ID: <code>{inputId}-error</code> or <code>{inputId}-success</code>.</p>
+
+      <h3>Usage Examples</h3>
+      <pre><code>// Basic text input with label
+&lt;Input
+  label="Full Name"
+  value={name}
+  onChange={e =&gt; setName(e.target.value)}
+  placeholder="Enter your full name"
+/&gt;
+
+// Password input with error
+&lt;Input
+  label="Password"
+  type="password"
+  value={password}
+  onChange={e =&gt; setPassword(e.target.value)}
+  error={errors.password}
+/&gt;
+
+// Input with success feedback
+&lt;Input
+  label="Staff ID"
+  value={staffId}
+  onChange={e =&gt; setStaffId(e.target.value)}
+  success="Staff ID verified"
+/&gt;
+
+// Loading state during async validation
+&lt;Input
+  label="Roll Number"
+  value={roll}
+  onChange={e =&gt; setRoll(e.target.value)}
+  loading={isValidating}
+/&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Modal Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="modal">
+      <h2>Modal Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/Modal.jsx</code></p>
+      <p>The Modal component implements an accessible dialog overlay used throughout the application for confirmation prompts, rejection reason entry, and informational displays. It renders directly into the normal React tree (not a portal), manages body scroll locking, keyboard dismissal, and focus management. The modal is the foundation upon which the <code>RejectModal</code> component is built.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>isOpen</code></td>
+              <td><code>boolean</code></td>
+              <td>--</td>
+              <td>Controls visibility. When false, the component returns <code>null</code> (renders nothing). When true, the overlay and dialog are rendered.</td>
+            </tr>
+            <tr>
+              <td><code>onClose</code></td>
+              <td><code>function</code></td>
+              <td>--</td>
+              <td>Callback invoked when the user dismisses the modal -- via backdrop click, Escape key, or the close button.</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>The modal heading text, rendered as an <code>&lt;h3&gt;</code> with <code>id="modal-title"</code> and referenced by <code>aria-labelledby</code> on the dialog.</td>
+            </tr>
+            <tr>
+              <td><code>children</code></td>
+              <td><code>React.ReactNode</code></td>
+              <td>--</td>
+              <td>The dialog body content. Receives any React elements -- forms, text, buttons, etc.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Scroll Locking</h3>
+      <p>When the modal opens (<code>isOpen</code> transitions to true), a <code>useEffect</code> sets <code>document.body.style.overflow = 'hidden'</code>, preventing the page behind the overlay from scrolling. When the modal closes or unmounts, the effect cleanup restores <code>document.body.style.overflow = ''</code>. This prevents the common issue of background content scrolling while the modal is open on mobile devices.</p>
+
+      <h3>Keyboard Interaction</h3>
+      <p>A second <code>useEffect</code> registers a <code>keydown</code> event listener on the <code>document</code> object. When the <code>Escape</code> key is pressed, <code>onClose()</code> is called. The listener is only active while <code>isOpen</code> is true and is cleaned up when the modal closes or unmounts. The effect depends on both <code>isOpen</code> and <code>onClose</code> to ensure the latest callback reference is used.</p>
+
+      <h3>Focus Management</h3>
+      <p>The Modal implements focus management via a <code>useRef</code> (<code>previousFocusRef</code>) and a third <code>useEffect</code>:</p>
+      <ol>
+        <li><strong>On open:</strong> The currently focused element is saved to <code>previousFocusRef.current</code>. Then, using <code>requestAnimationFrame</code>, the component queries the modal container for all focusable elements (<code>button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])</code>) and focuses the first one found.</li>
+        <li><strong>On close:</strong> Focus is restored to the previously saved element via <code>previousFocusRef.current.focus()</code>, and the ref is cleared.</li>
+      </ol>
+
+      <h3>Backdrop Behaviour</h3>
+      <p>The overlay div covers the entire viewport with <code>position: fixed; inset: 0</code>. Its background uses the navy colour at 50% opacity (<code>rgba(11, 27, 62, 0.5)</code>) with <code>backdrop-filter: blur(4px)</code> for a frosted glass effect consistent with the application's design language. Clicking anywhere on the overlay triggers <code>onClose</code>. The inner dialog container uses <code>e.stopPropagation()</code> on its <code>onClick</code> handler to prevent clicks inside the dialog from bubbling up and closing the modal.</p>
+
+      <h3>Dialog Structure</h3>
+      <p>The dialog itself uses the <code>glass-card fade-in</code> CSS class combination with a maximum width of 480px, full width, and explicit white background. The header row is a flex container with the title on the left and the close button on the right. The close button renders the <code>X</code> icon from <code>lucide-react</code> (20px) with a minimum touch target of 44x44px for mobile accessibility compliance.</p>
+
+      <h3>ARIA Attributes</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>role="dialog"</code></td>
+              <td>Overlay container</td>
+              <td>Identifies the element as a dialog</td>
+            </tr>
+            <tr>
+              <td><code>aria-modal="true"</code></td>
+              <td>Overlay container</td>
+              <td>Indicates the dialog is modal (content behind is inert)</td>
+            </tr>
+            <tr>
+              <td><code>aria-labelledby="modal-title"</code></td>
+              <td>Overlay container</td>
+              <td>Associates the dialog with its heading for screen readers</td>
+            </tr>
+            <tr>
+              <td><code>aria-label="Close"</code></td>
+              <td>Close button</td>
+              <td>Accessible name for the icon-only close button</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Usage Example</h3>
+      <pre><code>const [showModal, setShowModal] = useState(false)
+
+&lt;Modal isOpen={showModal} onClose={() =&gt; setShowModal(false)} title="Confirm Action"&gt;
+  &lt;p&gt;Are you sure you want to proceed?&lt;/p&gt;
+  &lt;div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end' }}&gt;
+    &lt;Button variant="ghost" onClick={() =&gt; setShowModal(false)}&gt;Cancel&lt;/Button&gt;
+    &lt;Button variant="primary" onClick={handleConfirm}&gt;Confirm&lt;/Button&gt;
+  &lt;/div&gt;
+&lt;/Modal&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Select Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="select">
+      <h2>Select Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/Select.jsx</code></p>
+      <p>The Select component wraps a native HTML <code>&lt;select&gt;</code> element with consistent styling, label rendering, error feedback, and accessible ARIA bindings. It uses the same visual language as the Input component -- the shared <code>input-field</code> CSS class, the <code>input-label</code> class for labels, and the <code>input-error</code> class for validation messages. The component is used throughout admin management screens for branch, specialisation, semester, section, and batch selection.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>label</code></td>
+              <td><code>string</code></td>
+              <td><code>undefined</code></td>
+              <td>When provided, renders a <code>&lt;label&gt;</code> element above the select with the <code>input-label</code> class, linked via <code>htmlFor</code>.</td>
+            </tr>
+            <tr>
+              <td><code>error</code></td>
+              <td><code>string</code></td>
+              <td><code>undefined</code></td>
+              <td>Error message. When truthy, adds the <code>error</code> CSS class to the select and renders the error text below in a <code>&lt;p role="alert"&gt;</code>.</td>
+            </tr>
+            <tr>
+              <td><code>options</code></td>
+              <td><code>Array&lt;{ value: string, label: string }&gt;</code></td>
+              <td><code>[]</code></td>
+              <td>Array of option objects. Each is rendered as an <code>&lt;option&gt;</code> element with <code>key={opt.value}</code>.</td>
+            </tr>
+            <tr>
+              <td><code>placeholder</code></td>
+              <td><code>string</code></td>
+              <td><code>'Select...'</code></td>
+              <td>Text for the first disabled option element, which has <code>value=""</code>. Serves as the default prompt when no selection has been made.</td>
+            </tr>
+            <tr>
+              <td><code>className</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>Additional CSS classes applied to the outer wrapper <code>&lt;div&gt;</code>.</td>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>string</code></td>
+              <td>auto-generated via <code>useId()</code></td>
+              <td>Explicit ID for the select element. Auto-generated if not provided.</td>
+            </tr>
+            <tr>
+              <td><code>...props</code></td>
+              <td><code>any</code></td>
+              <td>--</td>
+              <td>Spread onto the native <code>&lt;select&gt;</code> element. Covers <code>value</code>, <code>onChange</code>, <code>disabled</code>, <code>name</code>, <code>required</code>, etc.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>ID Generation</h3>
+      <p>Identical pattern to the Input component. Uses React's <code>useId()</code> hook to auto-generate a unique identifier, which is used for the <code>id</code> on the select, <code>htmlFor</code> on the label, and <code>aria-describedby</code> pointing to <code>{selectId}-error</code> when an error is present.</p>
+
+      <h3>Option Rendering</h3>
+      <p>The first option is always the placeholder, rendered with <code>value=""</code> and the placeholder text. It is not explicitly disabled in the current implementation, which means the user can select it to "clear" their selection (the empty string value is typically validated against). The <code>options</code> array is null-safely wrapped in <code>(options || [])</code> before mapping.</p>
+
+      <h3>Styling</h3>
+      <p>The select uses the shared <code>input-field</code> CSS class, which provides consistent height, padding, border radius, font, and colour with the Input component. The browser's native select dropdown is used (no custom dropdown overlay), styled with the project's design system variables. The error state adds a red border via the <code>error</code> class.</p>
+
+      <h3>Usage Example</h3>
+      <pre><code>&lt;Select
+  label="Branch"
+  value={selectedBranch}
+  onChange={e =&gt; setSelectedBranch(e.target.value)}
+  options={branches.map(b =&gt; ({ value: b.id, label: b.name }))}
+  placeholder="Choose a branch..."
+  error={errors.branch}
+/&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Badge Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="badge">
+      <h2>Badge Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/Badge.jsx</code></p>
+      <p>The Badge component renders a small coloured pill indicator used to display the status of fee requests. It is a minimal component that maps status strings to CSS class names, capitalises the first letter for display, and renders a <code>&lt;span&gt;</code>.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>status</code></td>
+              <td><code>'pending' | 'approved' | 'rejected' | string</code></td>
+              <td><code>undefined</code></td>
+              <td>The status string that determines both the visual variant and the displayed text. The first letter is capitalised automatically.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Style Mapping</h3>
+      <p>The component uses a <code>badgeStyles</code> object defined at module scope:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>CSS Classes</th>
+              <th>Visual Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>'pending'</code></td>
+              <td><code>badge badge-pending</code></td>
+              <td>Yellow/amber background with dark text -- indicates a request awaiting review.</td>
+            </tr>
+            <tr>
+              <td><code>'approved'</code></td>
+              <td><code>badge badge-approved</code></td>
+              <td>Green background with dark text -- indicates an accepted request.</td>
+            </tr>
+            <tr>
+              <td><code>'rejected'</code></td>
+              <td><code>badge badge-rejected</code></td>
+              <td>Red background with dark text -- indicates a declined request.</td>
+            </tr>
+            <tr>
+              <td>Any other / undefined</td>
+              <td><code>badge</code></td>
+              <td>Base badge style with neutral/grey appearance. Fallback for unknown status values.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Text Capitalisation</h3>
+      <p>The display text is computed as <code>status.charAt(0).toUpperCase() + status.slice(1)</code>. If the <code>status</code> prop is falsy (undefined, null, or empty string), an empty string is rendered, producing an invisible badge element.</p>
+
+      <h3>Usage Context</h3>
+      <p>The Badge component appears in several locations throughout the application:</p>
+      <ul>
+        <li><strong>Dashboard fee request tables</strong> -- each row shows the request status as a badge.</li>
+        <li><strong>Student tracking page</strong> -- the latest request status is displayed as a badge.</li>
+        <li><strong>Admin student manager</strong> -- active/inactive status indicators.</li>
+      </ul>
+
+      <h3>Usage Example</h3>
+      <pre><code>&lt;Badge status="pending" /&gt;   // Renders: "Pending" with amber style
+&lt;Badge status="approved" /&gt;  // Renders: "Approved" with green style
+&lt;Badge status="rejected" /&gt;  // Renders: "Rejected" with red style</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- GlassCard Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="glasscard">
+      <h2>GlassCard Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/GlassCard.jsx</code></p>
+      <p>The GlassCard component is the primary container element in the LTSU Fee Portal's design system. It implements the application's signature frosted glass (glassmorphism) aesthetic -- a semi-transparent white background with a blur-filtered backdrop, subtle border, and rounded corners. Nearly every content section in the application is wrapped in a GlassCard.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>children</code></td>
+              <td><code>React.ReactNode</code></td>
+              <td>--</td>
+              <td>The content rendered inside the glass container.</td>
+            </tr>
+            <tr>
+              <td><code>className</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>Additional CSS classes appended to the base class list.</td>
+            </tr>
+            <tr>
+              <td><code>hover</code></td>
+              <td><code>boolean</code></td>
+              <td><code>true</code></td>
+              <td>Controls hover animation. When <code>true</code> (default), the card has a subtle lift and shadow transition on mouse hover. When <code>false</code>, the <code>no-hover</code> class is applied, disabling the hover effect.</td>
+            </tr>
+            <tr>
+              <td><code>...props</code></td>
+              <td><code>any</code></td>
+              <td>--</td>
+              <td>All remaining props are spread onto the <code>&lt;div&gt;</code>. The <code>style</code> prop is specially handled: it is destructured and merged with the default <code>padding: 24</code> inline style, allowing consumers to extend or override styles.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>CSS Class Construction</h3>
+      <p>The final class string is built as: <code>glass-card {hover ? '' : 'no-hover'} {className}</code>. The <code>glass-card</code> base class (defined in <code>src/index.css</code>) provides:</p>
+      <ul>
+        <li><strong>Background:</strong> Semi-transparent white with varying opacity depending on the theme context.</li>
+        <li><strong>Backdrop filter:</strong> <code>backdrop-filter: blur()</code> for the frosted glass effect.</li>
+        <li><strong>Border:</strong> Subtle semi-transparent white border.</li>
+        <li><strong>Border radius:</strong> Rounded corners consistent with the design system.</li>
+        <li><strong>Shadow:</strong> Soft box shadow for depth.</li>
+        <li><strong>Hover transition:</strong> Subtle translateY and shadow change (disabled by <code>no-hover</code> class).</li>
+      </ul>
+
+      <h3>Style Merging</h3>
+      <p>The component destructures <code>style</code> from the rest props and merges it with a default <code>padding: 24</code> inline style using the spread operator: <code>style={{ padding: 24, ...inlineStyle }}</code>. This means consumers can override the padding or add any additional inline styles, and the consumer's values take precedence due to spread order.</p>
+
+      <h3>Usage Context</h3>
+      <p>The GlassCard is used as the container for virtually every content block:</p>
+      <ul>
+        <li><strong>StatsCard:</strong> Each statistics display is a GlassCard with a coloured left border.</li>
+        <li><strong>Dashboard sections:</strong> Fee request tables, filters, and action areas are wrapped in GlassCards.</li>
+        <li><strong>Admin panels:</strong> Each management module's content area uses GlassCard.</li>
+        <li><strong>Login form:</strong> The authentication form container.</li>
+        <li><strong>Student form:</strong> Each step of the multi-step form is a GlassCard.</li>
+      </ul>
+
+      <h3>Usage Example</h3>
+      <pre><code>// Default with hover
+&lt;GlassCard&gt;
+  &lt;h3&gt;Fee Request Details&lt;/h3&gt;
+  &lt;p&gt;Content here...&lt;/p&gt;
+&lt;/GlassCard&gt;
+
+// Without hover, custom padding
+&lt;GlassCard hover={false} style={{ padding: 16 }}&gt;
+  &lt;StatsGrid /&gt;
+&lt;/GlassCard&gt;
+
+// With additional class
+&lt;GlassCard className="my-custom-card"&gt;
+  &lt;FormContent /&gt;
+&lt;/GlassCard&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Spinner Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="spinner">
+      <h2>Spinner Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/Spinner.jsx</code></p>
+      <p>The Spinner component renders a full-page centred loading indicator used as the primary loading state throughout the application. It uses the <code>Loader2</code> icon from <code>lucide-react</code> with the <code>animate-spin</code> CSS animation and includes a visually hidden text label for screen reader accessibility.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>size</code></td>
+              <td><code>number</code></td>
+              <td><code>24</code></td>
+              <td>The pixel size passed to the <code>Loader2</code> icon's <code>size</code> prop, controlling both width and height of the SVG icon.</td>
+            </tr>
+            <tr>
+              <td><code>className</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>Additional CSS classes appended to the <code>Loader2</code> icon element alongside <code>animate-spin</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Layout</h3>
+      <p>The spinner is wrapped in a <code>&lt;div&gt;</code> with flexbox centring (<code>display: flex; justify-content: center; align-items: center</code>), <code>padding: 40px</code>, and <code>min-height: 60vh</code>. This ensures the spinner is vertically and horizontally centred within a significant portion of the viewport, making it suitable as a full-page loading indicator.</p>
+
+      <h3>Accessibility</h3>
+      <p>The wrapper div has <code>role="status"</code> and <code>aria-label="Loading"</code>, which announces the loading state to screen readers. Additionally, a visually hidden <code>&lt;span&gt;</code> with the text "Loading..." is included using the standard CSS clip pattern (<code>position: absolute; width: 1px; height: 1px; clip: rect(0,0,0,0); overflow: hidden</code>). This provides redundant accessibility for assistive technologies that may not support <code>aria-label</code> on non-interactive elements.</p>
+
+      <h3>Colour</h3>
+      <p>The <code>Loader2</code> icon uses <code>color: var(--color-gold)</code>, rendering the spinner in the application's gold accent colour. This maintains visual consistency with the navy-and-gold design system.</p>
+
+      <h3>Usage Context</h3>
+      <ul>
+        <li><strong>ProtectedRoute:</strong> Shown while the authentication state is being resolved (<code>if (loading) return &lt;Spinner /&gt;</code>).</li>
+        <li><strong>DashboardPage:</strong> Displayed while fee request data is being fetched from Supabase.</li>
+        <li><strong>AdminPage:</strong> Shown during initial data loading for each management module.</li>
+      </ul>
+
+      <h3>Usage Example</h3>
+      <pre><code>// Full-page loading
+if (loading) return &lt;Spinner /&gt;
+
+// Larger spinner
+&lt;Spinner size={48} /&gt;
+
+// With additional class
+&lt;Spinner className="my-spinner" /&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- StatsCard Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="statscard">
+      <h2>StatsCard Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/StatsCard.jsx</code></p>
+      <p>The StatsCard component displays a single numeric statistic with a label, icon, and accent colour. It uses the <code>glass-card</code> CSS class directly (not the GlassCard component) and features a coloured left border that visually categorises each statistic. StatsCards are used in grids on both the Dashboard and Admin Overview pages.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>icon</code></td>
+              <td><code>React.ComponentType</code> (Lucide icon)</td>
+              <td><code>undefined</code></td>
+              <td>A Lucide icon component (not an instance). Rendered at 18px size with the <code>borderColor</code> as its colour. Aliased as <code>Icon</code> via destructuring for JSX usage.</td>
+            </tr>
+            <tr>
+              <td><code>label</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>Descriptive text rendered below the value in <code>--text-xs</code> font size with muted colour. Examples: "Total Students", "Pending Requests".</td>
+            </tr>
+            <tr>
+              <td><code>value</code></td>
+              <td><code>string | number</code></td>
+              <td>--</td>
+              <td>The primary numeric value displayed prominently in <code>--text-xl</code> with <code>font-weight: 700</code>. Styled with <code>text-overflow: ellipsis</code> for long values.</td>
+            </tr>
+            <tr>
+              <td><code>borderColor</code></td>
+              <td><code>string</code> (CSS colour)</td>
+              <td><code>'var(--color-pending)'</code></td>
+              <td>CSS colour value applied to both the 3px left border of the card and the icon colour. Used to visually distinguish different statistics.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Layout Structure</h3>
+      <p>The card renders as a vertical flex column (<code>flex-direction: column</code>) with a 6px gap between elements:</p>
+      <ol>
+        <li><strong>Icon</strong> (if provided) -- Lucide icon component rendered at 18px, coloured with <code>borderColor</code>, with <code>flex-shrink: 0</code>.</li>
+        <li><strong>Value</strong> -- Large bold text using the <code>font-display</code> class (Playfair Display). Has <code>overflow: hidden; text-overflow: ellipsis; white-space: nowrap</code> to handle long numbers gracefully.</li>
+        <li><strong>Label</strong> -- Small muted text in <code>--text-xs</code> size with <code>white-space: nowrap</code>.</li>
+      </ol>
+      <p>The outer container uses <code>glass-card</code> class with 16px padding and a 3px left border in the accent colour.</p>
+
+      <h3>Dashboard Usage</h3>
+      <p>On the Dashboard page, four StatsCards are arranged in a CSS grid:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Icon</th>
+              <th>Border Colour</th>
+              <th>Value Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total Students</td>
+              <td><code>Users</code></td>
+              <td><code>var(--color-navy)</code></td>
+              <td>Total count of students in the section</td>
+            </tr>
+            <tr>
+              <td>Pending</td>
+              <td><code>Clock</code></td>
+              <td><code>var(--color-pending)</code></td>
+              <td>Count of requests with status "pending"</td>
+            </tr>
+            <tr>
+              <td>Approved</td>
+              <td><code>CheckCircle</code></td>
+              <td><code>var(--color-success)</code></td>
+              <td>Count of requests with status "approved"</td>
+            </tr>
+            <tr>
+              <td>Rejected</td>
+              <td><code>XCircle</code></td>
+              <td><code>var(--color-error)</code></td>
+              <td>Count of requests with status "rejected"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Usage Example</h3>
+      <pre><code>import { Users, Clock, CheckCircle, XCircle } from 'lucide-react'
+
+&lt;div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}&gt;
+  &lt;StatsCard icon={Users} label="Total Students" value={120} borderColor="var(--color-navy)" /&gt;
+  &lt;StatsCard icon={Clock} label="Pending" value={15} borderColor="var(--color-pending)" /&gt;
+  &lt;StatsCard icon={CheckCircle} label="Approved" value={98} borderColor="var(--color-success)" /&gt;
+  &lt;StatsCard icon={XCircle} label="Rejected" value={7} borderColor="var(--color-error)" /&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Tabs Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="tabs">
+      <h2>Tabs Component</h2>
+      <p><strong>File:</strong> <code>src/components/ui/Tabs.jsx</code></p>
+      <p>The Tabs component renders a horizontal tab bar with an underline indicator on the active tab. Each tab can optionally display a count badge, making it suitable for showing filtered data counts. The component is used on the Dashboard page to switch between "All Students", "Pending", "Approved", and "Rejected" views.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>tabs</code></td>
+              <td><code>Array&lt;{ id: string, label: string, count?: number }&gt;</code></td>
+              <td>--</td>
+              <td>Array of tab definitions. Each tab must have a unique <code>id</code> and a display <code>label</code>. The optional <code>count</code> property renders a numeric badge next to the label.</td>
+            </tr>
+            <tr>
+              <td><code>active</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>The <code>id</code> of the currently active tab. Determines which tab receives the active visual state (gold underline, navy text, bold weight).</td>
+            </tr>
+            <tr>
+              <td><code>onChange</code></td>
+              <td><code>(tabId: string) =&gt; void</code></td>
+              <td>--</td>
+              <td>Callback invoked with the tab's <code>id</code> when the user clicks a tab.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Active vs Inactive Styling</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Active Tab</th>
+              <th>Inactive Tab</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bottom border</td>
+              <td><code>2px solid var(--color-gold)</code></td>
+              <td><code>2px solid transparent</code></td>
+            </tr>
+            <tr>
+              <td>Text colour</td>
+              <td><code>var(--color-navy)</code></td>
+              <td><code>var(--color-text-muted)</code></td>
+            </tr>
+            <tr>
+              <td>Font weight</td>
+              <td><code>600</code></td>
+              <td><code>400</code></td>
+            </tr>
+            <tr>
+              <td>Count badge background</td>
+              <td><code>var(--color-navy)</code></td>
+              <td><code>var(--color-border-light)</code></td>
+            </tr>
+            <tr>
+              <td>Count badge text</td>
+              <td><code>var(--color-gold)</code></td>
+              <td><code>var(--color-text-muted)</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Count Badge</h3>
+      <p>When a tab object includes a <code>count</code> property (checked via <code>tab.count !== undefined</code>), a small pill badge is rendered to the right of the label with <code>border-radius: 10px</code>, <code>padding: 2px 8px</code>, and <code>font-size: var(--text-xs)</code>. The badge colours change based on whether the tab is active (navy background with gold text) or inactive (light border background with muted text).</p>
+
+      <h3>Responsive Behaviour</h3>
+      <p>The tab container uses <code>overflow-x: auto</code> with <code>-webkit-overflow-scrolling: touch</code> for smooth horizontal scrolling on iOS devices. Each tab button has <code>flex-shrink: 0</code> and <code>white-space: nowrap</code> to prevent text wrapping, ensuring tabs remain readable when they overflow horizontally. The container has the <code>hide-scrollbar</code> CSS class to hide the scrollbar while maintaining scroll functionality.</p>
+
+      <h3>Transitions</h3>
+      <p>All state changes are animated with <code>transition: color 0.2s ease, font-weight 0.2s ease, border-color 0.2s ease</code>, producing a subtle visual shift when switching between tabs.</p>
+
+      <h3>Usage Example</h3>
+      <pre><code>const [activeTab, setActiveTab] = useState('all')
+
+const tabList = [
+  { id: 'all', label: 'All Students', count: 120 },
+  { id: 'pending', label: 'Pending', count: 15 },
+  { id: 'approved', label: 'Approved', count: 98 },
+  { id: 'rejected', label: 'Rejected', count: 7 },
+]
+
+&lt;Tabs tabs={tabList} active={activeTab} onChange={setActiveTab} /&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ErrorBoundary Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="errorboundary">
+      <h2>ErrorBoundary Component</h2>
+      <p><strong>File:</strong> <code>src/components/ErrorBoundary.jsx</code></p>
+      <p>The ErrorBoundary is a React <strong>class component</strong> that catches JavaScript errors anywhere in its child component tree, logs the error, and renders a fallback UI instead of crashing the entire application. React error boundaries must be class components -- functional components cannot use <code>getDerivedStateFromError</code> or <code>componentDidCatch</code>.</p>
+
+      <h3>State</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>State Key</th>
+              <th>Type</th>
+              <th>Initial Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>hasError</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Flag indicating whether an error has been caught. Drives the rendering decision between fallback UI and children.</td>
+            </tr>
+            <tr>
+              <td><code>error</code></td>
+              <td><code>Error | null</code></td>
+              <td><code>null</code></td>
+              <td>The caught Error object. Currently stored but not displayed to the user in the fallback UI (only a generic message is shown).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Lifecycle Methods</h3>
+
+      <h4>static getDerivedStateFromError(error)</h4>
+      <p>Called during the render phase when a descendant component throws an error. Returns a new state object <code>{ hasError: true, error }</code>. This is a static method -- it does not have access to the component instance.</p>
+
+      <h4>componentDidCatch(error, errorInfo)</h4>
+      <p>Called during the commit phase after an error has been thrown. Currently logs the error and component stack trace to the console via <code>console.error('ErrorBoundary caught:', error, errorInfo)</code>. The logging is wrapped in a <code>typeof console !== 'undefined'</code> guard for safety. This method is where error reporting service integration (e.g., Sentry, LogRocket) would be added in production.</p>
+
+      <h3>Fallback UI</h3>
+      <p>When <code>hasError</code> is true, the component renders a full-viewport centred error display:</p>
+      <ul>
+        <li><strong>Container:</strong> Flexbox column centred vertically and horizontally, <code>min-height: 100vh</code>, 40px padding, using the application's background colour (<code>--color-bg</code> or fallback <code>#FAF6EE</code>).</li>
+        <li><strong>Heading:</strong> "Something went wrong" in 24px bold text with navy colour.</li>
+        <li><strong>Description:</strong> "An unexpected error occurred. Please refresh the page or try again later." in 14px muted text, centred, with a max-width of 400px.</li>
+        <li><strong>Action button:</strong> "Refresh Page" button styled with navy background and gold text. On click, calls <code>window.location.reload()</code> to perform a full page reload, which clears the error state by re-mounting the entire component tree.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <strong>Recovery Strategy:</strong> The fallback UI uses <code>window.location.reload()</code> rather than resetting component state. This is intentional -- a full reload ensures all contexts, providers, and Supabase authentication state are re-initialised from scratch, avoiding potential cascading errors from partially corrupted application state.
+      </div>
+
+      <h3>Mount Point</h3>
+      <p>The ErrorBoundary wraps the entire application at the top level in <code>src/main.jsx</code>:</p>
+      <pre><code>import ErrorBoundary from './components/ErrorBoundary'
+import App from './App'
+
+createRoot(document.getElementById('root')).render(
+  &lt;ErrorBoundary&gt;
+    &lt;App /&gt;
+  &lt;/ErrorBoundary&gt;
+)</code></pre>
+
+      <h3>Limitations</h3>
+      <ul>
+        <li>Error boundaries do <strong>not</strong> catch errors in event handlers (use try/catch instead).</li>
+        <li>Error boundaries do <strong>not</strong> catch errors in asynchronous code (promises, setTimeout).</li>
+        <li>Error boundaries do <strong>not</strong> catch errors during server-side rendering.</li>
+        <li>Error boundaries do <strong>not</strong> catch errors thrown in the error boundary itself.</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Layout Components Header -->
+    <!-- ============================================================ -->
+    <div class="card">
+      <h2>Layout Components</h2>
+      <p>Layout components manage the application's structural shell -- navigation, page wrapping, and route protection. They are context-driven, reading authentication state and routing information from <code>AuthContext</code> and <code>react-router-dom</code> hooks rather than receiving data via props. All layout components live in <code>src/components/layout/</code>.</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step">Navbar (fixed top)</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Sidebar (fixed left, desktop)</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">PageWrapper (main content)</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">MobileNav (fixed bottom, mobile)</div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Sidebar Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="sidebar">
+      <h2>Sidebar Component</h2>
+      <p><strong>File:</strong> <code>src/components/layout/Sidebar.jsx</code></p>
+      <p>The Sidebar component renders the desktop left-side navigation panel. It is a context-driven component with no props -- all data comes from <code>AuthContext</code> (user profile, logout function) and React Router (<code>useLocation</code>, <code>useNavigate</code>). The sidebar is visible only on desktop viewports (hidden below the mobile breakpoint) and is fixed to the left side of the screen.</p>
+
+      <h3>Props</h3>
+      <p>None. The component receives all necessary data from React context and router hooks.</p>
+
+      <h3>Context Dependencies</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Hook</th>
+              <th>Values Used</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>useAuth()</code></td>
+              <td><code>profile</code>, <code>logout</code></td>
+              <td>Displays user name and role in the header section; calls <code>logout()</code> for sign-out.</td>
+            </tr>
+            <tr>
+              <td><code>useNavigate()</code></td>
+              <td><code>navigate</code></td>
+              <td>Programmatic navigation on item click and post-logout redirect to <code>/login</code>.</td>
+            </tr>
+            <tr>
+              <td><code>useLocation()</code></td>
+              <td><code>location.pathname</code></td>
+              <td>Determines which navigation item is currently active by comparing against <code>item.path</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Navigation Items</h3>
+      <p>The sidebar navigation is defined as a static array of two items (the same for all staff roles -- CR and Teacher):</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Icon</th>
+              <th>Label</th>
+              <th>Path</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>LayoutDashboard</code></td>
+              <td>Dashboard</td>
+              <td><code>/dashboard</code></td>
+            </tr>
+            <tr>
+              <td><code>ScrollText</code></td>
+              <td>Activity Log</td>
+              <td><code>/log</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Layout and Positioning</h3>
+      <ul>
+        <li><strong>Width:</strong> 240px</li>
+        <li><strong>Height:</strong> <code>calc(100vh - 48px)</code> -- full viewport height minus the Navbar's 48px height.</li>
+        <li><strong>Position:</strong> <code>fixed</code>, <code>top: 48px</code>, <code>left: 0</code></li>
+        <li><strong>Background:</strong> <code>var(--color-white)</code> with a 1px right border using <code>var(--color-border-light)</code>.</li>
+        <li><strong>Z-index:</strong> 50</li>
+      </ul>
+
+      <h3>Sections</h3>
+      <ol>
+        <li><strong>Header section</strong> (top, with bottom border): Displays "LTSU Fee Portal" in bold navy text. Below it, if a user profile exists, shows the user's full name and role (uppercased) in muted xs text.</li>
+        <li><strong>Navigation section</strong> (middle, flex-grow): Renders navigation buttons for each item. Active item has navy background with gold text and font-weight 500. Inactive items have transparent background and inherit text colour.</li>
+        <li><strong>Logout section</strong> (bottom): A button with the <code>LogOut</code> icon and "Logout" label in red (<code>var(--color-error)</code>). Calls <code>logout()</code> then navigates to <code>/login</code>.</li>
+      </ol>
+
+      <h3>Active State Detection</h3>
+      <p>Each nav button determines its active state by comparing <code>location.pathname === item.path</code>. The active button receives <code>aria-current="page"</code> for accessibility, along with the visual navy background / gold text treatment.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MobileNav Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="mobilenav">
+      <h2>MobileNav Component</h2>
+      <p><strong>File:</strong> <code>src/components/layout/MobileNav.jsx</code></p>
+      <p>The MobileNav component renders a mobile-friendly bottom navigation bar fixed to the screen bottom. It mirrors the Sidebar's navigation items in a horizontal layout with icon-above-label buttons, plus a dedicated logout action. The component is visible only on mobile viewports.</p>
+
+      <h3>Props</h3>
+      <p>None. Same context-driven pattern as Sidebar.</p>
+
+      <h3>Context Dependencies</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Hook</th>
+              <th>Values Used</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>useAuth()</code></td>
+              <td><code>logout</code></td>
+              <td>Sign-out function called by the logout tab.</td>
+            </tr>
+            <tr>
+              <td><code>useNavigate()</code></td>
+              <td><code>navigate</code></td>
+              <td>Programmatic navigation on tab press.</td>
+            </tr>
+            <tr>
+              <td><code>useLocation()</code></td>
+              <td><code>location.pathname</code></td>
+              <td>Active tab detection.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Navigation Tabs</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Icon</th>
+              <th>Label</th>
+              <th>Path</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>LayoutDashboard</code></td>
+              <td>Dashboard</td>
+              <td><code>/dashboard</code></td>
+            </tr>
+            <tr>
+              <td><code>ScrollText</code></td>
+              <td>Log</td>
+              <td><code>/log</code></td>
+            </tr>
+            <tr>
+              <td><code>LogOut</code></td>
+              <td>Logout</td>
+              <td>(action, not a route)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Layout and Positioning</h3>
+      <ul>
+        <li><strong>Position:</strong> <code>fixed</code>, <code>bottom: 0</code>, <code>left: 0</code>, <code>right: 0</code></li>
+        <li><strong>Background:</strong> <code>var(--color-white)</code> with a 1px top border.</li>
+        <li><strong>Padding:</strong> <code>6px 0</code> top, plus <code>env(safe-area-inset-bottom)</code> for devices with home indicators (iPhone X and later).</li>
+        <li><strong>Z-index:</strong> 100</li>
+        <li><strong>Layout:</strong> Flexbox with <code>justify-content: space-around</code>.</li>
+      </ul>
+
+      <h3>Tab Button Structure</h3>
+      <p>Each tab button renders as a column flexbox container with a 2px gap:</p>
+      <ol>
+        <li>Lucide icon at 20px size.</li>
+        <li>Label text in <code>var(--text-xs)</code> size.</li>
+      </ol>
+      <p>Active tabs use <code>var(--color-gold)</code> for both icon and text colour. Inactive tabs use <code>var(--color-text-muted)</code>. All buttons have a minimum touch target of 44px height for mobile accessibility. The logout button is always rendered in muted colour regardless of navigation state.</p>
+
+      <h3>ARIA</h3>
+      <p>The outer <code>&lt;nav&gt;</code> element has <code>aria-label="Mobile navigation"</code> for screen reader identification. Active tabs receive <code>aria-current="page"</code>.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Navbar Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="navbar">
+      <h2>Navbar Component</h2>
+      <p><strong>File:</strong> <code>src/components/layout/Navbar.jsx</code></p>
+      <p>The Navbar component renders a fixed top navigation bar that spans the full width of the viewport. It is a minimal, zero-prop component that displays the application brand name centred horizontally.</p>
+
+      <h3>Props</h3>
+      <p>None. The component is entirely static.</p>
+
+      <h3>Layout and Styling</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Position</td>
+              <td><code>fixed</code>, <code>top: 0</code>, <code>left: 0</code>, <code>right: 0</code></td>
+              <td>Pinned to the top of the viewport, spanning full width.</td>
+            </tr>
+            <tr>
+              <td>Height</td>
+              <td><code>48px</code></td>
+              <td>Fixed height. Other layout components (Sidebar, PageWrapper) account for this offset.</td>
+            </tr>
+            <tr>
+              <td>Background</td>
+              <td><code>var(--color-navy)</code></td>
+              <td>Dark navy background, the strongest application brand colour.</td>
+            </tr>
+            <tr>
+              <td>Z-index</td>
+              <td><code>100</code></td>
+              <td>Above sidebar (z-50) and other content.</td>
+            </tr>
+            <tr>
+              <td>Content</td>
+              <td>"LTSU Fee Portal"</td>
+              <td>Centred text in gold (<code>var(--color-gold)</code>), <code>font-display</code> (Playfair Display), <code>--text-sm</code>, <code>font-weight: 600</code>, <code>letter-spacing: 0.02em</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Relationship to Other Layout Components</h3>
+      <p>The Navbar occupies the top 48px. The Sidebar positions itself at <code>top: 48px</code> to sit directly below. The PageWrapper applies <code>padding-top: 80px</code> to push content below both the Navbar and provide spacing. On mobile, the MobileNav sits at the bottom without overlapping the Navbar.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PageWrapper Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="pagewrapper">
+      <h2>PageWrapper Component</h2>
+      <p><strong>File:</strong> <code>src/components/layout/PageWrapper.jsx</code></p>
+      <p>The PageWrapper component provides the main content area layout for all authenticated pages. It constrains content width, applies consistent padding, sets minimum height, and adds a fade-in animation on mount.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>children</code></td>
+              <td><code>React.ReactNode</code></td>
+              <td>--</td>
+              <td>The page content to render inside the wrapper.</td>
+            </tr>
+            <tr>
+              <td><code>maxWidth</code></td>
+              <td><code>number</code></td>
+              <td><code>1200</code></td>
+              <td>Maximum width in pixels for the content container. Applied via inline <code>maxWidth</code> style.</td>
+            </tr>
+            <tr>
+              <td><code>className</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>Additional CSS classes appended alongside the default <code>fade-in</code> class.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Rendered Element</h3>
+      <p>Renders a <code>&lt;main&gt;</code> element with <code>id="main-content"</code> (used as the skip-link target if one were to be added). Key inline styles:</p>
+      <ul>
+        <li><code>max-width</code>: Value of the <code>maxWidth</code> prop (default 1200px).</li>
+        <li><code>margin: 0 auto</code>: Centres the content horizontally.</li>
+        <li><code>padding: 80px 24px 40px</code>: 80px top padding clears the Navbar; 24px horizontal for gutters; 40px bottom.</li>
+        <li><code>padding-bottom: calc(40px + env(safe-area-inset-bottom))</code>: Adds safe area inset for iOS devices with the MobileNav.</li>
+        <li><code>min-height: 100vh</code>: Ensures the wrapper fills at least the full viewport height.</li>
+      </ul>
+      <p>The <code>fade-in</code> CSS class applies a subtle opacity + translateY animation on mount for a smooth page transition effect.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ProtectedRoute Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="protectedroute">
+      <h2>ProtectedRoute Component</h2>
+      <p><strong>File:</strong> <code>src/components/layout/ProtectedRoute.jsx</code></p>
+      <p>The ProtectedRoute component is a route guard that wraps page components to enforce authentication and role-based access control. It reads auth state from <code>AuthContext</code> and either renders the children, shows a loading spinner, or redirects to the login page.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>children</code></td>
+              <td><code>React.ReactNode</code></td>
+              <td>--</td>
+              <td>The page component to render when access is granted.</td>
+            </tr>
+            <tr>
+              <td><code>allowedRoles</code></td>
+              <td><code>string[]</code></td>
+              <td><code>undefined</code></td>
+              <td>Optional array of role strings (e.g., <code>['cr', 'teacher']</code>). When provided, the user's <code>profile.role</code> must be included in this array. When omitted, any authenticated user with an active profile gains access.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Decision Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">Auth loading?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Show Spinner</div>
+      </div>
+      <div class="flow-diagram">
+        <div class="flow-step">No user or no profile?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Navigate to /login</div>
+      </div>
+      <div class="flow-diagram">
+        <div class="flow-step">Profile is_active is false?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Navigate to /login</div>
+      </div>
+      <div class="flow-diagram">
+        <div class="flow-step">allowedRoles provided and role not in list?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Navigate to /login</div>
+      </div>
+      <div class="flow-diagram">
+        <div class="flow-step">All checks pass</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Render children</div>
+      </div>
+
+      <p>All redirects use React Router's <code>&lt;Navigate to="/login" replace /&gt;</code> with the <code>replace</code> prop, which replaces the current history entry rather than pushing a new one. This prevents the user from navigating "back" to the protected page via the browser back button.</p>
+
+      <h3>Auth Checks (in order)</h3>
+      <ol>
+        <li><strong>Loading state:</strong> If <code>loading</code> is true (auth state still resolving), renders the <code>Spinner</code> component and stops.</li>
+        <li><strong>Authentication check:</strong> If <code>user</code> or <code>profile</code> is falsy, redirects to <code>/login</code>.</li>
+        <li><strong>Active account check:</strong> If <code>profile.is_active</code> is false, the account has been deactivated by an admin. Redirects to <code>/login</code>.</li>
+        <li><strong>Role check:</strong> If <code>allowedRoles</code> is provided and <code>profile.role</code> is not included, the user lacks permission. Redirects to <code>/login</code>.</li>
+        <li><strong>Access granted:</strong> Renders <code>{children}</code>.</li>
+      </ol>
+
+      <h3>Usage in App.jsx</h3>
+      <pre><code>&lt;Route path="/dashboard" element={
+  &lt;ProtectedRoute allowedRoles={['cr', 'teacher']}&gt;
+    &lt;DashboardPage /&gt;
+  &lt;/ProtectedRoute&gt;
+} /&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Dashboard-Specific Components Header -->
+    <!-- ============================================================ -->
+    <div class="card">
+      <h2>Dashboard-Specific Components</h2>
+      <p>These components are used exclusively within the Dashboard and related pages. They handle data export, fee request rejection, and section switching for multi-section staff members.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ExportMenu Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="exportmenu">
+      <h2>ExportMenu Component</h2>
+      <p><strong>File:</strong> <code>src/components/dashboard/ExportMenu.jsx</code></p>
+      <p>The ExportMenu component renders a row of three ghost-style buttons for exporting fee request data in PDF, Excel, and CSV formats. It uses dynamic imports to lazy-load the export utility modules, keeping the initial bundle size small. Each export format has its own dedicated utility function in <code>src/utils/</code>.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>title</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>Title used in the exported document's header. Passed through to the export utilities.</td>
+            </tr>
+            <tr>
+              <td><code>columns</code></td>
+              <td><code>Array&lt;{ key: string, label: string }&gt;</code></td>
+              <td>--</td>
+              <td>Column definitions for the exported table. Each column has a <code>key</code> (property name on data objects) and a display <code>label</code>.</td>
+            </tr>
+            <tr>
+              <td><code>data</code></td>
+              <td><code>Array&lt;Object&gt;</code></td>
+              <td>--</td>
+              <td>The array of fee request objects to export. Each object's properties are mapped to columns via the <code>key</code> field.</td>
+            </tr>
+            <tr>
+              <td><code>exportedBy</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>Name of the exporting user. Used in the PDF export header metadata.</td>
+            </tr>
+            <tr>
+              <td><code>sectionName</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>The name of the current section. Used in the PDF export header for context.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Export Process</h3>
+      <p>The <code>handleExport(type)</code> function manages the export lifecycle:</p>
+      <ol>
+        <li>Sets <code>exporting</code> state to the type string (<code>'pdf'</code>, <code>'excel'</code>, or <code>'csv'</code>), which updates the button text to "Exporting..." and disables all three buttons.</li>
+        <li>Dynamically imports the appropriate utility module using <code>await import()</code>.</li>
+        <li>Calls the export function with the component's props.</li>
+        <li>On completion (success or error), resets <code>exporting</code> to <code>null</code> in a <code>finally</code> block.</li>
+      </ol>
+
+      <h3>Export Utilities</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Module</th>
+              <th>Function</th>
+              <th>Library</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PDF</td>
+              <td><code>src/utils/exportPDF.js</code></td>
+              <td><code>exportTablePDF</code></td>
+              <td>jsPDF + jspdf-autotable</td>
+              <td>Generates an A4 PDF with LTSU header text, section/user metadata, and an auto-formatted table of fee request data.</td>
+            </tr>
+            <tr>
+              <td>Excel</td>
+              <td><code>src/utils/exportExcel.js</code></td>
+              <td><code>exportExcel</code></td>
+              <td>SheetJS (xlsx)</td>
+              <td>Creates a workbook with a single worksheet, maps column labels to headers, and triggers a .xlsx download.</td>
+            </tr>
+            <tr>
+              <td>CSV</td>
+              <td><code>src/utils/exportCSV.js</code></td>
+              <td><code>exportCSV</code></td>
+              <td>(none -- manual)</td>
+              <td>Manually generates CSV text. String values are quoted. Triggers download via a data URI with <code>text/csv</code> MIME type.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Button Layout</h3>
+      <p>The three buttons are rendered in a flex container with <code>gap: 6px</code> and <code>flex-wrap: wrap</code>. Each button uses the <code>ghost</code> variant with a <code>Download</code> icon (14px) from <code>lucide-react</code> and has a minimum touch target of 44px. When one export is in progress, all three buttons are disabled (<code>disabled={!!exporting}</code>). The active button shows "Exporting..." text while the other two retain their format labels.</p>
+
+      <h3>Error Handling</h3>
+      <p>Export errors are caught in a try/catch block and logged to the console (<code>console.error</code>). The user is not shown an error message -- the button simply returns to its normal state. This is a deliberate design choice since export failures are rare and typically caused by browser download restrictions.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RejectModal Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="rejectmodal">
+      <h2>RejectModal Component</h2>
+      <p><strong>File:</strong> <code>src/components/forms/RejectModal.jsx</code></p>
+      <p>The RejectModal is a specialised modal dialog for collecting a rejection reason when a staff member declines a fee request. It wraps the base <code>Modal</code> component and adds form logic: a textarea with character validation, a character counter, and confirm/cancel buttons. The title is always "Reject Fee Request".</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>isOpen</code></td>
+              <td><code>boolean</code></td>
+              <td>--</td>
+              <td>Controls modal visibility — passed through to <code>Modal.isOpen</code>.</td>
+            </tr>
+            <tr>
+              <td><code>onClose</code></td>
+              <td><code>function</code></td>
+              <td>--</td>
+              <td>Called when the user cancels or dismisses the modal (backdrop click, Escape key, Cancel button, close icon).</td>
+            </tr>
+            <tr>
+              <td><code>studentName</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>The student's full name, displayed in bold in the modal body for confirmation context.</td>
+            </tr>
+            <tr>
+              <td><code>rollNumber</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>The student's roll number, displayed in parentheses next to the name.</td>
+            </tr>
+            <tr>
+              <td><code>onConfirm</code></td>
+              <td><code>(reason: string) =&gt; void</code></td>
+              <td>--</td>
+              <td>Callback invoked with the trimmed rejection reason string when the user clicks "Confirm Rejection" and the reason passes validation.</td>
+            </tr>
+            <tr>
+              <td><code>loading</code></td>
+              <td><code>boolean</code></td>
+              <td>--</td>
+              <td>When true, the "Confirm Rejection" button shows a loading spinner and is disabled to prevent duplicate submissions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Internal State</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Type</th>
+              <th>Initial</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>reason</code></td>
+              <td><code>string</code></td>
+              <td><code>''</code></td>
+              <td>The current value of the rejection reason textarea. Reset to empty string when the modal opens (via <code>useEffect</code> on <code>isOpen</code>) and when the modal closes (via <code>handleClose</code>).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Validation</h3>
+      <p>The rejection reason must be at least 10 characters (after trimming whitespace) and at most 500 characters (enforced by the textarea's <code>maxLength</code> attribute). The "Confirm Rejection" button is disabled until the trimmed reason reaches 10 characters via <code>disabled={reason.trim().length &lt; 10}</code>. A character counter below the textarea shows <code>{reason.trim().length}/10 characters minimum</code>.</p>
+
+      <h3>Modal Body Structure</h3>
+      <ol>
+        <li><strong>Student info:</strong> "<strong>{studentName}</strong> ({rollNumber})" in muted small text.</li>
+        <li><strong>Textarea:</strong> Uses the shared <code>input-field</code> CSS class with <code>input-label</code> for the "Reason for rejection" label. Configured with 4 visible rows, vertical resize only, and the DM Sans font family. Placeholder text: "Please explain the reason (minimum 10 characters)..."</li>
+        <li><strong>Character counter:</strong> Muted xs text showing current character count vs minimum.</li>
+        <li><strong>Action buttons:</strong> Right-aligned flex row with Cancel (ghost variant) and Confirm Rejection (danger variant, loading-aware).</li>
+      </ol>
+
+      <h3>State Reset</h3>
+      <p>The textarea is reset in two places to prevent stale text from appearing:</p>
+      <ul>
+        <li>A <code>useEffect</code> watches <code>isOpen</code> -- when the modal opens (transitions to true), the reason is set to <code>''</code>.</li>
+        <li>The <code>handleClose</code> function explicitly sets reason to <code>''</code> before calling <code>onClose()</code>.</li>
+      </ul>
+      <p>The <code>handleConfirm</code> function also resets the reason after calling <code>onConfirm(reason.trim())</code>, and includes a guard against execution while loading is true.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SectionSwitcher Component -->
+    <!-- ============================================================ -->
+    <div class="card" id="sectionswitcher">
+      <h2>SectionSwitcher Component</h2>
+      <p><strong>File:</strong> <code>src/components/dashboard/SectionSwitcher.jsx</code></p>
+      <p>The SectionSwitcher component renders a horizontally scrollable row of pill-shaped buttons that allow staff members (particularly Teachers who manage multiple sections) to switch between section views on the Dashboard. It always includes an "All Sections" option as the first pill, followed by individual section pills.</p>
+
+      <h3>Props</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sections</code></td>
+              <td><code>Array&lt;Object&gt;</code></td>
+              <td><code>[]</code></td>
+              <td>Array of section objects. Each object must have an <code>id</code> property and a <code>name</code> property. May also include nested <code>branches</code> and <code>semesters</code> objects with a <code>name</code> property for additional context display.</td>
+            </tr>
+            <tr>
+              <td><code>activeSection</code></td>
+              <td><code>string</code></td>
+              <td>--</td>
+              <td>The currently active section ID, or <code>'all'</code> for the "All Sections" view. Determines which pill receives the active visual state.</td>
+            </tr>
+            <tr>
+              <td><code>onChange</code></td>
+              <td><code>(sectionId: string) =&gt; void</code></td>
+              <td>--</td>
+              <td>Callback invoked with the section's <code>id</code> (or the string <code>'all'</code>) when a pill is clicked.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Pill Button Styling</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Active Pill</th>
+              <th>Inactive Pill</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Background</td>
+              <td><code>var(--color-navy)</code></td>
+              <td><code>transparent</code></td>
+            </tr>
+            <tr>
+              <td>Text colour</td>
+              <td><code>var(--color-gold)</code></td>
+              <td><code>var(--color-text)</code></td>
+            </tr>
+            <tr>
+              <td>Outline</td>
+              <td><code>none</code></td>
+              <td><code>1px solid var(--color-border)</code></td>
+            </tr>
+            <tr>
+              <td>Border radius</td>
+              <td colspan="2"><code>20px</code> (fully rounded pill shape)</td>
+            </tr>
+            <tr>
+              <td>Padding</td>
+              <td colspan="2"><code>8px 16px</code></td>
+            </tr>
+            <tr>
+              <td>Font</td>
+              <td colspan="2">DM Sans, <code>--text-sm</code>, weight 500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>"All Sections" Pill</h3>
+      <p>A hardcoded first button with the text "All Sections". When clicked, calls <code>onChange('all')</code>. Its active state is determined by <code>activeSection === 'all'</code>. This pill is always rendered, regardless of whether the sections array is empty.</p>
+
+      <h3>Section Pills</h3>
+      <p>Each section from the <code>sections</code> array is rendered as a pill button. The pill content has two parts:</p>
+      <ol>
+        <li><strong>Primary text:</strong> <code>sec.name</code> -- the section's name (e.g., "Section A").</li>
+        <li><strong>Context suffix:</strong> If the section object contains nested <code>branches.name</code> or <code>semesters.name</code> properties, they are displayed in parentheses with 75% opacity and smaller font size, joined by a middle dot separator. Example: "Section A (CSE -- Sem 3)".</li>
+      </ol>
+
+      <h3>Horizontal Scrolling</h3>
+      <p>The container uses <code>overflow-x: auto</code> with <code>padding-bottom: 8px</code> (to prevent scroll clipping) and <code>margin-bottom: 16px</code> for spacing from subsequent content. Each button has <code>white-space: nowrap</code> to prevent text wrapping. On mobile devices where sections exceed the viewport width, the pills scroll horizontally.</p>
+
+      <h3>Usage Example</h3>
+      <pre><code>const [activeSection, setActiveSection] = useState('all')
+
+&lt;SectionSwitcher
+  sections={assignedSections}
+  activeSection={activeSection}
+  onChange={setActiveSection}
+/&gt;</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Component Dependency Map -->
+    <!-- ============================================================ -->
+    <div class="card">
+      <h2>Component Dependency Map</h2>
+      <p>The following diagram shows how components compose into each other across the application. Arrows indicate "uses" relationships.</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step">ErrorBoundary</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">App (Router)</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">ProtectedRoute</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Page Components</div>
+      </div>
+
+      <h3>Composition Relationships</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parent Component</th>
+              <th>Uses</th>
+              <th>Context</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>RejectModal</code></td>
+              <td><code>Modal</code>, <code>Button</code></td>
+              <td>Wraps Modal for rejection workflow; uses Button for Cancel/Confirm actions.</td>
+            </tr>
+            <tr>
+              <td><code>ExportMenu</code></td>
+              <td><code>Button</code></td>
+              <td>Uses three ghost-variant Buttons for PDF/Excel/CSV export triggers.</td>
+            </tr>
+            <tr>
+              <td><code>StatsCard</code></td>
+              <td><code>glass-card</code> (CSS class)</td>
+              <td>Applies the glass-card class directly rather than using the GlassCard component.</td>
+            </tr>
+            <tr>
+              <td><code>ProtectedRoute</code></td>
+              <td><code>Spinner</code></td>
+              <td>Shows Spinner during auth loading state.</td>
+            </tr>
+            <tr>
+              <td><code>Button</code></td>
+              <td><code>Loader2</code> (lucide-react)</td>
+              <td>Renders Loader2 icon with animate-spin during loading state.</td>
+            </tr>
+            <tr>
+              <td><code>Input</code></td>
+              <td><code>Eye</code>, <code>EyeOff</code>, <code>Loader2</code>, <code>Check</code>, <code>X</code></td>
+              <td>Icons for password toggle, loading, success, and error states respectively.</td>
+            </tr>
+            <tr>
+              <td><code>Modal</code></td>
+              <td><code>X</code> (lucide-react)</td>
+              <td>Close button icon in modal header.</td>
+            </tr>
+            <tr>
+              <td>DashboardPage</td>
+              <td><code>Tabs</code>, <code>StatsCard</code>, <code>Badge</code>, <code>ExportMenu</code>, <code>SectionSwitcher</code>, <code>RejectModal</code>, <code>GlassCard</code>, <code>Button</code>, <code>Spinner</code></td>
+              <td>The Dashboard is the heaviest consumer of components, using nearly the full library.</td>
+            </tr>
+            <tr>
+              <td>AdminPage</td>
+              <td><code>GlassCard</code>, <code>Button</code>, <code>Input</code>, <code>Select</code>, <code>Modal</code>, <code>Badge</code>, <code>Spinner</code>, <code>StatsCard</code></td>
+              <td>Admin management modules use form components heavily.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Icon Library Reference -->
+    <!-- ============================================================ -->
+    <div class="card">
+      <h2>Icon Library Reference</h2>
+      <p>All icons in the component library come from <a href="https://lucide.dev" target="_blank" rel="noopener"><code>lucide-react</code></a>. Icons are imported individually (tree-shakeable) and rendered as inline SVG elements. The following icons are used across components:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Icon</th>
+              <th>Used In</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Loader2</code></td>
+              <td>Button, Input, Spinner</td>
+              <td>Spinning loading indicator (always used with <code>animate-spin</code>)</td>
+            </tr>
+            <tr>
+              <td><code>Eye</code></td>
+              <td>Input</td>
+              <td>Show password toggle (password currently hidden)</td>
+            </tr>
+            <tr>
+              <td><code>EyeOff</code></td>
+              <td>Input</td>
+              <td>Hide password toggle (password currently visible)</td>
+            </tr>
+            <tr>
+              <td><code>Check</code></td>
+              <td>Input</td>
+              <td>Success validation state indicator</td>
+            </tr>
+            <tr>
+              <td><code>X</code></td>
+              <td>Input, Modal</td>
+              <td>Error validation indicator; modal close button</td>
+            </tr>
+            <tr>
+              <td><code>Download</code></td>
+              <td>ExportMenu</td>
+              <td>Export action icon prefix on each button</td>
+            </tr>
+            <tr>
+              <td><code>LayoutDashboard</code></td>
+              <td>Sidebar, MobileNav</td>
+              <td>Dashboard navigation item icon</td>
+            </tr>
+            <tr>
+              <td><code>ScrollText</code></td>
+              <td>Sidebar, MobileNav</td>
+              <td>Activity Log navigation item icon</td>
+            </tr>
+            <tr>
+              <td><code>LogOut</code></td>
+              <td>Sidebar, MobileNav</td>
+              <td>Logout action icon</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Reference - LTSU Fee Portal Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>API Reference</h1>
+      <p class="subtitle">Complete reference for all Supabase Edge Functions, RPC functions, client-side query patterns, and utility functions used across the LTSU Fee Portal system.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#api-overview">API Overview</a></li>
+        <li><a href="#supabase-client-setup">Supabase Client Setup</a></li>
+        <li><a href="#edge-function-admin-actions">Edge Function: admin-actions</a></li>
+        <li><a href="#action-create-user">Action: create_user</a></li>
+        <li><a href="#action-reset-password">Action: reset_password</a></li>
+        <li><a href="#action-deactivate-user">Action: deactivate_user</a></li>
+        <li><a href="#rpc-functions">RPC Functions (PostgreSQL Stored Procedures)</a></li>
+        <li><a href="#rpc-check-duplicate">check_duplicate_fee_request</a></li>
+        <li><a href="#rpc-submit-fee-request">submit_fee_request</a></li>
+        <li><a href="#rpc-track-fee-request">track_fee_request</a></li>
+        <li><a href="#rpc-batch-approve">batch_approve_requests</a></li>
+        <li><a href="#client-side-queries">Client-Side Query Patterns</a></li>
+        <li><a href="#dataprovider-queries">DataProvider Queries</a></li>
+        <li><a href="#fee-requests-queries">Fee Requests Queries</a></li>
+        <li><a href="#students-query">Students Query</a></li>
+        <li><a href="#user-management-queries">User Management Queries</a></li>
+        <li><a href="#activity-logging">Activity Logging</a></li>
+        <li><a href="#approve-single-request">Approve Single Request</a></li>
+        <li><a href="#reject-single-request">Reject Single Request</a></li>
+        <li><a href="#reference-number-generation">Reference Number Generation (Database Trigger)</a></li>
+        <li><a href="#authentication-api">Authentication API</a></li>
+        <li><a href="#error-handling-patterns">Error Handling Patterns</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- API Overview -->
+    <!-- ============================================================ -->
+    <div class="card" id="api-overview">
+      <h2>API Overview</h2>
+      <p>The LTSU Fee Portal communicates with Supabase in three distinct ways. Each method serves a different purpose and carries different security characteristics regarding authentication and Row Level Security (RLS) bypass behaviour.</p>
+
+      <ol>
+        <li><strong>Supabase Client SDK</strong> &mdash; Direct table queries (<code>select</code>, <code>insert</code>, <code>update</code>, <code>delete</code>) issued from the browser via the <code>@supabase/supabase-js</code> client library. These operations run under the authenticated user's JWT and are subject to all RLS policies defined on each table.</li>
+        <li><strong>RPC Functions</strong> &mdash; PostgreSQL stored procedures invoked via <code>supabase.rpc()</code>. These are written in PL/pgSQL and defined with <code>SECURITY DEFINER</code>, meaning they execute with the privileges of the function creator and bypass RLS.</li>
+        <li><strong>Edge Functions</strong> &mdash; Deno-based serverless functions deployed to the Supabase Edge runtime. Called via <code>supabase.functions.invoke()</code>, they create an internal admin client using the service role key and therefore bypass all RLS policies.</li>
+      </ol>
+
+      <h3>Summary Table</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Count</th>
+              <th>Auth Required</th>
+              <th>Bypasses RLS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Client Queries</td>
+              <td>~30</td>
+              <td>Yes (JWT)</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>RPC Functions</td>
+              <td>4</td>
+              <td>No (SECURITY DEFINER)</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Edge Functions</td>
+              <td>1 (3 actions)</td>
+              <td>Yes (Admin JWT)</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Note:</strong> Client Queries are the most common communication method, accounting for approximately 30 distinct query patterns across the codebase. RPC Functions handle the four most security-sensitive operations where bypassing RLS is intentional and necessary. The single Edge Function groups three admin-only actions behind one HTTP endpoint.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Supabase Client Setup -->
+    <!-- ============================================================ -->
+    <div class="card" id="supabase-client-setup">
+      <h2>Supabase Client Setup</h2>
+      <p>File: <code>src/lib/supabase.js</code></p>
+      <p>The Supabase client is created once at module scope and exported as a singleton. Every file in the application imports this same instance, ensuring a single connection is reused throughout the session.</p>
+
+      <pre><code><span class="kw">import</span> { <span class="fn">createClient</span> } <span class="kw">from</span> <span class="str">'@supabase/supabase-js'</span>
+
+<span class="kw">const</span> supabaseUrl = <span class="fn">import</span>.meta.env.<span class="str">VITE_SUPABASE_URL</span>
+<span class="kw">const</span> supabaseAnonKey = <span class="fn">import</span>.meta.env.<span class="str">VITE_SUPABASE_ANON_KEY</span>
+
+<span class="kw">export const</span> supabase = <span class="fn">createClient</span>(supabaseUrl, supabaseAnonKey)</code></pre>
+
+      <p>The client instance automatically attaches the user's JWT (stored in <code>localStorage</code> by the Supabase auth module) to all outgoing requests. This means every query, insert, update, and delete operation is authenticated without any manual header management.</p>
+
+      <div class="callout callout-warning">
+        <strong>Environment Variables:</strong> Both <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_ANON_KEY</code> are prefixed with <code>VITE_</code> because Vite only exposes environment variables with that prefix to client-side code. These values are safe to expose publicly &mdash; the anon key is a public key that relies on RLS for security.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Edge Function: admin-actions -->
+    <!-- ============================================================ -->
+    <div class="card" id="edge-function-admin-actions">
+      <h2>Edge Function: admin-actions</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>File</strong></td>
+              <td><code>supabase/functions/admin-actions/index.ts</code></td>
+            </tr>
+            <tr>
+              <td><strong>Runtime</strong></td>
+              <td>Deno (Supabase Edge Functions)</td>
+            </tr>
+            <tr>
+              <td><strong>URL</strong></td>
+              <td><code>POST https://xcvmlqugpqeuiyozkqcu.supabase.co/functions/v1/admin-actions</code></td>
+            </tr>
+            <tr>
+              <td><strong>Authentication</strong></td>
+              <td>Requires valid admin JWT in <code>Authorization</code> header</td>
+            </tr>
+            <tr>
+              <td><strong>Actions</strong></td>
+              <td><code>create_user</code>, <code>reset_password</code>, <code>deactivate_user</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>CORS Configuration</h3>
+      <p>The Edge Function handles CORS preflight requests to allow cross-origin calls from the Vercel-hosted frontend. When an <code>OPTIONS</code> request arrives, the function returns the following headers immediately:</p>
+      <ul>
+        <li><code>Access-Control-Allow-Origin: *</code></li>
+        <li><code>Access-Control-Allow-Headers: authorization, x-client-info, apikey, content-type</code></li>
+        <li><code>Access-Control-Allow-Methods: POST</code></li>
+      </ul>
+      <p>These headers are also applied to all non-preflight responses to ensure browsers accept the response body.</p>
+
+      <h3>Internal Admin Client</h3>
+      <p>Inside the Edge Function, a separate Supabase client is created using the <code>SUPABASE_URL</code> and <code>SUPABASE_SERVICE_ROLE_KEY</code> environment variables. These are auto-injected by the Supabase runtime and never exposed to the browser. The service role client bypasses all RLS policies, which is necessary for operations like creating auth users and managing profiles across the system.</p>
+
+      <pre><code><span class="kw">const</span> supabaseAdmin = <span class="fn">createClient</span>(
+  Deno.env.<span class="fn">get</span>(<span class="str">'SUPABASE_URL'</span>),
+  Deno.env.<span class="fn">get</span>(<span class="str">'SUPABASE_SERVICE_ROLE_KEY'</span>)
+)</code></pre>
+
+      <h3>Edge Function Error Response Format</h3>
+      <p>All errors from the Edge Function follow a consistent JSON structure:</p>
+      <pre><code>{
+  <span class="str">"error"</span>: <span class="str">"Description of what went wrong"</span>
+}</code></pre>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>HTTP Status</th>
+              <th>Meaning</th>
+              <th>When Returned</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge">200</span></td>
+              <td>Success</td>
+              <td>Operation completed without errors</td>
+            </tr>
+            <tr>
+              <td><span class="badge">400</span></td>
+              <td>Bad Request</td>
+              <td>Missing or invalid fields in the request body</td>
+            </tr>
+            <tr>
+              <td><span class="badge">401</span></td>
+              <td>Unauthorized</td>
+              <td>Missing or invalid JWT, or user is not an admin</td>
+            </tr>
+            <tr>
+              <td><span class="badge">500</span></td>
+              <td>Server Error</td>
+              <td>Unexpected failure during processing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Client-side Invocation Pattern</h3>
+      <p>All three actions are invoked using the same <code>supabase.functions.invoke()</code> method. The <code>action</code> field in the request body determines which operation the Edge Function performs.</p>
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase.functions.<span class="fn">invoke</span>(<span class="str">'admin-actions'</span>, {
+  body: { action: <span class="str">'create_user'</span>, email, password, full_name, role, staff_id, sections }
+})</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Action: create_user -->
+    <!-- ============================================================ -->
+    <div class="card" id="action-create-user">
+      <h3>Action: create_user</h3>
+      <p><strong>Purpose:</strong> Create a new staff account (teacher or CR) with an auth user entry, a public profile row, and section assignments.</p>
+
+      <h4>Request Body</h4>
+      <pre><code>{
+  <span class="str">"action"</span>: <span class="str">"create_user"</span>,
+  <span class="str">"email"</span>: <span class="str">"teacher@example.com"</span>,
+  <span class="str">"password"</span>: <span class="str">"GenerAted12!"</span>,
+  <span class="str">"full_name"</span>: <span class="str">"John Smith"</span>,
+  <span class="str">"role"</span>: <span class="str">"teacher"</span>,
+  <span class="str">"staff_id"</span>: <span class="str">"TCH001"</span>,
+  <span class="str">"sections"</span>: [<span class="str">"uuid-1"</span>, <span class="str">"uuid-2"</span>]
+}</code></pre>
+
+      <h4>Request Body Fields</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>action</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>Must be <code>"create_user"</code></td>
+            </tr>
+            <tr>
+              <td><code>email</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>Valid email address for the new account</td>
+            </tr>
+            <tr>
+              <td><code>password</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>Password (generated client-side, minimum 8 characters)</td>
+            </tr>
+            <tr>
+              <td><code>full_name</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>Display name for the staff member</td>
+            </tr>
+            <tr>
+              <td><code>role</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>Either <code>"teacher"</code> or <code>"cr"</code></td>
+            </tr>
+            <tr>
+              <td><code>staff_id</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>Unique staff identifier (e.g., <code>TCH001</code>)</td>
+            </tr>
+            <tr>
+              <td><code>sections</code></td>
+              <td><code>string[]</code></td>
+              <td>Yes</td>
+              <td>Array of section UUIDs to assign to this user</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Process</h4>
+      <ol>
+        <li>Creates an <code>auth.users</code> entry via <code>supabaseAdmin.auth.admin.createUser({ email, password, email_confirm: true })</code>. The <code>email_confirm: true</code> flag skips the email verification step, since admin-created accounts are trusted.</li>
+        <li>Inserts a row into <code>public.users</code> with the following fields: <code>{ id: authUser.id, email, full_name, role, staff_id, is_active: true }</code>. The <code>id</code> is linked to the auth user's UUID.</li>
+        <li>For each section UUID in the <code>sections</code> array, inserts a row into <code>user_sections</code>: <code>{ user_id: authUser.id, section_id: sectionUUID }</code>.</li>
+        <li>Returns: <code>{ user: publicUser }</code></li>
+      </ol>
+
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Receive create_user request</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Create auth.users entry</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Insert public.users row</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Insert user_sections rows</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Return { user }</div>
+      </div>
+
+      <h4>Error Handling</h4>
+      <ul>
+        <li><strong>Auth user creation fails:</strong> Returns the error message immediately. No cleanup is needed since nothing was created yet.</li>
+        <li><strong>public.users insert fails:</strong> Attempts to clean up the auth user that was just created to avoid orphaned auth entries.</li>
+        <li><strong>user_sections insert fails:</strong> Logs a warning to the console but does not roll back the auth user or profile. The user is created but may have incomplete section assignments.</li>
+      </ul>
+
+      <div class="callout callout-danger">
+        <strong>No Transactional Guarantee:</strong> Because the Edge Function performs three separate operations (auth user, profile, sections), there is no database-level transaction wrapping all three. If the profile insert succeeds but sections fail, the user exists with no section assignments. Admin must manually fix this via the Staff Manager page.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Action: reset_password -->
+    <!-- ============================================================ -->
+    <div class="card" id="action-reset-password">
+      <h3>Action: reset_password</h3>
+      <p><strong>Purpose:</strong> Reset a staff member's password. This is an admin-initiated operation &mdash; there is no self-service password reset flow in the portal.</p>
+
+      <h4>Request Body</h4>
+      <pre><code>{
+  <span class="str">"action"</span>: <span class="str">"reset_password"</span>,
+  <span class="str">"user_id"</span>: <span class="str">"uuid"</span>,
+  <span class="str">"password"</span>: <span class="str">"NewPassw0rd!"</span>
+}</code></pre>
+
+      <h4>Request Body Fields</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>action</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>Must be <code>"reset_password"</code></td>
+            </tr>
+            <tr>
+              <td><code>user_id</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>UUID of the target user in <code>auth.users</code></td>
+            </tr>
+            <tr>
+              <td><code>password</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>New password (minimum 8 characters)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Process</h4>
+      <ol>
+        <li>Calls <code>supabaseAdmin.auth.admin.updateUserById(user_id, { password })</code> to update the password in the <code>auth.users</code> table.</li>
+        <li>Returns: <code>{ success: true }</code></li>
+      </ol>
+
+      <div class="callout callout-info">
+        <strong>Session Impact:</strong> Resetting a password does not immediately invalidate existing sessions. The user's current JWT remains valid until it expires. However, the next login attempt will require the new password.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Action: deactivate_user -->
+    <!-- ============================================================ -->
+    <div class="card" id="action-deactivate-user">
+      <h3>Action: deactivate_user</h3>
+      <p><strong>Purpose:</strong> Deactivate (soft-delete) a staff account. The user's data is preserved but they can no longer log in or access the system.</p>
+
+      <h4>Request Body</h4>
+      <pre><code>{
+  <span class="str">"action"</span>: <span class="str">"deactivate_user"</span>,
+  <span class="str">"user_id"</span>: <span class="str">"uuid"</span>
+}</code></pre>
+
+      <h4>Request Body Fields</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>action</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>Must be <code>"deactivate_user"</code></td>
+            </tr>
+            <tr>
+              <td><code>user_id</code></td>
+              <td><code>string</code></td>
+              <td>Yes</td>
+              <td>UUID of the target user</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Process</h4>
+      <ol>
+        <li>Updates <code>public.users</code> SET <code>is_active = false</code> WHERE <code>id = user_id</code>. This soft-deletes the profile.</li>
+        <li>Updates the auth user via <code>supabaseAdmin.auth.admin.updateUserById(user_id, { ban_duration: 'none' })</code> to ban the user at the auth level, preventing any future login attempts.</li>
+        <li>Returns: <code>{ success: true }</code></li>
+      </ol>
+
+      <div class="callout callout-warning">
+        <strong>Soft Delete Only:</strong> Deactivation does not remove any data from the database. The user's profile, section assignments, and any fee requests they reviewed remain intact for audit purposes. The <code>is_active</code> flag is checked by the <code>AuthContext</code> on login to prevent deactivated users from accessing the dashboard.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RPC Functions -->
+    <!-- ============================================================ -->
+    <div class="card" id="rpc-functions">
+      <h2>RPC Functions (PostgreSQL Stored Procedures)</h2>
+      <p>All four RPC functions are defined with <code>SECURITY DEFINER</code>, meaning they execute with the privileges of the function creator (typically the <code>postgres</code> role) rather than the calling user. This allows them to bypass Row Level Security policies, which is necessary for operations that span multiple tables or require unrestricted access to the data.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Function Name</th>
+              <th>Called From</th>
+              <th>Returns</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>check_duplicate_fee_request</code></td>
+              <td>StudentForm (Step 2)</td>
+              <td><code>TEXT</code></td>
+              <td>Check for existing fee request</td>
+            </tr>
+            <tr>
+              <td><code>submit_fee_request</code></td>
+              <td>StudentForm (Step 2)</td>
+              <td><code>TEXT</code></td>
+              <td>Insert new fee request</td>
+            </tr>
+            <tr>
+              <td><code>track_fee_request</code></td>
+              <td>TrackingPage</td>
+              <td><code>TABLE</code></td>
+              <td>Look up request by reference number</td>
+            </tr>
+            <tr>
+              <td><code>batch_approve_requests</code></td>
+              <td>Dashboard</td>
+              <td><code>INTEGER</code></td>
+              <td>Bulk approve pending requests</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RPC: check_duplicate_fee_request -->
+    <!-- ============================================================ -->
+    <div class="card" id="rpc-check-duplicate">
+      <h3>check_duplicate_fee_request</h3>
+      <p><strong>Purpose:</strong> Check if a student already has a fee request for a specific semester. Called from the Student Form (Step 2) before submission to prevent duplicate requests.</p>
+
+      <h4>SQL Signature</h4>
+      <pre><code><span class="kw">CREATE OR REPLACE FUNCTION</span> <span class="fn">check_duplicate_fee_request</span>(
+  p_roll_number <span class="str">TEXT</span>,
+  p_semester <span class="str">INTEGER</span>
+) <span class="kw">RETURNS</span> <span class="str">TEXT</span>
+<span class="kw">LANGUAGE</span> plpgsql
+<span class="kw">SECURITY DEFINER</span></code></pre>
+
+      <h4>Parameters</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>p_roll_number</code></td>
+              <td><code>TEXT</code></td>
+              <td>The student's roll number</td>
+            </tr>
+            <tr>
+              <td><code>p_semester</code></td>
+              <td><code>INTEGER</code></td>
+              <td>The semester number to check against</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Logic</h4>
+      <ol>
+        <li>Queries <code>fee_requests</code> WHERE <code>roll_number = p_roll_number</code> AND <code>semester = p_semester</code>.</li>
+        <li>If a row exists with <code>status = 'pending'</code>, returns <code>'pending'</code>.</li>
+        <li>If a row exists with <code>status = 'approved'</code>, returns <code>'approved'</code>.</li>
+        <li>If a row exists with <code>status = 'rejected'</code>, returns <code>'rejected'</code>.</li>
+        <li>If no matching row exists, returns <code>'none'</code>.</li>
+      </ol>
+
+      <h4>Client Invocation</h4>
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase.<span class="fn">rpc</span>(<span class="str">'check_duplicate_fee_request'</span>, {
+  p_roll_number: rollNumber,
+  p_semester: semester
+})
+<span class="cm">// data = 'none' | 'pending' | 'approved' | 'rejected'</span></code></pre>
+
+      <h4>Behaviour in UI</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Return Value</th>
+              <th>UI Behaviour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>'none'</code></td>
+              <td>Proceed with submission normally</td>
+            </tr>
+            <tr>
+              <td><code>'pending'</code></td>
+              <td>Show warning: "You already have a pending request for this semester"</td>
+            </tr>
+            <tr>
+              <td><code>'approved'</code></td>
+              <td>Show info: "Your fee for this semester is already approved"</td>
+            </tr>
+            <tr>
+              <td><code>'rejected'</code></td>
+              <td>Allow resubmission (the student can submit a new request)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RPC: submit_fee_request -->
+    <!-- ============================================================ -->
+    <div class="card" id="rpc-submit-fee-request">
+      <h3>submit_fee_request</h3>
+      <p><strong>Purpose:</strong> Submit a new fee request with all validation performed server-side. Called from the Student Form (Step 2) on form submit.</p>
+
+      <h4>SQL Signature</h4>
+      <pre><code><span class="kw">CREATE OR REPLACE FUNCTION</span> <span class="fn">submit_fee_request</span>(
+  p_student_name <span class="str">TEXT</span>,
+  p_roll_number <span class="str">TEXT</span>,
+  p_branch <span class="str">TEXT</span>,
+  p_specialisation <span class="str">TEXT</span>,
+  p_section <span class="str">TEXT</span>,
+  p_semester <span class="str">INTEGER</span>,
+  p_email <span class="str">TEXT</span>,
+  p_fee_amount <span class="str">NUMERIC</span>,
+  p_batch <span class="str">TEXT</span>
+) <span class="kw">RETURNS</span> <span class="str">TEXT</span>
+<span class="kw">LANGUAGE</span> plpgsql
+<span class="kw">SECURITY DEFINER</span></code></pre>
+
+      <h4>Parameters</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>p_student_name</code></td>
+              <td><code>TEXT</code></td>
+              <td>Full name of the student</td>
+            </tr>
+            <tr>
+              <td><code>p_roll_number</code></td>
+              <td><code>TEXT</code></td>
+              <td>Student's roll number</td>
+            </tr>
+            <tr>
+              <td><code>p_branch</code></td>
+              <td><code>TEXT</code></td>
+              <td>Branch name (e.g., "Computer Science")</td>
+            </tr>
+            <tr>
+              <td><code>p_specialisation</code></td>
+              <td><code>TEXT</code></td>
+              <td>Specialisation name within the branch</td>
+            </tr>
+            <tr>
+              <td><code>p_section</code></td>
+              <td><code>TEXT</code></td>
+              <td>Section name (e.g., "A")</td>
+            </tr>
+            <tr>
+              <td><code>p_semester</code></td>
+              <td><code>INTEGER</code></td>
+              <td>Semester number</td>
+            </tr>
+            <tr>
+              <td><code>p_email</code></td>
+              <td><code>TEXT</code></td>
+              <td>Student's email address</td>
+            </tr>
+            <tr>
+              <td><code>p_fee_amount</code></td>
+              <td><code>NUMERIC</code></td>
+              <td>Fee amount in INR</td>
+            </tr>
+            <tr>
+              <td><code>p_batch</code></td>
+              <td><code>TEXT</code></td>
+              <td>Batch year (e.g., "2024")</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Logic</h4>
+      <ol>
+        <li>The reference number is generated automatically via the <code>generate_reference_number</code> BEFORE INSERT trigger (see <a href="#reference-number-generation">Reference Number Generation</a> section below).</li>
+        <li>Inserts a new row into <code>fee_requests</code> with <code>status = 'pending'</code> and <code>receipt_sent = false</code>.</li>
+        <li>Returns the generated <code>reference_number</code> string (e.g., <code>LTSU-2025-00042</code>).</li>
+      </ol>
+
+      <h4>Client Invocation</h4>
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase.<span class="fn">rpc</span>(<span class="str">'submit_fee_request'</span>, {
+  p_student_name: name,
+  p_roll_number: rollNumber,
+  p_branch: branch,
+  p_specialisation: spec,
+  p_section: section,
+  p_semester: semester,
+  p_email: email,
+  p_fee_amount: feeAmount,
+  p_batch: batch
+})
+<span class="cm">// data = 'LTSU-2025-00042' (reference number)</span></code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RPC: track_fee_request -->
+    <!-- ============================================================ -->
+    <div class="card" id="rpc-track-fee-request">
+      <h3>track_fee_request</h3>
+      <p><strong>Purpose:</strong> Look up a fee request by its reference number for the public tracking page. Students use this to check the status of their submission without logging in.</p>
+
+      <h4>SQL Signature</h4>
+      <pre><code><span class="kw">CREATE OR REPLACE FUNCTION</span> <span class="fn">track_fee_request</span>(
+  p_reference_number <span class="str">TEXT</span>
+) <span class="kw">RETURNS TABLE</span> (
+  reference_number <span class="str">TEXT</span>,
+  student_name <span class="str">TEXT</span>,
+  roll_number <span class="str">TEXT</span>,
+  branch <span class="str">TEXT</span>,
+  specialisation <span class="str">TEXT</span>,
+  section <span class="str">TEXT</span>,
+  semester <span class="str">INTEGER</span>,
+  email <span class="str">TEXT</span>,
+  fee_amount <span class="str">NUMERIC</span>,
+  status <span class="str">TEXT</span>,
+  rejection_reason <span class="str">TEXT</span>,
+  created_at <span class="str">TIMESTAMPTZ</span>,
+  updated_at <span class="str">TIMESTAMPTZ</span>,
+  reviewed_by <span class="str">TEXT</span>,
+  batch <span class="str">TEXT</span>
+)
+<span class="kw">LANGUAGE</span> plpgsql
+<span class="kw">SECURITY DEFINER</span></code></pre>
+
+      <h4>Parameters</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>p_reference_number</code></td>
+              <td><code>TEXT</code></td>
+              <td>The reference number to search for (e.g., <code>LTSU-2025-00042</code>)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Logic</h4>
+      <ol>
+        <li>Queries <code>fee_requests</code> WHERE <code>reference_number = p_reference_number</code>.</li>
+        <li>If found, returns the full row as a table result with all 15 columns.</li>
+        <li>If not found, returns an empty result set (zero rows).</li>
+      </ol>
+
+      <h4>Client Invocation</h4>
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase.<span class="fn">rpc</span>(<span class="str">'track_fee_request'</span>, {
+  p_reference_number: refNumber
+})
+<span class="cm">// data = [] (not found) or [{ reference_number, student_name, ... }]</span></code></pre>
+
+      <div class="callout callout-info">
+        <strong>Public Access:</strong> This RPC function is one of the few operations that does not require authentication. Students can track their request status using only their reference number, which serves as a form of "knowledge-based" authentication.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RPC: batch_approve_requests -->
+    <!-- ============================================================ -->
+    <div class="card" id="rpc-batch-approve">
+      <h3>batch_approve_requests</h3>
+      <p><strong>Purpose:</strong> Approve multiple fee requests at once in a single database operation. Called from the Dashboard "Batch Approve" feature.</p>
+
+      <h4>SQL Signature</h4>
+      <pre><code><span class="kw">CREATE OR REPLACE FUNCTION</span> <span class="fn">batch_approve_requests</span>(
+  p_request_ids <span class="str">UUID[]</span>,
+  p_reviewed_by <span class="str">TEXT</span>
+) <span class="kw">RETURNS</span> <span class="str">INTEGER</span>
+<span class="kw">LANGUAGE</span> plpgsql
+<span class="kw">SECURITY DEFINER</span></code></pre>
+
+      <h4>Parameters</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>p_request_ids</code></td>
+              <td><code>UUID[]</code></td>
+              <td>Array of fee request UUIDs to approve</td>
+            </tr>
+            <tr>
+              <td><code>p_reviewed_by</code></td>
+              <td><code>TEXT</code></td>
+              <td>Name of the staff member performing the approval</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Logic</h4>
+      <ol>
+        <li>Executes: <code>UPDATE fee_requests SET status='approved', reviewed_by=p_reviewed_by, updated_at=now() WHERE id = ANY(p_request_ids) AND status='pending'</code></li>
+        <li>Returns the count of actually updated rows as an integer.</li>
+        <li>Only updates rows that are still in <code>'pending'</code> status. This implements optimistic concurrency control &mdash; if another staff member already approved or rejected a request while the batch was being prepared, those rows are silently skipped.</li>
+      </ol>
+
+      <h4>Client Invocation</h4>
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase.<span class="fn">rpc</span>(<span class="str">'batch_approve_requests'</span>, {
+  p_request_ids: selectedIds,  <span class="cm">// array of UUIDs</span>
+  p_reviewed_by: user.full_name
+})
+<span class="cm">// data = 5 (number of approved requests)</span></code></pre>
+
+      <div class="callout callout-warning">
+        <strong>Maximum Batch Size:</strong> The client-side interface enforces a maximum batch size of 25 requests per operation. This limit is checked in the UI before calling the RPC function and is not enforced at the database level.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Client-Side Query Patterns -->
+    <!-- ============================================================ -->
+    <div class="card" id="client-side-queries">
+      <h2>Client-Side Query Patterns</h2>
+      <p>The following sections document the major Supabase Client SDK query patterns used throughout the application. All queries run under the authenticated user's JWT and are subject to Row Level Security policies.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- DataProvider Queries -->
+    <!-- ============================================================ -->
+    <div class="card" id="dataprovider-queries">
+      <h3>DataProvider Queries</h3>
+      <p>File: <code>src/context/DataContext.jsx</code></p>
+      <p>The <code>DataProvider</code> context loads all reference data on mount. This data is used across the application for dropdown options, form validation, and display purposes. Each query fetches data from a reference table and is executed once when the provider mounts.</p>
+
+      <h4>Branches</h4>
+      <pre><code><span class="kw">const</span> { data } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'branches'</span>)
+  .<span class="fn">select</span>(<span class="str">'*'</span>)
+  .<span class="fn">order</span>(<span class="str">'name'</span>)</code></pre>
+
+      <h4>Specialisations (with branch join)</h4>
+      <pre><code><span class="kw">const</span> { data } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'specialisations'</span>)
+  .<span class="fn">select</span>(<span class="str">'*, branches(name)'</span>)
+  .<span class="fn">order</span>(<span class="str">'name'</span>)</code></pre>
+
+      <h4>Semesters</h4>
+      <pre><code><span class="kw">const</span> { data } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'semesters'</span>)
+  .<span class="fn">select</span>(<span class="str">'*'</span>)
+  .<span class="fn">order</span>(<span class="str">'number'</span>)</code></pre>
+
+      <h4>Sections (with multiple joins)</h4>
+      <pre><code><span class="kw">const</span> { data } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'sections'</span>)
+  .<span class="fn">select</span>(<span class="str">'*, branches(name), specialisations(name), semesters(number)'</span>)
+  .<span class="fn">order</span>(<span class="str">'name'</span>)</code></pre>
+
+      <h4>Batch Configs</h4>
+      <pre><code><span class="kw">const</span> { data } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'batch_configs'</span>)
+  .<span class="fn">select</span>(<span class="str">'*'</span>)
+  .<span class="fn">order</span>(<span class="str">'year'</span>)</code></pre>
+
+      <div class="callout callout-info">
+        <strong>Join Syntax:</strong> Supabase uses PostgREST's embedded resource syntax for joins. Writing <code>branches(name)</code> inside the select string tells PostgREST to follow the foreign key relationship and embed the <code>name</code> column from the related <code>branches</code> table as a nested object.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Fee Requests Queries -->
+    <!-- ============================================================ -->
+    <div class="card" id="fee-requests-queries">
+      <h3>Fee Requests Queries</h3>
+      <p>File: <code>src/hooks/useFeeRequests.js</code></p>
+      <p>The <code>useFeeRequests</code> hook fetches fee requests scoped to specific sections assigned to the current user. Requests are filtered by branch, specialisation, and section name, then sorted by creation date (newest first).</p>
+
+      <pre><code><span class="kw">const</span> { data } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'fee_requests'</span>)
+  .<span class="fn">select</span>(<span class="str">'*'</span>)
+  .<span class="fn">eq</span>(<span class="str">'branch'</span>, sectionBranch)
+  .<span class="fn">eq</span>(<span class="str">'specialisation'</span>, sectionSpec)
+  .<span class="fn">eq</span>(<span class="str">'section'</span>, sectionName)
+  .<span class="fn">order</span>(<span class="str">'created_at'</span>, { ascending: <span class="kw">false</span> })</code></pre>
+
+      <p>This query chains three <code>.eq()</code> filters, each translated to a <code>WHERE</code> clause by PostgREST. The result is an array of fee request objects matching the given section's branch, specialisation, and section name.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Students Query -->
+    <!-- ============================================================ -->
+    <div class="card" id="students-query">
+      <h3>Students Query</h3>
+      <p>File: <code>src/components/admin/StudentManager.jsx</code></p>
+      <p>The Student Manager component fetches paginated, searchable, filterable, and sortable student data. This is the most complex client-side query in the application.</p>
+
+      <pre><code><span class="kw">const</span> { data, count } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'students'</span>)
+  .<span class="fn">select</span>(<span class="str">'*'</span>, { count: <span class="str">'exact'</span> })
+  .<span class="fn">ilike</span>(<span class="str">'name'</span>, <span class="str">`%${search}%`</span>)
+  .<span class="fn">eq</span>(<span class="str">'branch'</span>, filterBranch)
+  .<span class="fn">range</span>(from, to)
+  .<span class="fn">order</span>(sortCol, { ascending: sortDir === <span class="str">'asc'</span> })</code></pre>
+
+      <h4>Query Breakdown</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Purpose</th>
+              <th>SQL Equivalent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.select('*', { count: 'exact' })</code></td>
+              <td>Fetch all columns and return total count for pagination</td>
+              <td><code>SELECT *, COUNT(*) OVER()</code></td>
+            </tr>
+            <tr>
+              <td><code>.ilike('name', '%...%')</code></td>
+              <td>Case-insensitive partial match on student name</td>
+              <td><code>WHERE name ILIKE '%search%'</code></td>
+            </tr>
+            <tr>
+              <td><code>.eq('branch', filterBranch)</code></td>
+              <td>Exact match on branch column</td>
+              <td><code>AND branch = 'value'</code></td>
+            </tr>
+            <tr>
+              <td><code>.range(from, to)</code></td>
+              <td>Pagination (zero-indexed row range)</td>
+              <td><code>LIMIT ... OFFSET ...</code></td>
+            </tr>
+            <tr>
+              <td><code>.order(sortCol, { ascending })</code></td>
+              <td>Dynamic sort column and direction</td>
+              <td><code>ORDER BY col ASC/DESC</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The <code>count</code> value returned alongside <code>data</code> is used to calculate total pages for the pagination controls. The <code>.range()</code> method accepts zero-indexed start and end positions (inclusive).</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- User Management Queries -->
+    <!-- ============================================================ -->
+    <div class="card" id="user-management-queries">
+      <h3>User Management Queries</h3>
+      <p>File: <code>src/components/admin/StaffManager.jsx</code></p>
+      <p>The Staff Manager fetches all non-admin users along with their section assignments. This uses a deeply nested join to resolve section details.</p>
+
+      <pre><code><span class="kw">const</span> { data } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'users'</span>)
+  .<span class="fn">select</span>(<span class="str">'*, user_sections(section_id, sections(*))'</span>)
+  .<span class="fn">in</span>(<span class="str">'role'</span>, [<span class="str">'teacher'</span>, <span class="str">'cr'</span>])
+  .<span class="fn">order</span>(<span class="str">'full_name'</span>)</code></pre>
+
+      <h4>Join Structure</h4>
+      <p>The select string <code>'*, user_sections(section_id, sections(*))'</code> produces a nested object structure:</p>
+      <pre><code>{
+  <span class="str">"id"</span>: <span class="str">"uuid"</span>,
+  <span class="str">"email"</span>: <span class="str">"teacher@example.com"</span>,
+  <span class="str">"full_name"</span>: <span class="str">"John Smith"</span>,
+  <span class="str">"role"</span>: <span class="str">"teacher"</span>,
+  <span class="str">"staff_id"</span>: <span class="str">"TCH001"</span>,
+  <span class="str">"is_active"</span>: <span class="kw">true</span>,
+  <span class="str">"user_sections"</span>: [
+    {
+      <span class="str">"section_id"</span>: <span class="str">"uuid-1"</span>,
+      <span class="str">"sections"</span>: {
+        <span class="str">"id"</span>: <span class="str">"uuid-1"</span>,
+        <span class="str">"name"</span>: <span class="str">"A"</span>,
+        <span class="str">"branch_id"</span>: <span class="str">"..."</span>,
+        <span class="str">"specialisation_id"</span>: <span class="str">"..."</span>,
+        <span class="str">"semester_id"</span>: <span class="str">"..."</span>
+      }
+    }
+  ]
+}</code></pre>
+      <p>The <code>.in('role', ['teacher', 'cr'])</code> filter ensures only staff members (not admins) are returned to the Staff Manager interface.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Activity Logging -->
+    <!-- ============================================================ -->
+    <div class="card" id="activity-logging">
+      <h3>Activity Logging</h3>
+      <p>File: <code>src/utils/logAction.js</code></p>
+      <p>The <code>logAction</code> utility function writes audit trail entries to the <code>activity_logs</code> table. It is called throughout the application whenever a significant action occurs.</p>
+
+      <pre><code><span class="kw">export async function</span> <span class="fn">logAction</span>(action, details = {}, userId = <span class="kw">null</span>) {
+  <span class="kw">const</span> sanitized = <span class="fn">stripPII</span>(details)
+  <span class="kw">await</span> supabase.<span class="fn">from</span>(<span class="str">'activity_logs'</span>).<span class="fn">insert</span>({
+    action,
+    details: sanitized,
+    performed_by: userId
+  })
+}</code></pre>
+
+      <h4>Parameters</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>action</code></td>
+              <td><code>string</code></td>
+              <td>Action type identifier (30+ types, e.g., <code>'fee_request_approved'</code>)</td>
+            </tr>
+            <tr>
+              <td><code>details</code></td>
+              <td><code>object</code></td>
+              <td>Arbitrary metadata object describing the action context</td>
+            </tr>
+            <tr>
+              <td><code>userId</code></td>
+              <td><code>string | null</code></td>
+              <td>UUID of the user who performed the action (null for anonymous actions)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>PII Stripping</h4>
+      <p>The internal <code>stripPII</code> function processes the <code>details</code> object before insertion. It removes sensitive fields including email addresses and passwords from the logged data. This ensures that even if a developer passes the full request body to <code>logAction</code>, no personally identifiable information is stored in the activity log.</p>
+
+      <div class="callout callout-warning">
+        <strong>Fire-and-Forget:</strong> The <code>logAction</code> function intentionally does not <code>await</code> the result or handle errors from the insert operation at the call site. Activity logging failures are silent &mdash; they do not interrupt the user's workflow or display error messages.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Approve Single Request -->
+    <!-- ============================================================ -->
+    <div class="card" id="approve-single-request">
+      <h3>Approve Single Request</h3>
+      <p>The single-request approval pattern uses optimistic concurrency control to prevent race conditions when multiple staff members review the same request simultaneously.</p>
+
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'fee_requests'</span>)
+  .<span class="fn">update</span>({
+    status: <span class="str">'approved'</span>,
+    reviewed_by: user.full_name,
+    updated_at: <span class="kw">new</span> <span class="fn">Date</span>().<span class="fn">toISOString</span>()
+  })
+  .<span class="fn">eq</span>(<span class="str">'id'</span>, requestId)
+  .<span class="fn">eq</span>(<span class="str">'status'</span>, <span class="str">'pending'</span>)    <span class="cm">// Optimistic concurrency control</span>
+  .<span class="fn">select</span>()</code></pre>
+
+      <h4>Concurrency Control</h4>
+      <p>The second <code>.eq('status', 'pending')</code> clause is the key to the concurrency model. It means the <code>UPDATE</code> will only match rows that are still in <code>'pending'</code> status at the moment the query executes. If another staff member has already approved or rejected the request, the <code>WHERE</code> clause will not match any rows, and <code>data</code> will be an empty array.</p>
+      <ul>
+        <li>If <code>data.length === 1</code>: The approval succeeded. The request was still pending and has now been approved.</li>
+        <li>If <code>data.length === 0</code>: The request was already processed by someone else. The UI displays a message indicating the row was already reviewed.</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Reject Single Request -->
+    <!-- ============================================================ -->
+    <div class="card" id="reject-single-request">
+      <h3>Reject Single Request</h3>
+      <p>The rejection pattern mirrors the approval pattern with the addition of a <code>rejection_reason</code> field. The same optimistic concurrency control applies.</p>
+
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'fee_requests'</span>)
+  .<span class="fn">update</span>({
+    status: <span class="str">'rejected'</span>,
+    reviewed_by: user.full_name,
+    rejection_reason: reason,
+    updated_at: <span class="kw">new</span> <span class="fn">Date</span>().<span class="fn">toISOString</span>()
+  })
+  .<span class="fn">eq</span>(<span class="str">'id'</span>, requestId)
+  .<span class="fn">eq</span>(<span class="str">'status'</span>, <span class="str">'pending'</span>)
+  .<span class="fn">select</span>()</code></pre>
+
+      <p>The <code>rejection_reason</code> string is collected from the user via the <code>RejectModal</code> component, which enforces a minimum length before allowing submission. This ensures every rejection has a documented reason for the student to review on the tracking page.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Reference Number Generation -->
+    <!-- ============================================================ -->
+    <div class="card" id="reference-number-generation">
+      <h2>Reference Number Generation (Database Trigger)</h2>
+      <p>The reference number is generated automatically by a PostgreSQL trigger that fires before every insert into the <code>fee_requests</code> table. This ensures reference numbers are sequential, unique, and never assigned client-side.</p>
+
+      <h4>Trigger Definition</h4>
+      <pre><code><span class="kw">CREATE OR REPLACE FUNCTION</span> <span class="fn">generate_reference_number</span>()
+<span class="kw">RETURNS TRIGGER AS</span> $$
+<span class="kw">DECLARE</span>
+  year_part <span class="str">TEXT</span>;
+  seq_num <span class="str">INTEGER</span>;
+  new_ref <span class="str">TEXT</span>;
+<span class="kw">BEGIN</span>
+  year_part := <span class="fn">to_char</span>(<span class="fn">now</span>(), <span class="str">'YYYY'</span>);
+
+  <span class="kw">SELECT</span> <span class="fn">COALESCE</span>(
+    <span class="fn">MAX</span>(<span class="fn">CAST</span>(<span class="fn">SUBSTRING</span>(reference_number <span class="kw">FROM</span> <span class="num">10</span>) <span class="kw">AS</span> <span class="str">INTEGER</span>)), <span class="num">0</span>
+  ) + <span class="num">1</span>
+  <span class="kw">INTO</span> seq_num
+  <span class="kw">FROM</span> fee_requests
+  <span class="kw">WHERE</span> reference_number <span class="kw">LIKE</span> <span class="str">'LTSU-'</span> || year_part || <span class="str">'-%'</span>;
+
+  new_ref := <span class="str">'LTSU-'</span> || year_part || <span class="str">'-'</span> || <span class="fn">LPAD</span>(seq_num::<span class="str">TEXT</span>, <span class="num">5</span>, <span class="str">'0'</span>);
+  NEW.reference_number := new_ref;
+
+  <span class="kw">RETURN</span> NEW;
+<span class="kw">END</span>;
+$$ <span class="kw">LANGUAGE</span> plpgsql;</code></pre>
+
+      <h4>Format</h4>
+      <p>Reference numbers follow the pattern <code>LTSU-YYYY-XXXXX</code> where:</p>
+      <ul>
+        <li><code>LTSU</code> &mdash; Fixed prefix identifying the system</li>
+        <li><code>YYYY</code> &mdash; Four-digit calendar year (e.g., <code>2025</code>)</li>
+        <li><code>XXXXX</code> &mdash; Five-digit zero-padded sequential number (e.g., <code>00001</code>)</li>
+      </ul>
+
+      <h4>Sequence Behaviour</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First request of the year</td>
+              <td><code>LTSU-2025-00001</code></td>
+            </tr>
+            <tr>
+              <td>42nd request of the year</td>
+              <td><code>LTSU-2025-00042</code></td>
+            </tr>
+            <tr>
+              <td>New calendar year starts</td>
+              <td><code>LTSU-2026-00001</code> (counter resets)</td>
+            </tr>
+            <tr>
+              <td>Maximum capacity</td>
+              <td><code>LTSU-2025-99999</code> (99,999 requests per year)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Reset Mechanism:</strong> The sequence resets automatically each calendar year because the <code>WHERE</code> clause filters by the current year prefix. When January 1st arrives, no existing rows match the new year pattern, so <code>COALESCE</code> returns 0 and the counter starts at 1 again.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Authentication API -->
+    <!-- ============================================================ -->
+    <div class="card" id="authentication-api">
+      <h2>Authentication API</h2>
+      <p>File: <code>src/context/AuthContext.jsx</code></p>
+      <p>All authentication operations are handled through the Supabase Auth module. The <code>AuthContext</code> provider wraps the entire application and manages the current user's session, profile, and authentication state.</p>
+
+      <h3>Login</h3>
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase.auth.<span class="fn">signInWithPassword</span>({
+  email,
+  password
+})</code></pre>
+      <p>After successful authentication, the context immediately fetches the user's full profile with section assignments:</p>
+      <pre><code><span class="kw">const</span> { data: profile } = <span class="kw">await</span> supabase
+  .<span class="fn">from</span>(<span class="str">'users'</span>)
+  .<span class="fn">select</span>(<span class="str">'*, user_sections(section_id, sections(*, branches(name), specialisations(name), semesters(number)))'</span>)
+  .<span class="fn">eq</span>(<span class="str">'id'</span>, authUser.id)
+  .<span class="fn">single</span>()</code></pre>
+      <p>The <code>.single()</code> modifier ensures exactly one row is returned. If the user does not have a corresponding <code>public.users</code> profile (e.g., it was deleted), the query will error and the user will be signed out.</p>
+
+      <h3>Logout</h3>
+      <pre><code><span class="kw">await</span> supabase.auth.<span class="fn">signOut</span>()</code></pre>
+      <p>Clears the session from <code>localStorage</code> and triggers the <code>onAuthStateChange</code> listener with a <code>SIGNED_OUT</code> event. The <code>AuthContext</code> then resets all state to <code>null</code> and redirects to the login page.</p>
+
+      <h3>Session Check</h3>
+      <pre><code><span class="kw">const</span> { data: { session } } = <span class="kw">await</span> supabase.auth.<span class="fn">getSession</span>()
+
+supabase.auth.<span class="fn">onAuthStateChange</span>((event, session) =&gt; {
+  <span class="cm">// Handle session changes: SIGNED_IN, SIGNED_OUT, TOKEN_REFRESHED</span>
+})</code></pre>
+      <p>On initial mount, <code>getSession()</code> checks for an existing session in <code>localStorage</code>. The <code>onAuthStateChange</code> listener then handles all subsequent state transitions, including automatic token refresh when the JWT expires.</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step highlight">App mounts</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">getSession()</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Session exists?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Fetch profile</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Set user state</div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Error Handling Patterns -->
+    <!-- ============================================================ -->
+    <div class="card" id="error-handling-patterns">
+      <h2>Error Handling Patterns</h2>
+      <p>All Supabase operations in the LTSU Fee Portal follow a consistent destructured return pattern. The <code>{ data, error }</code> tuple is checked immediately after every query, and errors are surfaced to the user via the global toast notification system.</p>
+
+      <h3>Standard Query Pattern</h3>
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase.<span class="fn">from</span>(<span class="str">'table'</span>).<span class="fn">select</span>(<span class="str">'*'</span>)
+<span class="kw">if</span> (error) {
+  toast.<span class="fn">error</span>(<span class="str">'Failed to load data'</span>)
+  console.<span class="fn">error</span>(error)
+  <span class="kw">return</span>
+}
+<span class="cm">// Use data</span></code></pre>
+
+      <h3>Edge Function Error Pattern</h3>
+      <p>Edge Function calls require checking both the transport-level <code>error</code> (network failures, CORS issues) and the application-level <code>data.error</code> (returned by the function logic):</p>
+      <pre><code><span class="kw">const</span> { data, error } = <span class="kw">await</span> supabase.functions.<span class="fn">invoke</span>(<span class="str">'admin-actions'</span>, { body })
+<span class="kw">if</span> (error || data?.error) {
+  toast.<span class="fn">error</span>(data?.error || <span class="str">'Operation failed'</span>)
+  <span class="kw">return</span>
+}
+<span class="cm">// Use data</span></code></pre>
+
+      <h3>Error Response Structure</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>Error Location</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Client SDK query</td>
+              <td><code>error</code> object with <code>.message</code>, <code>.code</code>, <code>.details</code></td>
+              <td><code>{ message: "new row violates RLS", code: "42501" }</code></td>
+            </tr>
+            <tr>
+              <td>RPC function</td>
+              <td><code>error</code> object with <code>.message</code></td>
+              <td><code>{ message: "function returned error" }</code></td>
+            </tr>
+            <tr>
+              <td>Edge Function (transport)</td>
+              <td><code>error</code> from <code>functions.invoke()</code></td>
+              <td>Network error, CORS failure, 401/500 HTTP status</td>
+            </tr>
+            <tr>
+              <td>Edge Function (application)</td>
+              <td><code>data.error</code> string</td>
+              <td><code>{ error: "User with this email already exists" }</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>Double-Check Required:</strong> When working with Edge Functions, always check both <code>error</code> (from the SDK) and <code>data?.error</code> (from the function). The SDK may return <code>error: null</code> even when the function itself returned a 400 status with an error message in the body. This is a common source of bugs when only one check is implemented.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

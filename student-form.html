@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Form - LTSU Fee Portal Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Student Form and Tracking</h1>
+      <p class="subtitle">Two-step fee submission wizard with roll number validation, duplicate detection, auto-calculated fees, and reference number tracking system.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#fee-submission-wizard">Fee Submission Wizard (StudentFormPage.jsx)</a></li>
+        <li><a href="#step-1-student-information">Step 1: Student Information</a></li>
+        <li><a href="#step-2-fee-details">Step 2: Fee Details</a></li>
+        <li><a href="#duplicate-detection">Duplicate Detection</a></li>
+        <li><a href="#submission-process">Submission Process</a></li>
+        <li><a href="#request-tracking">Request Tracking (TrackingPage.jsx)</a></li>
+        <li><a href="#reference-number-validation">Reference Number Validation</a></li>
+        <li><a href="#lookup-process">Lookup Process</a></li>
+        <li><a href="#receipt-download">Receipt Download</a></li>
+        <li><a href="#input-validation-sanitization">Input Validation and Sanitization</a></li>
+        <li><a href="#data-flow">Data Flow</a></li>
+        <li><a href="#error-handling">Error Handling</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Overview -->
+    <!-- ============================================================ -->
+    <div class="card" id="overview">
+      <h2>Overview</h2>
+      <p>The student-facing side of the LTSU Fee Portal consists of two primary pages: <code>StudentFormPage.jsx</code> (fee submission) and <code>TrackingPage.jsx</code> (request tracking). Both pages are publicly accessible and require no authentication. They are reached from the <code>LandingPage.jsx</code> component, which serves as the application entry point at the <code>/</code> route.</p>
+
+      <h3>Landing Page Entry Points</h3>
+      <p>The Landing Page presents three <code>GlassCard</code> navigation options:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Card Label</th><th>Route</th><th>Target Component</th><th>Authentication</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Submit Fee Request</td><td><code>/submit</code></td><td><code>StudentFormPage.jsx</code></td><td>None (public)</td></tr>
+            <tr><td>Staff Login</td><td><code>/login</code></td><td><code>LoginPage.jsx</code></td><td>None (public)</td></tr>
+            <tr><td>Track Your Request</td><td><code>/track</code></td><td><code>TrackingPage.jsx</code></td><td>None (public)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Page Responsibilities</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Page</th><th>File</th><th>Route</th><th>Primary Function</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fee Submission</td><td><code>StudentFormPage.jsx</code></td><td><code>/submit</code></td><td>Two-step wizard: validate student identity, collect fee details, submit request via RPC, return reference number</td></tr>
+            <tr><td>Request Tracking</td><td><code>TrackingPage.jsx</code></td><td><code>/track</code></td><td>Accept reference number, look up request status via RPC, display details, allow receipt download for approved requests</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Public Access:</strong> Neither page uses the <code>ProtectedRoute</code> wrapper. Any visitor can submit a fee request or track an existing one without logging in. The only guard against misuse is roll number validation (the student must exist in the <code>students</code> table) and rate limiting on tracking lookups.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Fee Submission Wizard -->
+    <!-- ============================================================ -->
+    <div class="card" id="fee-submission-wizard">
+      <h2>Fee Submission Wizard (StudentFormPage.jsx)</h2>
+      <p><code>StudentFormPage.jsx</code> implements a two-step wizard pattern for fee submission. The component is approximately 410 lines of React code and manages its own local state without relying on global auth context. It uses the <code>DataContext</code> for reference data (active batches, branches, specialisations, sections) and communicates with Supabase directly for student lookup, duplicate checking, and submission.</p>
+
+      <h3>Component Dependencies</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Dependency</th><th>Source</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>useData()</code></td><td><code>DataContext</code></td><td>Provides <code>activeBatches</code>, <code>branches</code>, <code>specialisations</code>, <code>sections</code></td></tr>
+            <tr><td><code>useToast()</code></td><td><code>ToastContext</code></td><td>Displays success and error toast notifications</td></tr>
+            <tr><td><code>useNavigate()</code></td><td><code>react-router-dom</code></td><td>Programmatic navigation after submission</td></tr>
+            <tr><td><code>supabase</code></td><td><code>lib/supabase.js</code></td><td>Direct Supabase client for queries and RPCs</td></tr>
+            <tr><td><code>sanitizeRollNumber</code></td><td><code>utils/validators.js</code></td><td>Input sanitization for roll number field</td></tr>
+            <tr><td><code>isValidEmail</code></td><td><code>utils/validators.js</code></td><td>Email format validation</td></tr>
+            <tr><td><code>formatCurrency</code></td><td><code>utils/formatters.js</code></td><td>Formats fee amount with currency symbol</td></tr>
+            <tr><td><code>logAction</code></td><td><code>utils/logAction.js</code></td><td>Writes submission event to the activity log</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>ProgressIndicator Component</h3>
+      <p>A local sub-component rendered at the top of the form card. It displays two numbered circles connected by a horizontal line. The active step is highlighted with <code>var(--color-navy)</code> background and <code>var(--color-gold)</code> text. When Step 1 is complete, circle 1 shows a checkmark SVG instead of the number "1". The connector line transitions from <code>var(--color-border-light)</code> to <code>var(--color-gold)</code> when advancing to Step 2.</p>
+
+      <h3>State Management</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>State Variable</th><th>Type</th><th>Initial</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>step</code></td><td><code>number</code></td><td><code>1</code></td><td>Current wizard step (1 or 2)</td></tr>
+            <tr><td><code>submitted</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the form has been successfully submitted</td></tr>
+            <tr><td><code>referenceNumber</code></td><td><code>string</code></td><td><code>''</code></td><td>Reference number returned by the submit RPC</td></tr>
+            <tr><td><code>countdown</code></td><td><code>number</code></td><td><code>180</code></td><td>Seconds remaining before auto-redirect to homepage</td></tr>
+            <tr><td><code>submitting</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Loading state for the submit button</td></tr>
+            <tr><td><code>email</code></td><td><code>string</code></td><td><code>''</code></td><td>Student email input value</td></tr>
+            <tr><td><code>rollNumber</code></td><td><code>string</code></td><td><code>''</code></td><td>Roll number input value</td></tr>
+            <tr><td><code>rollStatus</code></td><td><code>string | null</code></td><td><code>null</code></td><td>Status of roll number lookup: <code>null</code>, <code>'loading'</code>, <code>'found'</code>, <code>'not_found'</code>, <code>'error'</code></td></tr>
+            <tr><td><code>studentData</code></td><td><code>object | null</code></td><td><code>null</code></td><td>Full student record from database lookup</td></tr>
+            <tr><td><code>emailError</code></td><td><code>string</code></td><td><code>''</code></td><td>Inline validation error for email field</td></tr>
+            <tr><td><code>duplicateError</code></td><td><code>string</code></td><td><code>''</code></td><td>Warning message if duplicate request detected</td></tr>
+            <tr><td><code>checkingDuplicate</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Loading state for duplicate check</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ref Values</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Ref</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>lastRollLookup</code></td><td>Stores the last roll number that was successfully looked up to prevent redundant API calls on repeated blur events</td></tr>
+            <tr><td><code>lastSubmitTime</code></td><td>Timestamp of the last successful submission; enforces a 10-second cooldown between submissions to prevent double-clicks</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Step 1: Student Information -->
+    <!-- ============================================================ -->
+    <div class="card" id="step-1-student-information">
+      <h2>Step 1: Student Information</h2>
+      <p>The first step of the wizard collects and validates the student's identity. The two user-editable fields are Email Address and Roll Number. All other student details are auto-filled from the database after a successful roll number lookup.</p>
+
+      <h3>Email Address Field</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Property</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Component</td><td><code>&lt;Input /&gt;</code></td></tr>
+            <tr><td>Type</td><td><code>email</code></td></tr>
+            <tr><td>Required</td><td>Yes</td></tr>
+            <tr><td>Placeholder</td><td><code>your.email@example.com</code></td></tr>
+            <tr><td>Validation</td><td><code>isValidEmail()</code> from <code>validators.js</code></td></tr>
+            <tr><td>Error Display</td><td>Inline error below the input via <code>emailError</code> state</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Roll Number Field</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Property</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Component</td><td><code>&lt;Input /&gt;</code></td></tr>
+            <tr><td>Type</td><td><code>text</code></td></tr>
+            <tr><td>Required</td><td>Yes</td></tr>
+            <tr><td>Placeholder</td><td><code>e.g. 24100110007</code></td></tr>
+            <tr><td>Key Event</td><td><code>onBlur</code> triggers <code>handleRollBlur()</code></td></tr>
+            <tr><td>Loading State</td><td>Shows spinner when <code>rollStatus === 'loading'</code></td></tr>
+            <tr><td>Success State</td><td>Shows green text "Found: [student name]" when <code>rollStatus === 'found'</code></td></tr>
+            <tr><td>Error State</td><td>Shows error message when <code>rollStatus === 'not_found'</code> or <code>'error'</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Roll Number Lookup Process (<code>handleRollBlur</code>)</h3>
+      <p>When the roll number field loses focus, the following sequence executes:</p>
+      <ol>
+        <li>The raw input is sanitized via <code>sanitizeRollNumber(value)</code> -- strips whitespace, converts to uppercase, removes non-alphanumeric characters.</li>
+        <li>If the cleaned value is empty or matches <code>lastRollLookup.current</code>, the function exits early (no redundant queries).</li>
+        <li><code>rollStatus</code> is set to <code>'loading'</code>, showing a spinner on the input.</li>
+        <li>A Supabase query is executed:
+          <pre><code>supabase
+  .from('students')
+  .select('id, full_name, roll_number, branch_id, specialisation_id, section_id, batch_year')
+  .eq('roll_number', cleaned)
+  .single()</code></pre>
+        </li>
+        <li>If <code>data</code> is returned: <code>studentData</code> is set, <code>rollStatus</code> becomes <code>'found'</code>, and <code>lastRollLookup</code> is updated.</li>
+        <li>If <code>data</code> is null: <code>studentData</code> is cleared, <code>rollStatus</code> becomes <code>'not_found'</code>.</li>
+        <li>If the query throws an exception: <code>rollStatus</code> becomes <code>'error'</code>.</li>
+      </ol>
+
+      <h3>Auto-Filled Fields (Derived from studentData)</h3>
+      <p>Once <code>rollStatus === 'found'</code>, the following fields are computed from <code>studentData</code> and displayed as read-only detail rows inside a gold-tinted container:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Display Label</th><th>Source</th><th>Derivation</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Branch</td><td><code>studentData.branch_id</code></td><td>Matched against <code>branches</code> array from DataContext to get <code>name</code></td></tr>
+            <tr><td>Specialisation</td><td><code>studentData.specialisation_id</code></td><td>Matched against <code>specialisations</code> array from DataContext to get <code>name</code></td></tr>
+            <tr><td>Section</td><td><code>studentData.section_id</code></td><td>Matched against <code>sections</code> array from DataContext to get <code>name</code></td></tr>
+            <tr><td>Semester</td><td><code>studentData.section_id</code></td><td>The matching section object contains a nested <code>semesters.name</code> property</td></tr>
+            <tr><td>Batch Year</td><td><code>studentData.batch_year</code></td><td>Direct value from student record</td></tr>
+            <tr><td>Fee Amount</td><td><code>studentData.batch_year</code></td><td>Looked up from <code>activeBatches</code> (DataContext) by matching <code>batch_year</code>; the <code>fee_amount</code> field from the matching <code>batch_config</code> record</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Fee Amount is Read-Only:</strong> Students cannot manually enter or modify the fee amount. It is automatically determined by the batch configuration set by an administrator. If no batch config exists for the student's batch year, the fee amount will be <code>null</code> and submission will be blocked with the message "Fee amount not configured for your batch. Contact admin."
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Step 2: Fee Details -->
+    <!-- ============================================================ -->
+    <div class="card" id="step-2-fee-details">
+      <h2>Step 2: Fee Details</h2>
+      <p>Step 2 serves as a confirmation and review screen before final submission. It does not introduce new editable fields. Instead, it displays a summary of all information collected in Step 1, giving the student an opportunity to verify before committing.</p>
+
+      <h3>Confirmation Summary</h3>
+      <p>A summary card is displayed at the top of Step 2 with the following information:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Line</th><th>Content</th><th>Styling</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Header</td><td>"Submitting for"</td><td>Uppercase, muted, <code>text-xs</code></td></tr>
+            <tr><td>Primary</td><td><code>[Full Name] -- [Roll Number]</code></td><td>Bold, <code>text-sm</code></td></tr>
+            <tr><td>Secondary</td><td><code>[Branch] . [Specialisation] . [Section] . [Semester] . Batch [Year]</code></td><td>Muted, <code>text-xs</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Fee Display</h3>
+      <p>Below the summary, a gold-tinted banner shows the fee amount:</p>
+      <pre><code>Fee for [Semester Name]: [Formatted Currency Amount]</code></pre>
+      <p>The fee is formatted using <code>formatCurrency(feeAmount)</code> from <code>utils/formatters.js</code>.</p>
+
+      <h3>Navigation Buttons</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Button</th><th>Class</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Back</td><td><code>btn-ghost</code></td><td>Sets <code>step</code> back to 1</td></tr>
+            <tr><td>Submit Request</td><td><code>&lt;Button /&gt;</code> (primary)</td><td>Calls <code>handleSubmit()</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The Submit button shows a loading spinner and text "Submitting..." while <code>submitting</code> state is true.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Duplicate Detection -->
+    <!-- ============================================================ -->
+    <div class="card" id="duplicate-detection">
+      <h2>Duplicate Detection</h2>
+      <p>Before advancing from Step 1 to Step 2, the form performs a server-side duplicate check to prevent students from creating multiple requests for the same semester. This is handled in the <code>handleNext()</code> function.</p>
+
+      <h3>Process Flow</h3>
+      <ol>
+        <li>Step 1 fields are validated: email is checked with <code>isValidEmail()</code>, roll number must have <code>rollStatus === 'found'</code>.</li>
+        <li><code>checkingDuplicate</code> state is set to <code>true</code> (shows loading on the Next button).</li>
+        <li>The RPC is called:
+          <pre><code>supabase.rpc('check_duplicate_fee_request', {
+  p_student_id: studentData.id,
+  p_section_id: studentData.section_id
+})</code></pre>
+        </li>
+        <li>The RPC returns a text value indicating the status of any existing request for this student and section combination.</li>
+      </ol>
+
+      <h3>Response Handling</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>RPC Return Value</th><th>Behavior</th><th>UI</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>'pending'</code></td><td>Blocks advancement to Step 2</td><td>Amber warning box: "Your fee request for this semester is already submitted and is pending review." with a link to the Track Request page</td></tr>
+            <tr><td><code>'approved'</code></td><td>Blocks advancement to Step 2</td><td>Amber info box: "Your fee request for this semester has already been approved." with a link to the Track Request page</td></tr>
+            <tr><td><code>'rejected'</code></td><td>Allows advancement to Step 2</td><td>No warning; student may resubmit after a previous rejection</td></tr>
+            <tr><td><code>'none'</code></td><td>Allows advancement to Step 2</td><td>No warning; first-time submission for this semester</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Resubmission After Rejection:</strong> If a student's previous request was rejected, the duplicate check returns <code>'rejected'</code> and the form permits a new submission. This allows students to correct any issues and try again without requiring admin intervention.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Submission Process -->
+    <!-- ============================================================ -->
+    <div class="card" id="submission-process">
+      <h2>Submission Process</h2>
+      <p>The <code>handleSubmit()</code> function is called when the student clicks "Submit Request" on Step 2. It performs validation, rate-limit enforcement, RPC invocation, activity logging, and transitions the UI to a success screen.</p>
+
+      <h3>Pre-Submission Checks</h3>
+      <ol>
+        <li><strong>Fee Amount Validation:</strong> If <code>feeAmount</code> is null or undefined, submission is blocked with the toast message "Fee amount not configured for your batch. Contact admin."</li>
+        <li><strong>Rate Limiting:</strong> The current timestamp is compared against <code>lastSubmitTime.current</code>. If fewer than 10,000 milliseconds (10 seconds) have elapsed since the last submission, the toast "Please wait before submitting again." is shown and submission is aborted.</li>
+      </ol>
+
+      <h3>RPC Call: <code>submit_fee_request</code></h3>
+      <pre><code>supabase.rpc('submit_fee_request', {
+  p_student_id:    studentData.id,          // uuid
+  p_roll_number:   sanitizeRollNumber(rollNumber), // text
+  p_student_email: email.trim(),            // text
+  p_section_id:    studentData.section_id,  // uuid
+  p_batch_year:    Number(batchYear),       // integer
+  p_fee_amount:    Number(feeAmount)        // numeric
+})</code></pre>
+
+      <h3>RPC Parameters</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Parameter</th><th>Type</th><th>Source</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>p_student_id</code></td><td>uuid</td><td><code>studentData.id</code></td><td>Primary key of the student record from the <code>students</code> table</td></tr>
+            <tr><td><code>p_roll_number</code></td><td>text</td><td><code>sanitizeRollNumber(rollNumber)</code></td><td>Cleaned roll number (uppercase, alphanumeric only)</td></tr>
+            <tr><td><code>p_student_email</code></td><td>text</td><td><code>email.trim()</code></td><td>Student's email address for notification delivery</td></tr>
+            <tr><td><code>p_section_id</code></td><td>uuid</td><td><code>studentData.section_id</code></td><td>Section the student belongs to (determines which CR/Teacher reviews)</td></tr>
+            <tr><td><code>p_batch_year</code></td><td>integer</td><td><code>Number(batchYear)</code></td><td>Admission batch year of the student</td></tr>
+            <tr><td><code>p_fee_amount</code></td><td>numeric</td><td><code>Number(feeAmount)</code></td><td>Fee amount from the batch configuration</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>RPC Return Value</h3>
+      <p>On success, the RPC returns a <strong>reference number</strong> as a text string. The format is:</p>
+      <pre><code>LTSU-YYYY-XXXXX</code></pre>
+      <p>Where <code>YYYY</code> is the current calendar year and <code>XXXXX</code> is a zero-padded sequential counter (e.g., <code>LTSU-2026-00042</code>).</p>
+
+      <h3>Activity Logging</h3>
+      <p>After a successful submission, <code>logAction()</code> is called to record the event in the activity log:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>actionType</code></td><td><code>'student_submitted'</code></td></tr>
+            <tr><td><code>performedByRole</code></td><td><code>'student'</code></td></tr>
+            <tr><td><code>performedByName</code></td><td>Student's full name</td></tr>
+            <tr><td><code>performedById</code></td><td>Sanitized roll number</td></tr>
+            <tr><td><code>targetName</code></td><td>Student's full name</td></tr>
+            <tr><td><code>targetRoll</code></td><td>Sanitized roll number</td></tr>
+            <tr><td><code>details</code></td><td>Object containing <code>reference</code>, <code>semester</code>, <code>fee_amount</code></td></tr>
+            <tr><td><code>sectionName</code></td><td>Derived section name</td></tr>
+            <tr><td><code>branchName</code></td><td>Derived branch name</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Success Screen</h3>
+      <p>After successful submission, the <code>submitted</code> state becomes <code>true</code> and the component renders a dedicated success view instead of the form. This screen contains:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Element</th><th>Content</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Heading</td><td>"Request Submitted"</td><td>Display font, <code>text-2xl</code></td></tr>
+            <tr><td>Confirmation</td><td>"Your fee submission for [Semester] has been received."</td><td>Standard body text</td></tr>
+            <tr><td>Email notice</td><td>"Your CR or Teacher will review it shortly. You will receive a confirmation at [email]."</td><td>Muted text</td></tr>
+            <tr><td>Reference Number</td><td>Monospace styled box with gold border</td><td>Prominently displayed; the student should note this number for tracking</td></tr>
+            <tr><td>Homepage Button</td><td>"Go to Homepage"</td><td>Full-width primary button, navigates to <code>/</code></td></tr>
+            <tr><td>Countdown</td><td>"Redirecting to homepage in M:SS"</td><td>180-second (3-minute) countdown; auto-navigates to <code>/</code> when it reaches 0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Submission Flow Diagram</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">Student clicks "Submit Request" on Step 2</div>
+        <div class="flow-step">Validate fee amount is not null</div>
+        <div class="flow-step">Check 10-second rate limit against lastSubmitTime ref</div>
+        <div class="flow-step">Set submitting = true (spinner on button)</div>
+        <div class="flow-step">Call supabase.rpc('submit_fee_request', { ... })</div>
+        <div class="flow-step">RPC inserts row into fee_requests table, generates reference number</div>
+        <div class="flow-step">Store returned reference number in state</div>
+        <div class="flow-step">Call logAction() with actionType 'student_submitted'</div>
+        <div class="flow-step">Set submitted = true; render success screen</div>
+        <div class="flow-step">Start 180-second countdown timer (useEffect)</div>
+        <div class="flow-step">Auto-redirect to / when countdown reaches 0</div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Request Tracking -->
+    <!-- ============================================================ -->
+    <div class="card" id="request-tracking">
+      <h2>Request Tracking (TrackingPage.jsx)</h2>
+      <p><code>TrackingPage.jsx</code> provides a public-facing interface at the <code>/track</code> route where students can check the status of their fee submission using the reference number they received upon submission. The component is approximately 221 lines and is entirely self-contained with local state management.</p>
+
+      <h3>Component Dependencies</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Dependency</th><th>Source</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>useNavigate()</code></td><td><code>react-router-dom</code></td><td>Navigation to <code>/submit</code> for resubmission</td></tr>
+            <tr><td><code>supabase</code></td><td><code>lib/supabase.js</code></td><td>RPC call for tracking lookup</td></tr>
+            <tr><td><code>formatCurrency</code></td><td><code>utils/formatters.js</code></td><td>Formats fee amount display</td></tr>
+            <tr><td><code>formatDate</code></td><td><code>utils/formatters.js</code></td><td>Formats date fields for display</td></tr>
+            <tr><td><code>generateReceipt</code></td><td><code>utils/generateReceipt.js</code></td><td>Dynamically imported for PDF receipt generation</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>State Management</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>State Variable</th><th>Type</th><th>Initial</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>token</code></td><td><code>string</code></td><td><code>''</code></td><td>Reference number input value</td></tr>
+            <tr><td><code>loading</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Loading state for the track button</td></tr>
+            <tr><td><code>result</code></td><td><code>object | null</code></td><td><code>null</code></td><td>Tracking result returned by the RPC</td></tr>
+            <tr><td><code>error</code></td><td><code>string</code></td><td><code>''</code></td><td>Error message displayed below the input</td></tr>
+            <tr><td><code>trackCount</code></td><td><code>number</code></td><td><code>0</code></td><td>Number of lookups performed in the current window</td></tr>
+            <tr><td><code>trackCooldown</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the 30-second cooldown is active</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Reference Number Validation -->
+    <!-- ============================================================ -->
+    <div class="card" id="reference-number-validation">
+      <h2>Reference Number Validation</h2>
+      <p>Before making any RPC call, the reference number input is validated client-side.</p>
+
+      <h3>Validation Steps</h3>
+      <ol>
+        <li><strong>Cooldown Check:</strong> If <code>trackCooldown</code> is <code>true</code>, the error "Too many lookups. Please wait 30 seconds." is displayed and the function returns immediately.</li>
+        <li><strong>Empty Check:</strong> The input is trimmed and converted to uppercase. If the result is empty, the error "Please enter a reference number" is shown.</li>
+        <li><strong>Format Validation:</strong> The trimmed value is tested against the regex:
+          <pre><code>/^LTSU-\d{4}-\d{5}$/</code></pre>
+          If it does not match, the error "Invalid format. Expected: LTSU-YYYY-XXXXX" is shown.
+        </li>
+      </ol>
+
+      <h3>Valid Format Specification</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Segment</th><th>Pattern</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Prefix</td><td><code>LTSU</code></td><td>Fixed literal string identifying the portal</td></tr>
+            <tr><td>Separator</td><td><code>-</code></td><td>Hyphen delimiter</td></tr>
+            <tr><td>Year</td><td><code>\d{4}</code></td><td>Four-digit year (e.g., 2026)</td></tr>
+            <tr><td>Separator</td><td><code>-</code></td><td>Hyphen delimiter</td></tr>
+            <tr><td>Sequence</td><td><code>\d{5}</code></td><td>Five-digit zero-padded sequential number (e.g., 00042)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Example valid reference numbers: <code>LTSU-2026-00001</code>, <code>LTSU-2025-12345</code>, <code>LTSU-2026-00042</code>.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Lookup Process -->
+    <!-- ============================================================ -->
+    <div class="card" id="lookup-process">
+      <h2>Lookup Process</h2>
+      <p>After passing client-side validation, the <code>handleTrack()</code> function proceeds with the lookup.</p>
+
+      <h3>Rate Limiting</h3>
+      <p>The tracking page implements client-side rate limiting to prevent abuse:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Parameter</th><th>Value</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Max lookups</td><td>5</td><td>Maximum number of lookups before cooldown activates</td></tr>
+            <tr><td>Cooldown duration</td><td>30 seconds</td><td>Time the user must wait after hitting the limit</td></tr>
+            <tr><td>Counter reset</td><td>After cooldown</td><td><code>trackCount</code> resets to 0 and <code>trackCooldown</code> resets to <code>false</code> via <code>setTimeout</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Each call to <code>handleTrack()</code> increments <code>trackCount</code>. When <code>trackCount</code> reaches 5, the <code>trackCooldown</code> flag is set to <code>true</code> and a 30-second <code>setTimeout</code> is scheduled to reset both values.</p>
+
+      <h3>RPC Call: <code>track_fee_request</code></h3>
+      <pre><code>supabase.rpc('track_fee_request', {
+  p_reference_number: trimmed  // uppercase, trimmed reference number
+})</code></pre>
+      <p>The RPC returns an array. If the array is empty or null, the error "No request found with this reference number" is displayed. Otherwise, the first element (<code>data[0]</code>) is stored in the <code>result</code> state.</p>
+
+      <h3>Result Object Structure</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>reference_number</code></td><td>text</td><td>The reference number that was looked up</td></tr>
+            <tr><td><code>student_name</code></td><td>text</td><td>Full name of the student</td></tr>
+            <tr><td><code>roll_number</code></td><td>text</td><td>Student roll number</td></tr>
+            <tr><td><code>branch_name</code></td><td>text</td><td>Branch name</td></tr>
+            <tr><td><code>specialisation_name</code></td><td>text</td><td>Specialisation name</td></tr>
+            <tr><td><code>section_name</code></td><td>text</td><td>Section name</td></tr>
+            <tr><td><code>semester_name</code></td><td>text</td><td>Semester name</td></tr>
+            <tr><td><code>batch_year</code></td><td>integer</td><td>Batch year</td></tr>
+            <tr><td><code>fee_amount</code></td><td>numeric</td><td>Fee amount submitted</td></tr>
+            <tr><td><code>status</code></td><td>text</td><td>One of: <code>'pending'</code>, <code>'approved'</code>, <code>'rejected'</code></td></tr>
+            <tr><td><code>submitted_at</code></td><td>timestamp</td><td>When the request was submitted</td></tr>
+            <tr><td><code>reviewed_at</code></td><td>timestamp | null</td><td>When the request was reviewed (null if pending)</td></tr>
+            <tr><td><code>reviewed_by_name</code></td><td>text | null</td><td>Name of the reviewer (null if pending)</td></tr>
+            <tr><td><code>reviewed_by_role</code></td><td>text | null</td><td>Role of the reviewer: <code>'cr'</code> or <code>'teacher'</code></td></tr>
+            <tr><td><code>rejection_reason</code></td><td>text | null</td><td>Reason for rejection (null unless rejected)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Status Display Configuration</h3>
+      <p>The result is displayed with status-specific styling defined in the <code>statusConfig</code> object:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Status</th><th>Label</th><th>Text Color</th><th>Background</th><th>Additional UI</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>pending</code></td><td><span class="badge" style="background:rgba(217,119,6,0.10);color:#d97706;">Pending Review</span></td><td><code>#d97706</code> (amber)</td><td><code>rgba(217,119,6,0.10)</code></td><td>Shows submission date; message "Your request is being reviewed"</td></tr>
+            <tr><td><code>approved</code></td><td><span class="badge" style="background:rgba(34,197,94,0.10);color:#22c55e;">Approved</span></td><td><code>var(--color-success)</code> (green)</td><td><code>rgba(34,197,94,0.10)</code></td><td>Shows approval date, reviewer name; "Download Receipt" button</td></tr>
+            <tr><td><code>rejected</code></td><td><span class="badge" style="background:rgba(239,68,68,0.10);color:#ef4444;">Rejected</span></td><td><code>var(--color-danger)</code> (red)</td><td><code>rgba(239,68,68,0.10)</code></td><td>Shows rejection reason; "Resubmit Request" button (navigates to <code>/submit</code>)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Result Detail Fields</h3>
+      <p>When a result is found, the following detail rows are displayed inside a gold-tinted card using the <code>DetailRow</code> sub-component:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Label</th><th>Value Source</th><th>Special Formatting</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Reference</td><td><code>result.reference_number</code></td><td>None</td></tr>
+            <tr><td>Student Name</td><td><code>result.student_name</code></td><td>None</td></tr>
+            <tr><td>Roll Number</td><td><code>result.roll_number</code></td><td>None</td></tr>
+            <tr><td>Branch</td><td><code>result.branch_name</code></td><td>None</td></tr>
+            <tr><td>Specialisation</td><td><code>result.specialisation_name</code></td><td>None</td></tr>
+            <tr><td>Section</td><td><code>result.section_name</code></td><td>None</td></tr>
+            <tr><td>Semester</td><td><code>result.semester_name</code></td><td>None</td></tr>
+            <tr><td>Batch Year</td><td><code>result.batch_year</code></td><td>None</td></tr>
+            <tr><td>Fee Amount</td><td><code>result.fee_amount</code></td><td><code>formatCurrency()</code>; navy color</td></tr>
+            <tr><td>Submitted</td><td><code>result.submitted_at</code></td><td><code>formatDate()</code></td></tr>
+            <tr><td>Reviewed</td><td><code>result.reviewed_at</code></td><td><code>formatDate()</code>; only shown if not null</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Receipt Download -->
+    <!-- ============================================================ -->
+    <div class="card" id="receipt-download">
+      <h2>Receipt Download</h2>
+      <p>When a tracked request has the status <code>approved</code>, a "Download Receipt (PDF)" button is rendered below the result details. This feature uses the <code>generateReceipt.js</code> utility to create a full A4-sized PDF document.</p>
+
+      <h3>Dynamic Import</h3>
+      <p>The <code>generateReceipt</code> function is loaded via dynamic <code>import()</code> to avoid bundling the jsPDF library on initial page load:</p>
+      <pre><code>const { generateReceipt } = await import('../utils/generateReceipt')</code></pre>
+      <p>Inside <code>generateReceipt.js</code>, jsPDF itself is also dynamically imported:</p>
+      <pre><code>const { default: jsPDF } = await import('jspdf')</code></pre>
+
+      <h3>Receipt Data Object</h3>
+      <p>The following data is assembled from the tracking result and passed to <code>generateReceipt()</code>:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Source</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>referenceNumber</code></td><td><code>result.reference_number</code></td><td>Unique reference identifier</td></tr>
+            <tr><td><code>approvedDate</code></td><td><code>formatDate(result.reviewed_at)</code></td><td>Formatted approval date</td></tr>
+            <tr><td><code>studentName</code></td><td><code>result.student_name</code></td><td>Full student name</td></tr>
+            <tr><td><code>rollNumber</code></td><td><code>result.roll_number</code></td><td>Student roll number</td></tr>
+            <tr><td><code>batchYear</code></td><td><code>result.batch_year</code></td><td>Admission batch year</td></tr>
+            <tr><td><code>branchName</code></td><td><code>result.branch_name</code></td><td>Branch name</td></tr>
+            <tr><td><code>specialisationName</code></td><td><code>result.specialisation_name</code></td><td>Specialisation name</td></tr>
+            <tr><td><code>sectionName</code></td><td><code>result.section_name</code></td><td>Section name</td></tr>
+            <tr><td><code>semesterName</code></td><td><code>result.semester_name</code></td><td>Semester name</td></tr>
+            <tr><td><code>feeAmount</code></td><td><code>result.fee_amount</code></td><td>Fee amount in numeric form</td></tr>
+            <tr><td><code>approvedByName</code></td><td><code>result.reviewed_by_name || 'N/A'</code></td><td>Name of the reviewer</td></tr>
+            <tr><td><code>approvedByRole</code></td><td><code>result.reviewed_by_role || 'staff'</code></td><td>Role of the reviewer</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>PDF Layout Structure</h3>
+      <p>The generated PDF is a single A4-page document (portrait, millimeters) with the following sections:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Section</th><th>Content</th><th>Styling</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Header</td><td>"Lamrin Tech Skills University Punjab"</td><td>Helvetica Bold 18pt, centered; gold horizontal line below</td></tr>
+            <tr><td>Title</td><td>"SEMESTER REGISTRATION FEE RECEIPT"</td><td>Helvetica Bold 13pt, centered; gray separator line below</td></tr>
+            <tr><td>Reference Info</td><td>Reference Number, Date of Approval</td><td>Label-value rows, 10pt</td></tr>
+            <tr><td>Student Details</td><td>Student Name, Roll Number, Batch Year, Branch, Specialisation, Section</td><td>Section header "STUDENT DETAILS" in Bold 11pt; label-value rows below</td></tr>
+            <tr><td>Fee Details</td><td>Semester, Fee Amount (Rs. format), Payment Mode ("Offline"), Status ("APPROVED")</td><td>Section header "FEE DETAILS" in Bold 11pt; label-value rows below</td></tr>
+            <tr><td>Approval</td><td>Approved By (name), Designation ("Teacher" or "CR" based on role)</td><td>Section header "APPROVED BY" in Bold 11pt</td></tr>
+            <tr><td>Footer Text</td><td>"This is a system-generated receipt." and "For queries contact: fees@ltsu.edu.in"</td><td>Italic 9pt, centered, gray color</td></tr>
+            <tr><td>Page Footer</td><td>"LTSU Fee Management System | Page 1 of 1"</td><td>8pt, centered, bottom of page</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>File Download</h3>
+      <p>The generated jsPDF document object is returned from <code>generateReceipt()</code> and saved with the filename:</p>
+      <pre><code>LTSU_Receipt_[REFERENCE_NUMBER].pdf</code></pre>
+      <p>For example: <code>LTSU_Receipt_LTSU-2026-00042.pdf</code>. The <code>doc.save()</code> method triggers a browser download.</p>
+
+      <div class="callout callout-warning">
+        <strong>Error Handling:</strong> If the dynamic import or PDF generation fails, the error is caught and logged to the console via <code>console.error('Failed to generate receipt:', err)</code>. No user-facing error toast is displayed for receipt generation failures.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Input Validation and Sanitization -->
+    <!-- ============================================================ -->
+    <div class="card" id="input-validation-sanitization">
+      <h2>Input Validation and Sanitization</h2>
+      <p>All user inputs in the student form and tracking pages are validated and sanitized before processing. The validation functions are centralized in <code>utils/validators.js</code>.</p>
+
+      <h3>Sanitization Functions</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Function</th><th>Input</th><th>Operations</th><th>Output</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sanitizeRollNumber(roll)</code></td>
+              <td>Raw roll number string</td>
+              <td>
+                1. Return empty string if falsy<br>
+                2. <code>trim()</code> whitespace<br>
+                3. <code>toUpperCase()</code><br>
+                4. Remove all non-alphanumeric characters via <code>/[^A-Z0-9]/g</code>
+              </td>
+              <td>Cleaned uppercase alphanumeric string</td>
+            </tr>
+            <tr>
+              <td><code>sanitizeText(text)</code></td>
+              <td>Raw text string</td>
+              <td>
+                1. Return empty string if falsy<br>
+                2. Strip HTML tags via <code>/&lt;[^&gt;]*&gt;/g</code><br>
+                3. Trim whitespace<br>
+                4. Strip CSV injection characters from start: <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>, tab, carriage return<br>
+                5. Replace tabs and carriage returns with spaces throughout<br>
+                6. Truncate to 500 characters
+              </td>
+              <td>Safe, sanitized text string (max 500 chars)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Validation Functions</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Function</th><th>Input</th><th>Validation Logic</th><th>Return</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>isValidEmail(email)</code></td>
+              <td>Email string</td>
+              <td>
+                1. Return <code>false</code> if falsy or length exceeds 254 characters<br>
+                2. Test against regex: <code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code>
+              </td>
+              <td><code>boolean</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Where Sanitization Is Applied</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Context</th><th>Function Used</th><th>When Applied</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Roll number input (StudentFormPage)</td><td><code>sanitizeRollNumber()</code></td><td>On blur (before database lookup) and on submission (before RPC call)</td></tr>
+            <tr><td>Email input (StudentFormPage)</td><td><code>isValidEmail()</code></td><td>During Step 1 validation (<code>validateStep1()</code>)</td></tr>
+            <tr><td>Reference number input (TrackingPage)</td><td><code>trim().toUpperCase()</code></td><td>Before regex validation and RPC call</td></tr>
+            <tr><td>Fee amount</td><td>N/A</td><td>Read-only field; cannot be edited by students</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Defense in Depth:</strong> While client-side sanitization provides immediate feedback and prevents obviously malformed inputs, the Supabase RPCs (<code>submit_fee_request</code>, <code>check_duplicate_fee_request</code>, <code>track_fee_request</code>) use parameterized queries on the server side, providing protection against SQL injection regardless of client-side sanitization.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Data Flow -->
+    <!-- ============================================================ -->
+    <div class="card" id="data-flow">
+      <h2>Data Flow</h2>
+      <p>The complete data flow for a fee submission, from initial student interaction through to the success screen:</p>
+
+      <h3>Fee Submission Data Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">Student enters roll number in the input field</div>
+        <div class="flow-step">On blur: sanitizeRollNumber() cleans the input</div>
+        <div class="flow-step">Supabase query: students table lookup by roll_number</div>
+        <div class="flow-step">If found: auto-fill Name, Branch, Specialisation, Section, Semester, Batch Year</div>
+        <div class="flow-step">Fee amount derived from activeBatches (DataContext) matching batch_year</div>
+        <div class="flow-step">Student enters email address</div>
+        <div class="flow-step">Student clicks "Next" -- triggers validateStep1()</div>
+        <div class="flow-step">Duplicate check: supabase.rpc('check_duplicate_fee_request')</div>
+        <div class="flow-step">If 'none' or 'rejected': advance to Step 2</div>
+        <div class="flow-step">Student reviews summary and clicks "Submit Request"</div>
+        <div class="flow-step">Rate limit check (10-second cooldown)</div>
+        <div class="flow-step">supabase.rpc('submit_fee_request') with all parameters</div>
+        <div class="flow-step">RPC returns reference number (LTSU-YYYY-XXXXX)</div>
+        <div class="flow-step">logAction() records the submission in activity_logs</div>
+        <div class="flow-step">Success screen displayed with reference number</div>
+        <div class="flow-step">180-second countdown begins; auto-redirect to /</div>
+      </div>
+
+      <h3>Request Tracking Data Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">Student enters reference number on /track page</div>
+        <div class="flow-step">Client-side validation: trim, uppercase, regex check</div>
+        <div class="flow-step">Rate limit check (max 5 lookups, then 30s cooldown)</div>
+        <div class="flow-step">supabase.rpc('track_fee_request') with reference number</div>
+        <div class="flow-step">RPC returns request details with student info and status</div>
+        <div class="flow-step">Display status badge (Pending / Approved / Rejected)</div>
+        <div class="flow-step">Display detail rows: student info, fee info, dates</div>
+        <div class="flow-step">If approved: show "Download Receipt" button</div>
+        <div class="flow-step">If rejected: show rejection reason + "Resubmit Request" button</div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Error Handling -->
+    <!-- ============================================================ -->
+    <div class="card" id="error-handling">
+      <h2>Error Handling</h2>
+      <p>Both the fee submission and tracking pages implement comprehensive error handling for all failure modes.</p>
+
+      <h3>Fee Submission Errors (StudentFormPage.jsx)</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Error Scenario</th><th>Detection</th><th>User Message</th><th>UI Element</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Student not found in database</td>
+              <td>Supabase query returns null data</td>
+              <td>"This roll number is not registered in our system."</td>
+              <td>Inline error on roll number input</td>
+            </tr>
+            <tr>
+              <td>Roll number lookup network failure</td>
+              <td>Exception caught in <code>handleRollBlur</code></td>
+              <td>"Failed to look up roll number. Please try again."</td>
+              <td>Inline error on roll number input</td>
+            </tr>
+            <tr>
+              <td>Invalid email format</td>
+              <td><code>isValidEmail()</code> returns false</td>
+              <td>"Please enter a valid email address"</td>
+              <td>Inline error on email input</td>
+            </tr>
+            <tr>
+              <td>Roll number not validated before proceeding</td>
+              <td><code>rollStatus !== 'found'</code></td>
+              <td>"Please enter a valid roll number"</td>
+              <td>Toast notification</td>
+            </tr>
+            <tr>
+              <td>Duplicate request (pending)</td>
+              <td>RPC returns <code>'pending'</code></td>
+              <td>"Your fee request for this semester is already submitted and is pending review."</td>
+              <td>Amber warning box with link to /track</td>
+            </tr>
+            <tr>
+              <td>Duplicate request (approved)</td>
+              <td>RPC returns <code>'approved'</code></td>
+              <td>"Your fee request for this semester has already been approved."</td>
+              <td>Amber info box with link to /track</td>
+            </tr>
+            <tr>
+              <td>Duplicate check RPC failure</td>
+              <td>RPC returns error or exception thrown</td>
+              <td>"Failed to check duplicate request. Please try again."</td>
+              <td>Toast notification</td>
+            </tr>
+            <tr>
+              <td>Fee amount not configured</td>
+              <td><code>feeAmount</code> is null</td>
+              <td>"Fee amount not configured for your batch. Contact admin."</td>
+              <td>Toast notification</td>
+            </tr>
+            <tr>
+              <td>Rapid resubmission attempt</td>
+              <td>Less than 10 seconds since last submit</td>
+              <td>"Please wait before submitting again."</td>
+              <td>Toast notification</td>
+            </tr>
+            <tr>
+              <td>Submission RPC failure</td>
+              <td>Exception caught in <code>handleSubmit</code></td>
+              <td>Server error message or "Submission failed. Please try again."</td>
+              <td>Toast notification</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Request Tracking Errors (TrackingPage.jsx)</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Error Scenario</th><th>Detection</th><th>User Message</th><th>UI Element</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Empty reference number</td>
+              <td>Trimmed input is empty string</td>
+              <td>"Please enter a reference number"</td>
+              <td>Inline error on input</td>
+            </tr>
+            <tr>
+              <td>Invalid reference number format</td>
+              <td>Regex test fails</td>
+              <td>"Invalid format. Expected: LTSU-YYYY-XXXXX"</td>
+              <td>Inline error on input</td>
+            </tr>
+            <tr>
+              <td>Rate limit exceeded</td>
+              <td><code>trackCooldown === true</code></td>
+              <td>"Too many lookups. Please wait 30 seconds."</td>
+              <td>Inline error on input</td>
+            </tr>
+            <tr>
+              <td>No request found</td>
+              <td>RPC returns empty or null data</td>
+              <td>"No request found with this reference number"</td>
+              <td>Inline error on input</td>
+            </tr>
+            <tr>
+              <td>RPC / network failure</td>
+              <td>Exception caught in <code>handleTrack</code></td>
+              <td>Server error message or "Failed to track request"</td>
+              <td>Inline error on input</td>
+            </tr>
+            <tr>
+              <td>Receipt generation failure</td>
+              <td>Exception caught in <code>handleDownloadReceipt</code></td>
+              <td>None (logged to console only)</td>
+              <td>No visible UI change</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Error Recovery Patterns:</strong> For roll number lookup failures, the student can simply re-focus and blur the field to retry. For RPC errors during duplicate checking or submission, the student can click the button again. The tracking page's rate limiter automatically resets after 30 seconds. These patterns ensure that transient network issues do not permanently block the student from completing their task.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

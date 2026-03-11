@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - LTSU Fee Portal Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Staff Dashboard</h1>
+      <p class="subtitle">Comprehensive CR and Teacher dashboard with statistics, fee request management, batch approve, multi-format export, and payment status tracking.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#dashboard-overview">Dashboard Overview</a></li>
+        <li><a href="#layout-structure">Layout Structure</a></li>
+        <li><a href="#section-switcher">Section Switcher (SectionSwitcher.jsx)</a></li>
+        <li><a href="#statistics-cards">Statistics Cards</a></li>
+        <li><a href="#tabs-system">Tabs System</a></li>
+        <li><a href="#fee-request-table">Fee Request Table</a></li>
+        <li><a href="#approve-reject-workflow">Approve / Reject Workflow</a></li>
+        <li><a href="#batch-approve">Batch Approve</a></li>
+        <li><a href="#payment-status-tracking">Payment Status Tracking</a></li>
+        <li><a href="#data-export">Data Export (ExportMenu.jsx)</a></li>
+        <li><a href="#mobile-responsiveness">Mobile Responsiveness</a></li>
+        <li><a href="#activity-log-page">Activity Log Page (ActivityLogPage.jsx)</a></li>
+        <li><a href="#use-fee-requests-hook">useFeeRequests Hook</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Dashboard Overview -->
+    <!-- ============================================================ -->
+    <div class="card" id="dashboard-overview">
+      <h2>Dashboard Overview</h2>
+      <p>The Staff Dashboard is the primary operational interface for Class Representatives (CRs) and Teachers. It is served at the <code>/dashboard</code> route and is protected by the <code>ProtectedRoute</code> component with <code>allowedRoles: ['cr', 'teacher']</code>. Any unauthenticated user or user with a role outside this list is redirected to the login page.</p>
+      <p><code>DashboardPage.jsx</code> is approximately 500 lines of React code and constitutes the single largest page component in the application. It orchestrates statistics computation, tabbed fee request views, search and sort filtering, pagination, approve/reject workflows, batch operations, multi-format data export, and payment status tracking -- all within a responsive layout that adapts between desktop and mobile viewports.</p>
+
+      <h3>Core Dependencies</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Dependency</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>useFeeRequests</code> hook</td><td>Fetches students and fee requests for the active section(s), enriches students with fee amounts from batch configs</td></tr>
+            <tr><td><code>DataContext</code></td><td>Provides <code>batchConfigs</code> array used to resolve fee amounts per batch year</td></tr>
+            <tr><td><code>AuthContext</code></td><td>Provides <code>user</code> (Supabase auth user) and <code>profile</code> (staff record with role, section assignments, full_name)</td></tr>
+            <tr><td><code>ToastContext</code></td><td>Provides the <code>addToast</code> function for success/error/warning notifications</td></tr>
+            <tr><td><code>SectionSwitcher</code></td><td>Allows teachers to switch between their multiple assigned sections</td></tr>
+            <tr><td><code>ExportMenu</code></td><td>Provides PDF, Excel, and CSV export functionality</td></tr>
+            <tr><td><code>RejectModal</code></td><td>Modal dialog for entering rejection reasons</td></tr>
+            <tr><td><code>useDebounce</code></td><td>Debounces the search input at 300ms to reduce unnecessary re-renders</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Data Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">AuthContext provides user + profile</div>
+        <div class="flow-step">Profile determines sectionIds (CR: single section, Teacher: multiple sections)</div>
+        <div class="flow-step">SectionSwitcher sets activeSectionId (teachers only)</div>
+        <div class="flow-step">useFeeRequests(sectionIds, batchConfigs) fetches students + fee_requests</div>
+        <div class="flow-step">Dashboard computes stats, filters by tab/search/sort, renders tables</div>
+        <div class="flow-step">Staff interacts: approve, reject, batch approve, export, track payment</div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Layout Structure -->
+    <!-- ============================================================ -->
+    <div class="card" id="layout-structure">
+      <h2>Layout Structure</h2>
+      <p>The dashboard uses a dual-layout approach that fundamentally changes the navigation paradigm based on viewport width.</p>
+
+      <h3>Desktop Layout (above 768px)</h3>
+      <ul>
+        <li><strong>Sidebar (fixed left):</strong> A permanently visible sidebar rendered by <code>Sidebar.jsx</code>. Contains three navigation links: Dashboard (active), Activity Log, and Logout. At the top, the sidebar displays the staff member's <code>full_name</code>, a role badge (either <span class="badge">CR</span> or <span class="badge">Teacher</span>), and their assigned section information (branch name, section name, semester number).</li>
+        <li><strong>Navbar (fixed top):</strong> Rendered by <code>Navbar.jsx</code>, displays the "LTSU Fee Portal" title across the top of the main content area. On desktop, this sits to the right of the sidebar.</li>
+        <li><strong>Main content area:</strong> Fills the remaining viewport space to the right of the sidebar and below the navbar. Contains all dashboard content: stats cards, section switcher, tabs, tables, and export controls.</li>
+      </ul>
+
+      <h3>Mobile Layout (768px and below)</h3>
+      <ul>
+        <li><strong>Navbar (fixed top):</strong> Same <code>Navbar.jsx</code> component, now spanning full width.</li>
+        <li><strong>Main content area:</strong> Full-width, scrollable content below the navbar and above the mobile nav.</li>
+        <li><strong>MobileNav (fixed bottom):</strong> Rendered by <code>MobileNav.jsx</code>, a bottom tab bar with three tabs: Dashboard (grid icon), Log (list icon), and Logout (log-out icon). Each tab includes an SVG icon and a label. The active tab is highlighted with the gold accent colour.</li>
+      </ul>
+
+      <h3>Component Hierarchy</h3>
+      <pre><code>DashboardPage
+  Sidebar (desktop only)
+    Profile display (full_name, role badge, section info)
+    Nav links: Dashboard, Activity Log, Logout
+  Navbar (always)
+    "LTSU Fee Portal" title
+  MobileNav (mobile only)
+    Dashboard tab, Log tab, Logout tab
+  SectionSwitcher (teachers with multiple sections)
+  StatsCards (4 cards)
+  Tabs (Students, Pending, Approved, Rejected)
+  Search input + Sort select + Payment filter (approved tab)
+  Fee Request Table / Mobile Cards
+  Pagination
+  ExportMenu</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Section Switcher -->
+    <!-- ============================================================ -->
+    <div class="card" id="section-switcher">
+      <h2>Section Switcher (SectionSwitcher.jsx)</h2>
+      <p>The Section Switcher is a dedicated component that appears only when the logged-in user is a Teacher who has been assigned to more than one section. CRs are always bound to a single section and will never see this component.</p>
+
+      <h3>Rendering Logic</h3>
+      <ul>
+        <li>The component receives the teacher's <code>assignedSections</code> array and the current <code>activeSectionId</code> as props.</li>
+        <li>If the array has fewer than 2 entries, the component returns <code>null</code> (renders nothing).</li>
+        <li>For each section, a pill button is rendered showing: <strong>section name</strong> + <strong>branch name</strong> + <strong>semester number</strong>.</li>
+      </ul>
+
+      <h3>Visual Behaviour</h3>
+      <ul>
+        <li>The active section pill receives a gold background (<code>#c8a951</code>) with dark text.</li>
+        <li>Inactive pills have a transparent background with a subtle border and lighter text.</li>
+        <li>Clicking an inactive pill fires the <code>onSectionChange</code> callback, which updates <code>activeSectionId</code> in the parent <code>DashboardPage</code> state.</li>
+        <li>When the active section changes, <code>useFeeRequests</code> re-fetches data for the newly selected section, causing the statistics, tables, and all derived views to update.</li>
+      </ul>
+
+      <h3>Teacher vs CR Behaviour</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Role</th><th>Sections</th><th>Switcher Visible</th><th>Behaviour</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="badge">CR</span></td><td>Exactly 1</td><td>No</td><td>Dashboard always shows the CR's single assigned section</td></tr>
+            <tr><td><span class="badge">Teacher</span></td><td>1</td><td>No</td><td>Dashboard shows the teacher's single assigned section</td></tr>
+            <tr><td><span class="badge">Teacher</span></td><td>2+</td><td>Yes</td><td>Teacher can switch between sections using pill buttons</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Statistics Cards -->
+    <!-- ============================================================ -->
+    <div class="card" id="statistics-cards">
+      <h2>Statistics Cards</h2>
+      <p>Four <code>StatsCard</code> components are rendered in a horizontal row across the top of the dashboard content area. Each card displays a label, a computed numeric value, and a colour-coded icon. These statistics are recalculated on every data change (section switch, approve/reject, refetch).</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Card</th><th>Computation</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>Total Students</strong></td>
+              <td><code>students.length</code></td>
+              <td>Count of all students in the currently active section. This includes both active and inactive students returned by the <code>useFeeRequests</code> hook.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>Submitted</strong></td>
+              <td><code>feeRequests.length</code></td>
+              <td>Count of all fee requests (any status: pending, approved, or rejected) associated with students in the current section. Represents the total number of submissions received.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Pending</strong></td>
+              <td><code>feeRequests.filter(r => r.status === 'pending').length</code></td>
+              <td>Count of fee requests that are still awaiting review. This is the primary metric staff use to determine their current workload.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Total Collected</strong></td>
+              <td><code>sum of fee_amount for approved requests</code></td>
+              <td>Iterates over all fee requests with <code>status === 'approved'</code>, sums their <code>fee_amount</code> values, and formats the result as INR currency using the <code>formatCurrency</code> utility (e.g., "12,500.00").</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Currency Formatting:</strong> The <code>formatCurrency</code> utility from <code>utils/formatters.js</code> uses <code>Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' })</code> to produce locale-aware Indian Rupee formatting with commas at the thousands and lakhs positions.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Tabs System -->
+    <!-- ============================================================ -->
+    <div class="card" id="tabs-system">
+      <h2>Tabs System</h2>
+      <p>The dashboard features a four-tab navigation system implemented using the <code>Tabs</code> UI component. Each tab displays a label and a count badge showing the number of records in that category. Switching tabs changes which subset of data is displayed in the table below.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Tab</th><th>Badge Count</th><th>Data Source</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Students</strong></td>
+              <td><code>students.length</code></td>
+              <td>Full student list for the section</td>
+              <td>Shows every student enrolled in the current section along with their fee submission status. Students who have not yet submitted a fee request appear with a "Not Submitted" badge. Students with submissions show their current status badge (pending, approved, or rejected).</td>
+            </tr>
+            <tr>
+              <td><strong>Pending</strong></td>
+              <td><code>pendingRequests.length</code></td>
+              <td><code>feeRequests.filter(r => r.status === 'pending')</code></td>
+              <td>Displays all fee requests awaiting review. Each row includes action buttons for approving or rejecting the request. This tab also supports batch selection via checkboxes.</td>
+            </tr>
+            <tr>
+              <td><strong>Approved</strong></td>
+              <td><code>approvedRequests.length</code></td>
+              <td><code>feeRequests.filter(r => r.status === 'approved')</code></td>
+              <td>Lists all approved fee requests. Includes the reviewer's name, the approval date, and a payment status toggle (Paid/Unpaid). This tab also provides an additional payment status filter dropdown.</td>
+            </tr>
+            <tr>
+              <td><strong>Rejected</strong></td>
+              <td><code>rejectedRequests.length</code></td>
+              <td><code>feeRequests.filter(r => r.status === 'rejected')</code></td>
+              <td>Shows all rejected fee requests with the rejection date and a truncated rejection reason. The full reason is available on hover or by expanding the row on mobile.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Fee Request Table -->
+    <!-- ============================================================ -->
+    <div class="card" id="fee-request-table">
+      <h2>Fee Request Table</h2>
+      <p>Each tab renders a data table with columns specific to the tab's context. The table supports search filtering, column-based sorting, and pagination. On mobile viewports, the table is replaced with a card-based layout.</p>
+
+      <h3>Columns by Tab</h3>
+
+      <h4>Students Tab</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Column</th><th>Source</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Roll Number</td><td><code>student.roll_number</code></td><td>Unique identifier displayed as plain text</td></tr>
+            <tr><td>Name</td><td><code>student.full_name</code></td><td>Full name of the student</td></tr>
+            <tr><td>Fee Amount</td><td><code>student.fee_amount</code></td><td>Resolved from batch config based on student's batch year</td></tr>
+            <tr><td>Status</td><td>Derived from fee_requests</td><td>Badge: <span class="badge">Approved</span>, <span class="badge">Pending</span>, <span class="badge">Rejected</span>, or <span class="badge">Not Submitted</span></td></tr>
+            <tr><td>Payment Status</td><td><code>paidStudentIds</code> Set</td><td>Only shown if the student has an approved request. Displays "Paid" or "Unpaid" badge.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Pending Tab</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Column</th><th>Source</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Checkbox</td><td>Selection state</td><td>For batch approve. Selecting the header checkbox toggles all visible rows.</td></tr>
+            <tr><td>Roll Number</td><td><code>request.students.roll_number</code></td><td>From the joined student record</td></tr>
+            <tr><td>Name</td><td><code>request.students.full_name</code></td><td>From the joined student record</td></tr>
+            <tr><td>Email</td><td><code>request.students.email</code></td><td>Student email address</td></tr>
+            <tr><td>Fee Amount</td><td><code>request.fee_amount</code></td><td>Amount submitted with the fee request</td></tr>
+            <tr><td>Submitted Date</td><td><code>request.created_at</code></td><td>Formatted using <code>formatDate</code> utility</td></tr>
+            <tr><td>Actions</td><td>Buttons</td><td>Two buttons: "Approve" (green) and "Reject" (red). Each triggers the respective workflow.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Approved Tab</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Column</th><th>Source</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Roll Number</td><td><code>request.students.roll_number</code></td><td>From the joined student record</td></tr>
+            <tr><td>Name</td><td><code>request.students.full_name</code></td><td>From the joined student record</td></tr>
+            <tr><td>Fee Amount</td><td><code>request.fee_amount</code></td><td>The approved fee amount</td></tr>
+            <tr><td>Reviewed By</td><td><code>request.reviewer.full_name</code></td><td>Name of the staff member who approved the request (joined via <code>reviewed_by</code> foreign key)</td></tr>
+            <tr><td>Approved Date</td><td><code>request.reviewed_at</code></td><td>Formatted date of approval</td></tr>
+            <tr><td>Payment Status</td><td><code>paidStudentIds</code> Set</td><td>Toggle button: "Paid" (green) or "Unpaid" (gray). Clicking toggles the state.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Rejected Tab</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Column</th><th>Source</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Roll Number</td><td><code>request.students.roll_number</code></td><td>From the joined student record</td></tr>
+            <tr><td>Name</td><td><code>request.students.full_name</code></td><td>From the joined student record</td></tr>
+            <tr><td>Fee Amount</td><td><code>request.fee_amount</code></td><td>The fee amount from the rejected request</td></tr>
+            <tr><td>Rejected Date</td><td><code>request.reviewed_at</code></td><td>Formatted date of rejection</td></tr>
+            <tr><td>Reason</td><td><code>request.rejection_reason</code></td><td>Truncated to approximately 50 characters with an ellipsis. Full text available on hover (title attribute) or in the mobile card expansion.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Search</h3>
+      <p>A text input field above the table allows staff to filter results by student name or roll number. The search value is debounced at 300ms using the <code>useDebounce</code> hook from <code>hooks/useDebounce.js</code>. The debounced value is applied as a case-insensitive substring match against both <code>full_name</code> and <code>roll_number</code> fields. An empty search string shows all records for the active tab.</p>
+
+      <h3>Sort</h3>
+      <p>A dropdown select allows sorting by:</p>
+      <ul>
+        <li><strong>Name (A-Z / Z-A):</strong> Alphabetical sort on <code>full_name</code></li>
+        <li><strong>Roll Number (Asc / Desc):</strong> Alphanumeric sort on <code>roll_number</code></li>
+        <li><strong>Date (Newest / Oldest):</strong> Chronological sort on <code>created_at</code> or <code>reviewed_at</code> depending on the tab</li>
+        <li><strong>Amount (High / Low):</strong> Numeric sort on <code>fee_amount</code></li>
+      </ul>
+
+      <h3>Payment Filter (Approved Tab Only)</h3>
+      <p>When the Approved tab is active, an additional dropdown filter appears with three options:</p>
+      <ul>
+        <li><strong>All:</strong> Shows all approved requests</li>
+        <li><strong>Paid:</strong> Shows only requests where the student ID is in the <code>paidStudentIds</code> Set</li>
+        <li><strong>Unpaid:</strong> Shows only requests where the student ID is not in the <code>paidStudentIds</code> Set</li>
+      </ul>
+
+      <h3>Pagination</h3>
+      <p>Results are paginated at 25 records per page. The pagination control renders the following buttons:</p>
+      <ul>
+        <li><strong>First:</strong> Jumps to page 1. Disabled when already on page 1.</li>
+        <li><strong>Prev:</strong> Goes to the previous page. Disabled on page 1.</li>
+        <li><strong>Numbered pages:</strong> Direct page number buttons. The current page is highlighted. A window of pages is shown around the current page to prevent rendering hundreds of buttons for large datasets.</li>
+        <li><strong>Next:</strong> Goes to the next page. Disabled on the last page.</li>
+        <li><strong>Last:</strong> Jumps to the final page. Disabled when already on the last page.</li>
+      </ul>
+      <p>Changing tabs, search terms, or sort order resets the page back to 1.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Approve/Reject Workflow -->
+    <!-- ============================================================ -->
+    <div class="card" id="approve-reject-workflow">
+      <h2>Approve / Reject Workflow</h2>
+      <p>The approve and reject operations are the most critical workflows in the dashboard. Both implement optimistic concurrency control to prevent race conditions when multiple staff members review the same request simultaneously.</p>
+
+      <h3 id="single-approve">Single Approve</h3>
+      <p>When a staff member clicks the "Approve" button on a pending fee request, the following sequence executes:</p>
+      <div class="flow-diagram">
+        <div class="flow-step">1. Staff clicks "Approve" on a pending request row</div>
+        <div class="flow-step">2. Supabase update with optimistic concurrency lock:
+          <code>supabase.from('fee_requests').update({ status: 'approved', reviewed_by: user.id, reviewed_at: new Date().toISOString() }).eq('id', requestId).eq('status', 'pending').select('id', { count: 'exact' })</code>
+        </div>
+        <div class="flow-step">3. Check count: if count === 0, the request was already processed by another user -- show warning toast and abort</div>
+        <div class="flow-step">4. On success: send approval email via EmailJS (template ID: template_bsick8e)</div>
+        <div class="flow-step">5. Update receipt_sent flag to true on the fee_request record</div>
+        <div class="flow-step">6. Log activity with action_type: 'approve_request'</div>
+        <div class="flow-step">7. Call refetch() to refresh all data from Supabase</div>
+      </div>
+
+      <h4>Optimistic Concurrency Control</h4>
+      <p>The key technique here is the double <code>.eq()</code> clause: <code>.eq('id', requestId).eq('status', 'pending')</code>. This ensures the update only succeeds if the request is still in 'pending' status at the moment the database processes the query. If another staff member has already approved or rejected the same request, the <code>.eq('status', 'pending')</code> condition fails, no rows are updated, and the returned <code>count</code> is 0. The dashboard then shows a warning toast informing the staff member that the request was already processed, preventing duplicate approvals or conflicting status changes.</p>
+
+      <h4>Approval Email Variables</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>EmailJS Variable</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>to_email</code></td><td>Student's email address</td></tr>
+            <tr><td><code>student_name</code></td><td>Student's full name</td></tr>
+            <tr><td><code>reference_number</code></td><td>Fee request reference number</td></tr>
+            <tr><td><code>fee_amount</code></td><td>Approved fee amount (formatted)</td></tr>
+            <tr><td><code>semester</code></td><td>Semester name/number</td></tr>
+            <tr><td><code>approved_date</code></td><td>Formatted approval timestamp</td></tr>
+            <tr><td><code>receipt_link</code></td><td>Download link for the fee receipt</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="single-reject">Single Reject</h3>
+      <p>When a staff member clicks the "Reject" button, a modal dialog opens to collect the rejection reason before proceeding.</p>
+      <div class="flow-diagram">
+        <div class="flow-step">1. Staff clicks "Reject" on a pending request row</div>
+        <div class="flow-step">2. RejectModal opens: textarea for rejection_reason input</div>
+        <div class="flow-step">3. Validation: minimum 10 characters, maximum 500 characters. The confirm button is disabled until the input passes validation.</div>
+        <div class="flow-step">4. On confirm: Supabase update with optimistic concurrency lock:
+          <code>supabase.from('fee_requests').update({ status: 'rejected', reviewed_by: user.id, reviewed_at: new Date().toISOString(), rejection_reason: reason }).eq('id', requestId).eq('status', 'pending').select('id', { count: 'exact' })</code>
+        </div>
+        <div class="flow-step">5. Check count: if count === 0, the request was already processed -- show warning toast and close modal</div>
+        <div class="flow-step">6. On success: send rejection email via EmailJS (template ID: template_wd7lk49)</div>
+        <div class="flow-step">7. Log activity with action_type: 'reject_request'</div>
+        <div class="flow-step">8. Call refetch() to refresh all data from Supabase</div>
+      </div>
+
+      <h4>RejectModal Component</h4>
+      <p>The <code>RejectModal</code> component (<code>components/forms/RejectModal.jsx</code>) renders a modal overlay with:</p>
+      <ul>
+        <li>A header displaying "Reject Fee Request"</li>
+        <li>A <code>&lt;textarea&gt;</code> for the rejection reason with a placeholder guiding the staff to explain why the request is being rejected</li>
+        <li>A character counter showing current length vs. the 500-character maximum</li>
+        <li>A "Cancel" button that closes the modal without any side effects</li>
+        <li>A "Confirm Reject" button that is disabled until the reason text is between 10 and 500 characters (inclusive)</li>
+      </ul>
+
+      <h4>Rejection Email Variables</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>EmailJS Variable</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>to_email</code></td><td>Student's email address</td></tr>
+            <tr><td><code>student_name</code></td><td>Student's full name</td></tr>
+            <tr><td><code>reference_number</code></td><td>Fee request reference number</td></tr>
+            <tr><td><code>rejection_reason</code></td><td>The reason text entered by the staff member</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Concurrency Edge Case:</strong> If two staff members open the same pending request at the same time and both click "Approve", only the first update will succeed. The second staff member's update will return count === 0, and they will see a warning toast: "This request has already been processed by another user." No duplicate emails are sent because the email dispatch only occurs after a successful status update.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Batch Approve -->
+    <!-- ============================================================ -->
+    <div class="card" id="batch-approve">
+      <h2>Batch Approve</h2>
+      <p>The batch approve feature allows staff to select multiple pending fee requests and approve them all in a single operation. This is designed for high-volume scenarios where a staff member needs to process many requests efficiently.</p>
+
+      <h3>Selection Mechanism</h3>
+      <ul>
+        <li>Each row in the Pending tab has a checkbox in the first column.</li>
+        <li>The table header row includes a "select all" checkbox that toggles all currently visible (paginated) rows.</li>
+        <li>Selected request IDs are stored in a local state array.</li>
+        <li>An "Approve Selected" button appears above the table when at least one request is selected.</li>
+        <li>The button displays the count of selected requests (e.g., "Approve Selected (12)").</li>
+      </ul>
+
+      <h3>Batch Limit</h3>
+      <p>A maximum of 25 requests can be batch-approved at once. If the staff member selects more than 25 requests, a warning toast is shown and the operation is blocked. This limit exists to prevent timeouts on the email dispatch loop and to keep the RPC call payload within reasonable bounds.</p>
+
+      <h3>Execution Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">1. Staff selects multiple pending requests via checkboxes (max 25)</div>
+        <div class="flow-step">2. Staff clicks "Approve Selected" button</div>
+        <div class="flow-step">3. Dashboard calls RPC: <code>supabase.rpc('batch_approve_requests', { p_request_ids: selectedIds, p_reviewer_id: user.id })</code></div>
+        <div class="flow-step">4. The RPC function atomically updates all selected requests to status 'approved', sets reviewed_by and reviewed_at</div>
+        <div class="flow-step">5. For each successfully approved request, an individual approval email is sent via EmailJS (template_bsick8e)</div>
+        <div class="flow-step">6. Activity is logged as a batch operation</div>
+        <div class="flow-step">7. Success toast: "Successfully approved N requests"</div>
+        <div class="flow-step">8. Selection state is cleared and data is refetched</div>
+      </div>
+
+      <h3>RPC Function: batch_approve_requests</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>p_request_ids</code></td><td><code>uuid[]</code></td><td>Array of fee_request IDs to approve</td></tr>
+            <tr><td><code>p_reviewer_id</code></td><td><code>uuid</code></td><td>The ID of the staff member performing the batch approve</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The server-side RPC function ensures atomicity: either all specified requests are updated, or the entire operation is rolled back. This prevents partial batch approvals that could leave the system in an inconsistent state. The function also only updates requests that are currently in 'pending' status, applying the same optimistic concurrency guard used by single approvals.</p>
+
+      <div class="callout callout-info">
+        <strong>Email Dispatch:</strong> After the batch RPC succeeds, the dashboard iterates over each approved request and sends an individual approval email. This means a batch of 25 approvals results in 25 separate EmailJS API calls. The emails are sent sequentially (not in parallel) to respect EmailJS rate limits and to ensure each email's success/failure is tracked independently.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Payment Status Tracking -->
+    <!-- ============================================================ -->
+    <div class="card" id="payment-status-tracking">
+      <h2>Payment Status Tracking</h2>
+      <p>The dashboard provides a client-side mechanism for staff to track which approved students have physically paid their fees (e.g., submitted cash or completed a bank transfer that has been verified outside the system).</p>
+
+      <h3>Implementation</h3>
+      <ul>
+        <li><strong>State:</strong> <code>paidStudentIds</code> is a <code>Set</code> stored in React component state. It contains the student IDs of students whose payment has been marked as received.</li>
+        <li><strong>Toggle:</strong> On the Approved tab, each row displays a toggle button. Clicking the button adds the student ID to the Set (marking as "Paid") or removes it (marking as "Unpaid").</li>
+        <li><strong>Visual indicator:</strong> A green <span class="badge">Paid</span> badge is shown for students in the Set. A gray <span class="badge">Unpaid</span> badge is shown for students not in the Set.</li>
+      </ul>
+
+      <h3>Persistence</h3>
+      <div class="callout callout-warning">
+        <strong>Not Persisted:</strong> The payment status is tracked entirely in client-side React state. It is not written to the Supabase database. This means the Paid/Unpaid status resets when the page is refreshed, when the staff member logs out, or when they switch sections. This is a deliberate design decision -- the LTSU Fee Portal tracks fee request approvals, not actual payment collection. Physical payment verification is handled outside the system.
+      </div>
+
+      <h3>Usage in Exports</h3>
+      <p>When exporting data via PDF, Excel, or CSV, the current payment status state is included in the exported data. This means if a staff member marks several students as "Paid" and then exports the Approved tab, the export will reflect those Paid/Unpaid values. However, since the state is ephemeral, re-exporting after a page refresh will show all students as "Unpaid" again.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Data Export -->
+    <!-- ============================================================ -->
+    <div class="card" id="data-export">
+      <h2>Data Export (ExportMenu.jsx)</h2>
+      <p>The <code>ExportMenu</code> component provides three export formats for downloading dashboard data. The component renders a dropdown button with three options. Each export function receives the current filtered/sorted data, section information, statistics, and payment status state.</p>
+
+      <h3>PDF Export (exportPDF.js)</h3>
+      <ul>
+        <li><strong>Library:</strong> jsPDF + jspdf-autotable plugin</li>
+        <li><strong>Page size:</strong> A4 (210mm x 297mm)</li>
+        <li><strong>Header:</strong> LTSU branding with navy background (<code>#1a1a2e</code>) and gold accent (<code>#c8a951</code>). Displays "LTSU Fee Portal" title and "Fee Request Report" subtitle.</li>
+        <li><strong>Section details:</strong> Below the header, displays the branch name, section name, semester, and export date.</li>
+        <li><strong>Summary statistics:</strong> A compact row showing Total Students, Submitted, Pending, and Total Collected values.</li>
+        <li><strong>Data table:</strong> Uses jspdf-autotable to render all fee requests in a styled table. Table headers use the navy background with white text. Alternating row colours improve readability. Column widths are auto-calculated based on content.</li>
+        <li><strong>File name:</strong> <code>fee-report-{sectionName}-{date}.pdf</code></li>
+      </ul>
+
+      <h3>Excel Export (exportExcel.js)</h3>
+      <ul>
+        <li><strong>Library:</strong> SheetJS (xlsx)</li>
+        <li><strong>Workbook structure:</strong> Two sheets are created within a single <code>.xlsx</code> file:</li>
+      </ul>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Sheet</th><th>Contents</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Summary</strong></td>
+              <td>Section information (branch, section, semester), export timestamp, and the four summary statistics (Total Students, Submitted, Pending, Total Collected). Formatted as key-value rows.</td>
+            </tr>
+            <tr>
+              <td><strong>Data</strong></td>
+              <td>Full fee request table with all columns relevant to the current tab view. Each row represents one fee request or student record depending on the active tab.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li><strong>File name:</strong> <code>fee-report-{sectionName}-{date}.xlsx</code></li>
+      </ul>
+
+      <h3>CSV Export (exportCSV.js)</h3>
+      <ul>
+        <li><strong>Encoding:</strong> UTF-8 with BOM (Byte Order Mark: <code>\uFEFF</code>) prepended to the output. The BOM ensures Microsoft Excel correctly interprets the file as UTF-8 rather than defaulting to ANSI encoding, which would mangle special characters.</li>
+        <li><strong>Cell sanitization:</strong> Before writing any cell value, the export function checks if the value starts with any of the characters <code>=</code>, <code>+</code>, <code>-</code>, or <code>@</code>. If so, a single quote (<code>'</code>) is prepended to the cell value. This prevents CSV injection attacks where a malicious cell value could execute formulas when opened in a spreadsheet application.</li>
+        <li><strong>Delimiter:</strong> Standard comma (<code>,</code>) delimiter with values enclosed in double quotes.</li>
+        <li><strong>File name:</strong> <code>fee-report-{sectionName}-{date}.csv</code></li>
+      </ul>
+
+      <div class="callout callout-danger">
+        <strong>CSV Injection Prevention:</strong> Without cell sanitization, a student name like <code>=CMD("calc")</code> could execute arbitrary commands when the CSV is opened in Excel. The single-quote prefix (<code>'=CMD("calc")</code>) tells Excel to treat the cell as a text literal rather than a formula. This protection applies to all cell values across all columns, not just name fields.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Mobile Responsiveness -->
+    <!-- ============================================================ -->
+    <div class="card" id="mobile-responsiveness">
+      <h2>Mobile Responsiveness</h2>
+      <p>Below the 768px breakpoint, the dashboard undergoes significant layout and component changes to provide a usable experience on smaller screens.</p>
+
+      <h3>Navigation Changes</h3>
+      <ul>
+        <li>The desktop <code>Sidebar</code> component is hidden entirely (<code>display: none</code>).</li>
+        <li>The <code>MobileNav</code> component appears as a fixed bottom bar with three tabs: Dashboard (grid icon), Log (list icon), and Logout (log-out icon).</li>
+        <li>The active tab is indicated by the gold accent colour on both the icon and the label text.</li>
+      </ul>
+
+      <h3>Table to Card Transformation</h3>
+      <p>Data tables are replaced with card-based layouts optimised for vertical scrolling on mobile devices. Two specialised card components handle this transformation:</p>
+
+      <h4>MobileRequestCard</h4>
+      <ul>
+        <li>Used for Pending, Approved, and Rejected tabs.</li>
+        <li>Each card displays: student name (bold header), roll number, status badge, fee amount, and tab-specific details (submission date, reviewer, rejection reason, etc.).</li>
+        <li>Action buttons (Approve/Reject) are rendered at the bottom of the card as full-width buttons for easy tap targets.</li>
+        <li>Wrapped in <code>React.memo</code> to prevent unnecessary re-renders when other cards in the list update.</li>
+      </ul>
+
+      <h4>MobileStudentCard</h4>
+      <ul>
+        <li>Used for the Students tab.</li>
+        <li>Each card displays: student name (bold header), roll number, batch year, and fee status badge.</li>
+        <li>Simpler layout than <code>MobileRequestCard</code> since there are no action buttons.</li>
+        <li>Also wrapped in <code>React.memo</code> for performance optimisation.</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>React.memo Optimisation:</strong> Both mobile card components use <code>React.memo</code> with the default shallow comparison. Since fee request objects are replaced (not mutated) on each refetch, this effectively prevents re-rendering cards whose data has not changed. In a section with 200 students, approving one request only causes a re-render of the affected card and the stats display, not all 200 cards.
+      </div>
+
+      <h3>Additional Mobile Adjustments</h3>
+      <ul>
+        <li>Stats cards stack vertically (single column) instead of the four-column horizontal layout.</li>
+        <li>The search input and sort dropdown stack vertically.</li>
+        <li>Pagination buttons use smaller sizing to fit within the viewport.</li>
+        <li>The Section Switcher pills wrap to multiple lines if there are many sections.</li>
+        <li>The Export Menu dropdown aligns to the left edge to prevent overflow.</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Activity Log Page -->
+    <!-- ============================================================ -->
+    <div class="card" id="activity-log-page">
+      <h2>Activity Log Page (ActivityLogPage.jsx)</h2>
+      <p>The Activity Log is a separate page at route <code>/log</code> (protected, accessible to both CRs and Teachers). It provides a searchable, filterable, paginated view of all actions performed on fee requests within the staff member's assigned sections. This section provides a brief overview; a dedicated documentation page covers the Activity Log in full detail.</p>
+
+      <h3>Core Features</h3>
+      <ul>
+        <li><strong>Data source:</strong> Uses the <code>useActivityLog</code> hook from <code>hooks/useActivityLog.js</code>, which fetches records from the <code>activity_logs</code> Supabase table.</li>
+        <li><strong>Pagination:</strong> Results are paginated with configurable page sizes.</li>
+        <li><strong>Eight filters:</strong> Date range (from date, to date), role filter, action type filter, branch filter, section filter, sort order, and free-text search.</li>
+      </ul>
+
+      <h3>Filter Details</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Filter</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Date From</td><td>Date picker</td><td>Filters logs created on or after this date</td></tr>
+            <tr><td>Date To</td><td>Date picker</td><td>Filters logs created on or before this date</td></tr>
+            <tr><td>Role</td><td>Select dropdown</td><td>Filter by the role of the user who performed the action (CR, Teacher)</td></tr>
+            <tr><td>Action Type</td><td>Select dropdown</td><td>Filter by action type (approve_request, reject_request, batch_approve, etc.)</td></tr>
+            <tr><td>Branch</td><td>Select dropdown</td><td>Filter by the branch associated with the logged action</td></tr>
+            <tr><td>Section</td><td>Select dropdown</td><td>Filter by the section associated with the logged action</td></tr>
+            <tr><td>Sort Order</td><td>Select dropdown</td><td>Newest first or oldest first</td></tr>
+            <tr><td>Search</td><td>Text input</td><td>Free-text search across log details</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>PII Sanitization</h3>
+      <p>When displaying the <code>details</code> JSON column from activity log records, the component strips sensitive personally identifiable information before rendering. The following fields are removed from the displayed JSON if present: <code>email</code>, <code>password</code>, <code>phone</code>. This prevention applies to the expandable detail view on each log row. The raw data in the database remains unchanged -- sanitization is purely a display-layer concern.</p>
+
+      <h3>Responsive Layout</h3>
+      <ul>
+        <li><strong>Desktop:</strong> Standard table with expandable rows. Clicking a row reveals the full detail JSON in a collapsible section below the row.</li>
+        <li><strong>Mobile:</strong> Card-based layout where each log entry is a card. The detail JSON is shown in a collapsible section within each card.</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- useFeeRequests Hook -->
+    <!-- ============================================================ -->
+    <div class="card" id="use-fee-requests-hook">
+      <h2>useFeeRequests Hook</h2>
+      <p>The <code>useFeeRequests</code> custom hook (<code>hooks/useFeeRequests.js</code>) is the primary data-fetching mechanism for the dashboard. It encapsulates all Supabase queries needed to populate the dashboard with student and fee request data.</p>
+
+      <h3>Parameters</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>sectionIds</code></td><td><code>string[]</code></td><td>Array of section UUIDs to fetch data for. For CRs, this is a single-element array. For teachers, it contains the currently active section ID.</td></tr>
+            <tr><td><code>batchConfigs</code></td><td><code>object[]</code></td><td>Array of batch configuration objects from <code>DataContext</code>. Each object contains <code>batch_year</code> and <code>fee_amount</code> fields used to enrich student records.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Data Fetching Process</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">1. Fetch students: <code>supabase.from('students').select('*').in('section_id', sectionIds)</code></div>
+        <div class="flow-step">2. Enrich students: for each student, find the matching <code>batchConfig</code> by <code>batch_year</code> and attach the <code>fee_amount</code> to the student object</div>
+        <div class="flow-step">3. Fetch fee requests: <code>supabase.from('fee_requests').select('*, students(*), semesters(name, number), reviewer:reviewed_by(full_name)').in('student_id', studentIds)</code></div>
+        <div class="flow-step">4. Return: { students (enriched), feeRequests, loading, error, refetch }</div>
+      </div>
+
+      <h3>Return Value</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>students</code></td><td><code>object[]</code></td><td>Array of student objects enriched with <code>fee_amount</code> from the matching batch config. If no batch config matches a student's <code>batch_year</code>, <code>fee_amount</code> defaults to 0.</td></tr>
+            <tr><td><code>feeRequests</code></td><td><code>object[]</code></td><td>Array of fee request objects with joined data: nested <code>students</code> object, nested <code>semesters</code> object (name, number), and nested <code>reviewer</code> object (full_name of the staff who reviewed it, or null if pending).</td></tr>
+            <tr><td><code>loading</code></td><td><code>boolean</code></td><td><code>true</code> while either the students query or the fee requests query is in progress. The dashboard renders a <code>Spinner</code> overlay while loading.</td></tr>
+            <tr><td><code>error</code></td><td><code>string | null</code></td><td>Error message if either query fails. Displayed as an error toast in the dashboard.</td></tr>
+            <tr><td><code>refetch</code></td><td><code>function</code></td><td>Callback to re-execute both queries. Called after every approve, reject, or batch approve operation to refresh the displayed data.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Fee Request Join Structure</h3>
+      <p>The fee requests query uses Supabase's nested select syntax to join related tables in a single query:</p>
+      <pre><code>supabase
+  .from('fee_requests')
+  .select(`
+    *,
+    students (*),
+    semesters (name, number),
+    reviewer:reviewed_by (full_name)
+  `)
+  .in('student_id', studentIds)</code></pre>
+      <p>This produces fee request objects with the following nested structure:</p>
+      <pre><code>{
+  id: "uuid",
+  student_id: "uuid",
+  semester_id: "uuid",
+  status: "pending" | "approved" | "rejected",
+  fee_amount: 1500,
+  reference_number: "REF-20250312-ABCD",
+  created_at: "2025-03-12T10:00:00Z",
+  reviewed_by: "uuid" | null,
+  reviewed_at: "2025-03-12T14:30:00Z" | null,
+  rejection_reason: "string" | null,
+  receipt_sent: false,
+  students: {
+    id: "uuid",
+    full_name: "John Doe",
+    roll_number: "0801CS231045",
+    email: "john@example.com",
+    section_id: "uuid",
+    batch_year: 2023,
+    is_active: true
+  },
+  semesters: {
+    name: "Semester 4",
+    number: 4
+  },
+  reviewer: {
+    full_name: "Prof. Smith"
+  } | null
+}</code></pre>
+
+      <h3>AbortController Cleanup</h3>
+      <p>The hook creates an <code>AbortController</code> instance at the start of each fetch cycle. The controller's signal is not passed directly to Supabase (which does not natively support AbortController), but is used to prevent state updates after the component unmounts or when a new fetch cycle begins. When the effect cleanup runs (on unmount or before a re-fetch), the controller is aborted and a flag is set. If the Supabase query completes after the abort, the state-setting calls are skipped, preventing the "Can't perform a React state update on an unmounted component" warning.</p>
+
+      <div class="callout callout-info">
+        <strong>Re-fetch Triggers:</strong> The hook's <code>useEffect</code> dependency array includes <code>sectionIds</code> and <code>batchConfigs</code>. Changing the active section (via SectionSwitcher) causes <code>sectionIds</code> to change, which triggers a re-fetch. The manual <code>refetch()</code> function is used after approve/reject operations. Both paths go through the same AbortController cleanup logic.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

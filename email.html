@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email System - LTSU Fee Portal Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Email Notification System</h1>
+      <p class="subtitle">EmailJS integration with branded HTML templates for automated approval and rejection notifications to students.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#emailjs-integration-overview">EmailJS Integration Overview</a></li>
+        <li><a href="#environment-variables">Environment Variables</a></li>
+        <li><a href="#email-trigger-flow">Email Trigger Flow</a></li>
+        <li><a href="#approval-email-template">Approval Email Template (template_bsick8e)</a></li>
+        <li><a href="#rejection-email-template">Rejection Email Template (template_wd7lk49)</a></li>
+        <li><a href="#receipt-sent-flag">receipt_sent Flag</a></li>
+        <li><a href="#error-handling">Error Handling</a></li>
+        <li><a href="#emailjs-initialization">EmailJS Initialization</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- EmailJS Integration Overview -->
+    <!-- ============================================================ -->
+    <div class="card" id="emailjs-integration-overview">
+      <h2>EmailJS Integration Overview</h2>
+      <p>The LTSU Fee Portal uses <strong>EmailJS</strong> (<code>@emailjs/browser</code>) as its email delivery service. EmailJS is a client-side email sending library that communicates directly with the EmailJS API from the browser -- no backend server or serverless function is required. This makes it ideal for a Supabase-backed SPA where all logic runs in the client.</p>
+
+      <h3>How It Works</h3>
+      <p>EmailJS is initialized once at application startup in <code>main.jsx</code> via a dynamic import. When a CR or Teacher approves or rejects a fee request on the Dashboard, the application constructs a template parameters object and calls <code>emailjs.send()</code> with the appropriate service ID and template ID. EmailJS then renders the HTML email template on its server-side infrastructure and sends it to the student's email address via the configured SMTP provider.</p>
+
+      <h3>Key Characteristics</h3>
+      <ul>
+        <li><strong>Library:</strong> <code>@emailjs/browser</code> (client-side, no server required)</li>
+        <li><strong>Initialization:</strong> <code>emailjs.init(publicKey)</code> called in <code>main.jsx</code> before React renders</li>
+        <li><strong>Service ID:</strong> <code>service_va1s1tq</code> (configured via <code>VITE_EMAILJS_SERVICE_ID</code>)</li>
+        <li><strong>Public Key:</strong> <code>Hp31LVJ0_HZsNpnN4</code> (configured via <code>VITE_EMAILJS_PUBLIC_KEY</code>)</li>
+        <li><strong>Two templates:</strong> one for approval notifications, one for rejection notifications</li>
+        <li><strong>Trigger point:</strong> <code>DashboardPage.jsx</code> -- emails are sent immediately after a CR/Teacher approves or rejects a fee request</li>
+        <li><strong>Non-blocking:</strong> email failures do not prevent the approve/reject operation from completing</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>Why Client-Side?</strong> Since the LTSU Fee Portal is a fully client-side React SPA with no custom backend, EmailJS provides a way to send emails without deploying a server or edge function. The public key is exposed in the browser, but EmailJS rate-limits and domain-restricts API usage to prevent abuse.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Environment Variables -->
+    <!-- ============================================================ -->
+    <div class="card" id="environment-variables">
+      <h2>Environment Variables</h2>
+      <p>All email-related configuration is managed through Vite environment variables (prefixed with <code>VITE_</code>). These are embedded at build time and accessible via <code>import.meta.env</code> in the application code.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Variable</th><th>Value</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>VITE_EMAILJS_SERVICE_ID</code></td>
+              <td><code>service_va1s1tq</code></td>
+              <td>EmailJS service identifier -- links to the SMTP provider configured in the EmailJS dashboard</td>
+            </tr>
+            <tr>
+              <td><code>VITE_EMAILJS_APPROVAL_TEMPLATE_ID</code></td>
+              <td><code>template_bsick8e</code></td>
+              <td>Template ID for the approval/receipt email</td>
+            </tr>
+            <tr>
+              <td><code>VITE_EMAILJS_REJECTION_TEMPLATE_ID</code></td>
+              <td><code>template_wd7lk49</code></td>
+              <td>Template ID for the rejection notification email</td>
+            </tr>
+            <tr>
+              <td><code>VITE_EMAILJS_PUBLIC_KEY</code></td>
+              <td><code>Hp31LVJ0_HZsNpnN4</code></td>
+              <td>EmailJS public API key used to authenticate client-side requests</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Build-Time Embedding:</strong> Because these are <code>VITE_</code>-prefixed variables, they are statically replaced at build time by Vite. Changing a value requires a full rebuild and redeployment. The values are visible in the compiled JavaScript bundle -- this is by design, as EmailJS public keys are intended to be client-facing.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Email Trigger Flow -->
+    <!-- ============================================================ -->
+    <div class="card" id="email-trigger-flow">
+      <h2>Email Trigger Flow</h2>
+      <p>Emails are triggered from <code>DashboardPage.jsx</code> after a staff member (CR or Teacher) successfully approves or rejects a fee request. The flow is identical for both single-approve and batch-approve operations, and a separate path handles rejections.</p>
+
+      <h3>High-Level Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Staff Approves/Rejects</div>
+        <div class="flow-step">Build Template Params</div>
+        <div class="flow-step">emailjs.send(serviceId, templateId, params)</div>
+        <div class="flow-step">EmailJS API</div>
+        <div class="flow-step highlight">Student Receives Email</div>
+      </div>
+
+      <h3>Detailed Approval Flow (Single Request)</h3>
+      <p>When a CR or Teacher clicks the Approve button for a single fee request, the following sequence executes in <code>DashboardPage.jsx</code>:</p>
+      <ol>
+        <li><strong>Status Update:</strong> The fee request's <code>status</code> is updated to <code>'approved'</code> in the <code>fee_requests</code> table via Supabase. The <code>reviewed_at</code> and <code>reviewed_by</code> fields are also set. An optimistic concurrency check ensures the request is still in <code>'pending'</code> status (<code>.eq('status', 'pending')</code>). If <code>count === 0</code>, the request was already processed by another reviewer, and the operation aborts with a warning toast.</li>
+        <li><strong>Receipt Generation:</strong> A PDF receipt is generated using <code>generateReceipt()</code> from <code>src/utils/generateReceipt.js</code>. This runs in parallel conceptually but completes before the email step.</li>
+        <li><strong>Template Parameters Construction:</strong> An object is built with all the template variables required by the approval email template:</li>
+      </ol>
+      <pre><code>{
+  to_email: req.student_email,
+  student_name: req.students?.full_name,
+  reference_number: req.reference_number,
+  roll_number: req.roll_number,
+  branch_name: req.students?.branches?.name,
+  specialisation_name: req.students?.specialisations?.name,
+  section_name: req.students?.sections?.name,
+  batch_year: req.batch_year,
+  semester_name: req.semesters?.name,
+  fee_amount: req.fee_amount,
+  approved_by_name: profile.full_name,
+  approved_date: formatDate(new Date().toISOString()),
+}</code></pre>
+      <ol start="4">
+        <li><strong>Email Send:</strong> <code>emailjs.send()</code> is called with the service ID (<code>VITE_EMAILJS_SERVICE_ID</code>), template ID (<code>VITE_EMAILJS_APPROVAL_TEMPLATE_ID</code>), and the parameters object.</li>
+        <li><strong>receipt_sent Update:</strong> On successful email delivery, the <code>receipt_sent</code> flag is set to <code>true</code> on the fee request record:
+          <pre><code>await supabase
+  .from('fee_requests')
+  .update({ receipt_sent: true })
+  .eq('id', req.id)</code></pre>
+        </li>
+        <li><strong>Activity Log Entry:</strong> A <code>receipt_sent</code> action is logged via <code>logAction()</code> with the reference number and email address in details.</li>
+        <li><strong>Error Handling:</strong> If <code>emailjs.send()</code> throws, the error is caught, <code>emailFailed</code> is set to <code>true</code>, and the error is logged to the console. The approve operation itself is not reverted -- the student's fee request remains approved.</li>
+      </ol>
+
+      <h3>Detailed Batch Approval Flow</h3>
+      <p>The batch approve flow uses the <code>batch_approve_requests</code> RPC function to update all selected requests in a single database call. After the RPC succeeds, emails are sent sequentially in a loop:</p>
+      <ol>
+        <li>The <code>batch_approve_requests</code> RPC is called with all selected request IDs, setting their status to approved.</li>
+        <li>EmailJS is dynamically imported once before the loop.</li>
+        <li>For each selected request, <code>emailjs.send()</code> is called with the approval template parameters. A 200ms delay (<code>setTimeout</code>) is inserted between each send to avoid EmailJS rate limits.</li>
+        <li>Successfully emailed request IDs are collected in <code>emailSuccessIds</code>.</li>
+        <li>After the loop, a single bulk update sets <code>receipt_sent: true</code> for all successfully emailed requests using <code>.in('id', emailSuccessIds)</code>.</li>
+        <li>A toast displays the count of approved requests and successfully sent emails, e.g., "5 request(s) approved. 4 email(s) sent."</li>
+      </ol>
+      <pre><code>const emailjs = await import('@emailjs/browser').then(m => m.default)
+let emailSuccessIds = []
+const total = selectedRequests.length
+
+for (let i = 0; i < total; i++) {
+  const req = selectedRequests[i]
+  setBatchProgress(`(${i + 1}/${total})`)
+  try {
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_APPROVAL_TEMPLATE_ID,
+      { /* template params */ }
+    )
+    emailSuccessIds.push(req.id)
+  } catch (emailErr) {
+    console.error(`Email failed for ${req.roll_number}:`, emailErr)
+  }
+  await new Promise(r => setTimeout(r, 200))
+}
+
+if (emailSuccessIds.length > 0) {
+  await supabase
+    .from('fee_requests')
+    .update({ receipt_sent: true })
+    .in('id', emailSuccessIds)
+}</code></pre>
+
+      <h3>Detailed Rejection Flow</h3>
+      <p>Rejection emails follow a similar pattern to single approvals, but use the rejection template and include a rejection reason:</p>
+      <ol>
+        <li>The fee request's <code>status</code> is updated to <code>'rejected'</code> with the <code>rejection_reason</code> field populated.</li>
+        <li>Template parameters are constructed with rejection-specific fields:</li>
+      </ol>
+      <pre><code>{
+  to_email: req.student_email,
+  student_name: req.students?.full_name,
+  reference_number: req.reference_number,
+  roll_number: req.roll_number,
+  semester_name: req.semesters?.name,
+  reviewed_by_name: profile.full_name,
+  reviewed_date: formatDate(new Date().toISOString()),
+  rejection_reason: reason,
+}</code></pre>
+      <ol start="3">
+        <li><code>emailjs.send()</code> is called with <code>VITE_EMAILJS_REJECTION_TEMPLATE_ID</code>.</li>
+        <li>On success, a <code>rejection_email_sent</code> action is logged.</li>
+        <li>On failure, the error is caught and logged to console. The rejection itself is not reverted.</li>
+      </ol>
+
+      <div class="callout callout-info">
+        <strong>Sequential Email Sending:</strong> In batch approve, emails are sent one at a time with a 200ms throttle delay between each. This respects EmailJS rate limits and prevents the service from rejecting burst requests. Progress is displayed to the user via <code>setBatchProgress()</code>.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Approval Email Template -->
+    <!-- ============================================================ -->
+    <div class="card" id="approval-email-template">
+      <h2>Approval Email Template (template_bsick8e)</h2>
+      <p>File: <code>email-templates/approval-template.html</code></p>
+      <p>This template is rendered by EmailJS when a fee request is approved. It produces a branded, responsive HTML email that serves as the student's official fee receipt notification.</p>
+
+      <h3>Template Variables</h3>
+      <p>The following variables are passed from <code>DashboardPage.jsx</code> to EmailJS as the template parameters object. EmailJS substitutes <code>{{variable_name}}</code> placeholders in the HTML template with these values.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Variable</th><th>Description</th><th>Example Value</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>to_email</code></td>
+              <td>Student's email address (recipient)</td>
+              <td><code>student@example.com</code></td>
+            </tr>
+            <tr>
+              <td><code>student_name</code></td>
+              <td>Student's full name</td>
+              <td><code>Rahul Sharma</code></td>
+            </tr>
+            <tr>
+              <td><code>reference_number</code></td>
+              <td>Fee request reference number</td>
+              <td><code>LTSU-2025-00001</code></td>
+            </tr>
+            <tr>
+              <td><code>roll_number</code></td>
+              <td>Student's roll number</td>
+              <td><code>0827CS221001</code></td>
+            </tr>
+            <tr>
+              <td><code>branch_name</code></td>
+              <td>Academic branch name</td>
+              <td><code>Computer Science</code></td>
+            </tr>
+            <tr>
+              <td><code>specialisation_name</code></td>
+              <td>Specialisation within the branch</td>
+              <td><code>AI &amp; ML</code></td>
+            </tr>
+            <tr>
+              <td><code>section_name</code></td>
+              <td>Section identifier</td>
+              <td><code>CS-A</code></td>
+            </tr>
+            <tr>
+              <td><code>batch_year</code></td>
+              <td>Student's batch/admission year</td>
+              <td><code>2022</code></td>
+            </tr>
+            <tr>
+              <td><code>semester_name</code></td>
+              <td>Semester name</td>
+              <td><code>Semester 4</code></td>
+            </tr>
+            <tr>
+              <td><code>fee_amount</code></td>
+              <td>Fee amount in INR</td>
+              <td><code>1,500.00</code></td>
+            </tr>
+            <tr>
+              <td><code>approved_by_name</code></td>
+              <td>Reviewer's full name</td>
+              <td><code>Dr. Amit Singh</code></td>
+            </tr>
+            <tr>
+              <td><code>approved_date</code></td>
+              <td>Approval timestamp (formatted)</td>
+              <td><code>Jan 15, 2025</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Template Design</h3>
+      <p>The approval email is a full HTML email built entirely with inline CSS and table-based layouts for maximum compatibility across email clients (Gmail, Outlook, Apple Mail, Yahoo, etc.). Key design elements:</p>
+      <ul>
+        <li><strong>Top Banner:</strong> Navy (#0A1628) header with "Lamrin Tech Skills University Punjab" in gold (#D4A853) lettering and "Fee Management Cell" subtitle</li>
+        <li><strong>Gold Accent Line:</strong> A 4px gradient bar (<code>#D4A853</code> to <code>#E8C97A</code>) separating the header from the content area</li>
+        <li><strong>Heading:</strong> "Semester Registration Fee Receipt" in uppercase navy text</li>
+        <li><strong>Approved Badge:</strong> A pill-shaped badge with green (#16A34A) border and green background (#ECFDF5) containing a checkmark and "APPROVED" text</li>
+        <li><strong>Greeting:</strong> Personalised "Dear {{student_name}}" with a confirmation message</li>
+        <li><strong>Transaction Details Table:</strong> A bordered table with alternating row backgrounds displaying Reference Number, Roll Number, Branch, Specialisation, Section, Batch Year, Semester, Amount (in green), Approved By, and Date of Approval</li>
+        <li><strong>Success Note Box:</strong> A green left-bordered (#16A34A) callout on light green (#F0FDF4) background instructing the student to download their official receipt from the Track Request page</li>
+        <li><strong>Footer:</strong> Navy background with gold "Lamrin Tech Skills University Punjab" branding, a subtle gold divider, and "This is an auto-generated email. Please do not reply." disclaimer</li>
+        <li><strong>Responsive:</strong> Max-width of 600px with <code>width:100%</code> for mobile email clients</li>
+      </ul>
+
+      <h3>Email Subject Line</h3>
+      <p>The email subject is configured in the EmailJS template dashboard and uses template variables:</p>
+      <pre><code>Fee Receipt -- {{semester_name}} | {{reference_number}}</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Rejection Email Template -->
+    <!-- ============================================================ -->
+    <div class="card" id="rejection-email-template">
+      <h2>Rejection Email Template (template_wd7lk49)</h2>
+      <p>File: <code>email-templates/rejection-template.html</code></p>
+      <p>This template is rendered by EmailJS when a fee request is rejected. It informs the student of the rejection and prominently displays the rejection reason provided by the reviewer.</p>
+
+      <h3>Template Variables</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Variable</th><th>Description</th><th>Example Value</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>to_email</code></td>
+              <td>Student's email address (recipient)</td>
+              <td><code>student@example.com</code></td>
+            </tr>
+            <tr>
+              <td><code>student_name</code></td>
+              <td>Student's full name</td>
+              <td><code>Priya Patel</code></td>
+            </tr>
+            <tr>
+              <td><code>reference_number</code></td>
+              <td>Fee request reference number</td>
+              <td><code>LTSU-2025-00002</code></td>
+            </tr>
+            <tr>
+              <td><code>roll_number</code></td>
+              <td>Student's roll number</td>
+              <td><code>0827CS221045</code></td>
+            </tr>
+            <tr>
+              <td><code>semester_name</code></td>
+              <td>Semester name</td>
+              <td><code>Semester 4</code></td>
+            </tr>
+            <tr>
+              <td><code>reviewed_by_name</code></td>
+              <td>Reviewer's full name</td>
+              <td><code>Dr. Amit Singh</code></td>
+            </tr>
+            <tr>
+              <td><code>reviewed_date</code></td>
+              <td>Rejection timestamp (formatted)</td>
+              <td><code>Jan 16, 2025</code></td>
+            </tr>
+            <tr>
+              <td><code>rejection_reason</code></td>
+              <td>Reason for rejection (entered by reviewer via RejectModal)</td>
+              <td><code>Incorrect fee amount submitted</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Template Design</h3>
+      <p>The rejection email shares the same base HTML structure and table-based layout as the approval template, but with distinct visual styling to clearly indicate the negative outcome:</p>
+      <ul>
+        <li><strong>Top Banner:</strong> Same navy (#0A1628) header with gold LTSU branding</li>
+        <li><strong>Gold Accent Line:</strong> Same 4px gradient bar</li>
+        <li><strong>Heading:</strong> "Fee Request Update" in uppercase navy text</li>
+        <li><strong>Rejected Badge:</strong> A pill-shaped badge with red (#DC2626) border and light red (#FEF2F2) background containing an X mark and "REJECTED" text</li>
+        <li><strong>Greeting:</strong> Personalised "Dear {{student_name}}" with a message indicating the request could not be approved</li>
+        <li><strong>Request Details Table:</strong> A bordered table displaying Reference Number, Roll Number, Semester, Reviewed By, and Date -- a smaller field set than the approval template since amount and branch details are less relevant for a rejection</li>
+        <li><strong>Rejection Reason Box:</strong> A prominently displayed red left-bordered (#DC2626) callout on light red (#FEF2F2) background with the reviewer's rejection reason text. This is preceded by an uppercase "Reason for Rejection" label</li>
+        <li><strong>Warning Note Box:</strong> An amber/yellow left-bordered (#F59E0B) callout on warm yellow (#FFFBEB) background: "If you believe this is an error, please contact your CR or Teacher directly. You may resubmit your request after resolving the issue."</li>
+        <li><strong>Footer:</strong> Same navy/gold footer as the approval template with auto-generated email disclaimer</li>
+        <li><strong>Responsive:</strong> Same max-width 600px responsive layout</li>
+      </ul>
+
+      <h3>Email Subject Line</h3>
+      <p>The rejection email subject is configured in the EmailJS template dashboard:</p>
+      <pre><code>Fee Request Update -- {{semester_name}} | {{reference_number}}</code></pre>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- receipt_sent Flag -->
+    <!-- ============================================================ -->
+    <div class="card" id="receipt-sent-flag">
+      <h2>receipt_sent Flag</h2>
+      <p>The <code>receipt_sent</code> column on the <code>fee_requests</code> table is a boolean flag that tracks whether the notification email for a given fee request has been successfully delivered via EmailJS.</p>
+
+      <h3>Schema</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Column</th><th>Type</th><th>Default</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>receipt_sent</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Indicates whether the approval/rejection email was successfully sent to the student</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Behaviour</h3>
+      <ul>
+        <li><strong>Default value:</strong> <code>false</code> -- every new fee request starts with <code>receipt_sent = false</code></li>
+        <li><strong>Set to true:</strong> Only after <code>emailjs.send()</code> resolves successfully. For single approvals, the update is immediate. For batch approvals, all successfully emailed IDs are collected and updated in a single bulk query after the loop.</li>
+        <li><strong>Remains false on email failure:</strong> If <code>emailjs.send()</code> throws an error, the flag stays <code>false</code>. This allows potential future retry mechanisms to identify unsent emails.</li>
+        <li><strong>Display in Dashboard:</strong> The <code>receipt_sent</code> field is included in the formatters utility (<code>src/utils/formatters.js</code>) where it maps to the label "Receipt email sent" for display purposes in activity logs and exports.</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>Idempotency Consideration:</strong> Currently, the application does not explicitly check <code>receipt_sent</code> before attempting to send an email during the approve/reject flow. However, because the status check (<code>.eq('status', 'pending')</code>) prevents re-processing already-handled requests, duplicate emails are effectively prevented. The flag serves primarily as an audit trail and for potential retry logic.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Error Handling -->
+    <!-- ============================================================ -->
+    <div class="card" id="error-handling">
+      <h2>Error Handling</h2>
+      <p>Email delivery in the LTSU Fee Portal is treated as a <strong>non-critical</strong> operation. The system is designed so that email failures never block or revert the primary approve/reject workflow.</p>
+
+      <h3>Error Handling Strategy</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Scenario</th><th>Behaviour</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EmailJS <code>.send()</code> throws</td>
+              <td>Error is caught in a <code>try/catch</code> block. The approve/reject operation is <strong>not</strong> reverted. The fee request status remains changed.</td>
+            </tr>
+            <tr>
+              <td>Console logging</td>
+              <td>The error object is logged via <code>console.error('Email send failed:', emailErr)</code> for single approvals and <code>console.error(`Email failed for ${req.roll_number}:`, emailErr)</code> for batch operations.</td>
+            </tr>
+            <tr>
+              <td>Toast notification</td>
+              <td>For single approvals, the toast message adjusts based on <code>emailFailed</code>: if true, the toast includes a warning note about email delivery failure alongside the success confirmation.</td>
+            </tr>
+            <tr>
+              <td><code>receipt_sent</code> flag</td>
+              <td>Remains <code>false</code> when email fails, distinguishing successful deliveries from failures in the database.</td>
+            </tr>
+            <tr>
+              <td>Activity log</td>
+              <td>The <code>receipt_sent</code> action is only logged if the email send succeeds. If it fails, no <code>receipt_sent</code> log entry is created, but the <code>request_approved</code> or <code>request_rejected</code> entry is still logged.</td>
+            </tr>
+            <tr>
+              <td>Batch approve partial failure</td>
+              <td>Each email in the batch loop is individually wrapped in <code>try/catch</code>. If email fails for one request, the loop continues to the next. The final toast shows both counts: "5 request(s) approved. 3 email(s) sent."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Failure Scenarios</h3>
+      <p>Common reasons for EmailJS send failures include:</p>
+      <ul>
+        <li><strong>Rate limiting:</strong> EmailJS free tier has monthly send limits. Exceeding the limit causes all subsequent sends to fail.</li>
+        <li><strong>Invalid public key:</strong> If <code>VITE_EMAILJS_PUBLIC_KEY</code> is misconfigured or empty, <code>emailjs.init()</code> will initialise with an invalid key and all sends will fail.</li>
+        <li><strong>Network issues:</strong> Transient network failures between the client browser and the EmailJS API.</li>
+        <li><strong>Invalid email address:</strong> If <code>to_email</code> (the student's email) is malformed, EmailJS may reject the request.</li>
+        <li><strong>Template misconfiguration:</strong> If the template ID does not match an existing template in the EmailJS dashboard, the API returns an error.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <strong>No Automatic Retry:</strong> The current implementation does not include automatic retry logic for failed email sends. If an email fails, the only recovery path is manual intervention (re-approving or using a future admin tool). The <code>receipt_sent = false</code> flag can be used to query for requests that were approved but never emailed.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- EmailJS Initialization -->
+    <!-- ============================================================ -->
+    <div class="card" id="emailjs-initialization">
+      <h2>EmailJS Initialization</h2>
+      <p>EmailJS is initialized at application startup in <code>src/main.jsx</code>, before React's <code>createRoot().render()</code> call. The initialization is performed via a dynamic import to keep the main bundle size minimal.</p>
+
+      <h3>Initialization Code</h3>
+      <pre><code>import('@emailjs/browser').then(m => {
+  m.default.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '')
+})</code></pre>
+
+      <h3>Breakdown</h3>
+      <ul>
+        <li><strong>Dynamic import:</strong> <code>import('@emailjs/browser')</code> returns a Promise. The <code>@emailjs/browser</code> module is loaded asynchronously and does not block the initial bundle parse or React rendering.</li>
+        <li><strong>Module default export:</strong> The <code>.then(m => m.default.init(...))</code> chain accesses the default export of the EmailJS module and calls <code>init()</code> with the public key.</li>
+        <li><strong>Fallback empty string:</strong> <code>import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''</code> ensures that if the environment variable is undefined, an empty string is passed rather than <code>undefined</code>. This prevents a runtime error during init but means all subsequent <code>emailjs.send()</code> calls will fail with an authentication error.</li>
+        <li><strong>Fire-and-forget:</strong> The <code>.then()</code> Promise is not awaited. If the dynamic import or init fails, no error is surfaced to the user. Emails will simply fail silently when triggered later.</li>
+      </ul>
+
+      <h3>Timing</h3>
+      <p>The dynamic import is kicked off immediately when <code>main.jsx</code> is evaluated, which happens before React mounts. By the time a user navigates to the Dashboard and performs an approve/reject action, the EmailJS library will have loaded and initialized. However, subsequent usages of EmailJS in <code>DashboardPage.jsx</code> also use dynamic imports (<code>await import('@emailjs/browser').then(m => m.default)</code>) to ensure the module is available, making the initialization in <code>main.jsx</code> a warm-up optimization rather than a hard requirement.</p>
+
+      <div class="callout callout-info">
+        <strong>Dual Dynamic Imports:</strong> Both <code>main.jsx</code> and <code>DashboardPage.jsx</code> use <code>import('@emailjs/browser')</code>. The first call loads the module and caches it; subsequent calls return the cached module instantly. The init in <code>main.jsx</code> ensures the library is ready by the time the Dashboard needs it, while the re-import in <code>DashboardPage.jsx</code> ensures the module reference is available in the local scope.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

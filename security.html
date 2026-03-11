@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security - LTSU Fee Portal Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Security</h1>
+      <p class="subtitle">Multi-layered security architecture with Row-Level Security, Content Security Policy, input sanitization, rate limiting, RBAC enforcement, and comprehensive activity logging.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#security-overview">Security Overview</a></li>
+        <li><a href="#row-level-security">Row-Level Security (RLS)</a></li>
+        <li><a href="#content-security-policy">Content Security Policy (CSP)</a></li>
+        <li><a href="#input-sanitization">Input Sanitization</a></li>
+        <li><a href="#rate-limiting">Rate Limiting</a></li>
+        <li><a href="#role-based-access-control">Role-Based Access Control (RBAC)</a></li>
+        <li><a href="#optimistic-concurrency-control">Optimistic Concurrency Control</a></li>
+        <li><a href="#edge-function-security">Edge Function Security (admin-actions)</a></li>
+        <li><a href="#activity-logging">Activity Logging</a></li>
+        <li><a href="#password-security">Password Security</a></li>
+        <li><a href="#build-time-security">Build-Time Security</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECURITY OVERVIEW                                            -->
+    <!-- ============================================================ -->
+    <div class="card" id="security-overview">
+      <h2>Security Overview</h2>
+      <p>The LTSU Fee Portal implements security at multiple layers, ensuring that no single point of compromise can grant unauthorized access to the system. Each layer operates independently and reinforces the others.</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step"><strong>1. Database Level</strong><br>Row-Level Security (RLS) on all 10 tables</div>
+        <div class="flow-step"><strong>2. Application Level</strong><br>Role-Based Access Control (RBAC), input sanitization, rate limiting</div>
+        <div class="flow-step"><strong>3. Network Level</strong><br>Content Security Policy headers, HTTPS enforcement</div>
+        <div class="flow-step"><strong>4. Server Level</strong><br>Edge Functions with <code>service_role</code> key for privileged operations</div>
+        <div class="flow-step"><strong>5. Audit Level</strong><br>Comprehensive activity logging with <code>activity_logs</code> table</div>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Defense in Depth:</strong> Even if a client-side check is bypassed (e.g., by manipulating React state), the database-level RLS policies and Edge Function authorization checks prevent unauthorized data access or modification. The security model does not rely on any single layer alone.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ROW-LEVEL SECURITY (RLS)                                     -->
+    <!-- ============================================================ -->
+    <div class="card" id="row-level-security">
+      <h2>Row-Level Security (RLS)</h2>
+      <p>All 10 database tables have RLS enabled. RLS enforces data access at the PostgreSQL level &mdash; queries only return rows the user is authorized to see. This means that even if the application code contains a bug that constructs an overly broad query, the database itself will filter the results before returning them.</p>
+
+      <h3>RLS Bypass Mechanisms</h3>
+      <p>Two mechanisms exist for bypassing RLS when required:</p>
+      <ul>
+        <li><strong>SECURITY DEFINER RPC functions:</strong> Used to grant public access to specific operations that do not require authentication, such as student fee submission (<code>submit_fee_request</code>) and tracking (<code>track_fee_request</code>). These functions execute with the privileges of the function creator, not the caller.</li>
+        <li><strong>Service role key:</strong> The <code>supabase service_role</code> key is used exclusively within Edge Functions. This key bypasses RLS entirely and has full database access. It is never exposed to the client.</li>
+      </ul>
+
+      <h3>RLS Policy Summary by Table</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Table</th>
+              <th>SELECT Policy</th>
+              <th>INSERT Policy</th>
+              <th>UPDATE Policy</th>
+              <th>DELETE Policy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>users</code></td>
+              <td>Staff can read own record via <code>auth.uid() = id</code></td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+            </tr>
+            <tr>
+              <td><code>students</code></td>
+              <td>Staff can read students in their assigned sections</td>
+              <td>Admin via <code>service_role</code>; public via RPC</td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+            </tr>
+            <tr>
+              <td><code>fee_requests</code></td>
+              <td>Staff can read requests for students in their assigned sections</td>
+              <td>Public via <code>submit_fee_request</code> RPC</td>
+              <td>Staff can update status for requests in their sections</td>
+              <td>Not permitted (immutable audit trail)</td>
+            </tr>
+            <tr>
+              <td><code>activity_logs</code></td>
+              <td>Authenticated staff can read all logs</td>
+              <td>Authenticated staff via <code>logAction</code> utility</td>
+              <td>Not permitted (immutable)</td>
+              <td>pg_cron cleanup only (31-day retention)</td>
+            </tr>
+            <tr>
+              <td><code>branches</code></td>
+              <td>Read access for authenticated users</td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+            </tr>
+            <tr>
+              <td><code>specialisations</code></td>
+              <td>Read access for authenticated users</td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+            </tr>
+            <tr>
+              <td><code>sections</code></td>
+              <td>Read access for authenticated users</td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+            </tr>
+            <tr>
+              <td><code>semesters</code></td>
+              <td>Read access for authenticated users</td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+            </tr>
+            <tr>
+              <td><code>batch_configs</code></td>
+              <td>Read access for authenticated users</td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+            </tr>
+            <tr>
+              <td><code>user_sections</code></td>
+              <td>Staff can read own assignments; admin can read all</td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+              <td>Admin via <code>service_role</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>SECURITY DEFINER Functions:</strong> The <code>submit_fee_request</code> and <code>track_fee_request</code> RPCs are declared with <code>SECURITY DEFINER</code>. This means they execute with the privileges of the database role that created them, not the anonymous caller. These are the only entry points for unauthenticated users to interact with the database. The functions perform strict input validation internally before executing any queries.
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>Service Role Key Exposure:</strong> The <code>service_role</code> key must never be exposed in client-side code, environment variables accessible to the browser, or version control. It is stored exclusively as a Supabase Edge Function secret and used only within the <code>admin-actions</code> Edge Function. Leaking this key would grant unrestricted database access, bypassing all RLS policies.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- CONTENT SECURITY POLICY (CSP)                                -->
+    <!-- ============================================================ -->
+    <div class="card" id="content-security-policy">
+      <h2>Content Security Policy (CSP)</h2>
+      <p>The application enforces a Content Security Policy via a <code>&lt;meta&gt;</code> tag in <code>index.html</code>. CSP restricts which resources the browser is allowed to load, mitigating cross-site scripting (XSS), data injection, and clickjacking attacks.</p>
+
+      <h3>CSP Directive Breakdown</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Directive</th>
+              <th>Value</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>default-src</code></td>
+              <td><code>'self'</code></td>
+              <td>Fallback for all resource types &mdash; only same-origin resources allowed unless overridden by a more specific directive</td>
+            </tr>
+            <tr>
+              <td><code>script-src</code></td>
+              <td><code>'self'</code></td>
+              <td>Only scripts from the same origin are permitted. No inline scripts, no <code>eval()</code>, no external CDNs</td>
+            </tr>
+            <tr>
+              <td><code>style-src</code></td>
+              <td><code>'self' 'unsafe-inline' https://fonts.googleapis.com</code></td>
+              <td>Allows same-origin stylesheets, inline styles (required for React component styling), and Google Fonts CSS</td>
+            </tr>
+            <tr>
+              <td><code>font-src</code></td>
+              <td><code>https://fonts.gstatic.com</code></td>
+              <td>Allows font file downloads from Google Fonts CDN only</td>
+            </tr>
+            <tr>
+              <td><code>connect-src</code></td>
+              <td><code>'self' https://*.supabase.co https://api.emailjs.com</code></td>
+              <td>Allows API requests to same origin, Supabase backend, and EmailJS API. All other XHR/fetch/WebSocket destinations are blocked</td>
+            </tr>
+            <tr>
+              <td><code>img-src</code></td>
+              <td><code>'self' data:</code></td>
+              <td>Allows same-origin images and inline data URIs (used for generated receipt PDFs)</td>
+            </tr>
+            <tr>
+              <td><code>frame-ancestors</code></td>
+              <td><code>'none'</code></td>
+              <td>Prevents the application from being embedded in any <code>&lt;iframe&gt;</code>, <code>&lt;frame&gt;</code>, or <code>&lt;object&gt;</code> &mdash; blocks clickjacking attacks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Actual CSP Meta Tag</h3>
+      <pre><code>&lt;meta http-equiv="Content-Security-Policy"
+  content="default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src https://fonts.gstatic.com;
+    connect-src 'self' https://*.supabase.co https://api.emailjs.com;
+    img-src 'self' data:;
+    frame-ancestors 'none';" /&gt;</code></pre>
+
+      <div class="callout callout-info">
+        <strong>Why unsafe-inline for styles?</strong> React applies component styles via the <code>style</code> attribute on DOM elements. Without <code>'unsafe-inline'</code> in <code>style-src</code>, all inline styles would be blocked, breaking the UI. This is a known trade-off in React applications that use inline styling patterns rather than CSS-in-JS libraries with nonce support.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- INPUT SANITIZATION                                           -->
+    <!-- ============================================================ -->
+    <div class="card" id="input-sanitization">
+      <h2>Input Sanitization</h2>
+      <p>All user-supplied text is sanitized before being stored or displayed. The sanitization utilities are defined in <code>src/utils/validators.js</code> and applied throughout the application wherever user input is processed.</p>
+
+      <h3>sanitizeText(value)</h3>
+      <p>The primary text sanitization function, applied to all free-text inputs (student names, remarks, rejection reasons, etc.).</p>
+      <pre><code>export const sanitizeText = (text) => {
+  if (!text) return ''
+  let clean = text.replace(/&lt;[^&gt;]*&gt;/g, '').trim()
+  // Strip CSV injection chars from start AND dangerous chars throughout
+  clean = clean.replace(/^[=+\-@\t\r]+/, '')
+  clean = clean.replace(/[\t\r]/g, ' ')
+  return clean.substring(0, 500)
+}</code></pre>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>Operation</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Strip HTML tags via regex <code>/&lt;[^&gt;]*&gt;/g</code></td>
+              <td>Prevents stored XSS by removing any HTML elements from the input</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Trim whitespace</td>
+              <td>Normalizes input by removing leading/trailing whitespace</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Strip CSV injection prefixes <code>/^[=+\-@\t\r]+/</code></td>
+              <td>Prevents CSV injection attacks. Spreadsheet applications (Excel, Google Sheets) interpret cells starting with <code>=</code>, <code>+</code>, <code>-</code>, or <code>@</code> as formulas, which can execute arbitrary commands when the exported CSV is opened</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Replace tab/carriage-return characters <code>/[\t\r]/g</code></td>
+              <td>Prevents CSV field splitting and other control character injection attacks</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Truncate to 500 characters</td>
+              <td>Caps input length to prevent excessively large payloads and potential DoS via storage exhaustion</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>sanitizeRollNumber(value)</h3>
+      <p>Specialized sanitizer for student roll number inputs. Applied on blur of the roll number field in the fee submission form.</p>
+      <pre><code>export const sanitizeRollNumber = (roll) => {
+  if (!roll) return ''
+  return roll.trim().toUpperCase().replace(/[^A-Z0-9]/g, '')
+}</code></pre>
+      <ul>
+        <li>Trims whitespace from both ends</li>
+        <li>Converts to uppercase for consistent formatting</li>
+        <li>Strips all characters except <code>A-Z</code> and <code>0-9</code> (whitelist approach)</li>
+      </ul>
+
+      <h3>isValidEmail(email)</h3>
+      <p>Regex-based email format validation used on the student email field in the fee submission form and on staff email inputs in the Admin Panel.</p>
+      <pre><code>export const isValidEmail = (email) => {
+  if (!email || email.length &gt; 254) return false
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}</code></pre>
+      <ul>
+        <li>Rejects empty strings and emails longer than 254 characters (RFC 5321 maximum)</li>
+        <li>Pattern requires: <code>localpart@domain.tld</code></li>
+        <li>Does not allow spaces or multiple <code>@</code> signs</li>
+        <li>Used as a client-side gate &mdash; the actual email deliverability is validated by EmailJS at send time</li>
+      </ul>
+
+      <h3>PII Sanitization in Activity Logs</h3>
+      <p>The <code>ActivityLogPage.jsx</code> component sanitizes log detail objects before rendering them in the UI. This prevents accidental exposure of Personally Identifiable Information (PII) to staff members viewing the activity log.</p>
+      <pre><code>const sanitizeDetails = (details) => {
+  if (!details || typeof details !== 'object') return details
+  const piiKeys = ['email', 'password', 'phone', 'phone_number', 'mobile']
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  const cleaned = {}
+  for (const [key, value] of Object.entries(details)) {
+    if (piiKeys.includes(key.toLowerCase())) continue
+    if (typeof value === 'string' && emailRegex.test(value.trim())) continue
+    cleaned[key] = value
+  }
+  return Object.keys(cleaned).length > 0 ? cleaned : null
+}</code></pre>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Filter</th>
+              <th>Mechanism</th>
+              <th>Fields Caught</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Key-based exclusion</td>
+              <td>Compares <code>key.toLowerCase()</code> against PII key list</td>
+              <td><code>email</code>, <code>password</code>, <code>phone</code>, <code>phone_number</code>, <code>mobile</code></td>
+            </tr>
+            <tr>
+              <td>Value-based exclusion</td>
+              <td>Tests string values against email regex pattern</td>
+              <td>Any value that looks like an email address, regardless of key name</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Client-Side Only:</strong> This PII sanitization is performed client-side for display purposes only. The actual log data in the <code>activity_logs</code> database table retains all fields for complete audit trail purposes. The sanitization prevents casual exposure of sensitive data to staff viewing logs in the dashboard, but does not affect the underlying data.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RATE LIMITING                                                -->
+    <!-- ============================================================ -->
+    <div class="card" id="rate-limiting">
+      <h2>Rate Limiting</h2>
+      <p>Client-side rate limiting is implemented in two critical areas to deter brute-force attacks. Both mechanisms use React component state to track attempt counts and enforce cooldown periods.</p>
+
+      <h3>Login Lockout (LoginPage.jsx)</h3>
+      <p>Prevents brute-forcing staff login credentials by locking the form after repeated failures.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Max attempts before lockout</td>
+              <td><strong>5</strong> failed login attempts</td>
+            </tr>
+            <tr>
+              <td>Lockout duration</td>
+              <td><strong>60 seconds</strong></td>
+            </tr>
+            <tr>
+              <td>State variables</td>
+              <td><code>attempts</code> (integer counter), <code>lockoutUntil</code> (timestamp)</td>
+            </tr>
+            <tr>
+              <td>Lockout behavior</td>
+              <td>Submit button disabled, countdown timer displayed in error message</td>
+            </tr>
+            <tr>
+              <td>Reset conditions</td>
+              <td>Successful login or page refresh (component remount)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <pre><code>// On failed login (catch block)
+setAttempts(prev => {
+  const next = prev + 1
+  if (next >= 5) setLockoutUntil(Date.now() + 60_000)
+  return next
+})
+
+// On form submit (before login attempt)
+if (lockoutUntil && Date.now() < lockoutUntil) {
+  const secs = Math.ceil((lockoutUntil - Date.now()) / 1000)
+  setError(`Too many attempts. Try again in ${secs}s.`)
+  return
+}</code></pre>
+
+      <h3>Tracking Rate Limit (TrackingPage.jsx)</h3>
+      <p>Prevents brute-forcing reference numbers by limiting the number of lookups within a time window.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Max lookups before cooldown</td>
+              <td><strong>5</strong> tracking lookups</td>
+            </tr>
+            <tr>
+              <td>Cooldown duration</td>
+              <td><strong>30 seconds</strong></td>
+            </tr>
+            <tr>
+              <td>State variables</td>
+              <td><code>trackCount</code> (integer counter), <code>trackCooldown</code> (boolean)</td>
+            </tr>
+            <tr>
+              <td>Cooldown behavior</td>
+              <td>Error message displayed, lookup function returns early</td>
+            </tr>
+            <tr>
+              <td>Reset conditions</td>
+              <td>Cooldown expires via <code>setTimeout</code> callback (resets both <code>trackCooldown</code> and <code>trackCount</code>)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <pre><code>setTrackCount(prev => {
+  const next = prev + 1
+  if (next >= 5) {
+    setTrackCooldown(true)
+    setTimeout(() => {
+      setTrackCooldown(false)
+      setTrackCount(0)
+    }, 30_000)
+  }
+  return next
+})</code></pre>
+
+      <div class="callout callout-warning">
+        <strong>Client-Side Limitation:</strong> Both rate limiting mechanisms use React component state. They are effective against casual abuse but can be circumvented by refreshing the page (which resets component state) or by making direct API calls that bypass the React UI. For production-grade rate limiting, server-side enforcement via Supabase Edge Functions or an API gateway should be considered.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ROLE-BASED ACCESS CONTROL (RBAC)                             -->
+    <!-- ============================================================ -->
+    <div class="card" id="role-based-access-control">
+      <h2>Role-Based Access Control (RBAC)</h2>
+      <p>The application defines 4 access levels. Access is enforced at three layers: React Router (client-side navigation), <code>ProtectedRoute</code> wrapper (authentication gate), and RLS policies (database-level authorization).</p>
+
+      <h3>Access Levels</h3>
+
+      <h4>1. Public (No Authentication)</h4>
+      <ul>
+        <li><strong>LandingPage</strong> (<code>/</code>) &mdash; Marketing page, no data access</li>
+        <li><strong>StudentFormPage</strong> (<code>/submit</code>) &mdash; Fee submission form. Uses <code>SECURITY DEFINER</code> RPCs to insert data without authentication</li>
+        <li><strong>TrackingPage</strong> (<code>/track</code>) &mdash; Reference number lookup. Uses <code>SECURITY DEFINER</code> RPCs to query data without authentication</li>
+        <li><strong>LoginPage</strong> (<code>/login</code>) &mdash; Staff authentication entry point</li>
+      </ul>
+
+      <h4>2. Class Representative (CR)</h4>
+      <ul>
+        <li>Dashboard with a single assigned section</li>
+        <li>Approve or reject fee requests within their assigned section</li>
+        <li>View activity logs filtered to their section</li>
+        <li>Export data (CSV, Excel, PDF) for their section</li>
+      </ul>
+
+      <h4>3. Teacher</h4>
+      <ul>
+        <li>All CR capabilities</li>
+        <li>Access to multiple assigned sections</li>
+        <li>Section switcher component to toggle between assigned sections</li>
+      </ul>
+
+      <h4>4. Admin</h4>
+      <ul>
+        <li>Full system configuration via the Admin Panel</li>
+        <li>Staff account management: create, edit, deactivate, delete accounts</li>
+        <li>Data management: branches, specialisations, semesters, sections, students, batch configs</li>
+        <li>CSV upload for bulk student data import</li>
+        <li>Activity log viewing across all sections</li>
+        <li>Uses Edge Functions with <code>service_role</code> key for privileged database operations</li>
+      </ul>
+
+      <h3>Route Access Matrix</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>Component</th>
+              <th>Public</th>
+              <th>CR</th>
+              <th>Teacher</th>
+              <th>Admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>/</code></td>
+              <td>LandingPage</td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+            </tr>
+            <tr>
+              <td><code>/submit</code></td>
+              <td>StudentFormPage</td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+            </tr>
+            <tr>
+              <td><code>/track</code></td>
+              <td>TrackingPage</td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+            </tr>
+            <tr>
+              <td><code>/login</code></td>
+              <td>LoginPage</td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+            </tr>
+            <tr>
+              <td><code>/dashboard</code></td>
+              <td>DashboardPage</td>
+              <td><span class="badge badge-red">No</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-red">No</span></td>
+            </tr>
+            <tr>
+              <td><code>/admin</code></td>
+              <td>AdminPage</td>
+              <td><span class="badge badge-red">No</span></td>
+              <td><span class="badge badge-red">No</span></td>
+              <td><span class="badge badge-red">No</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+            </tr>
+            <tr>
+              <td><code>/log</code></td>
+              <td>ActivityLogPage</td>
+              <td><span class="badge badge-red">No</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+              <td><span class="badge badge-green">Yes</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>ProtectedRoute Implementation</h3>
+      <p>The <code>ProtectedRoute</code> component wraps authenticated routes. It checks two conditions:</p>
+      <ol>
+        <li><strong>Authentication:</strong> Verifies that <code>user</code> and <code>profile</code> exist in <code>AuthContext</code>. If not, redirects to <code>/login</code>.</li>
+        <li><strong>Role Authorization:</strong> If an <code>allowedRoles</code> prop is provided, checks that <code>profile.role</code> is included in the array. If not, redirects to <code>/</code>.</li>
+      </ol>
+      <pre><code>// Dashboard route &mdash; only CR and Teacher
+&lt;ProtectedRoute allowedRoles={['cr', 'teacher']}&gt;
+  &lt;DashboardPage /&gt;
+&lt;/ProtectedRoute&gt;
+
+// Activity Log route &mdash; any authenticated user
+&lt;ProtectedRoute&gt;
+  &lt;ActivityLogPage /&gt;
+&lt;/ProtectedRoute&gt;</code></pre>
+
+      <div class="callout callout-info">
+        <strong>Admin Route Note:</strong> The <code>/admin</code> route uses <code>AdminPage</code> directly without the <code>ProtectedRoute</code> wrapper, but <code>AdminPage</code> performs its own internal authorization check. It verifies that the authenticated user has the <code>admin</code> role and redirects unauthorized users.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- OPTIMISTIC CONCURRENCY CONTROL                               -->
+    <!-- ============================================================ -->
+    <div class="card" id="optimistic-concurrency-control">
+      <h2>Optimistic Concurrency Control</h2>
+      <p>When multiple staff members (CRs or Teachers) are assigned to the same section, they may attempt to approve or reject the same fee request simultaneously. The application uses an optimistic concurrency pattern to detect and prevent double-processing.</p>
+
+      <h3>Mechanism</h3>
+      <p>The approve and reject operations use a conditional update query that includes the current status as a filter:</p>
+      <pre><code>const { error, count } = await supabase
+  .from('fee_requests')
+  .update({
+    status: 'approved',
+    reviewed_at: new Date().toISOString(),
+    reviewed_by: profile.id,
+  })
+  .eq('id', req.id)
+  .eq('status', 'pending')       // Only update if still pending
+  .select('id', { count: 'exact' })</code></pre>
+
+      <h3>Race Condition Prevention</h3>
+      <div class="flow-diagram">
+        <div class="flow-step"><strong>Step 1</strong><br>Staff A clicks "Approve" on request #123</div>
+        <div class="flow-step"><strong>Step 2</strong><br>UPDATE query filters by <code>id = 123 AND status = 'pending'</code></div>
+        <div class="flow-step"><strong>Step 3</strong><br>If <code>count === 1</code>: update succeeded, request is now approved</div>
+        <div class="flow-step"><strong>Step 4</strong><br>Staff B clicks "Approve" on the same request #123 moments later</div>
+        <div class="flow-step"><strong>Step 5</strong><br>UPDATE query filters by <code>id = 123 AND status = 'pending'</code>, but status is now <code>'approved'</code></div>
+        <div class="flow-step"><strong>Step 6</strong><br><code>count === 0</code>: no rows matched, indicating the request was already processed</div>
+      </div>
+
+      <p>When <code>count === 0</code>, the application displays a warning toast:</p>
+      <pre><code>if (count === 0) {
+  addToast('Request already processed by another reviewer.', 'warning')
+  refetch()  // Refresh the request list to reflect the current state
+  return
+}</code></pre>
+
+      <div class="callout callout-info">
+        <strong>Why This Works:</strong> PostgreSQL's <code>UPDATE ... WHERE</code> is atomic. When two concurrent UPDATE statements target the same row, one will execute first and change the status from <code>'pending'</code> to <code>'approved'</code> (or <code>'rejected'</code>). The second UPDATE's WHERE clause will then fail to match any rows because the status is no longer <code>'pending'</code>. The <code>count</code> return value allows the application to detect this scenario without a separate SELECT query.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- EDGE FUNCTION SECURITY                                       -->
+    <!-- ============================================================ -->
+    <div class="card" id="edge-function-security">
+      <h2>Edge Function Security (admin-actions)</h2>
+      <p>The <code>admin-actions</code> Edge Function runs on Supabase Edge Functions (Deno runtime) and handles privileged operations that require the <code>service_role</code> key. This key bypasses all RLS policies and has full database access.</p>
+
+      <h3>Supported Actions</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Description</th>
+              <th>Input</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>create_user</code></td>
+              <td>Creates a new Supabase Auth user and corresponding <code>users</code> table record</td>
+              <td>email, password, full_name, role, staff_id, branch_id, specialisation_id, section assignments</td>
+            </tr>
+            <tr>
+              <td><code>reset_password</code></td>
+              <td>Resets a staff member's password via Supabase Admin API</td>
+              <td>user_id, new_password</td>
+            </tr>
+            <tr>
+              <td><code>deactivate_user</code></td>
+              <td>Deactivates a staff account by setting <code>is_active = false</code> in the <code>users</code> table</td>
+              <td>user_id</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Security Checks</h3>
+      <ol>
+        <li><strong>Authentication:</strong> The Edge Function extracts the JWT from the <code>Authorization</code> header and verifies it using Supabase's <code>auth.getUser()</code> method. Unauthenticated requests are rejected with a <code>401</code> status.</li>
+        <li><strong>Authorization:</strong> After authentication, the function queries the <code>users</code> table to verify that the caller has the <code>admin</code> role. Non-admin callers are rejected with a <code>403</code> status.</li>
+        <li><strong>Input Validation:</strong> The request body is validated for required fields based on the action type. Missing or invalid fields result in a <code>400</code> status.</li>
+        <li><strong>Service Role Isolation:</strong> The <code>service_role</code> key is stored as a Supabase Edge Function secret (environment variable). It is never transmitted to or accessible by the client application.</li>
+      </ol>
+
+      <div class="flow-diagram">
+        <div class="flow-step"><strong>Client Request</strong><br>Admin Panel sends POST with JWT in Authorization header</div>
+        <div class="flow-step"><strong>Auth Check</strong><br>Edge Function verifies JWT via <code>auth.getUser()</code></div>
+        <div class="flow-step"><strong>Role Check</strong><br>Queries <code>users</code> table to confirm <code>role = 'admin'</code></div>
+        <div class="flow-step"><strong>Validation</strong><br>Validates request body fields for the specified action</div>
+        <div class="flow-step"><strong>Execution</strong><br>Performs the action using <code>service_role</code> Supabase client</div>
+        <div class="flow-step"><strong>Response</strong><br>Returns success or error JSON to the client</div>
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>No Client-Side Bypass:</strong> The admin-actions Edge Function is the only pathway for creating users, resetting passwords, and deactivating accounts. These operations cannot be performed through the Supabase client library with the anonymous key because RLS policies block direct access to Supabase Auth admin methods. An attacker with access to the anonymous key cannot escalate privileges without also compromising the Edge Function endpoint with a valid admin JWT.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ACTIVITY LOGGING                                             -->
+    <!-- ============================================================ -->
+    <div class="card" id="activity-logging">
+      <h2>Activity Logging</h2>
+      <p>The application maintains a comprehensive audit trail via the <code>activity_logs</code> table. Every significant user action is recorded, providing a complete history of system activity for compliance and forensic purposes.</p>
+
+      <h3>Log Entry Structure</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>id</code></td>
+              <td>UUID</td>
+              <td>Primary key, auto-generated</td>
+            </tr>
+            <tr>
+              <td><code>action_type</code></td>
+              <td>text</td>
+              <td>The type of action performed (see action types below)</td>
+            </tr>
+            <tr>
+              <td><code>performed_by_role</code></td>
+              <td>text</td>
+              <td>Role of the user who performed the action (<code>cr</code>, <code>teacher</code>, <code>admin</code>)</td>
+            </tr>
+            <tr>
+              <td><code>performed_by_name</code></td>
+              <td>text</td>
+              <td>Full name of the user who performed the action</td>
+            </tr>
+            <tr>
+              <td><code>performed_by_id</code></td>
+              <td>text</td>
+              <td>Staff ID of the user who performed the action</td>
+            </tr>
+            <tr>
+              <td><code>target_name</code></td>
+              <td>text</td>
+              <td>Name of the entity being acted upon (student name, staff name, etc.)</td>
+            </tr>
+            <tr>
+              <td><code>target_roll</code></td>
+              <td>text</td>
+              <td>Roll number of the target student (if applicable)</td>
+            </tr>
+            <tr>
+              <td><code>details</code></td>
+              <td>jsonb</td>
+              <td>Additional context as a JSON object (fee amount, rejection reason, etc.)</td>
+            </tr>
+            <tr>
+              <td><code>section_name</code></td>
+              <td>text</td>
+              <td>Section context for the action</td>
+            </tr>
+            <tr>
+              <td><code>branch_name</code></td>
+              <td>text</td>
+              <td>Branch context for the action</td>
+            </tr>
+            <tr>
+              <td><code>created_at</code></td>
+              <td>timestamptz</td>
+              <td>Timestamp of when the action was recorded</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>logAction Utility</h3>
+      <p>All log entries are created via the <code>logAction</code> utility in <code>src/utils/logAction.js</code>. This function inserts a row into the <code>activity_logs</code> table using the Supabase client.</p>
+      <pre><code>export const logAction = async ({
+  actionType,
+  performedByRole,
+  performedByName,
+  performedById = null,
+  targetName = null,
+  targetRoll = null,
+  details = null,
+  sectionName = null,
+  branchName = null,
+}) => {
+  try {
+    const { error } = await supabase.from('activity_logs').insert({
+      action_type: actionType,
+      performed_by_role: performedByRole,
+      performed_by_name: performedByName,
+      performed_by_id: performedById,
+      target_name: targetName,
+      target_roll: targetRoll,
+      details: details,
+      section_name: sectionName,
+      branch_name: branchName,
+    })
+    if (error) console.error('Failed to log action:', error)
+  } catch (err) {
+    console.error('Failed to log action:', err)
+  }
+}</code></pre>
+
+      <h3>Tracked Action Types</h3>
+      <p>Over 30 action types are tracked across the application. Key categories include:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Action Types</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Authentication</td>
+              <td><code>staff_login</code>, <code>staff_logout</code></td>
+            </tr>
+            <tr>
+              <td>Fee Requests</td>
+              <td><code>approve_request</code>, <code>reject_request</code>, <code>bulk_approve</code>, <code>bulk_reject</code></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><code>approval_email_sent</code>, <code>rejection_email_sent</code></td>
+            </tr>
+            <tr>
+              <td>Staff Management</td>
+              <td><code>admin_create_staff</code>, <code>admin_edit_staff</code>, <code>admin_deactivate_staff</code>, <code>admin_activate_staff</code>, <code>admin_delete_staff</code>, <code>admin_reset_password</code></td>
+            </tr>
+            <tr>
+              <td>Student Management</td>
+              <td><code>admin_create_student</code>, <code>admin_edit_student</code>, <code>admin_delete_student</code>, <code>admin_toggle_student</code></td>
+            </tr>
+            <tr>
+              <td>Data Management</td>
+              <td><code>admin_create_branch</code>, <code>admin_edit_branch</code>, <code>admin_toggle_branch</code>, <code>admin_create_section</code>, <code>admin_edit_section</code>, <code>admin_toggle_section</code>, <code>admin_create_spec</code>, <code>admin_edit_spec</code>, <code>admin_toggle_spec</code>, <code>admin_create_semester</code>, <code>admin_edit_semester</code>, <code>admin_toggle_semester</code></td>
+            </tr>
+            <tr>
+              <td>Batch &amp; CSV</td>
+              <td><code>admin_update_batch</code>, <code>admin_csv_upload</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Denormalized Design</h3>
+      <p>The <code>activity_logs</code> table uses a denormalized schema with no foreign key constraints. All contextual data (names, roles, section/branch names) is stored directly as text values rather than as references to other tables. This design decision ensures that:</p>
+      <ul>
+        <li>Log entries survive even if the referenced entities (users, students, sections, branches) are subsequently deleted or modified</li>
+        <li>Log queries do not require JOINs, enabling fast read performance</li>
+        <li>The audit trail remains an immutable historical record, unaffected by ongoing data changes</li>
+      </ul>
+
+      <h3>Automatic Cleanup</h3>
+      <p>A <code>pg_cron</code> scheduled job runs periodically to delete log entries older than 31 days. This prevents unbounded table growth while retaining a rolling window of recent activity for audit purposes.</p>
+
+      <div class="callout callout-info">
+        <strong>Fail-Safe Logging:</strong> The <code>logAction</code> utility wraps the insert in a try/catch block and only logs errors to the console. A logging failure never prevents the primary operation from completing. This ensures that a temporary database connectivity issue with the logging subsystem does not block user actions such as approving or rejecting fee requests.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PASSWORD SECURITY                                            -->
+    <!-- ============================================================ -->
+    <div class="card" id="password-security">
+      <h2>Password Security</h2>
+      <p>Staff passwords are managed through Supabase Auth, which handles hashing, storage, and verification. The application adds additional security through its password generation algorithm.</p>
+
+      <h3>Password Hashing</h3>
+      <p>Supabase Auth uses <strong>bcrypt</strong> for password hashing. Passwords are hashed before storage and never stored in plaintext. The application never has access to the raw password after the initial creation or reset operation.</p>
+
+      <h3>Auto-Generated Passwords</h3>
+      <p>When creating a new staff account or resetting a password, the Admin Panel generates a cryptographically secure random password using the <code>generatePassword()</code> function in <code>StaffManager.jsx</code>.</p>
+
+      <pre><code>const secureRandom = (max) => {
+  const arr = new Uint32Array(1)
+  crypto.getRandomValues(arr)
+  return arr[0] % max
+}
+
+const generatePassword = () => {
+  const upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ'
+  const lower = 'abcdefghjkmnpqrstuvwxyz'
+  const digits = '23456789'
+  const symbols = '!@#$%&*'
+  const all = upper + lower + digits + symbols
+  const pick = (s) => s[secureRandom(s.length)]
+  let pw = [pick(upper), pick(lower), pick(digits), pick(symbols)]
+  for (let i = 0; i < 8; i++) pw.push(pick(all))
+  // Fisher-Yates shuffle
+  for (let i = pw.length - 1; i > 0; i--) {
+    const j = secureRandom(i + 1);
+    [pw[i], pw[j]] = [pw[j], pw[i]]
+  }
+  return pw.join('')
+}</code></pre>
+
+      <h3>Password Generation Properties</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Length</td>
+              <td><strong>12 characters</strong> (4 guaranteed category picks + 8 random from all categories)</td>
+            </tr>
+            <tr>
+              <td>Uppercase requirement</td>
+              <td>At least 1 character from <code>ABCDEFGHJKLMNPQRSTUVWXYZ</code></td>
+            </tr>
+            <tr>
+              <td>Lowercase requirement</td>
+              <td>At least 1 character from <code>abcdefghjkmnpqrstuvwxyz</code></td>
+            </tr>
+            <tr>
+              <td>Digit requirement</td>
+              <td>At least 1 character from <code>23456789</code></td>
+            </tr>
+            <tr>
+              <td>Special character requirement</td>
+              <td>At least 1 character from <code>!@#$%&amp;*</code></td>
+            </tr>
+            <tr>
+              <td>Ambiguous characters excluded</td>
+              <td><code>I</code>, <code>l</code>, <code>O</code>, <code>0</code>, <code>1</code> are omitted from character pools to avoid visual confusion</td>
+            </tr>
+            <tr>
+              <td>Randomness source</td>
+              <td><code>crypto.getRandomValues()</code> (Web Crypto API, cryptographically secure)</td>
+            </tr>
+            <tr>
+              <td>Position randomness</td>
+              <td>Fisher-Yates shuffle ensures that the guaranteed category characters are not always at the start of the password</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Password Lifecycle</h3>
+      <div class="flow-diagram">
+        <div class="flow-step"><strong>Generation</strong><br>Admin clicks "Generate" in StaffManager; <code>generatePassword()</code> produces 12-char password</div>
+        <div class="flow-step"><strong>Display</strong><br>Password shown in the form field for admin to copy and share with the staff member</div>
+        <div class="flow-step"><strong>Transmission</strong><br>Password sent to Edge Function via HTTPS POST in the request body</div>
+        <div class="flow-step"><strong>Hashing</strong><br>Supabase Auth hashes the password with bcrypt before storing it</div>
+        <div class="flow-step"><strong>Discarded</strong><br>Plaintext password is not stored anywhere in the application after the API call completes</div>
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>No Self-Service Password Reset:</strong> Staff members cannot reset their own passwords. Only admin users can reset passwords via the Admin Panel, which invokes the <code>admin-actions</code> Edge Function with the <code>reset_password</code> action. This centralizes password management and prevents unauthorized password changes.
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- BUILD-TIME SECURITY                                          -->
+    <!-- ============================================================ -->
+    <div class="card" id="build-time-security">
+      <h2>Build-Time Security</h2>
+      <p>The Vite build configuration (<code>vite.config.js</code>) includes production-specific optimizations that remove debug information from the production bundle, reducing the attack surface and preventing information leakage.</p>
+
+      <pre><code>export default defineConfig(({ mode }) => ({
+  plugins: [react(), tailwindcss()],
+  esbuild: mode === 'production'
+    ? {
+        drop: ['debugger'],
+        pure: [
+          'console.log',
+          'console.debug',
+          'console.info',
+          'console.warn',
+        ],
+      }
+    : {},
+  build: {
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          supabase: ['@supabase/supabase-js'],
+        },
+      },
+    },
+  },
+}))</code></pre>
+
+      <h3>Production Stripping</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Setting</th>
+              <th>Effect</th>
+              <th>Security Benefit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>esbuild.pure</code></td>
+              <td>Removes <code>console.log</code>, <code>console.debug</code>, <code>console.info</code>, <code>console.warn</code> calls from the production bundle</td>
+              <td>Prevents leaking internal application state, variable values, API responses, and debug messages to the browser console</td>
+            </tr>
+            <tr>
+              <td><code>esbuild.drop: ['debugger']</code></td>
+              <td>Removes all <code>debugger</code> statements from the production bundle</td>
+              <td>Prevents accidental breakpoints in production that could halt execution and expose the call stack to anyone with DevTools open</td>
+            </tr>
+            <tr>
+              <td><code>build.sourcemap: false</code></td>
+              <td>Disables source map generation for production builds</td>
+              <td>Prevents reverse-engineering of the original source code structure, variable names, and component logic from the minified production bundle</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Development vs Production:</strong> The <code>esbuild</code> stripping configuration is conditionally applied only when <code>mode === 'production'</code>. During local development (<code>pnpm run dev</code>), all console statements and debugger calls remain functional to support debugging and development workflows.
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>console.error Preserved:</strong> Note that <code>console.error</code> is intentionally not included in the <code>pure</code> list. Error logging remains active in production to facilitate debugging of critical failures in the browser console. The <code>logAction</code> utility, for instance, falls back to <code>console.error</code> when an activity log insert fails.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication - LTSU Fee Portal Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <span class="mobile-header-brand">LTSU Fee Portal Docs</span>
+  <div class="mobile-header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+    <button class="hamburger" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-brand">LTSU Fee Portal</a>
+    <span class="sidebar-subtitle">Technical Documentation</span>
+  </div>
+  <div class="sidebar-nav">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Overview</a>
+    <a href="architecture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Architecture</a>
+    <a href="database.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Database Schema</a>
+    <a href="authentication.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Authentication</a>
+    <a href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Panel</a>
+    <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Dashboard</a>
+    <a href="student-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Student Form</a>
+    <a href="email.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email System</a>
+    <a href="security.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Security</a>
+    <a href="deployment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>Deployment</a>
+    <a href="components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Components</a>
+    <a href="api.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API Reference</a>
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://github.com/Ns81000/LTSU_Fee_Portal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View Source</a>
+    <button class="theme-toggle" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <button class="btn btn-secondary btn-sm" onclick="downloadMarkdown()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download as Markdown
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Authentication</h1>
+      <p class="subtitle">Supabase Auth integration with role-based access control, session management, login lockout protection, and multi-level route guarding.</p>
+      <div class="gold-line"></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#authentication-overview">Authentication Overview</a></li>
+        <li><a href="#login-flow">Login Flow (LoginPage.jsx)</a></li>
+        <li><a href="#auth-context">AuthContext (AuthContext.jsx)</a></li>
+        <li><a href="#admin-authentication">Admin Authentication (AdminPage.jsx)</a></li>
+        <li><a href="#route-protection">Route Protection (ProtectedRoute.jsx)</a></li>
+        <li><a href="#session-management">Session Management</a></li>
+        <li><a href="#user-account-lifecycle">User Account Lifecycle</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Authentication Overview -->
+    <!-- ============================================================ -->
+    <h2 id="authentication-overview">Authentication Overview</h2>
+
+    <div class="card">
+      <p>The LTSU Fee Portal uses <strong>Supabase Auth</strong> as its sole authentication provider, handling all credential-based authentication via <strong>email and password</strong>. There is no OAuth, magic link, or SSO integration. The system supports three authenticated roles that correspond to distinct access levels within the application.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Authentication Method</th>
+              <th>Access Scope</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>admin</code></td>
+              <td>Email + Password (verified against <code>VITE_ADMIN_EMAIL</code>)</td>
+              <td>Full admin panel: 9 management modules + activity log</td>
+            </tr>
+            <tr>
+              <td><code>cr</code></td>
+              <td>Email + Password (Supabase Auth)</td>
+              <td>Dashboard: review/approve/reject fee requests for assigned sections</td>
+            </tr>
+            <tr>
+              <td><code>teacher</code></td>
+              <td>Email + Password (Supabase Auth)</td>
+              <td>Dashboard: review/approve/reject fee requests for assigned sections</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Students do not need authentication.</strong> The student-facing pages (<code>/submit</code> for fee submission and <code>/track</code> for tracking request status) are entirely public. Students identify themselves by roll number, not by a login session.</p>
+    </div>
+
+    <div class="card">
+      <h3>Users Table Structure</h3>
+      <p>The <code>users</code> table in the <code>public</code> schema extends <code>auth.users</code> with application-specific fields. When a staff account is created, a corresponding record is inserted into both <code>auth.users</code> (managed by Supabase) and <code>public.users</code> (managed by the application).</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Column</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>id</code></td>
+              <td><code>uuid</code> (PK, FK to auth.users)</td>
+              <td>Primary key, references the Supabase auth user ID</td>
+            </tr>
+            <tr>
+              <td><code>role</code></td>
+              <td><code>text</code></td>
+              <td>One of: <code>admin</code>, <code>cr</code>, <code>teacher</code></td>
+            </tr>
+            <tr>
+              <td><code>full_name</code></td>
+              <td><code>text</code></td>
+              <td>Display name of the staff member</td>
+            </tr>
+            <tr>
+              <td><code>staff_id</code></td>
+              <td><code>text</code> (unique)</td>
+              <td>Auto-generated identifier (e.g., <code>TCH-17100523894a</code>)</td>
+            </tr>
+            <tr>
+              <td><code>email</code></td>
+              <td><code>text</code> (unique)</td>
+              <td>Login email address</td>
+            </tr>
+            <tr>
+              <td><code>is_active</code></td>
+              <td><code>boolean</code></td>
+              <td>Account activation flag; <code>false</code> prevents login</td>
+            </tr>
+            <tr>
+              <td><code>created_at</code></td>
+              <td><code>timestamptz</code></td>
+              <td>Timestamp of account creation</td>
+            </tr>
+            <tr>
+              <td><code>created_by</code></td>
+              <td><code>uuid</code> (FK)</td>
+              <td>ID of the admin who created the account</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Supabase Responsibilities:</strong> Supabase Auth handles JWT token generation, session refresh (automatic), secure password hashing (bcrypt), and the <code>auth.users</code> table. The application never stores or processes raw passwords -- all credential handling is delegated to Supabase's server-side auth engine.
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Login Flow -->
+    <!-- ============================================================ -->
+    <h2 id="login-flow">Login Flow (LoginPage.jsx)</h2>
+
+    <div class="card">
+      <h3>Step-by-Step Login Process</h3>
+      <p>The login flow is implemented in <code>LoginPage.jsx</code> and involves multiple validation layers before granting access:</p>
+
+      <ol>
+        <li><strong>User navigates to <code>/login</code>.</strong> The page renders a centered login card with a role selector and credential fields.</li>
+        <li><strong>Role selection.</strong> Two pill-shaped buttons allow the user to choose between "CR" (Class Representative) and "Teacher". The selected role is stored in local state as <code>role</code> (<code>'cr'</code> or <code>'teacher'</code>). This selection determines which role the profile will be validated against after authentication.</li>
+        <li><strong>User enters email and password.</strong> Both fields are required HTML inputs. The email field uses <code>type="email"</code> for basic browser validation.</li>
+        <li><strong>Lockout check.</strong> Before any network request, the handler checks whether a lockout is active. If <code>lockoutUntil</code> is set and <code>Date.now() &lt; lockoutUntil</code>, the form displays a countdown message and returns early without calling Supabase.</li>
+        <li><strong>Supabase authentication.</strong> The <code>login(email, password)</code> function from <code>AuthContext</code> is called, which internally invokes <code>supabase.auth.signInWithPassword({ email, password })</code>. On success, this returns the authenticated <code>user</code> object.</li>
+        <li><strong>Profile fetch.</strong> After successful Supabase auth, the component directly queries the <code>users</code> table: <code>supabase.from('users').select('*').eq('id', user.id).single()</code>. This retrieves the application-level profile record.</li>
+        <li><strong>Account existence check.</strong> If no profile is returned (<code>!profile</code>), the user sees "Account not found. Contact your administrator." and login halts.</li>
+        <li><strong>Active status check.</strong> If <code>profile.is_active</code> is <code>false</code>, the error "Your account has been deactivated. Contact the administrator." is displayed and login halts.</li>
+        <li><strong>Role verification.</strong> The profile's <code>role</code> field is compared against the role pill the user selected. If <code>profile.role !== role</code>, Supabase auth is signed out immediately (<code>supabase.auth.signOut()</code>) and the error "Incorrect role selected." is shown. This prevents a teacher from logging in via the CR pill and vice versa.</li>
+        <li><strong>Activity log entry.</strong> On successful validation, an activity log record is created via <code>logAction()</code> with <code>actionType: 'staff_login'</code>, <code>performedByRole: profile.role</code>, <code>performedByName: profile.full_name</code>, and <code>performedById: profile.staff_id</code>.</li>
+        <li><strong>Redirect.</strong> A success toast is shown and the user is navigated to <code>/dashboard</code> using React Router's <code>useNavigate()</code>.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Login Lockout Mechanism</h3>
+      <p>A client-side brute-force protection system prevents rapid successive login attempts:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>State Variable</th>
+              <th>Type</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>attempts</code></td>
+              <td><code>number</code></td>
+              <td>Tracks the count of consecutive failed login attempts (initialized to <code>0</code>)</td>
+            </tr>
+            <tr>
+              <td><code>lockoutUntil</code></td>
+              <td><code>number | null</code></td>
+              <td>Unix timestamp (ms) when the lockout expires; <code>null</code> when no lockout is active</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Behaviour on failed login:</strong></p>
+      <ol>
+        <li>The <code>catch</code> block increments <code>attempts</code> by 1 using a state updater function.</li>
+        <li>If the new count is <code>&gt;= 5</code>, <code>lockoutUntil</code> is set to <code>Date.now() + 60000</code> (60-second cooldown).</li>
+        <li>While locked out, the submit handler checks <code>lockoutUntil</code> at the top and displays "Too many attempts. Try again in Xs." where X is the remaining seconds.</li>
+      </ol>
+
+      <pre><code>// Lockout logic in the catch block of handleSubmit
+setAttempts(prev =&gt; {
+  const next = prev + 1
+  if (next &gt;= 5) setLockoutUntil(Date.now() + 60_000)
+  return next
+})</code></pre>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Client-Side Only:</strong> The lockout mechanism is implemented entirely in React state. Refreshing the page resets the counter. This provides a first line of defence against accidental rapid retries but is not a substitute for server-side rate limiting. Supabase itself applies its own rate limits on the <code>signInWithPassword</code> endpoint.
+    </div>
+
+    <div class="card">
+      <h3>Login Flow Diagram</h3>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">User enters credentials</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Lockout check</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">signInWithPassword()</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Fetch profile</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Active check</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Role match</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Redirect to /dashboard</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Login Error States</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Condition</th>
+              <th>Error Message</th>
+              <th>Side Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Supabase auth fails (wrong email/password)</td>
+              <td>"Invalid email or password."</td>
+              <td>Increments <code>attempts</code>; may trigger lockout</td>
+            </tr>
+            <tr>
+              <td>No profile record found</td>
+              <td>"Account not found. Contact your administrator."</td>
+              <td>None (auth session exists but unused)</td>
+            </tr>
+            <tr>
+              <td><code>is_active === false</code></td>
+              <td>"Your account has been deactivated. Contact the administrator."</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>Role mismatch (profile.role !== selected pill)</td>
+              <td>"Incorrect role selected."</td>
+              <td>Calls <code>supabase.auth.signOut()</code></td>
+            </tr>
+            <tr>
+              <td>Lockout active</td>
+              <td>"Too many attempts. Try again in Xs."</td>
+              <td>Login button effectively disabled</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- AuthContext -->
+    <!-- ============================================================ -->
+    <h2 id="auth-context">AuthContext (AuthContext.jsx)</h2>
+
+    <div class="card">
+      <h3>Context Architecture</h3>
+      <p>The <code>AuthContext</code> is created via <code>createContext()</code> and exposed through an <code>AuthProvider</code> wrapper component placed at the root of the component tree in <code>App.jsx</code>. All child components can access authentication state via the <code>useAuth()</code> custom hook.</p>
+
+      <h4>State Variables</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>user</code></td>
+              <td><code>object | null</code></td>
+              <td>The Supabase <code>auth.user</code> object containing <code>id</code>, <code>email</code>, <code>aud</code>, etc.</td>
+            </tr>
+            <tr>
+              <td><code>profile</code></td>
+              <td><code>object | null</code></td>
+              <td>The application-level user record from the <code>public.users</code> table</td>
+            </tr>
+            <tr>
+              <td><code>sections</code></td>
+              <td><code>array</code></td>
+              <td>Array of section objects the user is assigned to, with nested semester/branch/specialisation data</td>
+            </tr>
+            <tr>
+              <td><code>loading</code></td>
+              <td><code>boolean</code></td>
+              <td>True while the initial session check and profile fetch are in progress</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Refs</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Ref</th>
+              <th>Type</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>fetchingRef</code></td>
+              <td><code>useRef(false)</code></td>
+              <td>Guard to prevent duplicate <code>fetchProfile</code> calls. If <code>fetchingRef.current</code> is <code>true</code>, subsequent calls return immediately.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>fetchProfile Function</h3>
+      <p>The core data-fetching function retrieves the user's profile and their assigned sections with all related academic data:</p>
+
+      <pre><code>const fetchProfile = useCallback(async (userId) =&gt; {
+  if (fetchingRef.current) return
+  fetchingRef.current = true
+  try {
+    // Step 1: Fetch the user profile
+    const { data: profileData } = await supabase
+      .from('users')
+      .select('*')
+      .eq('id', userId)
+      .single()
+
+    if (profileData) {
+      setProfile(profileData)
+
+      // Step 2: Fetch assigned sections with nested relations
+      const { data: sectionData } = await supabase
+        .from('user_sections')
+        .select(`
+          section_id,
+          sections(
+            id, name, branch_id, specialisation_id, semester_id,
+            semesters(id, name, number),
+            branches(name),
+            specialisations(name)
+          )
+        `)
+        .eq('user_id', userId)
+
+      setSections(sectionData?.map(s =&gt; s.sections) || [])
+    }
+  } finally {
+    fetchingRef.current = false
+    setLoading(false)
+  }
+}, [])</code></pre>
+
+      <p>This two-step fetch ensures the profile is available before sections are loaded. The <code>fetchingRef</code> guard prevents race conditions when <code>onAuthStateChange</code> fires multiple times rapidly (which can happen during session restoration on page load).</p>
+    </div>
+
+    <div class="card">
+      <h3>Auth State Listener</h3>
+      <p>On mount, the <code>AuthProvider</code> registers a Supabase auth state change listener. This fires on sign-in, sign-out, and token refresh events:</p>
+
+      <pre><code>useEffect(() =&gt; {
+  // Check existing session on mount
+  supabase.auth.getSession().then(({ data: { session } }) =&gt; {
+    if (session?.user) {
+      setUser(session.user)
+      fetchProfile(session.user.id)
+    } else {
+      setLoading(false)
+    }
+  })
+
+  // Listen for auth state changes
+  const { data: { subscription } } = supabase.auth.onAuthStateChange(
+    (_event, session) =&gt; {
+      if (session?.user) {
+        setUser(session.user)
+        fetchProfile(session.user.id)
+      } else {
+        setUser(null)
+        setProfile(null)
+        setSections([])
+        setLoading(false)
+      }
+    }
+  )
+
+  return () =&gt; subscription.unsubscribe()
+}, [fetchProfile])</code></pre>
+
+      <p>On <code>SIGNED_IN</code>, the user state is set and <code>fetchProfile()</code> is called to load application data. On <code>SIGNED_OUT</code>, all state is cleared to <code>null</code> / empty arrays.</p>
+    </div>
+
+    <div class="card">
+      <h3>Exposed Context Value</h3>
+      <p>The context value is wrapped in <code>useMemo</code> to prevent unnecessary re-renders across the component tree:</p>
+
+      <pre><code>const value = useMemo(() =&gt; ({
+  user,       // Supabase auth.user object
+  profile,    // public.users record
+  sections,   // Array of assigned section objects
+  loading,    // Boolean: initial load in progress
+  login,      // (email, password) =&gt; Promise
+  logout,     // () =&gt; Promise (signs out, clears state)
+}), [user, profile, sections, loading, login, logout])</code></pre>
+
+      <h4>Function Signatures</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Parameters</th>
+              <th>Returns</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>login</code></td>
+              <td><code>(email: string, password: string)</code></td>
+              <td><code>Promise&lt;data&gt;</code></td>
+              <td>Calls <code>supabase.auth.signInWithPassword()</code>; throws on error</td>
+            </tr>
+            <tr>
+              <td><code>logout</code></td>
+              <td>None</td>
+              <td><code>Promise&lt;void&gt;</code></td>
+              <td>Calls <code>supabase.auth.signOut()</code>; clears <code>user</code>, <code>profile</code>, and <code>sections</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>useAuth Hook</h3>
+      <pre><code>export const useAuth = () =&gt; {
+  const context = useContext(AuthContext)
+  if (!context)
+    throw new Error('useAuth must be used within an AuthProvider')
+  return context
+}</code></pre>
+      <p>The hook includes a runtime guard that throws if called outside the <code>AuthProvider</code> tree. This catches misconfiguration errors during development.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Admin Authentication -->
+    <!-- ============================================================ -->
+    <h2 id="admin-authentication">Admin Authentication (AdminPage.jsx)</h2>
+
+    <div class="card">
+      <h3>Separate Auth Flow</h3>
+      <p>The admin panel uses a <strong>completely separate authentication flow</strong> from the regular staff login. It does not share the <code>/login</code> route or the <code>AuthContext</code> login mechanism. Instead, <code>AdminPage.jsx</code> manages its own local authentication state.</p>
+
+      <h4>Authentication Steps</h4>
+      <ol>
+        <li><strong>Session check on mount.</strong> The component calls <code>supabase.auth.getSession()</code> to check if an existing session belongs to the admin. If <code>session.user.email</code> matches <code>VITE_ADMIN_EMAIL</code> (case-insensitive comparison), the component sets <code>authenticated = true</code> and skips the login form.</li>
+        <li><strong>Login form.</strong> If no valid admin session exists, a login card is rendered with email and password fields and a shield icon.</li>
+        <li><strong>Supabase auth.</strong> On submit, <code>supabase.auth.signInWithPassword({ email, password })</code> is called.</li>
+        <li><strong>Admin email verification.</strong> After successful Supabase authentication, the entered email is compared (case-insensitive) against the <code>VITE_ADMIN_EMAIL</code> environment variable. If they do not match, <code>supabase.auth.signOut()</code> is called immediately and the login fails with a generic error message.</li>
+        <li><strong>Activity log.</strong> On successful admin login, an activity log entry is created with <code>actionType: 'admin_login'</code>, <code>performedByRole: 'admin'</code>, <code>performedByName: 'Administrator'</code>.</li>
+        <li><strong>Admin dashboard renders.</strong> The <code>AdminSidebar</code> component and the active management module are displayed.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Admin Login Flow Diagram</h3>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Admin enters credentials</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">signInWithPassword()</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Email vs VITE_ADMIN_EMAIL</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Log admin_login</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Admin Panel</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Key Implementation Details</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Environment variable</td>
+              <td><code>VITE_ADMIN_EMAIL</code> -- set in <code>.env</code> file, accessed via <code>import.meta.env.VITE_ADMIN_EMAIL</code></td>
+            </tr>
+            <tr>
+              <td>Admin email</td>
+              <td><code>admin@ltsu.edu.in</code></td>
+            </tr>
+            <tr>
+              <td>Admin staff ID</td>
+              <td><code>ADMIN001</code></td>
+            </tr>
+            <tr>
+              <td>Session storage</td>
+              <td>Supabase manages the session in <code>localStorage</code>; admin state is held in component-level React state (resets on page refresh, re-checked via <code>getSession()</code>)</td>
+            </tr>
+            <tr>
+              <td>Logout</td>
+              <td>Calls <code>supabase.auth.signOut()</code>, resets local state (<code>authenticated</code>, <code>email</code>, <code>password</code>, <code>activeSection</code>)</td>
+            </tr>
+            <tr>
+              <td>Management modules</td>
+              <td>AdminOverview, BranchManager, SpecManager, SectionManager, BatchManager, SemesterManager, StaffManager, CSVUploader, StudentManager</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-danger">
+      <strong>Security Note:</strong> The admin email check is performed client-side after Supabase authentication succeeds. This prevents unauthorized users from accessing the admin UI, but the true security boundary is enforced at the database layer via Row-Level Security policies. Even if a non-admin user bypassed the client-side check, RLS policies would prevent them from executing admin-only database operations.
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Route Protection -->
+    <!-- ============================================================ -->
+    <h2 id="route-protection">Route Protection (ProtectedRoute.jsx)</h2>
+
+    <div class="card">
+      <h3>Guard Component</h3>
+      <p>The <code>ProtectedRoute</code> component wraps protected routes in <code>App.jsx</code>, enforcing authentication and role-based access before rendering child components. It consumes the <code>AuthContext</code> via <code>useAuth()</code>.</p>
+
+      <h4>Props</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>children</code></td>
+              <td><code>ReactNode</code></td>
+              <td>The component to render if all checks pass</td>
+            </tr>
+            <tr>
+              <td><code>allowedRoles</code></td>
+              <td><code>string[] | undefined</code></td>
+              <td>Array of permitted roles (e.g., <code>['cr', 'teacher']</code>). If omitted, any authenticated active user is allowed.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Check Sequence</h4>
+      <ol>
+        <li>If <code>loading</code> is <code>true</code> -- renders <code>&lt;Spinner /&gt;</code> (waiting for session check to complete).</li>
+        <li>If <code>!user</code> or <code>!profile</code> -- redirects to <code>/login</code> via <code>&lt;Navigate to="/login" replace /&gt;</code>.</li>
+        <li>If <code>!profile.is_active</code> -- redirects to <code>/login</code>.</li>
+        <li>If <code>allowedRoles</code> is provided and <code>!allowedRoles.includes(profile.role)</code> -- redirects to <code>/login</code>.</li>
+        <li>All checks pass -- renders <code>children</code>.</li>
+      </ol>
+
+      <pre><code>export default function ProtectedRoute({ children, allowedRoles }) {
+  const { user, profile, loading } = useAuth()
+
+  if (loading) return &lt;Spinner /&gt;
+
+  if (!user || !profile) return &lt;Navigate to="/login" replace /&gt;
+
+  if (!profile.is_active) return &lt;Navigate to="/login" replace /&gt;
+
+  if (allowedRoles &amp;&amp; !allowedRoles.includes(profile.role)) {
+    return &lt;Navigate to="/login" replace /&gt;
+  }
+
+  return children
+}</code></pre>
+    </div>
+
+    <div class="card">
+      <h3>Route Protection Flow</h3>
+      <div class="flow-diagram">
+        <div class="flow-step">loading?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">user exists?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">profile exists?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">is_active?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">role allowed?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Render children</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Route Configuration</h3>
+      <p>The complete route table from <code>App.jsx</code>, showing which routes are public, which are guarded by <code>ProtectedRoute</code>, and which use custom protection:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>Component</th>
+              <th>Protection</th>
+              <th>Allowed Roles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>/</code></td>
+              <td>LandingPage</td>
+              <td>None</td>
+              <td>Public</td>
+            </tr>
+            <tr>
+              <td><code>/submit</code></td>
+              <td>StudentFormPage</td>
+              <td>None</td>
+              <td>Public</td>
+            </tr>
+            <tr>
+              <td><code>/track</code></td>
+              <td>TrackingPage</td>
+              <td>None</td>
+              <td>Public</td>
+            </tr>
+            <tr>
+              <td><code>/login</code></td>
+              <td>LoginPage</td>
+              <td>None</td>
+              <td>Public</td>
+            </tr>
+            <tr>
+              <td><code>/dashboard</code></td>
+              <td>DashboardPage</td>
+              <td>ProtectedRoute</td>
+              <td><code>cr</code>, <code>teacher</code></td>
+            </tr>
+            <tr>
+              <td><code>/log</code></td>
+              <td>ActivityLogPage</td>
+              <td>ProtectedRoute</td>
+              <td>Any authenticated user</td>
+            </tr>
+            <tr>
+              <td><code>/admin</code></td>
+              <td>AdminPage</td>
+              <td>Custom (component-level session check)</td>
+              <td><code>admin</code></td>
+            </tr>
+            <tr>
+              <td><code>*</code></td>
+              <td>NotFoundPage</td>
+              <td>None</td>
+              <td>Public</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Lazy Loading:</strong> All page components in <code>App.jsx</code> are loaded via <code>React.lazy()</code> with a <code>&lt;Suspense fallback={&lt;Spinner /&gt;}&gt;</code> wrapper. This means the JavaScript bundle for each page is only downloaded when that route is first accessed. The <code>ProtectedRoute</code> guard runs after the lazy component resolves but before the component's own effects execute.
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Session Management -->
+    <!-- ============================================================ -->
+    <h2 id="session-management">Session Management</h2>
+
+    <div class="card">
+      <h3>Staff Session (Supabase-Managed)</h3>
+      <p>Supabase Auth manages session lifecycle automatically for staff users (CR and teacher roles):</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Behaviour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Storage</td>
+              <td>Session tokens (access token + refresh token) are persisted in <code>localStorage</code> by the Supabase client library</td>
+            </tr>
+            <tr>
+              <td>Token format</td>
+              <td>JWT (JSON Web Token) containing the user's <code>sub</code> (user ID), <code>role</code>, <code>aud</code>, and expiry claims</td>
+            </tr>
+            <tr>
+              <td>Token refresh</td>
+              <td>Supabase automatically refreshes the JWT before it expires using the refresh token. No application code is needed.</td>
+            </tr>
+            <tr>
+              <td>State detection</td>
+              <td>The <code>onAuthStateChange</code> listener in <code>AuthContext</code> detects all auth events (sign-in, sign-out, token refresh) and updates application state accordingly</td>
+            </tr>
+            <tr>
+              <td>Profile re-fetch</td>
+              <td><code>fetchProfile()</code> is called on every auth state change that includes a user, ensuring the profile data is always current</td>
+            </tr>
+            <tr>
+              <td>Persistence</td>
+              <td>Sessions survive page refreshes and browser restarts (persisted in <code>localStorage</code>). Users remain logged in until they explicitly sign out or the refresh token expires.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Admin Session</h3>
+      <p>The admin authentication state is managed differently from staff sessions:</p>
+      <ul>
+        <li>The <code>authenticated</code> boolean is stored in <strong>component-level React state</strong>, not in <code>sessionStorage</code>.</li>
+        <li>On page refresh, the component re-checks the existing Supabase session by calling <code>supabase.auth.getSession()</code> and comparing the user's email against <code>VITE_ADMIN_EMAIL</code>.</li>
+        <li>Closing the browser tab does not invalidate the Supabase session in <code>localStorage</code>, but the admin component will re-verify the email on next load.</li>
+        <li>On logout, <code>supabase.auth.signOut()</code> is called, which clears the session from <code>localStorage</code> and resets all local component state.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Session Flow Diagram</h3>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Page load</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">getSession()</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Session exists?</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">fetchProfile()</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">onAuthStateChange listener</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">App ready</div>
+      </div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Token Expiry:</strong> If the Supabase refresh token itself expires (due to prolonged inactivity beyond the server-configured refresh token lifetime), the user will be silently signed out on the next auth state change event. The <code>onAuthStateChange</code> listener will fire with a <code>null</code> session, clearing all application state and effectively redirecting the user to the login page on the next navigation attempt through <code>ProtectedRoute</code>.
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- User Account Lifecycle -->
+    <!-- ============================================================ -->
+    <h2 id="user-account-lifecycle">User Account Lifecycle</h2>
+
+    <div class="card">
+      <h3>Full Lifecycle</h3>
+      <p>Staff accounts (CR and teacher) follow a controlled lifecycle managed entirely by the admin:</p>
+
+      <ol>
+        <li>
+          <strong>Account Creation.</strong> The admin creates a staff account via the <code>StaffManager</code> component in the admin panel. This triggers a Supabase Edge Function (<code>admin-actions</code>) that:
+          <ul>
+            <li>Creates a record in <code>auth.users</code> (Supabase-managed authentication table) with the provided email and auto-generated password.</li>
+            <li>Creates a corresponding record in <code>public.users</code> with the role, full name, auto-generated staff ID, email, and <code>is_active = true</code>.</li>
+            <li>Creates entries in <code>user_sections</code> to link the staff member to their assigned sections.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Staff ID Generation.</strong> Staff IDs are auto-generated with the following format:
+          <ul>
+            <li>Teachers: <code>TCH-{timestamp}{random}</code> (e.g., <code>TCH-17100523894a</code>)</li>
+            <li>Class Representatives: <code>CR-{timestamp}{random}</code> (e.g., <code>CR-1710052389b7</code>)</li>
+          </ul>
+          The timestamp provides uniqueness, and random characters add collision resistance.
+        </li>
+        <li>
+          <strong>Password Generation.</strong> An initial password of <strong>12 characters</strong> is auto-generated using <code>crypto.getRandomValues()</code>. The password includes a mix of:
+          <ul>
+            <li>Uppercase letters (A-Z)</li>
+            <li>Lowercase letters (a-z)</li>
+            <li>Digits (0-9)</li>
+            <li>Special symbols (!@#$%^&amp;*)</li>
+          </ul>
+          The generated password is shown to the admin once during account creation. It is never stored in plaintext -- Supabase hashes it using bcrypt before persisting.
+        </li>
+        <li>
+          <strong>First Login.</strong> The staff member signs in at <code>/login</code> using the admin-provided email and generated password. On successful login, the activity log records the <code>staff_login</code> event.
+        </li>
+        <li>
+          <strong>Password Reset.</strong> The admin can reset a staff member's password via the <code>StaffManager</code> component, which calls the Edge Function. A new 12-character password is generated and displayed to the admin. The old password is invalidated immediately.
+        </li>
+        <li>
+          <strong>Account Deactivation.</strong> The admin toggles <code>is_active</code> to <code>false</code> via the <code>StaffManager</code>. The effect is:
+          <ul>
+            <li>Existing sessions are not forcefully terminated.</li>
+            <li>On the <strong>next login attempt</strong>, step 8 of the login flow (active status check) fails, and the user sees "Your account has been deactivated."</li>
+            <li>If the user is already logged in, the <code>ProtectedRoute</code> guard checks <code>profile.is_active</code> on re-render (e.g., after profile re-fetch on auth state change). If inactive, the user is redirected to <code>/login</code>.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Account Reactivation.</strong> The admin can toggle <code>is_active</code> back to <code>true</code>. The staff member can then log in normally with their existing credentials (unless the password was also reset).
+        </li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Account Lifecycle Diagram</h3>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Admin creates account</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Edge Function: auth.users + public.users + user_sections</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Staff receives credentials</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Staff logs in</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Active use</div>
+      </div>
+      <div class="flow-diagram">
+        <div class="flow-step">Admin deactivates</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">is_active = false</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Login blocked</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step">Admin reactivates</div>
+        <span class="flow-arrow">&#8594;</span>
+        <div class="flow-step highlight">Login restored</div>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>No Self-Service:</strong> Staff members cannot create their own accounts, change their own passwords, or modify their profile information. All account management operations are restricted to the admin through the admin panel and the <code>admin-actions</code> Edge Function. This centralised control ensures that only authorised personnel have system access.
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Password Visibility:</strong> The auto-generated password is displayed in the admin UI only at the moment of creation or reset. There is no "show password later" feature. If the admin does not record the password, a new one must be generated via the reset function. The application never stores passwords in plaintext anywhere -- not in the database, not in the browser, and not in logs.
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      LTSU Fee Portal Documentation. Built for Lamrin Tech Skills University Punjab.
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
